@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="utf-8">
+        <title>Controlling the print style-sheets [CSS]</title>
+        <link rel="stylesheet" href="http://fully-faltoo.com/theme/css/main.css">
+                
+        <!--[if IE]>
+            <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+</head>
+
+<body id="index" class="home">
+        <header id="banner" class="body">
+                <h1><a href="http://fully-faltoo.com/">A Fully-Faltoo Blog </a></h1>
+                <nav><ul>
+                                    <li><a href="http://twitter.com/faltoo">@faltoo</a></li>
+                                                    <li><a href="http://fully-faltoo.com/pages/poke.html">Poke Me!</a></li>
+                                                                    <li class="active"><a href="http://fully-faltoo.com/category/misc.html">misc</a></li>
+                                    <li ><a href="http://fully-faltoo.com/category/tumblr.html">tumblr</a></li>
+                                                </ul></nav>
+        </header><!-- /#banner -->
+        <section id="content" class="body">
+  <article>
+    <header>
+      <h1 class="entry-title">
+        <a href="http://fully-faltoo.com/controlling-the-print-style-sheets-css.html" rel="bookmark"
+           title="Permalink to Controlling the print style-sheets [CSS]">Controlling the print style-sheets [CSS]</a></h1>
+          </header>
+
+    <div class="entry-content">
+      <footer class="post-info">
+        <abbr class="published" title="2012-12-11T00:00:00">
+                Tue 11 December 2012
+        </abbr>
+
+                <address class="vcard author">
+                By <a class="url fn" href="http://fully-faltoo.com/author/pratyush-mittal.html">Pratyush Mittal</a>
+        </address>
+        <p>In <a href="http://fully-faltoo.com/category/misc.html">misc</a>. </p>
+<p>tags: <a href="http://fully-faltoo.com/tag/css.html">"CSS"</a></p>
+</footer><!-- /.post-info -->      <p>There are some very useful CSS2 features which allow the authors to get control on how the pages are printed.</p>
+<h3>Avoid the page breaks just after headings</h3>
+<div class="highlight"><pre><span class="n">h1</span><span class="p">,</span> <span class="n">h2</span><span class="p">,</span> <span class="n">h3</span><span class="p">,</span> <span class="n">h4</span><span class="p">,</span> <span class="n">h5</span><span class="p">,</span> <span class="n">h6</span> <span class="p">{</span> <span class="n">page</span><span class="o">-</span><span class="k">break</span><span class="o">-</span><span class="n">after</span> <span class="o">:</span> <span class="n">avoid</span> <span class="p">}</span>
+</pre></div>
+
+
+<blockquote>
+<p>page-break-after properties accept the auto, always, avoid, left, and right keywords.</p>
+<p>The keyword auto is the default, it lets the browser generate page breaks as needed. The keyword always forces a page break before or after the element, while avoid suppresses a page break immediately before or after the element. The left and right keywords force one or two page breaks, so that the element is rendered on a left-hand or right-hand page.</p>
+</blockquote>
+<h3>Prevent just a line of the paragraph from moving onto next page</h3>
+<div class="highlight"><pre><span class="err">@</span><span class="n">page</span> <span class="p">{</span>
+    <span class="nl">orphans:</span><span class="mi">4</span><span class="p">;</span>
+    <span class="nl">widows:</span><span class="mi">2</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+
+
+<blockquote>
+<p>The <code>orphans</code> property specifies the minimum number of lines of a paragraph that must be left at the bottom of a page.</p>
+<p>The <code>widows</code> property specifies the minimum number of lines of a paragraph that must be left at the top of a page.</p>
+</blockquote>
+<p><strong><a href="http://www.tutorialspoint.com/css/css_paged_media.htm">TutorialsPoint</a> covers many other features for better print pages. Bookmarked it for long!</strong></p>
+    </div><!-- /.entry-content -->
+    
+  </article>
+</section>
+        <section id="extras" class="body">
+                                <div class="social">
+                        <h2>social</h2>
+                        <ul>
+                            <li><a href="http://fully-faltoo.com/None" type="application/atom+xml" rel="alternate">atom feed</a></li>
+                            
+                                                    <li><a href="#">You can add links in your config file</a></li>
+                                                    <li><a href="#">Another social link</a></li>
+                                                </ul>
+                </div><!-- /.social -->
+                </section><!-- /#extras -->
+
+        <footer id="contentinfo" class="body">
+                <address id="about" class="vcard body">
+                Proudly powered by <a href="http://getpelican.com/">Pelican</a>, which takes great advantage of <a href="http://python.org">Python</a>.
+                </address><!-- /#about -->
+
+                <p>The theme is by <a href="http://coding.smashingmagazine.com/2009/08/04/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a>, thanks!</p>
+        </footer><!-- /#contentinfo -->
+
+</body>
+</html>

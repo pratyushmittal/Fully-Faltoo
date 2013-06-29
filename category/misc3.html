@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="{{ DEFAULT_LANG }}">
+  <head>
+    <meta charset="utf-8">
+    <meta name="author" content="Pratyush Mittal">
+    <title>A Fully-Faltoo Blog
+    </title>    <link href="http://feeds.feedburner.com/fullyfaltoo" type="application/rss+xml" rel="alternate" title="A Fully-Faltoo Blog RSS Feed">    <link rel="shortcut icon" href="/favicon.ico">
+    <link href="/favicon.ico" type="image/x-icon" rel="icon">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link rel="stylesheet" type="text/css" href="/theme/css/css.css">  </head>
+  <body>
+    <div class="wrapper">
+      <div class="section intro right">
+        <div class="navigation">
+          <ul>            <li><a href="http://twitter.com/faltoo">@faltoo</a>
+            </li>            <li class="active"><a href="/">Diary</a>
+            </li>
+            <li class=""><a href="/archives.html">Archives</a>
+            </li>            <li class=""><a href="http://fully-faltoo.com/pages/poke.html">Poke Me!</a>
+            </li>          </ul>
+        </div>
+        <div class="fix">
+        </div>
+      </div>
+      <div class="sidebar logo left">
+        <div class="logo center"><a href="/"><img src="/theme/images/logo100.png" alt="Pratyush - A <GeeK>!!!"></a>
+        </div>
+      </div>
+      <div class="section main right">
+        <div class="white"><article class="entry">
+  <div class="page-header">
+    <h1><a href="http://www.quora.com/How-can-I-make-my-life-simpler" class="external">Life tips</a>    </h1>
+    <p class="meta sub"><a href="2012/12/12/life-tips/"><small>Wed 12 December 2012</small></a>
+    </p>
+  </div>
+  <div class="page-content">
+    <div class="post"><p><img alt="Everyone needs a kick" src="http://fully-faltoo.com/static/uploads/butt-kick.png" /></p>
+<p>Stumbled across this <a href="http://www.quora.com/How-can-I-make-my-life-simpler">post on Quora</a> on "How can I make life simpler?"</p>
+<p>It has some good Calvin cartoon strips:</p>
+<p><img alt="Keep the expectations low" src="http://fully-faltoo.com/static/uploads/lower.png" /></p>
+<p>And also some good tips:</p>
+<blockquote>
+<p>Ask for help</p>
+<p>Carry less stuff in your pockets</p>
+<p>Clean out your house, purge your belongings of anything you haven't used in five years</p>
+<p>Eliminate clutter on your desk</p>
+</blockquote>
+<p>I would also add <strong>"<a href="http://modernerd.com/post/348119427/inbox-heaven">Zero Inbox</a>"</strong> to the list.</p>
+    </div>
+  </div>
+</article><article class="entry">
+  <div class="page-header">
+    <h1><a href="2012/12/11/print-stylesheets/">Controlling the print style-sheets [CSS]</a>    </h1>
+    <p class="meta sub"><a href="2012/12/11/print-stylesheets/"><small>Tue 11 December 2012</small></a>
+    </p>
+  </div>
+  <div class="page-content">
+    <div class="post"><p>There are some very useful CSS2 features which allow the authors to get control on how the pages are printed.</p>
+<h3>Avoid the page breaks just after headings</h3>
+<div class="highlight"><pre><span class="n">h1</span><span class="p">,</span> <span class="n">h2</span><span class="p">,</span> <span class="n">h3</span><span class="p">,</span> <span class="n">h4</span><span class="p">,</span> <span class="n">h5</span><span class="p">,</span> <span class="n">h6</span> <span class="p">{</span> <span class="n">page</span><span class="o">-</span><span class="k">break</span><span class="o">-</span><span class="n">after</span> <span class="o">:</span> <span class="n">avoid</span> <span class="p">}</span>
+</pre></div>
+
+
+<blockquote>
+<p>page-break-after properties accept the auto, always, avoid, left, and right keywords.</p>
+<p>The keyword auto is the default, it lets the browser generate page breaks as needed. The keyword always forces a page break before or after the element, while avoid suppresses a page break immediately before or after the element. The left and right keywords force one or two page breaks, so that the element is rendered on a left-hand or right-hand page.</p>
+</blockquote>
+<h3>Prevent just a line of the paragraph from moving onto next page</h3>
+<div class="highlight"><pre><span class="err">@</span><span class="n">page</span> <span class="p">{</span>
+    <span class="nl">orphans:</span><span class="mi">4</span><span class="p">;</span>
+    <span class="nl">widows:</span><span class="mi">2</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+
+
+<blockquote>
+<p>The <code>orphans</code> property specifies the minimum number of lines of a paragraph that must be left at the bottom of a page.</p>
+<p>The <code>widows</code> property specifies the minimum number of lines of a paragraph that must be left at the top of a page.</p>
+</blockquote>
+<p><strong><a href="http://www.tutorialspoint.com/css/css_paged_media.htm">TutorialsPoint</a> covers many other features for better print pages. Bookmarked it for long!</strong></p>
+    </div>
+  </div>
+</article><article class="entry">
+  <div class="page-header">
+    <h1><a href="2012/10/27/search-engine/">You are using the wrong search engine!</a>    </h1>
+    <p class="meta sub"><a href="2012/10/27/search-engine/"><small>Sat 27 October 2012</small></a>
+    </p>
+  </div>
+  <div class="page-content">
+    <div class="post"><p><img alt="Change default search engine to Google's &quot;I am Feeling Lucky&quot;" src="http://fully-faltoo.com/static/uploads/feeling-lucky.png" /></p>
+<div class="highlight"><pre><span class="p">{</span><span class="n">google</span><span class="o">:</span><span class="n">baseURL</span><span class="p">}</span><span class="n">search</span><span class="o">?</span><span class="n">ie</span><span class="o">=</span><span class="n">UTF</span><span class="o">-</span><span class="mi">8</span><span class="o">&amp;</span><span class="n">oe</span><span class="o">=</span><span class="n">UTF</span><span class="o">-</span><span class="mi">8</span><span class="o">&amp;</span><span class="n">sourceid</span><span class="o">=</span><span class="n">navclient</span><span class="o">&amp;</span><span class="n">gfns</span><span class="o">=</span><span class="mi">1</span><span class="o">&amp;</span><span class="n">q</span><span class="o">=%</span><span class="n">s</span>
+</pre></div>
+
+
+<p>Before ignoring this tip, I would highly recommend you to try the above as the default search engine in Chrome (at-least for a week). <strong>It is the Google's "I am Feeling Lucky™" search</strong>.</p>
+<p>I began using the <em>"I am Feeling Lucky" (IAFL)</em> link in one of my websites to link to specific details. The results were overwhelming as the accuracy was more than 90%. Since then I started using it as my default search engine.</p>
+<p>The biggest advantage of using IAFL is that it makes you more productive. Traditionally, you first input the search query in the omnibox, hit enter, and get the list of results. You need to scan through ads, through results and through all the distractions. In most cases, we often end-up opening more than one pages, and correspondingly many more number of clicks and time. In contrast, <a href="http://en.wikipedia.org/wiki/Google_Search#.22I.27m_Feeling_Lucky.22">the IAFL search is ad-free</a> and takes you to the best result (which is mostly the page you want to see), just after you hit enter. Also, in case Google is not sure which is the <em>the best</em> result, it shows the default results.</p>
+<p>As you use more of IAFL search, you start exploring its hidden potentials. Don't remember your favourite band's Facebook page link? No problem, just type <code>facebook [band name]</code> and enter, and it will take you directly take to the band's page. In similar fashion you can use it for twitter, linkedin, stackoverflow, mp3, subtitles or even torrents. You will be soon surprised by the Google's accuracy.</p>
+<p>Do give it a try and share your search tips.</p>
+<p>Detailed instructions for using "I am Feeling Lucky" on <a href="http://support.google.com/chrome/bin/answer.py?hl=en&amp;answer=95426">Chrome</a>, <a href="http://support.mozilla.org/en-US/kb/search-web-address-bar?redirectlocale=en-US&amp;redirectslug=Location+bar+search#w_changing-the-internet-keyword-service">Firefox</a>, <a href="http://my.opera.com/ariesptn/blog/index.dml/tag/I'm%20feeling%20lucky">Opera</a> and <a href="http://answers.microsoft.com/en-us/ie/forum/ie8-windows_other/how-can-i-make-googles-im-feeling-lucky-my-default/877858f5-36c3-4627-b337-5d62bb421a27">Internet Explorer</a>.<br />
+Link: <code>{google:baseURL}search?ie=UTF-8&amp;oe=UTF-8&amp;sourceid=navclient&amp;gfns=1&amp;q=%s</code></p>
+    </div>
+  </div>
+</article><article class="entry">
+  <div class="page-header">
+    <h1><a href="http://siriuslymeg.tumblr.com/post/33738057928/99-life-hacks-to-make-your-life-easier" class="external">99 Life hacks [in pictures]</a>    </h1>
+    <p class="meta sub"><a href="2012/10/18/99-life-hacks/"><small>Thu 18 October 2012</small></a>
+    </p>
+  </div>
+  <div class="page-content">
+    <div class="post"><p>This an awesome compilation of some super-useful life-hacks. Few of my favourite ones from the link:</p>
+<p><img alt="Identifying keys using nail-polish" src="http://media.tumblr.com/tumblr_mbyii9fETT1qhkzpz.jpg" /></p>
+<p><img alt="Untying knots" src="http://media.tumblr.com/tumblr_mbyijl18Dw1qhkzpz.jpg" /></p>
+<p><img alt="Sandwich guide" src="http://media.tumblr.com/tumblr_mbyikrUJ0B1qhkzpz.jpg" /></p>
+<h2><a href="http://siriuslymeg.tumblr.com/post/33738057928/99-life-hacks-to-make-your-life-easier">See the complete list</a></h2>
+    </div>
+  </div>
+</article><article class="entry">
+  <div class="page-header">
+    <h1><a href="http://dayscore.net/" class="external">DayScore is a fabulous way to develop habits</a>    </h1>
+    <p class="meta sub"><a href="2012/10/03/dayscore-habits/"><small>Wed 03 October 2012</small></a>
+    </p>
+  </div>
+  <div class="page-content">
+    <div class="post"><p><a href="http://dayscore.net"><img alt="DayScore sheet" src="http://fully-faltoo.com/static/uploads/DayScore.png" /></a></p>
+<p>This is wow! Earlier I used to make a <a href="http://fully-faltoo.com/static/uploads/todo.jpg">score list of daily rituals</a> to get the important (and un-motivating) things done. <a href="http://dayscore.net">DayScore</a> converts that concept into an awesome web platform to "reinforce positive habits by keeping score."</p>
+<p>I have set the service as one of my opening tabs in Chrome.</p>
+    </div>
+  </div>
+</article><article class="entry">
+  <div class="page-header">
+    <h1><a href="http://www.youtube.com/watch?v=jILgxeNBK_8&feature=share" class="external">Why do competitors open their stores next to one another?</a>    </h1>
+    <p class="meta sub"><a href="2012/10/01/competitors/"><small>Mon 01 October 2012</small></a>
+    </p>
+  </div>
+  <div class="page-content">
+    <div class="post"><p>I often wondered why the crowd of computer shops exist only at one place in our city; why all those big garment showrooms open next to each other; or even why all the shops of musical instruments open only at one place (and those at other places get closed).</p>
+<p>This video answers that well, in a simple animation.</p>
+<iframe width="640" height="360" src="http://www.youtube.com/embed/jILgxeNBK_8?feature=player_detailpage" frameborder="0" allowfullscreen="allowfullscreen"> </iframe>
+    </div>
+  </div>
+</article><article class="entry">
+  <div class="page-header">
+    <h1><a href="2012/09/25/world-cup-dhoni/">Aya World Cup - Jeetengi meri Dhoni ki India</a>    </h1>
+    <p class="meta sub"><a href="2012/09/25/world-cup-dhoni/"><small>Tue 25 September 2012</small></a>
+    </p>
+  </div>
+  <div class="page-content">
+    <div class="post"><h2>This song is awesome!!!</h2>
+<p>It refreshes the <a href="http://fully-faltoo.com/2011/04/03/love-you-india/">memories of the amazing World Cup win</a>. Hope the repeat it in this T20 World Cup 2012 too.</p>
+<iframe width="420" height="315" src="http://www.youtube.com/embed/zxhuJLXjemw" frameborder="0" allowfullscreen="allowfullscreen"> </iframe>
+
+<p><strong>Composed by Omkar &amp; Aditya</strong></p>
+<p><strong>Lyrics:</strong></p>
+<p>Maare des re, aaayaaa</p>
+<p>Aya world cup maare des re,<br />
+Jeetengi meri Dhoni ki India</p>
+<p>Maare 6 chakke Yuvraj,<br />
+Phode ache gendbaaj</p>
+<p>Oo, Sreesanth tej gendbaaj,<br />
+Phataka tikhaa hai andaaj</p>
+<p>Powerhouse Yusuf Pathan,<br />
+Dhurandar Virendar chattan</p>
+<p>Googly daale Bhajji khaas,<br />
+Gambhir khele superfast</p>
+<p>Suresh Raina jeet ka gehna,<br />
+Baandhe Nehra jeet ka sehra</p>
+<p>Ooooo...</p>
+<p>All-rounder Tendulkar ka raaj re,<br />
+Jeetengi meri Dhoni ki India!</p>
+<p><strong><a href="http://www.reverbnation.com/play_now/song_8006186?utm_campaign=opengraph&amp;utm_content=song&amp;utm_medium=link&amp;utm_source=facebook">Download link</a></strong></p>
+    </div>
+  </div>
+</article><div class="pagination"><a href="http://fully-faltoo.com/category/misc2.html" class="prev left-page">&larr; Previous page</a><a href="http://fully-faltoo.com/category/misc4.html" class="next right-page">Next page &rarr;</a></div>        </div>
+        <div class="section footer right">
+        </div>
+      </div>
+      <div class="sidebar left">
+        <div class="white"><img src="http://dl.dropbox.com/u/4607238/profile.jpg">
+          <h3>About Me
+          </h3>
+          <p class="sub">My name is Pratyush Mittal. I am a Chartered Accountant living in Lucknow, India. I love to create financial web-applications and write Python programs. I blog about stocks at <a href='http://dalal-street.in'>Dalal-Street</a>.
+
+          </p>
+        </div>
+        <div class="white island"><gcse:search></gcse:search><a href="http://feedburner.google.com/fb/a/mailverify?uri=fullyfaltoo" target="_blank" class="no-line"><img src="/theme/images/email.gif"> Get updates via Email
+</a><a href="http://feeds.feedburner.com/fullyfaltoo" class="right no-line"><img src="/theme/images/rss.png"> RSS Link
+</a>
+          <div class="fix">
+          </div>
+        </div>
+        <div class="white island blogroll">
+          <h3>Blogroll
+          </h3>          <p><a href="http://news.ycombinator.com/">Hacker News</a><small class="sub">: To keep updated with the latest tech developments</small>
+          </p>          <p><a href="http://lifehacker.com">LifeHacker</a><small class="sub">: Collection of the best life hacks</small>
+          </p>          <p><a href="http://www.screener.in">Screener.in</a><small class="sub">: A Stock Screener and stock analysis tool I am working on</small>
+          </p>          <p><a href="http://www.webtrickz.com">WebTrickz</a><small class="sub">: My cousin Mayur's Blog for the best 'web-tricks'</small>
+          </p>        </div>
+        <footer class="white island">
+          <p><small>Designed with &lt;3 in India.
+</small>
+          </p>
+          <p><small>Proudly powered by 
+<a href="http://getpelican.com/">Pelican</a>, and hosted on 
+<a href="http://python.org">GitHub</a>.
+</small>
+          </p>
+        </footer>
+      </div>
+      <div class="fix">
+      </div>
+    </div>    <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-2456523-1']);
+    _gaq.push(['_trackPageview']);
+    (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+    </script>
+<script type="text/javascript">
+    var disqus_shortname = 'fully-faltoo';
+    (function () {
+        var s = document.createElement('script'); s.async = true;
+        s.type = 'text/javascript';
+        s.src = 'http://' + disqus_shortname + '.disqus.com/count.js';
+        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+    }());
+</script>
+<script>
+  (function() {
+    var cx = '009049710563382089934:sftcdudo044';
+    var gcse = document.createElement('script'); gcse.type = 'text/javascript'; gcse.async = true;
+    gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
+        '//www.google.com/cse/cse.js?cx=' + cx;
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(gcse, s);
+  })();
+</script>  </body>
+</html>

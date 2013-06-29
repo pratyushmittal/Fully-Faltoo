@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="utf-8">
+        <title>Mount NTFS partition automatically in Ubuntu</title>
+        <link rel="stylesheet" href="http://fully-faltoo.com/theme/css/main.css">
+                
+        <!--[if IE]>
+            <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+</head>
+
+<body id="index" class="home">
+        <header id="banner" class="body">
+                <h1><a href="http://fully-faltoo.com/">A Fully-Faltoo Blog </a></h1>
+                <nav><ul>
+                                    <li><a href="http://twitter.com/faltoo">@faltoo</a></li>
+                                                    <li><a href="http://fully-faltoo.com/pages/poke.html">Poke Me!</a></li>
+                                                                    <li class="active"><a href="http://fully-faltoo.com/category/misc.html">misc</a></li>
+                                    <li ><a href="http://fully-faltoo.com/category/tumblr.html">tumblr</a></li>
+                                                </ul></nav>
+        </header><!-- /#banner -->
+        <section id="content" class="body">
+  <article>
+    <header>
+      <h1 class="entry-title">
+        <a href="http://fully-faltoo.com/mount-ntfs-new.html" rel="bookmark"
+           title="Permalink to Mount NTFS partition automatically in Ubuntu">Mount NTFS partition automatically in Ubuntu</a></h1>
+          </header>
+
+    <div class="entry-content">
+      <footer class="post-info">
+        <abbr class="published" title="2012-12-26T00:00:00">
+                Wed 26 December 2012
+        </abbr>
+
+                <address class="vcard author">
+                By <a class="url fn" href="http://fully-faltoo.com/author/pratyush-mittal.html">Pratyush Mittal</a>
+        </address>
+        <p>In <a href="http://fully-faltoo.com/category/misc.html">misc</a>. </p>
+<p>tags: <a href="http://fully-faltoo.com/tag/ubuntu.html">"Ubuntu"</a></p>
+</footer><!-- /.post-info -->      <p>I had <a href="http://fully-faltoo.com/2012/06/30/mount-ntfs/">earlier mentioned</a> about the correct way of mounting NTFS partition using ntfs-config. However, recently I experienced a few crash errors and thus found this method easier to use.</p>
+<p>Open Unity (using windows key) and type "Startup Applications"</p>
+<blockquote>
+<p>Then click on the Add button, Write a name for this operation such as "Mount ntfs drives", then in command input box, write <code>udisks --mount /dev/sda2</code>, to automount the ntfs partition.</p>
+<p><strong>Note: You need to replace the /dev/sda2 with your actual NTFS partition number.</strong></p>
+<p>You can get this number by this command:</p>
+<p>sudo blkid
+Below is the output of this command in my computer.</p>
+</blockquote>
+<p><img alt="Find NTFS partition number" src="http://fully-faltoo.com/static/uploads/ntfs-mount.png" /></p>
+<p>Since I had to mount the partition with the label "Storage", I entered this command:</p>
+<div class="highlight"><pre><span class="n">udisks</span> <span class="o">--</span><span class="n">mount</span> <span class="o">/</span><span class="n">dev</span><span class="o">/</span><span class="n">sda4</span>
+</pre></div>
+
+
+<p>This auto mounts the partition on start-up with correct user permissions.</p>
+    </div><!-- /.entry-content -->
+    
+  </article>
+</section>
+        <section id="extras" class="body">
+                                <div class="social">
+                        <h2>social</h2>
+                        <ul>
+                            <li><a href="http://fully-faltoo.com/None" type="application/atom+xml" rel="alternate">atom feed</a></li>
+                            
+                                                    <li><a href="#">You can add links in your config file</a></li>
+                                                    <li><a href="#">Another social link</a></li>
+                                                </ul>
+                </div><!-- /.social -->
+                </section><!-- /#extras -->
+
+        <footer id="contentinfo" class="body">
+                <address id="about" class="vcard body">
+                Proudly powered by <a href="http://getpelican.com/">Pelican</a>, which takes great advantage of <a href="http://python.org">Python</a>.
+                </address><!-- /#about -->
+
+                <p>The theme is by <a href="http://coding.smashingmagazine.com/2009/08/04/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a>, thanks!</p>
+        </footer><!-- /#contentinfo -->
+
+</body>
+</html>
