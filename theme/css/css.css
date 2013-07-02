@@ -1,4 +1,4 @@
-@import url(http://fonts.googleapis.com/css?family=Droid+Sans:400,700);
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,700);
 
 /* General styles */
 body {
@@ -8,7 +8,7 @@ background-image:url('../images/tile.jpg');
 background-color:#f2f2f2;
 color:#333333;
 font-size:100%;
-font-family: 'Droid Sans', sans-serif;
+font-family: 'Open Sans','Helvetica Neue', Helvetica, Arial;
 min-height:480px;
 min-width:320px;
 border-top:5px solid #2c2c2c;
