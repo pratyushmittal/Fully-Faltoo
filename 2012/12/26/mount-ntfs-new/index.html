@@ -39,10 +39,9 @@
 <blockquote>
 <p>Then click on the Add button, Write a name for this operation such as "Mount ntfs drives", then in command input box, write <code>udisks --mount /dev/sda2</code>, to automount the ntfs partition.</p>
 <p><strong>Note: You need to replace the /dev/sda2 with your actual NTFS partition number.</strong></p>
-<p>You can get this number by this command:</p>
-<p>sudo blkid
-Below is the output of this command in my computer.</p>
+<p>You can get this number by <code>sudo blkid</code></p>
 </blockquote>
+<p>Below is the output of this command in my computer.</p>
 <p><img alt="Find NTFS partition number" src="http://fully-faltoo.com/static/uploads/ntfs-mount.png" /></p>
 <p>Since I had to mount the partition with the label "Storage", I entered this command:</p>
 <div class="highlight"><pre><span class="n">udisks</span> <span class="o">--</span><span class="n">mount</span> <span class="o">/</span><span class="n">dev</span><span class="o">/</span><span class="n">sda4</span>

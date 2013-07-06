@@ -171,10 +171,9 @@ Moora..&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;Then click on the Add button, Write a name for this operation such as "Mount ntfs drives", then in command input box, write &lt;code&gt;udisks --mount /dev/sda2&lt;/code&gt;, to automount the ntfs partition.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Note: You need to replace the /dev/sda2 with your actual NTFS partition number.&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;You can get this number by this command:&lt;/p&gt;
-&lt;p&gt;sudo blkid
-Below is the output of this command in my computer.&lt;/p&gt;
+&lt;p&gt;You can get this number by &lt;code&gt;sudo blkid&lt;/code&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
+&lt;p&gt;Below is the output of this command in my computer.&lt;/p&gt;
 &lt;p&gt;&lt;img alt="Find NTFS partition number" src="http://fully-faltoo.com/static/uploads/ntfs-mount.png" /&gt;&lt;/p&gt;
 &lt;p&gt;Since I had to mount the partition with the label "Storage", I entered this command:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;udisks&lt;/span&gt; &lt;span class="o"&gt;--&lt;/span&gt;&lt;span class="n"&gt;mount&lt;/span&gt; &lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;dev&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;sda4&lt;/span&gt;
