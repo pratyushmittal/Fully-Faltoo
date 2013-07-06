@@ -1,5 +1,53 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>A Fully-Faltoo Blog</title><link>http://fully-faltoo.com/</link><description></description><atom:link href="http://feeds.feedburner.com/fullyfaltoo/feed.rss" rel="self"></atom:link><lastBuildDate>Fri, 05 Apr 2013 00:00:00 +0530</lastBuildDate><item><title>Getting the users back</title><link>http://fully-faltoo.com/2013/04/05/go-viral/</link><description>&lt;p&gt;A brilliant write-up on "How to Get Lost users to Come Back to Your Product - Five Lessons From Facebook"&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Pratyush Mittal</dc:creator><pubDate>Fri, 05 Apr 2013 00:00:00 +0530</pubDate><guid>tag:fully-faltoo.com,2013-04-05:2013/04/05/go-viral/</guid><category>"web-psyche"</category><category>"web-designing"</category></item><item><title>Thomas Edison's questions to job candidates</title><link>http://fully-faltoo.com/2013/02/23/edisons-questions/</link><description>&lt;p&gt;Came across &lt;a href="http://query.nytimes.com/mem/archive-free/pdf?res=F40F10FB355B1B7A93C3A8178ED85F458285F9"&gt;this&lt;/a&gt; New York Times article which shares about the Edison's list of questions for job candidates in his plant.&lt;/p&gt;
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>A Fully-Faltoo Blog</title><link>http://fully-faltoo.com/</link><description></description><atom:link href="http://feeds.feedburner.com/fullyfaltoo/feed.rss" rel="self"></atom:link><lastBuildDate>Sat, 06 Jul 2013 00:00:00 +0530</lastBuildDate><item><title>Relative symlinks in Git using subtree</title><link>http://fully-faltoo.com/2013/07/06/git-symlinks/</link><description>&lt;p&gt;I have two separate projects and both use a common set of directories. Since both the projects are under active development, I symlinked the common files. Thus the changes were incorporated in both the projects. &lt;strong&gt;However, git &lt;em&gt;does not&lt;/em&gt; follow the symbolic links and instead saves its contents.&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;To solve it I:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Copied one of the projects into the another as a subdirectory using subtree.&lt;/li&gt;
+&lt;li&gt;Created symlinks from inside this subtree directory.&lt;/li&gt;
+&lt;li&gt;Changed the absolute paths of symbolic links into relative paths.&lt;/li&gt;
+&lt;li&gt;Automated all of the above into a script.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2&gt;Detailed steps&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;Step 1:&lt;/strong&gt; Subtree is useful (and better than submodule) for including a project into another project as a subdirectory. The main advantage is that the changes are both downstream as well as upstream. I followed &lt;a href="http://www.codeproject.com/Articles/562950/GitplusSubtreeplusMergeplus-e2-80-93TheplusQuickpl"&gt;this post&lt;/a&gt; to include the project as subtree sub-directory.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Step 2:&lt;/strong&gt; Next step was to convert all the old symlinks (directly from main project) to symlinks from the new subtree directory. To find all the symbolic links in a directory use &lt;code&gt;$ find /path -type l&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Step 3:&lt;/strong&gt; The symlinks created usually contain absolute file paths (even though they might be in the same git project). Use the &lt;a href="http://bashscripts.org/forum/viewtopic.php?f=8&amp;amp;t=457"&gt;symlinks utility&lt;/a&gt; to convert all the symlinks from absolute paths to relative paths.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;sudo apt-get install symlinks
+&lt;span class="nv"&gt;$ &lt;/span&gt;symlinks -tscr .  &lt;span class="c"&gt;# Preview changes&lt;/span&gt;
+&lt;span class="nv"&gt;$ &lt;/span&gt;symlinks -scr .   &lt;span class="c"&gt;# Execute changes&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;&lt;strong&gt;Step 4:&lt;/strong&gt; To automate all of the above, I compiled and saved the above commands in a fab file to run while committing the changes.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;sync_down&lt;/span&gt;&lt;span class="p"&gt;():&lt;/span&gt;
+    &lt;span class="sd"&gt;&amp;quot;&amp;quot;&amp;quot;Syncs downstream from remote to local branch&amp;quot;&amp;quot;&amp;quot;&lt;/span&gt;
+    &lt;span class="n"&gt;local&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;git checkout remote_branch&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+    &lt;span class="n"&gt;local&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;git pull&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+    &lt;span class="n"&gt;local&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;git checkout master&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+    &lt;span class="n"&gt;local&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;git merge --squash -s subtree &amp;#39;&lt;/span&gt;
+          &lt;span class="s"&gt;&amp;#39;--no-commit &amp;#39;&lt;/span&gt;
+          &lt;span class="s"&gt;&amp;#39;remote_branch&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+
+
+&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;sync_up&lt;/span&gt;&lt;span class="p"&gt;():&lt;/span&gt;
+    &lt;span class="sd"&gt;&amp;quot;&amp;quot;&amp;quot;Syncs upstream from local to remote branch&amp;quot;&amp;quot;&amp;quot;&lt;/span&gt;
+    &lt;span class="n"&gt;local&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;git checkout remote_branch&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+    &lt;span class="n"&gt;local&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;git merge --squash -s subtree &amp;#39;&lt;/span&gt;
+          &lt;span class="s"&gt;&amp;#39;--no-commit &amp;#39;&lt;/span&gt;
+          &lt;span class="s"&gt;&amp;#39;master&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+    &lt;span class="n"&gt;local&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;git add . -A&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+    &lt;span class="n"&gt;local&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;git commit -m &amp;quot;Merged changes from remote&amp;quot;&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+    &lt;span class="n"&gt;local&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;git push remote remote_branch:master&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+    &lt;span class="n"&gt;local&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;git checkout master&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+
+
+&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;sync_all&lt;/span&gt;&lt;span class="p"&gt;():&lt;/span&gt;
+    &lt;span class="n"&gt;local&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;symlinks -scr .&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+    &lt;span class="n"&gt;sync_down&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+    &lt;span class="n"&gt;sync_up&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;I agree that this is a very hacky way to achieve a simple following of symlinks. However, all the &lt;a href="http://stackoverflow.com/questions/86402/how-can-i-get-git-to-follow-symlinks"&gt;other&lt;/a&gt; &lt;a href="http://stackoverflow.com/questions/1500772/getting-git-to-follow-symlinks-again"&gt;workarounds&lt;/a&gt; looked as bad. &lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Pratyush Mittal</dc:creator><pubDate>Sat, 06 Jul 2013 00:00:00 +0530</pubDate><guid>tag:fully-faltoo.com,2013-07-06:2013/07/06/git-symlinks/</guid><category>'git'</category><category>'python'</category><category>'subtree'</category></item><item><title>Getting the users back</title><link>http://fully-faltoo.com/2013/04/05/go-viral/</link><description>&lt;p&gt;A brilliant write-up on "How to Get Lost users to Come Back to Your Product - Five Lessons From Facebook"&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Pratyush Mittal</dc:creator><pubDate>Fri, 05 Apr 2013 00:00:00 +0530</pubDate><guid>tag:fully-faltoo.com,2013-04-05:2013/04/05/go-viral/</guid><category>"web-psyche"</category><category>"web-designing"</category></item><item><title>Thomas Edison's questions to job candidates</title><link>http://fully-faltoo.com/2013/02/23/edisons-questions/</link><description>&lt;p&gt;Came across &lt;a href="http://query.nytimes.com/mem/archive-free/pdf?res=F40F10FB355B1B7A93C3A8178ED85F458285F9"&gt;this&lt;/a&gt; New York Times article which shares about the Edison's list of questions for job candidates in his plant.&lt;/p&gt;
 &lt;p&gt;Of-course the list has a few questions which would have been relevant in those particular years (around 1921), but it can be great if we can modernise this list.&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;Just in case the original link does not work, &lt;a href="http://fully-faltoo.com/static/uploads/edisons-questions.pdf"&gt;here is the pdf&lt;/a&gt;.&lt;/em&gt;&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Pratyush Mittal</dc:creator><pubDate>Sat, 23 Feb 2013 00:00:00 +0530</pubDate><guid>tag:fully-faltoo.com,2013-02-23:2013/02/23/edisons-questions/</guid><category>"Edison"</category><category>"Interesting"</category></item><item><title>Triumph and Defeat - Atul Gawande</title><link>http://fully-faltoo.com/2013/02/16/triumph-defeat/</link><description>&lt;blockquote&gt;
 &lt;p&gt;“A failure often does not have to be a failure at all. However, you have to be ready for it. Will you admit when things go wrong? Will you take steps to set them right? Because the difference between triumph and defeat, you’ll find, isn’t about willingness to take risks. It’s about mastery of rescue.” – &lt;strong&gt;Atul Gawande&lt;/strong&gt;, &lt;a href="http://www.newyorker.com/online/blogs/newsdesk/2012/06/atul-gawande-failure-and-rescue.html"&gt;2012 Williams College Commencement Address&lt;/a&gt;&lt;/p&gt;

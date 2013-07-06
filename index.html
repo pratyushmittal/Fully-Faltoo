@@ -29,6 +29,64 @@
       <div class="section main right">
         <div class="white"><article class="entry">
   <div class="page-header">
+    <h1><a href="2013/07/06/git-symlinks/">Relative symlinks in Git using subtree</a>    </h1>
+    <p class="meta sub"><a href="2013/07/06/git-symlinks/"><small>Sat 06 July 2013</small></a>
+    </p>
+  </div>
+  <div class="page-content">
+    <div class="post"><p>I have two separate projects and both use a common set of directories. Since both the projects are under active development, I symlinked the common files. Thus the changes were incorporated in both the projects. <strong>However, git <em>does not</em> follow the symbolic links and instead saves its contents.</strong></p>
+<p>To solve it I:</p>
+<ol>
+<li>Copied one of the projects into the another as a subdirectory using subtree.</li>
+<li>Created symlinks from inside this subtree directory.</li>
+<li>Changed the absolute paths of symbolic links into relative paths.</li>
+<li>Automated all of the above into a script.</li>
+</ol>
+<h2>Detailed steps</h2>
+<p><strong>Step 1:</strong> Subtree is useful (and better than submodule) for including a project into another project as a subdirectory. The main advantage is that the changes are both downstream as well as upstream. I followed <a href="http://www.codeproject.com/Articles/562950/GitplusSubtreeplusMergeplus-e2-80-93TheplusQuickpl">this post</a> to include the project as subtree sub-directory.</p>
+<p><strong>Step 2:</strong> Next step was to convert all the old symlinks (directly from main project) to symlinks from the new subtree directory. To find all the symbolic links in a directory use <code>$ find /path -type l</code>.</p>
+<p><strong>Step 3:</strong> The symlinks created usually contain absolute file paths (even though they might be in the same git project). Use the <a href="http://bashscripts.org/forum/viewtopic.php?f=8&amp;t=457">symlinks utility</a> to convert all the symlinks from absolute paths to relative paths.</p>
+<div class="highlight"><pre><span class="nv">$ </span>sudo apt-get install symlinks
+<span class="nv">$ </span>symlinks -tscr .  <span class="c"># Preview changes</span>
+<span class="nv">$ </span>symlinks -scr .   <span class="c"># Execute changes</span>
+</pre></div>
+
+
+<p><strong>Step 4:</strong> To automate all of the above, I compiled and saved the above commands in a fab file to run while committing the changes.</p>
+<div class="highlight"><pre><span class="k">def</span> <span class="nf">sync_down</span><span class="p">():</span>
+    <span class="sd">&quot;&quot;&quot;Syncs downstream from remote to local branch&quot;&quot;&quot;</span>
+    <span class="n">local</span><span class="p">(</span><span class="s">&quot;git checkout remote_branch&quot;</span><span class="p">)</span>
+    <span class="n">local</span><span class="p">(</span><span class="s">&quot;git pull&quot;</span><span class="p">)</span>
+    <span class="n">local</span><span class="p">(</span><span class="s">&quot;git checkout master&quot;</span><span class="p">)</span>
+    <span class="n">local</span><span class="p">(</span><span class="s">&#39;git merge --squash -s subtree &#39;</span>
+          <span class="s">&#39;--no-commit &#39;</span>
+          <span class="s">&#39;remote_branch&#39;</span><span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">sync_up</span><span class="p">():</span>
+    <span class="sd">&quot;&quot;&quot;Syncs upstream from local to remote branch&quot;&quot;&quot;</span>
+    <span class="n">local</span><span class="p">(</span><span class="s">&quot;git checkout remote_branch&quot;</span><span class="p">)</span>
+    <span class="n">local</span><span class="p">(</span><span class="s">&#39;git merge --squash -s subtree &#39;</span>
+          <span class="s">&#39;--no-commit &#39;</span>
+          <span class="s">&#39;master&#39;</span><span class="p">)</span>
+    <span class="n">local</span><span class="p">(</span><span class="s">&#39;git add . -A&#39;</span><span class="p">)</span>
+    <span class="n">local</span><span class="p">(</span><span class="s">&#39;git commit -m &quot;Merged changes from remote&quot;&#39;</span><span class="p">)</span>
+    <span class="n">local</span><span class="p">(</span><span class="s">&quot;git push remote remote_branch:master&quot;</span><span class="p">)</span>
+    <span class="n">local</span><span class="p">(</span><span class="s">&quot;git checkout master&quot;</span><span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">sync_all</span><span class="p">():</span>
+    <span class="n">local</span><span class="p">(</span><span class="s">&quot;symlinks -scr .&quot;</span><span class="p">)</span>
+    <span class="n">sync_down</span><span class="p">()</span>
+    <span class="n">sync_up</span><span class="p">()</span>
+</pre></div>
+
+
+<p>I agree that this is a very hacky way to achieve a simple following of symlinks. However, all the <a href="http://stackoverflow.com/questions/86402/how-can-i-get-git-to-follow-symlinks">other</a> <a href="http://stackoverflow.com/questions/1500772/getting-git-to-follow-symlinks-again">workarounds</a> looked as bad. </p>
+    </div>
+  </div>
+</article><article class="entry">
+  <div class="page-header">
     <h1><a href="http://blog.alexgodin.com/post/47045832186/how-to-get-lost-users-to-come-back-to-your-product" class="external">Getting the users back</a>    </h1>
     <p class="meta sub"><a href="2013/04/05/go-viral/"><small>Fri 05 April 2013</small></a>
     </p>
@@ -139,19 +197,6 @@ Step 2: Don't lose the market. Those who can't pay, give them free and make them
 <li>Enable <a href="http://gmailblog.blogspot.ca/2010/10/new-in-labs-auto-advance-to-next.html">auto-advance</a> in labs.</li>
 <li>Enable <a href="http://fully-faltoo.com/2009/03/20/undo-in-gmail/">undo sent</a> if you already haven't.</li>
 </ol>
-    </div>
-  </div>
-</article><article class="entry">
-  <div class="page-header">
-    <h1><a href="http://alignedleft.com/tutorials/d3/scales/" class="external">Understanding scales, domains and ranges in D3</a>    </h1>
-    <p class="meta sub"><a href="2013/01/22/scales-d3/"><small>Tue 22 January 2013</small></a>
-    </p>
-  </div>
-  <div class="page-content">
-    <div class="post"><p>Have been playing around with <a href="http://d3js.org/">D3</a> recently. <a href="http://alignedleft.com/tutorials/d3/scales/">This</a> was the most easy to understand guide/tutorial to understand <em>scales</em>, <em>domains</em> and <em>ranges</em> in D3. It is powerful and I am loving it!</p>
-<blockquote>
-<p>The values in any data set are unlikely to correspond exactly to pixel measurements for use in your visualization. Scales provide a convenient way to map those data values to new values useful for visualization purposes.</p>
-</blockquote>
     </div>
   </div>
 </article><div class="pagination"><a href="http://fully-faltoo.com/index2.html" class="next right-page">Next page &rarr;</a></div>        </div>

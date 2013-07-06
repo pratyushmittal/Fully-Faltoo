@@ -339,7 +339,7 @@ cite {
   font-style: normal;
 }
 
-code { color:#234f32; }
+code { background:#ffeeee; padding:5px; color:#234f32; }
 pre { font-size:medium; background:#E0FFB8; border:1px solid #94da3a; border-width:1px 0; margin: 1em 0; padding: .3em .4em; overflow: hidden; }
 
 .wrapper{
