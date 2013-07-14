@@ -1,5 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>A Fully-Faltoo Blog</title><link>http://fully-faltoo.com/</link><description></description><atom:link href="http://feeds.feedburner.com/fullyfaltoo/feed.rss" rel="self"></atom:link><lastBuildDate>Sat, 06 Jul 2013 00:00:00 +0530</lastBuildDate><item><title>Relative symlinks in Git using subtree</title><link>http://fully-faltoo.com/2013/07/06/git-symlinks/</link><description>&lt;p&gt;I have two separate projects and both use a common set of directories. Since both the projects are under active development, I symlinked the common files. Thus the changes were incorporated in both the projects. &lt;strong&gt;However, git &lt;em&gt;does not&lt;/em&gt; follow the symbolic links and instead saves its contents.&lt;/strong&gt;&lt;/p&gt;
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>A Fully-Faltoo Blog</title><link>http://fully-faltoo.com/</link><description></description><atom:link href="http://feeds.feedburner.com/fullyfaltoo/feed.rss" rel="self"></atom:link><lastBuildDate>Sun, 14 Jul 2013 00:00:00 +0530</lastBuildDate><item><title>Faster PIP installs using local archives</title><link>http://fully-faltoo.com/2013/07/14/pip-local/</link><description>&lt;p&gt;This method copies the PIP packages locally and uses them for faster installation when starting new projects.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;First, download the archives that fulfill your requirements:&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;pip install --download &amp;lt;DIR&amp;gt; -r requirements.txt
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;blockquote&gt;
+&lt;p&gt;Then, install using –find-links and –no-index:&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;pip install --no-index --find-links&lt;span class="o"&gt;=&lt;/span&gt;&amp;lt;DIR&amp;gt; -r requirements.txt
+&lt;/pre&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Pratyush Mittal</dc:creator><pubDate>Sun, 14 Jul 2013 00:00:00 +0530</pubDate><guid>tag:fully-faltoo.com,2013-07-14:2013/07/14/pip-local/</guid><category>python</category></item><item><title>Style snippet #1</title><link>http://fully-faltoo.com/2013/07/14/snippet-1/</link><description>&lt;p&gt;&lt;mark&gt;Starting this new "style-snippet" series to archive snippets of some good designs and their application.&lt;/mark&gt;&lt;/p&gt;
+&lt;p&gt;Loved the &lt;a href="http://www.google.com/fonts/specimen/Cambo"&gt;Cambo&lt;/a&gt; font used in the header of the &lt;a href="http://myusuf3.github.io/numbers.vim/"&gt;numbers package&lt;/a&gt; for Vim.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nt"&gt;h1&lt;/span&gt;&lt;span class="o"&gt;,&lt;/span&gt; &lt;span class="nt"&gt;h2&lt;/span&gt;&lt;span class="o"&gt;,&lt;/span&gt; &lt;span class="nt"&gt;h3&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+    &lt;span class="k"&gt;font-family&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;Cambo&amp;#39;&lt;/span&gt;&lt;span class="o"&gt;,&lt;/span&gt; &lt;span class="k"&gt;serif&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+    &lt;span class="k"&gt;color&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="m"&gt;#333333&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Pratyush Mittal</dc:creator><pubDate>Sun, 14 Jul 2013 00:00:00 +0530</pubDate><guid>tag:fully-faltoo.com,2013-07-14:2013/07/14/snippet-1/</guid><category>style</category><category>snippet</category></item><item><title>Relative symlinks in Git using subtree</title><link>http://fully-faltoo.com/2013/07/06/git-symlinks/</link><description>&lt;p&gt;I have two separate projects and both use a common set of directories. Since both the projects are under active development, I symlinked the common files. Thus the changes were incorporated in both the projects. &lt;strong&gt;However, git &lt;em&gt;does not&lt;/em&gt; follow the symbolic links and instead saves its contents.&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;To solve it I:&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;Copied one of the projects into the another as a subdirectory using subtree.&lt;/li&gt;
