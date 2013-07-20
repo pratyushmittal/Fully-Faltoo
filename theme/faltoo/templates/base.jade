@@ -1,0 +1,102 @@
+doctype 5
+html(lang="{{ DEFAULT_LANG }}")
+    head
+        meta(charset="utf-8")
+        meta(name="author", content="#{AUTHOR}")
+        title
+            block title
+                | #{SITENAME}
+
+        - if FEED_ATOM
+            link(href="#{FEED_DOMAIN}", type="application/atom+xml", rel="alternate", title="#{SITENAME} Atom Feed")
+        - if FEED_RSS
+            link(href="#{FEED_DOMAIN}", type="application/rss+xml", rel="alternate", title="#{SITENAME} RSS Feed")
+        - if CATEGORY_FEED_ATOM
+            link(href="#{FEED_DOMAIN}/#{CATEGORY_FEED_ATOM}", type="application/atom+xml", rel="alternate", title="#{SITENAME} Categories Atom Feed")
+        - if CATEGORY_FEED_RSS
+            link(href="#{FEED_DOMAIN}/#{CATEGORY_FEED_RSS}", type="application/rss+xml", rel="alternate", title="#{SITENAME} Categories RSS Feed")
+        - if TAG_FEED_ATOM
+            link(href="#{FEED_DOMAIN}/#{TAG_FEED_ATOM}", type="application/atom+xml", rel="alternate", title="#{SITENAME} Tags Atom Feed")
+        - if TAG_FEED_RSS
+            link(href="#{FEED_DOMAIN}/#{TAG_FEED_RSS}", type="application/rss+xml", rel="alternate", title="#{SITENAME} Tags RSS Feed")
+
+        link(rel="shortcut icon", href="/favicon.ico")
+        link(href="/favicon.ico", type="image/x-icon", rel="icon")
+        meta(name="viewport", content="width=device-width, initial-scale=1, maximum-scale=1")
+        link(rel="stylesheet", type="text/css", href="/theme/css/css.css")
+        
+        block head
+
+    body
+        .wrapper
+
+            .section.intro.right
+                .navigation
+                    ul
+                        - for title, link in MENUITEMS
+                            li: a(href="#{link}") #{title}
+
+                        li(class="#{'active' if page_name not in ['archives',] and not page else ''}")
+                            a(href="/") Diary
+
+                        li(class="#{'active' if page_name == 'archives' else ''}")
+                            a(href="/archives.html") Archives
+
+                        - if DISPLAY_PAGES_ON_MENU
+                            - for p in PAGES
+                                li(class="#{'active' if p == page else ''}")
+                                    a(href="#{SITEURL}/#{p.url}") #{p.title}
+                        - else
+                            - for cat, null in categories
+                                li(class="#{'active' if p == page else ''}")
+                                a(href="#{SITEURL}/#{cat.url}") #{cat}
+                .fix
+
+            .sidebar.logo.left
+                .logo.center
+                    a(href="/")
+                        img(src="/theme/images/logo100.png", alt='Pratyush - A <GeeK>!!!')
+
+            .section.main.right
+                .white
+                    block content
+                
+                .section.footer.right
+
+
+            .sidebar.left
+                .white
+                    img(src="http://dl.dropbox.com/u/4607238/profile.jpg")
+                    h3 About Me
+                    p.sub
+                        #{ABOUT_AUTHOR}
+                .white.island
+                    include search.html
+                    a.no-line(href="http://feedburner.google.com/fb/a/mailverify?uri=fullyfaltoo", target="_blank")
+                        img(src="/theme/images/email.gif")
+                        |  Get updates via Email
+                    a.right.no-line(href="http://feeds.feedburner.com/fullyfaltoo")
+                        img(src="/theme/images/rss.png")
+                        |  RSS Link
+                    .fix
+                .white.island.blogroll
+                    h3 Blogroll
+                    - for name, des, link in LINKS
+                        p
+                            a(href="#{link}") #{name}
+                            small.sub : #{des}
+                footer.white.island
+                    p: small
+                        | Designed with &lt;3 in India.
+                    p: small
+                        | Proudly powered by 
+                        a(href="http://getpelican.com/") Pelican
+                        | , and hosted on 
+                        a(href="http://python.org") GitHub
+                        | .
+
+            .fix
+        include analysis.html
+        include disqus.html
+        include search_script.html
+        block body_end
