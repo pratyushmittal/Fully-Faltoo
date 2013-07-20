@@ -29,6 +29,27 @@
       <div class="section main right">
         <div class="white"><article class="entry">
   <div class="page-header">
+    <h1><a href="2012/12/27/dump-mysql/">Dump and restore all MySQL databases in one command</a>    </h1>
+    <p class="meta sub"><a href="2012/12/27/dump-mysql/"><small>Thu 27 December 2012</small></a>
+    </p>
+  </div>
+  <div class="page-content">
+    <div class="post"><p>Came across this <a href="http://stackoverflow.com/questions/328922/transfer-mysql-database-to-another-computer/4819610#4819610">wonderful discussion</a> on StackOverflow, for dumping all the MySQL databases from command line.</p>
+<p><strong>For dumping:</strong></p>
+<div class="highlight"><pre><span class="n">mysqldump</span> <span class="o">-</span><span class="n">u</span> <span class="n">username</span> <span class="o">-</span><span class="n">p</span> <span class="o">--</span><span class="n">all</span><span class="o">-</span><span class="n">databases</span> <span class="o">&gt;</span> <span class="n">alldbs</span><span class="p">.</span><span class="n">sql</span>
+</pre></div>
+
+
+<p><strong>For restoring:</strong></p>
+<div class="highlight"><pre><span class="n">mysql</span> <span class="o">-</span><span class="n">u</span> <span class="n">username</span> <span class="o">-</span><span class="n">p</span> <span class="o">&lt;</span> <span class="n">alldbs</span><span class="p">.</span><span class="n">sql</span>
+</pre></div>
+
+
+<p>The advantage is that it is very quick, and you do not lose the user privileges.</p>
+    </div>
+  </div>
+</article><article class="entry">
+  <div class="page-header">
     <h1><a href="http://askubuntu.com/questions/83461/automatically-mount-ntfs-drive-when-i-login" class="external">Mount NTFS partition automatically in Ubuntu</a>    </h1>
     <p class="meta sub"><a href="2012/12/26/mount-ntfs-new/"><small>Wed 26 December 2012</small></a>
     </p>
@@ -155,20 +176,6 @@
 <p>Do give it a try and share your search tips.</p>
 <p>Detailed instructions for using "I am Feeling Lucky" on <a href="http://support.google.com/chrome/bin/answer.py?hl=en&amp;answer=95426">Chrome</a>, <a href="http://support.mozilla.org/en-US/kb/search-web-address-bar?redirectlocale=en-US&amp;redirectslug=Location+bar+search#w_changing-the-internet-keyword-service">Firefox</a>, <a href="http://my.opera.com/ariesptn/blog/index.dml/tag/I'm%20feeling%20lucky">Opera</a> and <a href="http://answers.microsoft.com/en-us/ie/forum/ie8-windows_other/how-can-i-make-googles-im-feeling-lucky-my-default/877858f5-36c3-4627-b337-5d62bb421a27">Internet Explorer</a>.<br />
 Link: <code>{google:baseURL}search?ie=UTF-8&amp;oe=UTF-8&amp;sourceid=navclient&amp;gfns=1&amp;q=%s</code></p>
-    </div>
-  </div>
-</article><article class="entry">
-  <div class="page-header">
-    <h1><a href="http://siriuslymeg.tumblr.com/post/33738057928/99-life-hacks-to-make-your-life-easier" class="external">99 Life hacks [in pictures]</a>    </h1>
-    <p class="meta sub"><a href="2012/10/18/99-life-hacks/"><small>Thu 18 October 2012</small></a>
-    </p>
-  </div>
-  <div class="page-content">
-    <div class="post"><p>This an awesome compilation of some super-useful life-hacks. Few of my favourite ones from the link:</p>
-<p><img alt="Identifying keys using nail-polish" src="http://media.tumblr.com/tumblr_mbyii9fETT1qhkzpz.jpg" /></p>
-<p><img alt="Untying knots" src="http://media.tumblr.com/tumblr_mbyijl18Dw1qhkzpz.jpg" /></p>
-<p><img alt="Sandwich guide" src="http://media.tumblr.com/tumblr_mbyikrUJ0B1qhkzpz.jpg" /></p>
-<h2><a href="http://siriuslymeg.tumblr.com/post/33738057928/99-life-hacks-to-make-your-life-easier">See the complete list</a></h2>
     </div>
   </div>
 </article><div class="pagination"><a href="http://fully-faltoo.com/category/misc2.html" class="prev left-page">&larr; Previous page</a><a href="http://fully-faltoo.com/category/misc4.html" class="next right-page">Next page &rarr;</a></div>        </div>

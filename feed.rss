@@ -1,5 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>A Fully-Faltoo Blog</title><link>http://fully-faltoo.com/</link><description></description><atom:link href="http://feeds.feedburner.com/fullyfaltoo/feed.rss" rel="self"></atom:link><lastBuildDate>Sun, 14 Jul 2013 00:00:00 +0530</lastBuildDate><item><title>Faster PIP installs using local archives</title><link>http://fully-faltoo.com/2013/07/14/pip-local/</link><description>&lt;p&gt;This method copies the PIP packages locally and uses them for faster installation when starting new projects.&lt;/p&gt;
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>A Fully-Faltoo Blog</title><link>http://fully-faltoo.com/</link><description></description><atom:link href="http://feeds.feedburner.com/fullyfaltoo/feed.rss" rel="self"></atom:link><lastBuildDate>Sat, 20 Jul 2013 00:00:00 +0530</lastBuildDate><item><title>Fixing Lenovo touchpads on Ubuntu</title><link>http://fully-faltoo.com/2013/07/20/lenovo-touchpad/</link><description>&lt;p&gt;I recently moved from Dell Studio to Lenovo's Thinkpad Edge E430 laptop. It is an all-Intel machine and thus the drivers support is quite good. Initially the touchpad felt over sensitive as the cursor jumped a few pixels on clicks. Luckily, it is a common &lt;a href="https://bugs.launchpad.net/ubuntu/+source/xserver-xorg-input-synaptics/+bug/1042069"&gt;touchpad issue on Lenovo machines&lt;/a&gt; and easily fixable.&lt;/p&gt;
+&lt;p&gt;Create the following config file in &lt;code&gt;/usr/share/X11/xorg.conf.d/50-thinkpad-touchpad.conf&lt;/code&gt; (create &lt;code&gt;xorg.conf.d&lt;/code&gt; directory if it doesn't exist):&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;Section&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;InputClass&amp;quot;&lt;/span&gt;
+        &lt;span class="n"&gt;Identifier&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;touchpad&amp;quot;&lt;/span&gt;
+        &lt;span class="n"&gt;MatchProduct&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;SynPS/2 Synaptics TouchPad&amp;quot;&lt;/span&gt;
+        &lt;span class="n"&gt;Driver&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;synaptics&amp;quot;&lt;/span&gt;
+        &lt;span class="err"&gt;#&lt;/span&gt; &lt;span class="n"&gt;fix&lt;/span&gt; &lt;span class="n"&gt;touchpad&lt;/span&gt; &lt;span class="n"&gt;resolution&lt;/span&gt;
+        &lt;span class="n"&gt;Option&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;VertResolution&amp;quot;&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;100&amp;quot;&lt;/span&gt;
+        &lt;span class="n"&gt;Option&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;HorizResolution&amp;quot;&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;65&amp;quot;&lt;/span&gt;
+        &lt;span class="err"&gt;#&lt;/span&gt; &lt;span class="n"&gt;increment&lt;/span&gt; &lt;span class="n"&gt;noise&lt;/span&gt; &lt;span class="n"&gt;cancellation&lt;/span&gt; &lt;span class="n"&gt;factor&lt;/span&gt;
+        &lt;span class="n"&gt;Option&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;HorizHysteresis&amp;quot;&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;50&amp;quot;&lt;/span&gt;
+        &lt;span class="n"&gt;Option&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;VertHysteresis&amp;quot;&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;50&amp;quot;&lt;/span&gt;
+&lt;span class="n"&gt;EndSection&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Different Lenovo laptops may require different tweaking. Above works best for Edge series. Other configs are available &lt;strong&gt;&lt;a href="https://bugs.launchpad.net/ubuntu/+source/xserver-xorg-input-synaptics/+bug/1042069"&gt;here&lt;/a&gt;&lt;/strong&gt;.&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Pratyush Mittal</dc:creator><pubDate>Sat, 20 Jul 2013 00:00:00 +0530</pubDate><guid>tag:fully-faltoo.com,2013-07-20:2013/07/20/lenovo-touchpad/</guid></item><item><title>Faster PIP installs using local archives</title><link>http://fully-faltoo.com/2013/07/14/pip-local/</link><description>&lt;p&gt;This method copies the PIP packages locally and uses them for faster installation when starting new projects.&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;First, download the archives that fulfill your requirements:&lt;/p&gt;
 &lt;/blockquote&gt;

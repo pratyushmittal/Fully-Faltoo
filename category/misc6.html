@@ -29,6 +29,16 @@
       <div class="section main right">
         <div class="white"><article class="entry">
   <div class="page-header">
+    <h1><a href="2012/07/09/gandhis-letter-to-hitler/">Gandhi's letter to Hitler</a>    </h1>
+    <p class="meta sub"><a href="2012/07/09/gandhis-letter-to-hitler/"><small>Mon 09 July 2012</small></a>
+    </p>
+  </div>
+  <div class="page-content">
+    <div class="post"><p><img alt="Gandhi's letter to Hitler" src="http://fully-faltoo.com/static/uploads/gandhi-letter.jpg" /></p>
+    </div>
+  </div>
+</article><article class="entry">
+  <div class="page-header">
     <h1><a href="2012/07/07/bill-gates-fanatics/">Bill Gates on building best companies</a>    </h1>
     <p class="meta sub"><a href="2012/07/07/bill-gates-fanatics/"><small>Sat 07 July 2012</small></a>
     </p>
@@ -116,63 +126,6 @@ Charlie Rose: Help me understand what it takes to build a Microsoft, or to build
   <div class="page-content">
     <div class="post"><p><img alt="Do it today, or..." src="http://24.media.tumblr.com/tumblr_m6eh1dVLgJ1qzr04eo1_500.jpg" /></p>
 <p>via <a href="http://icanread.tumblr.com/post/26546369391">I can read</a></p>
-    </div>
-  </div>
-</article><article class="entry">
-  <div class="page-header">
-    <h1><a href="2012/07/05/jekyll-bookmarklet/">Jekyll bookmarklet [AutoKey script]</a>    </h1>
-    <p class="meta sub"><a href="2012/07/05/jekyll-bookmarklet/"><small>Thu 05 July 2012</small></a>
-    </p>
-  </div>
-  <div class="page-content">
-    <div class="post"><p>Since I have <a href="http://fully-faltoo.com/2012/06/30/moving-to-jekyll">moved to Jekyll</a> I have been writing a lot many posts. A major reason is the easy with which I can write the posts now.</p>
-<p>I created a small AutoKey script:</p>
-<div class="highlight"><pre><span class="k">import</span> <span class="nx">datetime</span>
-<span class="k">import</span> <span class="nb">time</span>
-<span class="k">import</span> <span class="nx">sys</span>
-<span class="k">import</span> <span class="nx">re</span>
-
-<span class="err">#</span> <span class="nx">EDIT</span> <span class="o">&amp;</span> <span class="nx">CUSTOMIZE</span> <span class="nx">the</span> <span class="nx">following</span> <span class="nx">two</span> <span class="nx">lines</span>
-<span class="n">location</span> <span class="o">=</span> <span class="s1">&#39;/home/pratyush/Websites/pratyushmittal.github.com/&#39;</span>
-<span class="n">text_editor</span> <span class="o">=</span> <span class="s1">&#39;sublime-text-2 -n&#39;</span>
-
-
-<span class="nx">def</span> <span class="nx">to_slug</span><span class="p">(</span><span class="nx">text</span><span class="p">):</span>
-    <span class="n">new_name</span> <span class="o">=</span> <span class="nx">text.lower</span><span class="p">()</span><span class="bp">.</span><span class="nb">replace</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="p">,</span> <span class="s1">&#39;-&#39;</span><span class="p">)</span>
-    <span class="n">new_name</span> <span class="o">=</span> <span class="nx">re.sub</span><span class="p">(</span><span class="s1">&#39;-+&#39;</span><span class="p">,</span> <span class="s1">&#39;-&#39;</span><span class="p">,</span> <span class="nx">new_name</span><span class="p">)</span>
-    <span class="n">pattern</span> <span class="o">=</span> <span class="nx">re.compile</span><span class="p">(</span><span class="s1">&#39;[^a-z0-9-]+&#39;</span><span class="p">)</span>
-    <span class="n">new_name</span> <span class="o">=</span> <span class="nx">pattern.sub</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="nx">new_name</span><span class="p">)</span><span class="bp">.</span><span class="nx">strip</span><span class="p">(</span><span class="s1">&#39;-&#39;</span><span class="p">)</span>
-    <span class="k">return</span> <span class="nx">new_name</span>
-
-<span class="nx">keyboard.send_keys</span><span class="p">(</span><span class="s2">&quot;&lt;ctrl&gt;+c&quot;</span><span class="p">)</span>
-<span class="n">text</span> <span class="o">=</span> <span class="nx">clipboard.get_selection</span><span class="p">()</span>
-<span class="n">text</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="bp">.</span><span class="nb">join</span><span class="p">(</span><span class="err">[</span><span class="s1">&#39;&gt; &#39;</span> <span class="o">+</span> <span class="nb">line</span> <span class="nb">for</span> <span class="n">line</span> <span class="k">in</span> <span class="nx">text.split</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span><span class="cp">]</span>)
-
-keyboard.send_keys(&quot;<span class="nt">&lt;ctrl&gt;</span>+l&quot;)
-time.sleep(1)
-keyboard.send_keys(&quot;<span class="nt">&lt;ctrl&gt;</span>+c&quot;)
-time.sleep(1)
-link = clipboard.get_selection()
-cb, post_title = dialog.input_dialog(&quot;New Blog Post&quot;, &quot;Content: %s \nLink: %s\nPost Title:&quot; % (text<span class="cp">[</span><span class="p">:</span><span class="mi">140</span><span class="cp">]</span>, link))
-if not post_title:
-   sys.exit()
-cb, slug_title = dialog.input_dialog(&quot;New Blog Post&quot;, &quot;Slug Title&quot;, &#39;%s&#39; % post_title)
-slug_title = to_slug(slug_title)
-
-time_stamp = output = system.exec_command(&quot;date&quot;)
-postname = &#39;%s-%s&#39; % (datetime.datetime.now().strftime(&quot;%Y-%m-%d&quot;), slug_title)
-post_url = &#39;%s_posts/%s.md&#39; % (location, postname)
-with open(post_url, &#39;w&#39;) as post:
-    content = &#39;---\ndate: %s\nlayout: post\ntitle: %s\ndescription: \nlink: %s\ntags: <span class="cp">[</span><span class="s2">&quot;&quot;</span><span class="cp">]</span>\n---\n\n%s\n\n&#39; % (time_stamp, post_title, link, text)
-    post.write(content)
-
-system.exec_command(&quot;%s %s&quot; % (text_editor, post_url), getOutput=False)
-</pre></div>
-
-
-<p>I have set the keyboard shortcut for the above as <code>&lt;super&gt;+b</code>. It asks for a title, automatically creates a post in your specified directory and opens it in your favourite text editor.</p>
-<p>I know the above is <strong><em>not a bookmarklet</em></strong> and the title is mis-worded. But after setting up Jekyll, that was the first thing I searched for. It landed me on a <a href="http://jonathanbuys.com/04-05-2011/Jekyll_Bookmarklet.html">blog-post by Jonathan</a> who had written a similar script but only for Mac. Using his idea, I wrote the above script for AutoKey which works well on Ubuntu (or any Linux distribution).</p>
-<p>There is also a <a href="http://www.justkez.com/jekyll-post-creator/">pure browser-based bookmarklet too</a>, written by Kester. It lets you write the post-content right from the browser.</p>
     </div>
   </div>
 </article><div class="pagination"><a href="http://fully-faltoo.com/category/misc5.html" class="prev left-page">&larr; Previous page</a><a href="http://fully-faltoo.com/category/misc7.html" class="next right-page">Next page &rarr;</a></div>        </div>

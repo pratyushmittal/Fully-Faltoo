@@ -29,6 +29,32 @@
       <div class="section main right">
         <div class="white"><article class="entry">
   <div class="page-header">
+    <h1><a href="2013/07/20/lenovo-touchpad/">Fixing Lenovo touchpads on Ubuntu</a>    </h1>
+    <p class="meta sub"><a href="2013/07/20/lenovo-touchpad/"><small>Sat 20 July 2013</small></a>
+    </p>
+  </div>
+  <div class="page-content">
+    <div class="post"><p>I recently moved from Dell Studio to Lenovo's Thinkpad Edge E430 laptop. It is an all-Intel machine and thus the drivers support is quite good. Initially the touchpad felt over sensitive as the cursor jumped a few pixels on clicks. Luckily, it is a common <a href="https://bugs.launchpad.net/ubuntu/+source/xserver-xorg-input-synaptics/+bug/1042069">touchpad issue on Lenovo machines</a> and easily fixable.</p>
+<p>Create the following config file in <code>/usr/share/X11/xorg.conf.d/50-thinkpad-touchpad.conf</code> (create <code>xorg.conf.d</code> directory if it doesn't exist):</p>
+<div class="highlight"><pre><span class="n">Section</span> <span class="s">&quot;InputClass&quot;</span>
+        <span class="n">Identifier</span> <span class="s">&quot;touchpad&quot;</span>
+        <span class="n">MatchProduct</span> <span class="s">&quot;SynPS/2 Synaptics TouchPad&quot;</span>
+        <span class="n">Driver</span> <span class="s">&quot;synaptics&quot;</span>
+        <span class="err">#</span> <span class="n">fix</span> <span class="n">touchpad</span> <span class="n">resolution</span>
+        <span class="n">Option</span> <span class="s">&quot;VertResolution&quot;</span> <span class="s">&quot;100&quot;</span>
+        <span class="n">Option</span> <span class="s">&quot;HorizResolution&quot;</span> <span class="s">&quot;65&quot;</span>
+        <span class="err">#</span> <span class="n">increment</span> <span class="n">noise</span> <span class="n">cancellation</span> <span class="n">factor</span>
+        <span class="n">Option</span> <span class="s">&quot;HorizHysteresis&quot;</span> <span class="s">&quot;50&quot;</span>
+        <span class="n">Option</span> <span class="s">&quot;VertHysteresis&quot;</span> <span class="s">&quot;50&quot;</span>
+<span class="n">EndSection</span>
+</pre></div>
+
+
+<p>Different Lenovo laptops may require different tweaking. Above works best for Edge series. Other configs are available <strong><a href="https://bugs.launchpad.net/ubuntu/+source/xserver-xorg-input-synaptics/+bug/1042069">here</a></strong>.</p>
+    </div>
+  </div>
+</article><article class="entry">
+  <div class="page-header">
     <h1><a href="http://www.pip-installer.org/en/latest/cookbook.html#fast-local-installs" class="external">Faster PIP installs using local archives</a>    </h1>
     <p class="meta sub"><a href="2013/07/14/pip-local/"><small>Sun 14 July 2013</small></a>
     </p>
@@ -155,27 +181,6 @@
     <div class="post"><blockquote>
 <p>“A failure often does not have to be a failure at all. However, you have to be ready for it. Will you admit when things go wrong? Will you take steps to set them right? Because the difference between triumph and defeat, you’ll find, isn’t about willingness to take risks. It’s about mastery of rescue.” – <strong>Atul Gawande</strong>, <a href="http://www.newyorker.com/online/blogs/newsdesk/2012/06/atul-gawande-failure-and-rescue.html">2012 Williams College Commencement Address</a></p>
 </blockquote>
-    </div>
-  </div>
-</article><article class="entry">
-  <div class="page-header">
-    <h1><a href="2013/02/04/bill-gates-letter/">An Open Letter to Hobbyists</a>    </h1>
-    <p class="meta sub"><a href="2013/02/04/bill-gates-letter/"><small>Mon 04 February 2013</small></a>
-    </p>
-  </div>
-  <div class="page-content">
-    <div class="post"><p>Bill Gates hits the bulls-eye in this open letter dated February 3, 1976. The line that strikes me the most is that <em>"most of you steal your software. Hardware must be paid for, but software is something to share."</em> Something that is abnormally common in India.</p>
-<p>The complete letter (via <a href="http://www.lettersofnote.com/2009/10/most-of-you-steal-your-software.html">LettersOfNote</a>:</p>
-<p><img alt="Open Letter by Bill Gates" src="http://farm3.static.flickr.com/2474/3991297476_1dc98a1d14_o.png" /></p>
-<p>I now realise the perils of piracy in India. Being addicted to piracy, and getting mp3s and movies for free, we now assume the net to be free. Software is the last thing we like to pay for. <strong>And probably this is the reason why we neither have "good softwares being written" nor a Facebook or Google marked <em>‘made in India’</em>.</strong></p>
-<p><strong><em>Update:</em></strong></p>
-<p><a href="http://www.britannica.com/EBchecked/topic/461490/piracy">Bill Gate's response to Windows Piracy in China, in 1998:</a></p>
-<blockquote>
-<p>Although about 3 million computers get sold every year in China, people don’t pay for the software. Someday they will, though, and as long as they’re going to steal it, we want them to steal ours. <strong>They’ll get sort of addicted, and then we’ll somehow figure out how to collect sometime in the next decade.</strong></p>
-</blockquote>
-<p>That is actually what is happening now as all the laptops are preloaded with genuine Windows. The lesson can be summarized as:</p>
-<p>Step 1: If you want to make a great software, and keep it alive, then make it paid.<br />
-Step 2: Don't lose the market. Those who can't pay, give them free and make them addicted.  </p>
     </div>
   </div>
 </article><div class="pagination"><a href="http://fully-faltoo.com/category/misc2.html" class="next right-page">Next page &rarr;</a></div>        </div>

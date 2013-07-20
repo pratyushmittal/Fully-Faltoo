@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="author" content="Pratyush Mittal">
-    <title>A Fully-Faltoo Blog
+    <title>Fixing Lenovo touchpads on Ubuntu
     </title>    <link href="http://feeds.feedburner.com/fullyfaltoo" type="application/rss+xml" rel="alternate" title="A Fully-Faltoo Blog RSS Feed">    <link rel="shortcut icon" href="/favicon.ico">
     <link href="/favicon.ico" type="image/x-icon" rel="icon">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -29,89 +29,47 @@
       <div class="section main right">
         <div class="white"><article class="entry">
   <div class="page-header">
-    <h1><a href="2008/09/04/slumdog-millionaire-trailer/">Slumdog Millionaire trailer</a>    </h1>
-    <p class="meta sub"><a href="2008/09/04/slumdog-millionaire-trailer/"><small>Thu 04 September 2008</small></a>
+    <h1>Fixing Lenovo touchpads on Ubuntu
+    </h1>
+    <p class="meta sub"><a href="2013/07/20/lenovo-touchpad/"><small>Sat 20 July 2013</small></a>
     </p>
   </div>
   <div class="page-content">
-    <div class="post"><iframe width="400" height="300" src="http://www.youtube.com/embed/4jq59IDR3AU?wmode=transparent&autohide=1&egm=0&hd=1&iv_load_policy=3&modestbranding=1&rel=0&showinfo=0&showsearch=0" frameborder="0" allowfullscreen></iframe>
+    <div class="post"><p>I recently moved from Dell Studio to Lenovo's Thinkpad Edge E430 laptop. It is an all-Intel machine and thus the drivers support is quite good. Initially the touchpad felt over sensitive as the cursor jumped a few pixels on clicks. Luckily, it is a common <a href="https://bugs.launchpad.net/ubuntu/+source/xserver-xorg-input-synaptics/+bug/1042069">touchpad issue on Lenovo machines</a> and easily fixable.</p>
+<p>Create the following config file in <code>/usr/share/X11/xorg.conf.d/50-thinkpad-touchpad.conf</code> (create <code>xorg.conf.d</code> directory if it doesn't exist):</p>
+<div class="highlight"><pre><span class="n">Section</span> <span class="s">&quot;InputClass&quot;</span>
+        <span class="n">Identifier</span> <span class="s">&quot;touchpad&quot;</span>
+        <span class="n">MatchProduct</span> <span class="s">&quot;SynPS/2 Synaptics TouchPad&quot;</span>
+        <span class="n">Driver</span> <span class="s">&quot;synaptics&quot;</span>
+        <span class="err">#</span> <span class="n">fix</span> <span class="n">touchpad</span> <span class="n">resolution</span>
+        <span class="n">Option</span> <span class="s">&quot;VertResolution&quot;</span> <span class="s">&quot;100&quot;</span>
+        <span class="n">Option</span> <span class="s">&quot;HorizResolution&quot;</span> <span class="s">&quot;65&quot;</span>
+        <span class="err">#</span> <span class="n">increment</span> <span class="n">noise</span> <span class="n">cancellation</span> <span class="n">factor</span>
+        <span class="n">Option</span> <span class="s">&quot;HorizHysteresis&quot;</span> <span class="s">&quot;50&quot;</span>
+        <span class="n">Option</span> <span class="s">&quot;VertHysteresis&quot;</span> <span class="s">&quot;50&quot;</span>
+<span class="n">EndSection</span>
+</pre></div>
 
-<p><b>Trailer of Slumdog Millionaire</b></p>
 
-<p>This really seems very interesting as it is directed by Danny Boyle, the director of Trainspotting (in top 250 at IMDB). It will be a challenge and nice to see how he performs on the Indian terrain.</p>
-
-<p>Cast: Mia Drake, Imran Hasnee, Anil Kapoor, Irfan Khan, Madhur Mittal, Jamal Malik, Freida Pinto.</p>
-
-<p>More info: <a href="http://www.foxsearchlight.com/slumdogmillionaire/" target="_blank">http://www.foxsearchlight.com/slumdogmillionaire/</a><br/>
-
-Music: A R Rahman</p>
-
-<p>Release Date: 28th November 2008</p>
+<p>Different Lenovo laptops may require different tweaking. Above works best for Edge series. Other configs are available <strong><a href="https://bugs.launchpad.net/ubuntu/+source/xserver-xorg-input-synaptics/+bug/1042069">here</a></strong>.</p>
     </div>
   </div>
-</article><article class="entry">
-  <div class="page-header">
-    <h1><a href="2008/09/02/about-google-chrome/">All about Google Chrome</a>    </h1>
-    <p class="meta sub"><a href="2008/09/02/about-google-chrome/"><small>Tue 02 September 2008</small></a>
-    </p>
+</article><hr/><div class="comments">
+  <h3>Add comment or 
+<a href="https://twitter.com/share" data-via="faltoo" class="twitter-share-button">Tweet it</a>
+  </h3>
+  <div id="disqus_thread">
   </div>
-  <div class="page-content">
-    <div class="post"><p><a href="http://www.google.com/googlebooks/chrome/index.html">All about Google Chrome - The new Open Source Web Browser by Google</a><br/><p>This really seems interesting, it was fast though awaited for a long time.</p></p>
-    </div>
-  </div>
-</article><article class="entry">
-  <div class="page-header">
-    <h1><a href="2008/08/31/blog-day/">Blog Day</a>    </h1>
-    <p class="meta sub"><a href="2008/08/31/blog-day/"><small>Sun 31 August 2008</small></a>
-    </p>
-  </div>
-  <div class="page-content">
-    <div class="post"><p><a href="http://www.blogday.org/images/badge_blue.gif"><img src="/static/tumblr_files/kLg0R7T3tdb9z1n4sNDO26OF_500.gif"/></a><br/><p><a href="http://www.blogday.org/" target="_blank">31-08 Celebrate The Blog day</a></p></p>
-    </div>
-  </div>
-</article><article class="entry">
-  <div class="page-header">
-    <h1><a href="2008/08/31/interviews-tips/">Interviews Tips</a>    </h1>
-    <p class="meta sub"><a href="2008/08/31/interviews-tips/"><small>Sun 31 August 2008</small></a>
-    </p>
-  </div>
-  <div class="page-content">
-    <div class="post"><p><a href="http://lifehacker.com/5042867/tips-for-talking-your-way-into-a-job">Interviews: Tips for Talking Your Way Into a Job</a></p>
-    </div>
-  </div>
-</article><article class="entry">
-  <div class="page-header">
-    <h1><a href="2008/08/31/learn-css/">Learn and Master CSS</a>    </h1>
-    <p class="meta sub"><a href="2008/08/31/learn-css/"><small>Sun 31 August 2008</small></a>
-    </p>
-  </div>
-  <div class="page-content">
-    <div class="post"><p><a href="http://sixrevisions.com/css/20_websites_learn_master_css/">20 Websites To Help You Learn and Master CSS</a></p>
-    </div>
-  </div>
-</article><article class="entry">
-  <div class="page-header">
-    <h1><a href="2008/08/30/discuss-ideas/">Discuss Ideas</a>    </h1>
-    <p class="meta sub"><a href="2008/08/30/discuss-ideas/"><small>Sat 30 August 2008</small></a>
-    </p>
-  </div>
-  <div class="page-content">
-    <div class="post"><blockquote>Great minds discuss ideas; Average minds discuss events; Small minds discuss people.</blockquote>
+  <script>var disqus_identifier = "2013/07/20/lenovo-touchpad/";
+var disqus_url = "http://fully-faltoo.com/2013/07/20/lenovo-touchpad/";
+(function() {
+var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+dsq.src = 'http://fully-faltoo.disqus.com/embed.js';
+(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+})();
 
-<p>&#8212;Eleanor Roosevelt (via <a href="http://hrrrthrrr.tumblr.com/" target="_blank">hrrrthrrr</a>)</p>
-    </div>
-  </div>
-</article><article class="entry">
-  <div class="page-header">
-    <h1><a href="2008/08/29/ancient-toy-illusion/">Ancient toy illusion</a>    </h1>
-    <p class="meta sub"><a href="2008/08/29/ancient-toy-illusion/"><small>Fri 29 August 2008</small></a>
-    </p>
-  </div>
-  <div class="page-content">
-    <div class="post"><p><embed src="http://www.metacafe.com/fplayer/764310/natures_wonders.swf" width="400" height="345" wmode="transparent" pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash"> </embed><p>The mysterious movement of this ancient toy still fascinates kids and adults alike. Its actually very simple to make one.</p></p>
-    </div>
-  </div>
-</article><div class="pagination"><a href="http://fully-faltoo.com/index43.html" class="prev left-page">&larr; Previous page</a><a href="http://fully-faltoo.com/index45.html" class="next right-page">Next page &rarr;</a></div>        </div>
+  </script>
+</div>        </div>
         <div class="section footer right">
         </div>
       </div>
@@ -176,5 +134,8 @@ Music: A R Rahman</p>
         '//www.google.com/cse/cse.js?cx=' + cx;
     var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(gcse, s);
   })();
+</script><script>// Put this just before the closing body tag
+!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
+
 </script>  </body>
 </html>
