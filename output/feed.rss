@@ -103,7 +103,10 @@ Step 2: Don't lose the market. Those who can't pay, give them free and make them
 &lt;/blockquote&gt;
 &lt;ol&gt;
 &lt;li&gt;
-&lt;p&gt;Installed the latest Wine version (1.5.22) using Synaptic. It auto installed wine-mono mentioned in the original article.&lt;/p&gt;
+&lt;p&gt;Installed the latest Wine version. It auto installed wine-mono mentioned in the original article.&lt;/p&gt;
+&lt;p&gt;$ sudo add-apt-repository ppa:ubuntu-wine/ppa
+$ sudo apt-get update
+$ sudo apt-get install wine1.6&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;Installed ttf-mscorefonts (i.e. the windows fonts).&lt;/p&gt;
@@ -1454,7 +1457,7 @@ A young second generation Indian in the US was asked by his mother to explain th
 
 &lt;p&gt;via &lt;a href="http://aldzs.tumblr.com/post/319482767/aeilyn-9gag-how-to-ace-your-finals-without" target="_blank"&gt;aldzs&lt;/a&gt; | &lt;a href="http://aeilyn.tumblr.com/post/317983637/9gag-how-to-ace-your-finals-without-studying" target="_blank"&gt;aeilyn&lt;/a&gt; | &lt;a href="http://tumblr.9gag.com/post/317927442/how-to-ace-your-finals-without-studying" target="_blank"&gt;9gag&lt;/a&gt;&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Pratyush Mittal</dc:creator><pubDate>Sat, 27 Feb 2010 00:00:00 +0530</pubDate><guid>tag:fully-faltoo.com,2010-02-27:2010/02/27/how-to-ace-in-exams/</guid></item><item><title>I have seen God!!!</title><link>http://fully-faltoo.com/2010/02/24/i-have-seen-god/</link><description>&lt;p&gt;&lt;img src="http://img693.imageshack.us/img693/9809/sachin200.jpg"/&gt;&lt;/p&gt;
 
-&lt;p&gt;It was truly amazing to watch THE GENIUS at work today. The whole atmosphere was thrilling, adrenaline was flowing and we were happy that we were the part of it. Some year later, we probably would be telling the next generation that yes; we watched the God at work and add another record to his name.&lt;/p&gt;
+&lt;p&gt;It was truly amazing to watch THE GENIUS at work today. The whole atmosphere was thrilling, adrenaline was flowing and we were happy that we were the part of it. Some years later, we probably would be telling the next generation that yes, we watched the God at work and add another record to his name.&lt;/p&gt;
 
 &lt;p&gt;&lt;a href="http://img713.imageshack.us/img713/5351/sachintrending.png" target="_blank"&gt;Sachin, the word instantly became the trending topic Worldwide&lt;/a&gt;. Sachin, the name alone, united the India as Twitter, Google and Cricinfo went down for few moments.&lt;/p&gt;
 

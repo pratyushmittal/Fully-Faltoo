@@ -11,7 +11,12 @@ Bookmarking the relevant extracts for future.
 
 > Make sure all dependencies of Wine are installed on your system, including winbind.
 
-1. Installed the latest Wine version (1.5.22) using Synaptic. It auto installed wine-mono mentioned in the original article.
+1. Installed the latest Wine version. It auto installed wine-mono mentioned in the original article.
+
+    $ sudo add-apt-repository ppa:ubuntu-wine/ppa
+    $ sudo apt-get update
+    $ sudo apt-get install wine1.6
+
 
 2. Installed ttf-mscorefonts (i.e. the windows fonts).
 
