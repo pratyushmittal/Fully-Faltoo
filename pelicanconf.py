@@ -103,7 +103,7 @@ JINJA_EXTENSIONS = ['pyjade.ext.jinja.PyJadeExtension']
 THEME = "theme/faltoo"
 READERS = {'html': None, 'rst': None}
 PATH = "content"
-STATIC_PATHS = ["uploads", "tumblr_files"]
+STATIC_PATHS = ["uploads", "tumblr_files", "root", ]
 EXTRA_PATH_METADATA = {
     'root/CNAME': {'path': 'CNAME'},
     'root/google726cfb66a8285a50.html': {'path': 'google726cfb66a8285a50.html'},
