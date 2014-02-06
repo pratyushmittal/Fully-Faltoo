@@ -4,7 +4,7 @@ layout: post
 title: Tie Cheat Sheet
 
 
-<img src="/static/tumblr_files/DybEEF9Cvg7r68wqPkSfen2vo1_500.jpg"/><br/><p><a href="http://tumblelog.marco.org/59602940" target="_blank">marco</a>:</p>
+<img src="/tumblr_files/DybEEF9Cvg7r68wqPkSfen2vo1_500.jpg"/><br/><p><a href="http://tumblelog.marco.org/59602940" target="_blank">marco</a>:</p>
 
 
 

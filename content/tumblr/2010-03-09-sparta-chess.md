@@ -4,7 +4,7 @@ layout: post
 title: Sparta Chess
 
 
-<img src="/static/tumblr_files/tumblr_kyxkseJIzy1qaocsvo1_500.jpg"/><br/><p><b>This Isn&#8217;t Madness - ROFL</b></p>
+<img src="/tumblr_files/tumblr_kyxkseJIzy1qaocsvo1_500.jpg"/><br/><p><b>This Isn&#8217;t Madness - ROFL</b></p>
 
 <p><a href="http://aldzs.tumblr.com/post/437180304/thedoctorfeels-buknoybol-via-siopaomaster" target="_blank">aldzs</a>:</p>
 

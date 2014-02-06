@@ -4,4 +4,4 @@ layout: post
 title: Imagination vs. knowledge
 
 
-<img src="/static/tumblr_files/tumblr_m4wsrhbfe31qzr04eo1_500.jpg"/>
+<img src="/tumblr_files/tumblr_m4wsrhbfe31qzr04eo1_500.jpg"/>

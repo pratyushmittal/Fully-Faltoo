@@ -4,7 +4,7 @@ layout: post
 title: Read Illusion
 
 
-<img src="/static/tumblr_files/tumblr_l2y9actSdW1qaaowno1_400.jpg"/><br/><p><strong>Miracle!!! Miracle!!! Miracle!!!</strong></p>
+<img src="/tumblr_files/tumblr_l2y9actSdW1qaaowno1_400.jpg"/><br/><p><strong>Miracle!!! Miracle!!! Miracle!!!</strong></p>
 
 <p><em><a target="_blank" href="http://img401.imageshack.us/img401/144/screenshotlr.png">TRY THIS TOO!!!</a></em></p>
 

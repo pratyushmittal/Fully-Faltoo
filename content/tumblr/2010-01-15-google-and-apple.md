@@ -4,7 +4,7 @@ layout: post
 title: Google and Apple
 
 
-<a href="http://www.businessweek.com/magazine/content/10_04/b4164028483414.htm"><img src="/static/tumblr_files/tumblr_kw9sqfENRk1qz7ywso1_500.gif"/></a><br/><p><a href="http://www.businessweek.com/magazine/content/10_04/b4164028483414.htm" target="_blank"><b>Google vs Apple</b></a></p>
+<a href="http://www.businessweek.com/magazine/content/10_04/b4164028483414.htm"><img src="/tumblr_files/tumblr_kw9sqfENRk1qz7ywso1_500.gif"/></a><br/><p><a href="http://www.businessweek.com/magazine/content/10_04/b4164028483414.htm" target="_blank"><b>Google vs Apple</b></a></p>
 
 <p><a href="http://modiddy.tumblr.com/post/335942686/mikehudack-soupsoup-siddman-google-vs" target="_blank">modiddy</a>:</p>
 

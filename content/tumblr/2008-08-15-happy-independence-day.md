@@ -4,4 +4,4 @@ layout: post
 title: Happy Independence Day
 
 
-<img src="/static/tumblr_files/kLg0R7T3tcnonqcnWucJeAEw_500.jpg"/><br/><p><b>Happy Independence Day </b></p>
+<img src="/tumblr_files/kLg0R7T3tcnonqcnWucJeAEw_500.jpg"/><br/><p><b>Happy Independence Day </b></p>

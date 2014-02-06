@@ -4,7 +4,7 @@ layout: post
 title: Undo in Gmail
 
 
-<a href="http://gmailblog.blogspot.com/2009/03/new-in-labs-undo-send.html"><img src="/static/tumblr_files/kLg0R7T3tl9yexbqdB8qL3o5o1_500.png"/></a><br/><p><b>Now get &#8220;Undo&#8221; feature in GMail</b></p>
+<a href="http://gmailblog.blogspot.com/2009/03/new-in-labs-undo-send.html"><img src="/tumblr_files/kLg0R7T3tl9yexbqdB8qL3o5o1_500.png"/></a><br/><p><b>Now get &#8220;Undo&#8221; feature in GMail</b></p>
 
 
 

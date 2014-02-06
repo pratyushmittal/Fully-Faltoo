@@ -4,7 +4,7 @@ layout: post
 title: Magical Circle
 
 
-<img src="/static/tumblr_files/tumblr_ls4n9boIfU1qi6eyao1_500.jpg"/><br/><p><a href="http://tvthomson.tumblr.com/post/10683932969" target="_blank">tvthomson</a>:</p>
+<img src="/tumblr_files/tumblr_ls4n9boIfU1qi6eyao1_500.jpg"/><br/><p><a href="http://tvthomson.tumblr.com/post/10683932969" target="_blank">tvthomson</a>:</p>
 
 <blockquote>
 

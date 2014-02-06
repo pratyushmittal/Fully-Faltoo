@@ -4,7 +4,7 @@ layout: post
 title: Batman Poster
 
 
-<img src="/static/tumblr_files/G9NM1FU5Ycn50sogIuC2ePAh_500.jpg"/><br/><p><b>The Dark Knight Returns - 2011</b></p>
+<img src="/tumblr_files/G9NM1FU5Ycn50sogIuC2ePAh_500.jpg"/><br/><p><b>The Dark Knight Returns - 2011</b></p>
 
 <p><a href="http://lavenderlines.tumblr.com/post/46013871/into-kayfabe-via-joshuawoulf" target="_blank">lavenderlines</a>:</p>
 

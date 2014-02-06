@@ -4,7 +4,7 @@ layout: post
 title: What Your Phone Says About You
 
 
-<a href="http://techcrunch.com/2010/11/04/iphone-android-blackberry/"><img src="/static/tumblr_files/tumblr_lbf881c02K1qz4tjlo1_500.jpg"/></a><br/><p><strong>What Your Phone Says About You</strong></p>
+<a href="http://techcrunch.com/2010/11/04/iphone-android-blackberry/"><img src="/tumblr_files/tumblr_lbf881c02K1qz4tjlo1_500.jpg"/></a><br/><p><strong>What Your Phone Says About You</strong></p>
 
 <blockquote></blockquote>
 

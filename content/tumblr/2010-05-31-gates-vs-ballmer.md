@@ -4,7 +4,7 @@ layout: post
 title: Gates Vs. Ballmer
 
 
-<a href="http://twitpic.com/1snr7r"><img src="/static/tumblr_files/tumblr_l39pzqmqbc1qz4gevo1_500.png"/></a><br/><p><a href="http://superamit.tumblr.com/post/649101031/parislemon-a-tale-of-two-ceos-the-scales-a" target="_blank">superamit</a>:</p>
+<a href="http://twitpic.com/1snr7r"><img src="/tumblr_files/tumblr_l39pzqmqbc1qz4gevo1_500.png"/></a><br/><p><a href="http://superamit.tumblr.com/post/649101031/parislemon-a-tale-of-two-ceos-the-scales-a" target="_blank">superamit</a>:</p>
 
 <blockquote>
 

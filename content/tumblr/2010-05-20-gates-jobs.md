@@ -4,7 +4,7 @@ layout: post
 title: Gates &amp; Jobs
 
 
-<a href="http://www.sadanduseless.com/2010/05/steve-jobs-vs-bill-gates/"><img src="/static/tumblr_files/tumblr_l2mn05BdAI1qzpwi0o1_500.jpg"/></a><br/><p><a href="http://aayush.me/post/615084732/chartier-steve-jobs-vs-bill-gates-many-more" target="_blank">aayush</a>:</p>
+<a href="http://www.sadanduseless.com/2010/05/steve-jobs-vs-bill-gates/"><img src="/tumblr_files/tumblr_l2mn05BdAI1qzpwi0o1_500.jpg"/></a><br/><p><a href="http://aayush.me/post/615084732/chartier-steve-jobs-vs-bill-gates-many-more" target="_blank">aayush</a>:</p>
 
 <blockquote>
 

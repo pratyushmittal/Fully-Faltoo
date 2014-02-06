@@ -4,7 +4,7 @@ layout: post
 title: Swine Flu fashion
 
 
-<img src="/static/tumblr_files/hqR4f9lD5mwntrluEKEZyDxZo1_500.jpg"/><br/><p><a href="http://glamourkillsmiki.tumblr.com/post/101778580/swine-flu-fashion" target="_blank">glamourkillsmiki</a>:</p>
+<img src="/tumblr_files/hqR4f9lD5mwntrluEKEZyDxZo1_500.jpg"/><br/><p><a href="http://glamourkillsmiki.tumblr.com/post/101778580/swine-flu-fashion" target="_blank">glamourkillsmiki</a>:</p>
 
 <blockquote>Swine flu fashion.</blockquote>
 

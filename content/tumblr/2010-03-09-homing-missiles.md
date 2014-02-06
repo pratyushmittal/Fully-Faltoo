@@ -4,7 +4,7 @@ layout: post
 title: Homing Missiles
 
 
-<img src="/static/tumblr_files/tumblr_kyzhdwrdtj1qzaor3o1_500.jpg"/><br/><p>OMG!!! Homing Missiles - What an idea!</p>
+<img src="/tumblr_files/tumblr_kyzhdwrdtj1qzaor3o1_500.jpg"/><br/><p>OMG!!! Homing Missiles - What an idea!</p>
 
 <p><a href="http://superamit.tumblr.com/post/435572757/tedr-hragv-i-wish-i-knew-the-source-for-this" target="_blank">superamit</a>:</p>
 

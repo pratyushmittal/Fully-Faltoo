@@ -4,7 +4,7 @@ layout: post
 title: How to ace in exams
 
 
-<a href="http://feedproxy.google.com/~r/9GAG/~3/gw4qRFuIp8Y/16132"><img src="/static/tumblr_files/tumblr_kvrsmqRN3l1qzxzwwo1_500.jpg"/></a><br/><p><b>How to ace your finals without studying.</b></p>
+<a href="http://feedproxy.google.com/~r/9GAG/~3/gw4qRFuIp8Y/16132"><img src="/tumblr_files/tumblr_kvrsmqRN3l1qzxzwwo1_500.jpg"/></a><br/><p><b>How to ace your finals without studying.</b></p>
 
 <p>Like most of us, I tried some of them too :D (but only got a big ZERO).</p>
 

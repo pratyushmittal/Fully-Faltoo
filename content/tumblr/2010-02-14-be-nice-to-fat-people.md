@@ -4,7 +4,7 @@ layout: post
 title: Be nice to fat people
 
 
-<a href="http://www.dweebist.com/2010/02/life-savers/?utm_source=feedburner&amp;utm_medium=feed&amp;utm_campaign=Feed%3A+Dweebist+%28Dweebist%29&amp;utm_content=Google+Reader"><img src="/static/tumblr_files/tumblr_kxp6tbmq6c1qzyaoeo1_500.jpg"/></a><br/><p><b>Be Nice To Fat People - ROFL</b></p>
+<a href="http://www.dweebist.com/2010/02/life-savers/?utm_source=feedburner&amp;utm_medium=feed&amp;utm_campaign=Feed%3A+Dweebist+%28Dweebist%29&amp;utm_content=Google+Reader"><img src="/tumblr_files/tumblr_kxp6tbmq6c1qzyaoeo1_500.jpg"/></a><br/><p><b>Be Nice To Fat People - ROFL</b></p>
 
 <p><a href="http://cherokeerain.tumblr.com/post/386177331/lmao-the-first-time-i-went-camping-my-friends" target="_blank">cherokeerain</a>:</p>
 

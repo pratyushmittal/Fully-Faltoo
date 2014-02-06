@@ -4,7 +4,7 @@ layout: post
 title: Happy with job
 
 
-<img src="/static/tumblr_files/AZN7wsuV4jjwnie5RaTRjp9ko1_500.gif"/><br/><p><a href="http://whoisarpit.tumblr.com/post/94170883/how-happy-i-am-with-my-job" target="_blank">whoisarpit</a>:</p>
+<img src="/tumblr_files/AZN7wsuV4jjwnie5RaTRjp9ko1_500.gif"/><br/><p><a href="http://whoisarpit.tumblr.com/post/94170883/how-happy-i-am-with-my-job" target="_blank">whoisarpit</a>:</p>
 
 
 

@@ -4,7 +4,7 @@ layout: post
 title: Steve Jobs' Quote
 
 
-<a href="http://startupquote.com/post/9057337917/your-work-is-going-to-fill-a-large-part-of-your"><img src="/static/tumblr_files/tumblr_lq3jujxEMM1qz6pqio1_500.png"/></a><br/><p><a href="http://startupquote.com/post/9057337917" target="_blank">startupquote</a>:</p>
+<a href="http://startupquote.com/post/9057337917/your-work-is-going-to-fill-a-large-part-of-your"><img src="/tumblr_files/tumblr_lq3jujxEMM1qz6pqio1_500.png"/></a><br/><p><a href="http://startupquote.com/post/9057337917" target="_blank">startupquote</a>:</p>
 
 <blockquote>
 

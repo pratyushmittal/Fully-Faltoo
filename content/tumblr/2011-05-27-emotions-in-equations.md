@@ -4,7 +4,7 @@ layout: post
 title: Emotions in equations
 
 
-<img src="/static/tumblr_files/tumblr_llur37z2pS1qz5128o1_500.jpg"/><br/><p><a href="http://krisnair.tumblr.com/post/5895067103" target="_blank">krisnair</a>:</p>
+<img src="/tumblr_files/tumblr_llur37z2pS1qz5128o1_500.jpg"/><br/><p><a href="http://krisnair.tumblr.com/post/5895067103" target="_blank">krisnair</a>:</p>
 
 <blockquote>
 

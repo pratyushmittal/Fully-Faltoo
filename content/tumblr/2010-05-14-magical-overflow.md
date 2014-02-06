@@ -4,7 +4,7 @@ layout: post
 title: Magical Overflow
 
 
-<img src="/static/tumblr_files/tumblr_l1tyhrEIW71qae5rmo1_500.jpg"/><br/><p><strong>MAGICAL OVERFLOW</strong></p>
+<img src="/tumblr_files/tumblr_l1tyhrEIW71qae5rmo1_500.jpg"/><br/><p><strong>MAGICAL OVERFLOW</strong></p>
 
 <p>You serve Coke and in few minutes after serving, the glass starts overflowing suddenly.</p>
 

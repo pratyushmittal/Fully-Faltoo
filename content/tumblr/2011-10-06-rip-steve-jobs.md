@@ -4,7 +4,7 @@ layout: post
 title: RIP Steve Jobs
 
 
-<a href="http://thephobia.com"><img src="/static/tumblr_files/tumblr_lsmb8yptl71qzpegpo1_500.jpg"/></a><br/><p><a href="http://microlife.tumblr.com/post/11081356595" target="_blank">microlife</a>:</p>
+<a href="http://thephobia.com"><img src="/tumblr_files/tumblr_lsmb8yptl71qzpegpo1_500.jpg"/></a><br/><p><a href="http://microlife.tumblr.com/post/11081356595" target="_blank">microlife</a>:</p>
 
 <blockquote>
 

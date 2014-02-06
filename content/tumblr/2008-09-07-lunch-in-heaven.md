@@ -4,7 +4,7 @@ layout: post
 title: Lunch in heaven
 
 
-<a href="http://photosthatchangedtheworld.com/wp-content/uploads/2008/07/lunchtime-atop-a-skyscraper.jpg"><img src="/static/tumblr_files/kLg0R7T3tdlffkqdo9tSsETO_500.jpg"/></a><br/><p><b>Lunch in Heaven</b></p>
+<a href="http://photosthatchangedtheworld.com/wp-content/uploads/2008/07/lunchtime-atop-a-skyscraper.jpg"><img src="/tumblr_files/kLg0R7T3tdlffkqdo9tSsETO_500.jpg"/></a><br/><p><b>Lunch in Heaven</b></p>
 
 
 

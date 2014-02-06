@@ -4,7 +4,7 @@ layout: post
 title: How sewing machine works
 
 
-<a href="http://bitsandpieces.us/2009/08/26/how-a-sewing-machine-works/"><img src="/static/tumblr_files/tumblr_kp1wy5nBA41qz7pd3o1_500.gif"/></a><br/><p><a href="http://superamit.tumblr.com/post/173286848/wintercheck-hathathat-rgrjnr-how-a-sewing" target="_blank">superamit</a>:</p>
+<a href="http://bitsandpieces.us/2009/08/26/how-a-sewing-machine-works/"><img src="/tumblr_files/tumblr_kp1wy5nBA41qz7pd3o1_500.gif"/></a><br/><p><a href="http://superamit.tumblr.com/post/173286848/wintercheck-hathathat-rgrjnr-how-a-sewing" target="_blank">superamit</a>:</p>
 
 
 

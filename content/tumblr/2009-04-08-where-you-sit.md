@@ -4,7 +4,7 @@ layout: post
 title: Where you sit?
 
 
-<img src="/static/tumblr_files/j9vkmnE15ixjhgdj4mI50hcXo1_500.gif"/><br/><p><a href="http://whoisarpit.tumblr.com/post/94173521/where-u-sit-in-class-n-what-it-says" target="_blank">whoisarpit</a>:</p>
+<img src="/tumblr_files/j9vkmnE15ixjhgdj4mI50hcXo1_500.gif"/><br/><p><a href="http://whoisarpit.tumblr.com/post/94173521/where-u-sit-in-class-n-what-it-says" target="_blank">whoisarpit</a>:</p>
 
 
 
