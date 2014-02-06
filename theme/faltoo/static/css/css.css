@@ -1,25 +1,24 @@
 @import url(http://fonts.googleapis.com/css?family=Open+Sans:400,700);
+@import url(http://fonts.googleapis.com/css?family=Gloria+Hallelujah);
 
 /* General styles */
 body {
-margin: 0;
-padding: 0;
-background-image:url('../images/tile.jpg');
-background-color:#f2f2f2;
-color:#333333;
-font-size:100%;
-font-family: 'Open Sans','Helvetica Neue', Helvetica, Arial;
-min-height:480px;
-min-width:320px;
-border-top:5px solid #2c2c2c;
+    margin: 0;
+    padding: 0;
+    color:#333333;
+    font-size:100%;
+    font-family: 'Open Sans','Helvetica Neue', Helvetica, Arial;
+    min-height:480px;
+    min-width:320px;
 }
 
 a {
-color:#08c;
+    color:#b371b3;
+    text-decoration: none;
 }
 
-.no-line {
-  text-decoration: none;
+a:hover {
+    text-decoration: underline;
 }
 
 .external {
@@ -27,61 +26,38 @@ color:#08c;
     padding-right: 13px;
 }
 
-.logo {
-    margin:10px 0 15px 0;
+
+.header {
+    margin: 100px 0 75px 0;
 }
 
-
-/* Navigation */
-.navigation {
-    display:block;
-}
-.navigation ul {
-  margin: 0;
-  padding: 0;
-}
-.navigation li {
-    display:inline;
-    float:left;
-}
-.navigation li a {
-    font-weight:400;
-    text-decoration:none;
-    display:block;
-    color:#2c2c2c;
-    font-size:1.2em;
-    margin:15px 8px 3px 8px;
+.footer {
+    padding-top: 20px;
 }
 
-.navigation .active {
-    background:#2c2c2c;
+.header a, .footer a {
+    color: #6a6a6a;
 }
 
-.navigation .active a {
-    color:#fff;
+.content {
+    margin-left: auto;
+    margin-right: auto;
+    width: 65.9375%;    /* 633px / 960px */
 }
+
 
 /* Other General Style */
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  color: #222;
-  margin: 0;
-  font-family: inherit;
+h1, h2, h3, h4, h5, h6, .header, .footer {
+  font-family: 'Gloria Hallelujah', cursive;
   font-weight: bold;
   text-rendering: optimizelegibility;
 }
-h1 small,
-h2 small,
-h3 small,
-h4 small,
-h5 small,
-h6 small {
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+}
+h1 small, h2 small, h3 small, h4 small, h5 small, h6 small {
   font-weight: normal;
-  color: #999999;
 }
 h1 {
   font-size: 1.875em;
@@ -104,9 +80,7 @@ h3 {
 h3 small {
   font-size: .875em;
 }
-h4,
-h5,
-h6 {
+h4, h5, h6 {
   line-height: 1.125em;
 }
 h4 {
@@ -120,14 +94,15 @@ h5 {
 }
 h6 {
   font-size: .6875em;
-  color: #999999;
   text-transform: uppercase;
 }
+
 p {
-  max-width: 47em;
-  line-height: 1.5em;
-  margin: 1em 0;
+    max-width: 40em;
+    line-height: 1.5em;
+    margin: 1em 0;
 }
+
 .low_pad {
   padding:.25em;
 }
@@ -142,19 +117,14 @@ p {
 
 /* Posts */
 .entry {
-  padding-bottom:2em;
+  padding-bottom:2.5em;
 }
 .page-header h1 {
-  color: #222;
   font-weight: normal;
-  line-height: 1;
-}
-.page-header a {
-  text-decoration: none;
+  line-height: 1.35em;
 }
 .page-header {
 margin: 1em 0;
-border-bottom: 2px solid #222;
 }
 
 .meta {
@@ -205,7 +175,6 @@ table {
     background:#fff;
     border-right:0;
     clear: both;
-    color: #333;
     margin-bottom: .5em;
     border-collapse: collapse;
     border-spacing: 0;
@@ -342,31 +311,6 @@ cite {
 code { background:#ffeeee; padding:5px; color:#234f32; }
 pre { font-size:medium; background:#E0FFB8; border:1px solid #94da3a; border-width:1px 0; margin: 1em 0; padding: .3em .4em; overflow: hidden; }
 
-.wrapper{
-margin:0 auto;
-padding:0;
-width: 93.75%;      /* 960px / 1024px */
-}
-
-.sidebar {
-    width: 31.875%; /* 306px / 960px */
-}
-
-.sidebar h3 {
-  margin: .5em 0;
-  border-bottom: 1px dashed #222;
-}
-
-.main {
-    padding-top:2em;
-}
-
-.intro,
-.main,
-footer {
-    width: 65.9375%;    /* 633px / 960px */
-}
-
 .white {
     background-color:white;
     border:1px solid #DDD;
@@ -381,26 +325,8 @@ footer {
     visibility: hidden;
 }
 
-/*Contact Form*/
-textarea, input {
-  border: 1px solid #eee;
-  font: inherit;
-}
-
-textarea {
-  max-width: 98%;
-}
-
 @media (max-width: 600px) {
-    /* 633px grid (88x6 col, 21x5 gut; 88+21+88+21+88+21+88+21+88+21+88) */
-    .wrapper {
-        position: relative;
-    }
-    .sidebar,
-    .intro,
-    .main,
-    footer {
-        float: none;
-        width: auto;
+    .content {
+        width: 93.75%;
     }
 }

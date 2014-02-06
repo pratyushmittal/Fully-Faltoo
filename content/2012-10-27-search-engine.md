@@ -7,7 +7,7 @@ tags: "Google", "Search", "GTD"
 comments: true
 
 
-![Change default search engine to Google's "I am Feeling Lucky"](http://fully-faltoo.com/static/uploads/feeling-lucky.png)
+![Change default search engine to Google's "I am Feeling Lucky"]({filename}/uploads/feeling-lucky.png)
 
     {google:baseURL}search?ie=UTF-8&oe=UTF-8&sourceid=navclient&gfns=1&q=%s
 
