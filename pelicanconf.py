@@ -106,6 +106,7 @@ PATH = "content"
 STATIC_PATHS = ["uploads", "tumblr_files"]
 EXTRA_PATH_METADATA = {
     'root/CNAME': {'path': 'CNAME'},
+    'root/google726cfb66a8285a50.html': {'path': 'google726cfb66a8285a50.html'},
     'root/favicon.ico': {'path': 'favicon.ico'},
 }
 
