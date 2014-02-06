@@ -7,7 +7,7 @@ link: http://subtlepatterns.com/
 tags: "web-designing"
 
 
-![Subtle Patters](http://fully-faltoo.com/static/uploads/subtle-patterns.png)
+![Subtle Patters](http://fully-faltoo.com/uploads/subtle-patterns.png)
 
 After getting tired of searching that perfect background image for my sites, I stumbled upon Subtle Patterns.
 

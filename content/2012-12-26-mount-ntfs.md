@@ -19,7 +19,7 @@ Open Unity (using windows key) and type "Startup Applications"
 
 Below is the output of this command in my computer.
 
-![Find NTFS partition number](http://fully-faltoo.com/static/uploads/ntfs-mount.png)
+![Find NTFS partition number](http://fully-faltoo.com/uploads/ntfs-mount.png)
 
 Since I had to mount the partition with the label "Storage", I entered this command:
 

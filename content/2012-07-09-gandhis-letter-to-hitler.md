@@ -5,4 +5,4 @@ title: Gandhi's letter to Hitler
 tags: "Letters", "Gandhi", "Hitler"
 
 
-![Gandhi's letter to Hitler](http://fully-faltoo.com/static/uploads/gandhi-letter.jpg)
+![Gandhi's letter to Hitler](http://fully-faltoo.com/uploads/gandhi-letter.jpg)

@@ -14,4 +14,4 @@ Of-course the list has a few questions which would have been relevant in those p
 *Just in case the original link does not work, [here is the pdf][pdf].*
 
 [article]: http://query.nytimes.com/mem/archive-free/pdf?res=F40F10FB355B1B7A93C3A8178ED85F458285F9
-[pdf]: http://fully-faltoo.com/static/uploads/edisons-questions.pdf
+[pdf]: http://fully-faltoo.com/uploads/edisons-questions.pdf

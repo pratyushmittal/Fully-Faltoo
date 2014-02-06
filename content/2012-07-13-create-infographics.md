@@ -9,7 +9,7 @@ comments: True
 
 ## [Infogram][1]
 
-![Infographics generator](http://fully-faltoo.com/static/uploads/infogram.png)
+![Infographics generator](http://fully-faltoo.com/uploads/infogram.png)
 
 Found this handy tool to easily generate and design infographics from the browser itself. [Infogr.am][1] provides pre-designed templates where we can fill in the data and rest is a magic.
 

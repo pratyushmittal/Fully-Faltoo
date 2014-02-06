@@ -13,6 +13,6 @@ This is wow! Earlier I used to make a [score list of daily rituals][1] to get th
 
 I have set the service as one of my opening tabs in Chrome.
 
-[1]: http://fully-faltoo.com/static/uploads/todo.jpg
+[1]: http://fully-faltoo.com/uploads/todo.jpg
 [2]: http://dayscore.net
-[3]: http://fully-faltoo.com/static/uploads/DayScore.png
+[3]: http://fully-faltoo.com/uploads/DayScore.png
