@@ -72,9 +72,10 @@ CATEGORIES_SAVE_AS = False
 TAG_SAVE_AS = False
 TAGS_SAVE_AS = False
 FILENAME_METADATA = '(?P<date>\d{4}-\d{2}-\d{2})-(?P<slug>.*)'
+RANDOM = 'random/index.html'
 
 # Sitemap
-PLUGINS = ['sitemap']
+PLUGINS = ['sitemap', 'random_article', ]
 SITEMAP = {
     'format': 'xml',
     'priorities': {
