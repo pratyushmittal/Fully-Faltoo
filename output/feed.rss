@@ -1,5 +1,101 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>A Fully-Faltoo Blog</title><link>http://fully-faltoo.com/</link><description></description><atom:link href="http://feeds.feedburner.com/fullyfaltoo/feed.rss" rel="self"></atom:link><lastBuildDate>Tue, 28 Jan 2014 00:00:00 +0530</lastBuildDate><item><title>Werewolf: A group game</title><link>http://fully-faltoo.com/2014/01/28/werewolf/</link><description>&lt;p&gt;I celebrated the new year on a vacation with a
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>A Fully-Faltoo Blog</title><link>http://fully-faltoo.com/</link><description></description><atom:link href="http://feeds.feedburner.com/fullyfaltoo/feed.rss" rel="self"></atom:link><lastBuildDate>Thu, 15 May 2014 00:00:00 +0530</lastBuildDate><item><title>Websites I use: A to Z</title><link>http://fully-faltoo.com/2014/05/15/a-to-z/</link><description>&lt;p&gt;These are the websites I use the most based on my
+browser's &lt;a href="http://en.wikipedia.org/wiki/Frecency"&gt;frecency&lt;/a&gt;:&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;This post is inspired from &lt;a href="http://www.s-anand.net/blog/a-z-of-my-browsing-history/"&gt;S Anand's blogpost&lt;/a&gt;.&lt;/em&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;A is for &lt;a href="http://www.amazon.in"&gt;amazon.in&lt;/a&gt;.
+  Though I don't shop too much, I usually use
+  Amazon to browse though books and
+  read their initial pages.&lt;/li&gt;
+&lt;li&gt;B is &lt;a href="http://www.bseindia.com"&gt;bseindia.com&lt;/a&gt; - mostly
+  for checking current stock prices and for
+  keeping a track of latest corporate announcements.&lt;/li&gt;
+&lt;li&gt;C shows one of my favorite tech blogs -
+  &lt;a href="http://www.codinghorror.com"&gt;codinghorror.com&lt;/a&gt;.
+  Recently, have been visiting it more frequently
+  to check the blog's integration with
+  &lt;a href="http://www.discourse.org"&gt;Discourse&lt;/a&gt;. It is followed by
+  &lt;a href="http://cricket.yahoo.com"&gt;cricket.yahoo.com&lt;/a&gt;,
+  which I use to keep a track of latest scores.&lt;/li&gt;
+&lt;li&gt;D is &lt;a href="http://docs.google.com"&gt;docs.google.com&lt;/a&gt;.
+  I love to use the live sharing and commenting
+  feature in Google Docs to collaborate on
+  articles, letters and reports. For other
+  writings, I prefer to use gVim.&lt;/li&gt;
+&lt;li&gt;E is
+  &lt;a href="http://english.stackexchange.com"&gt;english.stackexchange.com&lt;/a&gt;.
+  I recently read Strunk and White's
+  &lt;a href="https://en.wikipedia.org/wiki/The_Elements_of_Style"&gt;The Elements of Style&lt;/a&gt;;
+  have been using this StackExchange to follow up
+  with few of the rules mentioned in the book.&lt;/li&gt;
+&lt;li&gt;F is (obviously)
+  &lt;a href="http://www.facebook.com"&gt;facebook.com&lt;/a&gt;. The
+  runner-up is &lt;a href="http://feedly.com"&gt;feedly.com&lt;/a&gt; - rss reader to keep
+  a track of my favorite blogs. In future I would
+  like to see Feedly climb above :).&lt;/li&gt;
+&lt;li&gt;G is &lt;a href="http://www.github.com"&gt;github.com&lt;/a&gt; - I
+  love open-source projects.&lt;/li&gt;
+&lt;li&gt;H is &lt;a href="http://hootsuite.com"&gt;hootsuite.com&lt;/a&gt; - used to manage multiple
+  Twitter accounts including
+  &lt;a href="http://www.twitter.com/faltoo"&gt;@faltoo&lt;/a&gt; and
+  &lt;a href="http://www.twitter.com/screener_in"&gt;@screener_in&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;I is &lt;a href="http://www.irctc.co.in"&gt;irctc.co.in&lt;/a&gt; -
+  for booking all the train tickets. It is
+  followed by &lt;a href="http://www.imdb.com"&gt;imdb.com&lt;/a&gt; for
+  checking all the movie recommendations.&lt;/li&gt;
+&lt;li&gt;J shows one of my favorite financial blogs
+  &lt;a href="http://janav.wordpress.com"&gt;janav.wordpress.com&lt;/a&gt;.
+  It is followed by &lt;a href="http://jpegmini.com"&gt;jpegmini.com&lt;/a&gt;,
+  which I use to compress images in blog posts.&lt;/li&gt;
+&lt;li&gt;K is &lt;a href="http://www.kickass.to"&gt;kickass.to&lt;/a&gt; - for
+  movies and music.&lt;/li&gt;
+&lt;li&gt;L is &lt;a href="http://localhost/"&gt;localhost&lt;/a&gt; - a
+  playground for all my development projects.&lt;/li&gt;
+&lt;li&gt;M is (again obviously)
+  &lt;a href="http://mail.google.com"&gt;mail.google.com&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;N is [news.ycominator.com] - I use it to stay
+  updated with the latest programing developments.
+  Lately, I have been using more of
+  &lt;a href="http://www.hckrnews.com"&gt;hckrnews.com&lt;/a&gt; for its
+  better interface.&lt;/li&gt;
+&lt;li&gt;O is
+  &lt;a href="http://openshift.redhat.com"&gt;openshift.redhat.com&lt;/a&gt; -
+  for deploying new test projects for free.&lt;/li&gt;
+&lt;li&gt;P is
+  &lt;a href="http://play.fully-faltoo.com"&gt;play.fully-faltoo.com&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;a custom domain used for testing different
+  internal projects at different times. It is
+  followed by
+  &lt;a href="http://pixlr.com/express/"&gt;pixlr.com/express/&lt;/a&gt;,
+  used for quickly fixing the photographs.&lt;/li&gt;
+&lt;li&gt;Q is &lt;a href="http://www.quora.com"&gt;Quora&lt;/a&gt;. I am not a
+  huge fan of Quora but it is the only one with Q.&lt;/li&gt;
+&lt;li&gt;R is &lt;a href="http://www.readiotbox.com"&gt;Readiot.com&lt;/a&gt; -
+  a side-project I have been working upon. It is
+  like Evernote but saves everything in your
+  DropBox.&lt;/li&gt;
+&lt;li&gt;S is for &lt;a href="http://www.screener.in"&gt;screener.in&lt;/a&gt; -
+  the project that takes most of my time :). It is
+  followed by &lt;a href="http://stackoverflow.com"&gt;stackoverflow.com&lt;/a&gt; -
+  my favorite resource to get and provide help.&lt;/li&gt;
+&lt;li&gt;T is &lt;a href="http://www.twitter.com"&gt;twitter.com&lt;/a&gt; - I
+  like to keep track of latest updates through
+  Twitter rather than watching news.&lt;/li&gt;
+&lt;li&gt;U is &lt;a href="http://ubuntu.com/"&gt;ubuntu.com&lt;/a&gt;, an old
+  and the only item in U. Now I like to use
+  &lt;a href="https://www.archlinux.org/"&gt;Arch&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;V is &lt;a href="http://valuepickr.com/"&gt;valuepickr.com&lt;/a&gt;,
+  my favorite forum for in-depth discussions on stocks.&lt;/li&gt;
+&lt;li&gt;W is &lt;a href="http://webfaction.com"&gt;webfaction.com&lt;/a&gt; -
+  my webhost for all the production deployments.&lt;/li&gt;
+&lt;li&gt;X is &lt;a href="http://xiaomi.eu/community/"&gt;xiaomi.eu&lt;/a&gt; -
+  an old one time item when I used MIUI Rom on my
+  Nexus S.&lt;/li&gt;
+&lt;li&gt;Y is &lt;a href="http://youtube.com"&gt;youtube.com&lt;/a&gt; - I love
+  to hear music and watch my favorite channels
+  online.&lt;/li&gt;
+&lt;li&gt;Z has no items.&lt;/li&gt;
+&lt;/ul&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Pratyush Mittal</dc:creator><pubDate>Thu, 15 May 2014 00:00:00 +0530</pubDate><guid>tag:fully-faltoo.com,2014-05-15:2014/05/15/a-to-z/</guid></item><item><title>Werewolf: A group game</title><link>http://fully-faltoo.com/2014/01/28/werewolf/</link><description>&lt;p&gt;I celebrated the new year on a vacation with a
 group of friends. One of the best time-pass was
 the group game of &lt;a href="http://maxistentialism.com/werewolf/"&gt;Werewolf&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;Be it a bus journey, waiting at a stop or a late
