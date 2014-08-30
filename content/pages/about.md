@@ -30,8 +30,8 @@ I love to learn and try new web technologies,
 libraries and frameworks. I currently use Python
 and Django for most of my projects.
 
-I have an Arch Linux installation, with VIM as
-the text editor and i3 as the tiling window manager.
+I have an Arch Linux installation, with VIM text
+editor and i3 tiling window manager.
 
 
 
