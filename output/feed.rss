@@ -1,5 +1,88 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>A Fully-Faltoo Blog</title><link>http://fully-faltoo.com/</link><description></description><atom:link href="http://feeds.feedburner.com/fullyfaltoo/feed.rss" rel="self"></atom:link><lastBuildDate>Thu, 15 May 2014 00:00:00 +0530</lastBuildDate><item><title>Websites I use: A to Z</title><link>http://fully-faltoo.com/2014/05/15/a-to-z/</link><description>&lt;p&gt;These are the websites I use the most based on my
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>A Fully-Faltoo Blog</title><link>http://fully-faltoo.com/</link><description></description><atom:link href="http://feeds.feedburner.com/fullyfaltoo/feed.rss" rel="self"></atom:link><lastBuildDate>Sat, 23 Aug 2014 00:00:00 +0530</lastBuildDate><item><title>Useful bash commands</title><link>http://fully-faltoo.com/2014/08/23/commands/</link><description>&lt;p&gt;These are few of the bash commands I often find
+useful:&lt;/p&gt;
+&lt;hr /&gt;
+&lt;p&gt;&lt;a href="https://github.com/rupa/z"&gt;&lt;code&gt;z&lt;/code&gt;&lt;/a&gt;: Z allows jumping (&lt;code&gt;cd&lt;/code&gt;) into &lt;em&gt;frecently
+(i.e. frequently and recently)&lt;/em&gt; used directories.
+Insted of doing
+&lt;code&gt;cd /home/pratyush/websites/project_name&lt;/code&gt;
+each time, I can now simply do &lt;code&gt;z project_name&lt;/code&gt;.
+Z supports tab completion too. &lt;strong&gt;&lt;a href="https://github.com/rupa/z"&gt;Link to Z library&lt;/a&gt;&lt;/strong&gt;.&lt;/p&gt;
+&lt;hr /&gt;
+&lt;p&gt;&lt;code&gt;ps -u &amp;lt;username&amp;gt; -o pid,rss,command | awk '{print $0}{sum+=$2} END {print "Total", sum/1024, "MB"}'&lt;/code&gt;:
+When accessing remote servers using shell, I often need to
+check the list of scripts running and the memory
+they are consuming. This command does exactly
+that. It is a sort of minimal task-manager. I
+found this command &lt;a href="https://community.webfaction.com/questions/8553/how-to-determine-memory-consumption"&gt;here&lt;/a&gt;.&lt;/p&gt;
+&lt;hr /&gt;
+&lt;p&gt;&lt;code&gt;php -S localhost:8888 -t .&lt;/code&gt;: Though I am not a
+&lt;code&gt;PHP&lt;/code&gt; fan (anymore), this command serves the
+current directory using a live php server. This
+comes handy to tryout a local wordpress
+installation by just extracting the package.&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;python -m SimpleHTTPServer 8080&lt;/code&gt; is a Python
+alternative for starting a live server from
+current directory to serve the files.&lt;/p&gt;
+&lt;hr /&gt;
+&lt;p&gt;&lt;code&gt;du file/path -chs&lt;/code&gt;: du is the disk-utility
+command. This command shows the total size of any
+directory. &lt;code&gt;-c&lt;/code&gt; is for total, &lt;code&gt;-h&lt;/code&gt; is for showing
+humanize file sizes and &lt;code&gt;-s&lt;/code&gt; for showing only the
+summary. I often use this command on web-servers
+to find the size of file-system caches.&lt;/p&gt;
+&lt;hr /&gt;
+&lt;p&gt;&lt;code&gt;ssh-copy-id user@example.com&lt;/code&gt;: This appends the
+public key to the remote-host for password-less
+ssh logins.&lt;/p&gt;
+&lt;hr /&gt;
+&lt;p&gt;&lt;code&gt;mysqldump -u username -p --all-databases &amp;gt; alldbs.sql&lt;/code&gt;:
+For creating a backup of all the mysql databases.&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;mysql -u username -p &amp;lt; alldbs.sql&lt;/code&gt;:
+For restoring all the databases from the dump.&lt;/p&gt;
+&lt;p&gt;Both of the these mysql commands are high on
+performance. These come handy for creating a
+backup snapshots of databases.&lt;/p&gt;
+&lt;p&gt;I found these two commands [here][].&lt;/p&gt;
+&lt;hr /&gt;
+&lt;p&gt;&lt;code&gt;ssh -D 31500 user@example.com&lt;/code&gt;: This turns the SSH client into a SOCKS proxy server. It provides me a VPN on the fly. So if a website refuses to open, or is restricted to a particular country, I run this command and then update the proxy settings in Firefox as below:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="mf"&gt;1.&lt;/span&gt; &lt;span class="n"&gt;Enable&lt;/span&gt; &lt;span class="n"&gt;proxy&lt;/span&gt; &lt;span class="n"&gt;in&lt;/span&gt; &lt;span class="n"&gt;firefox&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;
+&lt;span class="mf"&gt;2.&lt;/span&gt; &lt;span class="n"&gt;Enter&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;127.0.0.1&amp;quot;&lt;/span&gt; &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;SOCKS Host&amp;quot;&lt;/span&gt;
+&lt;span class="mf"&gt;3.&lt;/span&gt; &lt;span class="n"&gt;Enter&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;31500&amp;quot;&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;or&lt;/span&gt; &lt;span class="n"&gt;whatever&lt;/span&gt; &lt;span class="n"&gt;port&lt;/span&gt; &lt;span class="n"&gt;we&lt;/span&gt; &lt;span class="n"&gt;chose&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;Port&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Full documentation for this trick is available
+&lt;a href="https://help.ubuntu.com/community/SSH/OpenSSH/PortForwarding#Dynamic_Port_Forwarding"&gt;here&lt;/a&gt;.&lt;/p&gt;
+&lt;hr /&gt;
+&lt;p&gt;&lt;code&gt;howdoi&lt;/code&gt;: &lt;a href="https://github.com/gleitz/howdoi"&gt;HowDoI&lt;/a&gt; provides answers to
+programming questions from command line. Thus
+instead of opening a browser and getting
+distracted in web, I can now simply type in
+something like &lt;code&gt;howdoi convert csv to namedtuple&lt;/code&gt;
+to get the leads.&lt;/p&gt;
+&lt;p&gt;I usually pass the &lt;code&gt;-ac&lt;/code&gt; arguments: &lt;code&gt;-a&lt;/code&gt; provides
+the full text of the answer, &lt;code&gt;-c&lt;/code&gt; enables
+colorized output.&lt;/p&gt;
+&lt;hr /&gt;
+&lt;p&gt;&lt;code&gt;ab -n 100 -c 10 http://www.example.com&lt;/code&gt;: AB is a
+poor man's website performance benchmarking tool. &lt;code&gt;-c&lt;/code&gt;
+specifies the number of concurrent requests and
+&lt;code&gt;-n&lt;/code&gt; specifies the total number of requests to be
+sent to a webpage. This comes handy while
+migrating websites to new servers or when making
+significant frontend changes.&lt;/p&gt;
+&lt;hr /&gt;
+&lt;p&gt;&lt;code&gt;wget "url" -c&lt;/code&gt;: WGET is for downloading files
+from command-line. I often find the download speeds
+significantly different in browser's built-in
+download managers and wget. &lt;code&gt;-c&lt;/code&gt; enables the
+resume support.&lt;/p&gt;
+&lt;hr /&gt;
+&lt;p&gt;There are various other &lt;em&gt;must-know&lt;/em&gt; bash commands
+such as &lt;code&gt;awk&lt;/code&gt;, &lt;code&gt;uniq&lt;/code&gt;, &lt;code&gt;head&lt;/code&gt; which are
+super-useful in daily work. &lt;a href="http://datavu.blogspot.in/2014/08/useful-unix-commands-for-exploring-data.html"&gt;Akshay&lt;/a&gt; has covered
+them in a &lt;a href="http://datavu.blogspot.in/2014/08/useful-unix-commands-for-exploring-data.html"&gt;brief tutorial here&lt;/a&gt;.&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Pratyush Mittal</dc:creator><pubDate>Sat, 23 Aug 2014 00:00:00 +0530</pubDate><guid>tag:fully-faltoo.com,2014-08-23:2014/08/23/commands/</guid></item><item><title>Websites I use: A to Z</title><link>http://fully-faltoo.com/2014/05/15/a-to-z/</link><description>&lt;p&gt;These are the websites I use the most based on my
 browser's &lt;a href="http://en.wikipedia.org/wiki/Frecency"&gt;frecency&lt;/a&gt;:&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;This post is inspired from &lt;a href="http://www.s-anand.net/blog/a-z-of-my-browsing-history/"&gt;S Anand's blogpost&lt;/a&gt;.&lt;/em&gt;&lt;/p&gt;
 &lt;ul&gt;
@@ -64,8 +147,8 @@ browser's &lt;a href="http://en.wikipedia.org/wiki/Frecency"&gt;frecency&lt;/a&g
   &lt;a href="http://openshift.redhat.com"&gt;openshift.redhat.com&lt;/a&gt; -
   for deploying new test projects for free.&lt;/li&gt;
 &lt;li&gt;P is
-  &lt;a href="http://play.fully-faltoo.com"&gt;play.fully-faltoo.com&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;a custom domain used for testing different
+  &lt;a href="http://play.fully-faltoo.com"&gt;play.fully-faltoo.com&lt;/a&gt; -
+  a custom domain used for testing different
   internal projects at different times. It is
   followed by
   &lt;a href="http://pixlr.com/express/"&gt;pixlr.com/express/&lt;/a&gt;,
@@ -2250,7 +2333,7 @@ The official, incredulous, says, “You didn’t even measure like the other guy
 
 &lt;blockquote&gt;1. If your throat tickles, scratch your ear.&lt;br/&gt;“When the nerves in the ear are stimulated, it creates a reflex in the throat that can cause a muscle spasm… This spasm relieves the tickle.”&lt;br/&gt;&lt;br/&gt;2. Your right ear is better than your left at following the rapid rhythms of speech (good tip for spies!) The left ear is better at picking up music tones.&lt;br/&gt;&lt;br/&gt;4. Feel no pain&lt;br/&gt;Coughing during an injection can lessen the pain of the needle stick.&lt;br/&gt;&lt;br/&gt;5. Clear your stuffed nose&lt;br/&gt;Forget Sudafed. An easier way is by alternately thrusting your tongue against the roof of your mouth, then pressing between your eyebrows with one finger.&lt;br/&gt;&lt;br/&gt;7. Cure your toothache without opening your mouth&lt;br/&gt;Just rub ice on the back of your hand, on the V-shaped webbed area between your thumb and index finger… reduces toothache pain by as much as 50 percent&lt;br/&gt;&lt;br/&gt;12. Make your heart stand still&lt;br/&gt;Trying to quell first-date jitters? Blow on your thumb. The vagus nerve, which governs heart rate, can be controlled through breathing… It’ll get your heart rate back to normal.&lt;br/&gt;&lt;br/&gt;15. If your hand falls asleep while you’re driving or sitting in an odd position, &lt;br/&gt;rock your head from side to side. It’ll painlessly banish your pins and needles in less than a minute.&lt;br/&gt;&lt;br/&gt;Read the rest of the article &lt;a href="http://health.msn.com/menshealth/articlepage.aspx?cp-documentid=100119940&amp;amp;GT1=7538" target="_blank"&gt;here&lt;/a&gt;&lt;/blockquote&gt;
 
-&lt;p&gt;I was already tired of my toothache, it really helped :D&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Pratyush Mittal</dc:creator><pubDate>Fri, 24 Oct 2008 00:00:00 +0530</pubDate><guid>tag:fully-faltoo.com,2008-10-24:2008/10/24/body-tricks/</guid></item><item><title>Walk in rain</title><link>http://fully-faltoo.com/2008/10/24/walk-in-rain/</link><description>&lt;p&gt;&lt;a href="http://i37.tinypic.com/35akx6s.jpg"&gt;&lt;img src="/tumblr_files/kLg0R7T3tfgbfsclKiDA2Wrjo1_250.jpg"/&gt;&lt;/a&gt;&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Pratyush Mittal</dc:creator><pubDate>Fri, 24 Oct 2008 00:00:00 +0530</pubDate><guid>tag:fully-faltoo.com,2008-10-24:2008/10/24/walk-in-rain/</guid></item><item><title>Aamir in Ghajini</title><link>http://fully-faltoo.com/2008/10/23/aamir-in-ghajini/</link><description>&lt;p&gt;&lt;a href="http://download.rahmanism.com/Downloads/Ghajini/new.jpeg"&gt;&lt;img src="/tumblr_files/kLg0R7T3tff2scturxcbv1bro1_500.jpg"/&gt;&lt;/a&gt;&lt;br/&gt;&lt;p&gt;Aamir Khan in Ghajini&lt;/p&gt;&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Pratyush Mittal</dc:creator><pubDate>Thu, 23 Oct 2008 00:00:00 +0530</pubDate><guid>tag:fully-faltoo.com,2008-10-23:2008/10/23/aamir-in-ghajini/</guid></item><item><title>Rahman on Yuvvraaj</title><link>http://fully-faltoo.com/2008/10/22/rahman-on-yuvvraaj/</link><description>&lt;p&gt;&lt;a href="http://www.rahmanism.com/2008/10/ar-rahman-on-yuvvraaj-and-other.html"&gt;A R Rahman on Yuvvraaj and Other forthcoming Films&lt;/a&gt;&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Pratyush Mittal</dc:creator><pubDate>Wed, 22 Oct 2008 00:00:00 +0530</pubDate><guid>tag:fully-faltoo.com,2008-10-22:2008/10/22/rahman-on-yuvvraaj/</guid></item><item><title>Burj Dubai</title><link>http://fully-faltoo.com/2008/10/21/burj-dubai/</link><description>&lt;iframe width="400" height="300" src="http://www.youtube.com/embed/5LjTWSKbfiU?wmode=transparent&amp;autohide=1&amp;egm=0&amp;hd=1&amp;iv_load_policy=3&amp;modestbranding=1&amp;rel=0&amp;showinfo=0&amp;showsearch=0" frameborder="0" allowfullscreen&gt;&lt;/iframe&gt;
+&lt;p&gt;I was already tired of my toothache, it really helped :D&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Pratyush Mittal</dc:creator><pubDate>Fri, 24 Oct 2008 00:00:00 +0530</pubDate><guid>tag:fully-faltoo.com,2008-10-24:2008/10/24/body-tricks/</guid></item><item><title>Aamir in Ghajini</title><link>http://fully-faltoo.com/2008/10/23/aamir-in-ghajini/</link><description>&lt;p&gt;&lt;a href="http://download.rahmanism.com/Downloads/Ghajini/new.jpeg"&gt;&lt;img src="/tumblr_files/kLg0R7T3tff2scturxcbv1bro1_500.jpg"/&gt;&lt;/a&gt;&lt;br/&gt;&lt;p&gt;Aamir Khan in Ghajini&lt;/p&gt;&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Pratyush Mittal</dc:creator><pubDate>Thu, 23 Oct 2008 00:00:00 +0530</pubDate><guid>tag:fully-faltoo.com,2008-10-23:2008/10/23/aamir-in-ghajini/</guid></item><item><title>Rahman on Yuvvraaj</title><link>http://fully-faltoo.com/2008/10/22/rahman-on-yuvvraaj/</link><description>&lt;p&gt;&lt;a href="http://www.rahmanism.com/2008/10/ar-rahman-on-yuvvraaj-and-other.html"&gt;A R Rahman on Yuvvraaj and Other forthcoming Films&lt;/a&gt;&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Pratyush Mittal</dc:creator><pubDate>Wed, 22 Oct 2008 00:00:00 +0530</pubDate><guid>tag:fully-faltoo.com,2008-10-22:2008/10/22/rahman-on-yuvvraaj/</guid></item><item><title>Burj Dubai</title><link>http://fully-faltoo.com/2008/10/21/burj-dubai/</link><description>&lt;iframe width="400" height="300" src="http://www.youtube.com/embed/5LjTWSKbfiU?wmode=transparent&amp;autohide=1&amp;egm=0&amp;hd=1&amp;iv_load_policy=3&amp;modestbranding=1&amp;rel=0&amp;showinfo=0&amp;showsearch=0" frameborder="0" allowfullscreen&gt;&lt;/iframe&gt;
 
 &lt;p&gt;&lt;a href="http://thedeplorableword.net/post/55489654/new-worlds-tallest-building-the-burj-dubai" target="_blank"&gt;deplorableword&lt;/a&gt;:&lt;/p&gt;
 

@@ -16,6 +16,98 @@
     </header>
     <div class="content"><article class="entry">
   <div class="page-header">
+    <h1><a href="http://fully-faltoo.com/2014/08/23/commands/">Useful bash commands</a>    </h1>
+    <p class="meta sub"><a href="http://fully-faltoo.com/2014/08/23/commands/"><small>Posted on Sat 23 August 2014</small></a>
+    </p>
+  </div>
+  <div class="page-content">
+    <div class="post"><p>These are few of the bash commands I often find
+useful:</p>
+<hr />
+<p><a href="https://github.com/rupa/z"><code>z</code></a>: Z allows jumping (<code>cd</code>) into <em>frecently
+(i.e. frequently and recently)</em> used directories.
+Insted of doing
+<code>cd /home/pratyush/websites/project_name</code>
+each time, I can now simply do <code>z project_name</code>.
+Z supports tab completion too. <strong><a href="https://github.com/rupa/z">Link to Z library</a></strong>.</p>
+<hr />
+<p><code>ps -u &lt;username&gt; -o pid,rss,command | awk '{print $0}{sum+=$2} END {print "Total", sum/1024, "MB"}'</code>:
+When accessing remote servers using shell, I often need to
+check the list of scripts running and the memory
+they are consuming. This command does exactly
+that. It is a sort of minimal task-manager. I
+found this command <a href="https://community.webfaction.com/questions/8553/how-to-determine-memory-consumption">here</a>.</p>
+<hr />
+<p><code>php -S localhost:8888 -t .</code>: Though I am not a
+<code>PHP</code> fan (anymore), this command serves the
+current directory using a live php server. This
+comes handy to tryout a local wordpress
+installation by just extracting the package.</p>
+<p><code>python -m SimpleHTTPServer 8080</code> is a Python
+alternative for starting a live server from
+current directory to serve the files.</p>
+<hr />
+<p><code>du file/path -chs</code>: du is the disk-utility
+command. This command shows the total size of any
+directory. <code>-c</code> is for total, <code>-h</code> is for showing
+humanize file sizes and <code>-s</code> for showing only the
+summary. I often use this command on web-servers
+to find the size of file-system caches.</p>
+<hr />
+<p><code>ssh-copy-id user@example.com</code>: This appends the
+public key to the remote-host for password-less
+ssh logins.</p>
+<hr />
+<p><code>mysqldump -u username -p --all-databases &gt; alldbs.sql</code>:
+For creating a backup of all the mysql databases.</p>
+<p><code>mysql -u username -p &lt; alldbs.sql</code>:
+For restoring all the databases from the dump.</p>
+<p>Both of the these mysql commands are high on
+performance. These come handy for creating a
+backup snapshots of databases.</p>
+<p>I found these two commands [here][].</p>
+<hr />
+<p><code>ssh -D 31500 user@example.com</code>: This turns the SSH client into a SOCKS proxy server. It provides me a VPN on the fly. So if a website refuses to open, or is restricted to a particular country, I run this command and then update the proxy settings in Firefox as below:</p>
+<div class="highlight"><pre><span class="mf">1.</span> <span class="n">Enable</span> <span class="n">proxy</span> <span class="n">in</span> <span class="n">firefox</span><span class="p">.</span>
+<span class="mf">2.</span> <span class="n">Enter</span> <span class="s">&quot;127.0.0.1&quot;</span> <span class="k">for</span> <span class="s">&quot;SOCKS Host&quot;</span>
+<span class="mf">3.</span> <span class="n">Enter</span> <span class="s">&quot;31500&quot;</span> <span class="p">(</span><span class="n">or</span> <span class="n">whatever</span> <span class="n">port</span> <span class="n">we</span> <span class="n">chose</span><span class="p">)</span> <span class="k">for</span> <span class="n">Port</span><span class="p">.</span>
+</pre></div>
+
+
+<p>Full documentation for this trick is available
+<a href="https://help.ubuntu.com/community/SSH/OpenSSH/PortForwarding#Dynamic_Port_Forwarding">here</a>.</p>
+<hr />
+<p><code>howdoi</code>: <a href="https://github.com/gleitz/howdoi">HowDoI</a> provides answers to
+programming questions from command line. Thus
+instead of opening a browser and getting
+distracted in web, I can now simply type in
+something like <code>howdoi convert csv to namedtuple</code>
+to get the leads.</p>
+<p>I usually pass the <code>-ac</code> arguments: <code>-a</code> provides
+the full text of the answer, <code>-c</code> enables
+colorized output.</p>
+<hr />
+<p><code>ab -n 100 -c 10 http://www.example.com</code>: AB is a
+poor man's website performance benchmarking tool. <code>-c</code>
+specifies the number of concurrent requests and
+<code>-n</code> specifies the total number of requests to be
+sent to a webpage. This comes handy while
+migrating websites to new servers or when making
+significant frontend changes.</p>
+<hr />
+<p><code>wget "url" -c</code>: WGET is for downloading files
+from command-line. I often find the download speeds
+significantly different in browser's built-in
+download managers and wget. <code>-c</code> enables the
+resume support.</p>
+<hr />
+<p>There are various other <em>must-know</em> bash commands
+such as <code>awk</code>, <code>uniq</code>, <code>head</code> which are
+super-useful in daily work. <a href="http://datavu.blogspot.in/2014/08/useful-unix-commands-for-exploring-data.html">Akshay</a> has covered
+them in a <a href="http://datavu.blogspot.in/2014/08/useful-unix-commands-for-exploring-data.html">brief tutorial here</a>.</p>    </div>
+  </div>
+</article><article class="entry">
+  <div class="page-header">
     <h1><a href="http://fully-faltoo.com/2014/05/15/a-to-z/">Websites I use: A to Z</a>    </h1>
     <p class="meta sub"><a href="http://fully-faltoo.com/2014/05/15/a-to-z/"><small>Posted on Thu 15 May 2014</small></a>
     </p>
@@ -86,8 +178,8 @@ browser's <a href="http://en.wikipedia.org/wiki/Frecency">frecency</a>:</p>
   <a href="http://openshift.redhat.com">openshift.redhat.com</a> -
   for deploying new test projects for free.</li>
 <li>P is
-  <a href="http://play.fully-faltoo.com">play.fully-faltoo.com</a></li>
-<li>a custom domain used for testing different
+  <a href="http://play.fully-faltoo.com">play.fully-faltoo.com</a> -
+  a custom domain used for testing different
   internal projects at different times. It is
   followed by
   <a href="http://pixlr.com/express/">pixlr.com/express/</a>,
@@ -290,63 +382,6 @@ again and again at regular intervals.</p>    </div>
     <span class="k">color</span><span class="o">:</span> <span class="m">#333333</span><span class="p">;</span>
 <span class="p">}</span>
 </pre></div>    </div>
-  </div>
-</article><article class="entry">
-  <div class="page-header">
-    <h1><a href="http://fully-faltoo.com/2013/07/06/git-symlinks/">Relative symlinks in Git using subtree</a>    </h1>
-    <p class="meta sub"><a href="http://fully-faltoo.com/2013/07/06/git-symlinks/"><small>Posted on Sat 06 July 2013</small></a>
-    </p>
-  </div>
-  <div class="page-content">
-    <div class="post"><p>I have two separate projects and both use a common set of directories. Since both the projects are under active development, I symlinked the common files. Thus the changes were incorporated in both the projects. <strong>However, git <em>does not</em> follow the symbolic links and instead saves its contents.</strong></p>
-<p>To solve it I:</p>
-<ol>
-<li>Copied one of the projects into the another as a subdirectory using subtree.</li>
-<li>Created symlinks from inside this subtree directory.</li>
-<li>Changed the absolute paths of symbolic links into relative paths.</li>
-<li>Automated all of the above into a script.</li>
-</ol>
-<h2>Detailed steps</h2>
-<p><strong>Step 1:</strong> Subtree is useful (and better than submodule) for including a project into another project as a subdirectory. The main advantage is that the changes are both downstream as well as upstream. I followed <a href="http://www.codeproject.com/Articles/562950/GitplusSubtreeplusMergeplus-e2-80-93TheplusQuickpl">this post</a> to include the project as subtree sub-directory.</p>
-<p><strong>Step 2:</strong> Next step was to convert all the old symlinks (directly from main project) to symlinks from the new subtree directory. To find all the symbolic links in a directory use <code>$ find /path -type l</code>.</p>
-<p><strong>Step 3:</strong> The symlinks created usually contain absolute file paths (even though they might be in the same git project). Use the <a href="http://bashscripts.org/forum/viewtopic.php?f=8&amp;t=457">symlinks utility</a> to convert all the symlinks from absolute paths to relative paths.</p>
-<div class="highlight"><pre><span class="nv">$ </span>sudo apt-get install symlinks
-<span class="nv">$ </span>symlinks -tscr .  <span class="c"># Preview changes</span>
-<span class="nv">$ </span>symlinks -scr .   <span class="c"># Execute changes</span>
-</pre></div>
-
-
-<p><strong>Step 4:</strong> To automate all of the above, I compiled and saved the above commands in a fab file to run while committing the changes.</p>
-<div class="highlight"><pre><span class="k">def</span> <span class="nf">sync_down</span><span class="p">():</span>
-    <span class="sd">&quot;&quot;&quot;Syncs downstream from remote to local branch&quot;&quot;&quot;</span>
-    <span class="n">local</span><span class="p">(</span><span class="s">&quot;git checkout remote_branch&quot;</span><span class="p">)</span>
-    <span class="n">local</span><span class="p">(</span><span class="s">&quot;git pull&quot;</span><span class="p">)</span>
-    <span class="n">local</span><span class="p">(</span><span class="s">&quot;git checkout master&quot;</span><span class="p">)</span>
-    <span class="n">local</span><span class="p">(</span><span class="s">&#39;git merge --squash -s subtree &#39;</span>
-          <span class="s">&#39;--no-commit &#39;</span>
-          <span class="s">&#39;remote_branch&#39;</span><span class="p">)</span>
-
-
-<span class="k">def</span> <span class="nf">sync_up</span><span class="p">():</span>
-    <span class="sd">&quot;&quot;&quot;Syncs upstream from local to remote branch&quot;&quot;&quot;</span>
-    <span class="n">local</span><span class="p">(</span><span class="s">&quot;git checkout remote_branch&quot;</span><span class="p">)</span>
-    <span class="n">local</span><span class="p">(</span><span class="s">&#39;git merge --squash -s subtree &#39;</span>
-          <span class="s">&#39;--no-commit &#39;</span>
-          <span class="s">&#39;master&#39;</span><span class="p">)</span>
-    <span class="n">local</span><span class="p">(</span><span class="s">&#39;git add . -A&#39;</span><span class="p">)</span>
-    <span class="n">local</span><span class="p">(</span><span class="s">&#39;git commit -m &quot;Merged changes from remote&quot;&#39;</span><span class="p">)</span>
-    <span class="n">local</span><span class="p">(</span><span class="s">&quot;git push remote remote_branch:master&quot;</span><span class="p">)</span>
-    <span class="n">local</span><span class="p">(</span><span class="s">&quot;git checkout master&quot;</span><span class="p">)</span>
-
-
-<span class="k">def</span> <span class="nf">sync_all</span><span class="p">():</span>
-    <span class="n">local</span><span class="p">(</span><span class="s">&quot;symlinks -scr .&quot;</span><span class="p">)</span>
-    <span class="n">sync_down</span><span class="p">()</span>
-    <span class="n">sync_up</span><span class="p">()</span>
-</pre></div>
-
-
-<p>I agree that this is a very hacky way to achieve a simple following of symlinks. However, all the <a href="http://stackoverflow.com/questions/86402/how-can-i-get-git-to-follow-symlinks">other</a> <a href="http://stackoverflow.com/questions/1500772/getting-git-to-follow-symlinks-again">workarounds</a> looked as bad. </p>    </div>
   </div>
 </article><p class="paginator center">
     Page 1 / 51
