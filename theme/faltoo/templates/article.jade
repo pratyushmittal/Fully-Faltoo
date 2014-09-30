@@ -1,7 +1,7 @@
 extends base
 
 block title
-  #{article.title}
+    {{article.title}}
 
 block head
     - if article.code
@@ -15,7 +15,7 @@ block content
     //-   p
     //-     | Tags: 
     //-     - for tag in article.tags
-    //-       a(href="") #{tag}
+    //-       a(href="") {{tag}}
 
     hr
     - if article.comments and DISQUS_SITENAME and SITEURL and article.status != "draft"
@@ -25,11 +25,11 @@ block content
           a.twitter-share-button(href="https://twitter.com/share", data-via="faltoo") Tweet it
         #disqus_thread
         script
-          var disqus_identifier = "#{article.url}";
+          var disqus_identifier = "{{article.url}}";
           var disqus_url = "{{ SITEURL }}/{{ article.url }}";
           (function() {
           var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-          dsq.src = 'http://#{DISQUS_SITENAME}.disqus.com/embed.js';
+          dsq.src = 'http://{{DISQUS_SITENAME}}.disqus.com/embed.js';
           (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
           })();
 

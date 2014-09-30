@@ -1,5 +1,6 @@
 @import url(http://fonts.googleapis.com/css?family=Open+Sans:400,700);
-@import url(http://fonts.googleapis.com/css?family=Gloria+Hallelujah);
+@import url(http://fonts.googleapis.com/css?family=Architects+Daughter);
+@import url(http://fonts.googleapis.com/css?family=PT+Mono);
 
 /* General styles */
 body {
@@ -48,8 +49,7 @@ a:hover {
 
 /* Other General Style */
 h1, h2, h3, h4, h5, h6, .header, .footer {
-  font-family: 'Gloria Hallelujah', cursive;
-  font-weight: bold;
+  font-family: 'Architects Daughter', cursive;
   text-rendering: optimizelegibility;
 }
 
@@ -130,6 +130,13 @@ margin: 1em 0;
 .meta {
   margin: 0 0 .5em;
 }
+
+.footnote-ref {
+    background-color: #DEF;
+    padding: 0px 3px;
+}
+.footnote-ref:before { content: "["; }
+.footnote-ref:after { content: "]"; }
 
 /* Layout */
 img, object, iframe {
@@ -214,18 +221,21 @@ table tr:nth-child(even) {
 }
 
 /** Scaffold View **/
-dt,
-dd {
-  line-height: 1.125em;
-}
 
+dl {
+    padding: 0.5em;
+}
 dt {
-  font-weight: bold;
-  line-height: 1em;
+    float: left;
+    clear: left;
+    font-weight: bold;
+    padding-right: 7px;
 }
-
+dt:after {
+    content: ": ";
+}
 dd {
-  margin-left: .5em;
+    padding: 0 0 0.2em;
 }
 
 hr {
@@ -308,8 +318,19 @@ cite {
   font-style: normal;
 }
 
-code { background:#ffeeee; padding:5px; color:#234f32; }
-pre { font-size:medium; background:#E0FFB8; border:1px solid #94da3a; border-width:1px 0; margin: 1em 0; padding: .3em .4em; overflow: hidden; }
+code {
+    font-family: 'PT Mono';
+    background:#ffeeee;
+    padding:5px;
+    color:#111;
+}
+pre {
+    font-family: 'PT Mono';
+    background:#EEE;
+    margin: 1em 0;
+    padding: .3em .4em;
+    overflow: auto;
+}
 
 .white {
     background-color:white;

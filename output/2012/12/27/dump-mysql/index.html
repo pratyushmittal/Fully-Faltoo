@@ -3,8 +3,9 @@
   <head>
     <meta charset="utf-8">
     <meta name="author" content="Pratyush Mittal">
-    <title>Dump and restore all MySQL databases in one command
-    </title>    <link href="http://feeds.feedburner.com/fullyfaltoo" type="application/rss+xml" rel="alternate" title="A Fully-Faltoo Blog RSS Feed">    <link rel="shortcut icon" href="/favicon.ico">
+    <title>Dump and restore all MySQL databases in one&nbsp;command
+    </title>
+    <link href="http://feeds.feedburner.com/fullyfaltoo" type="application/rss+xml" rel="alternate" title="A Fully-Faltoo Blog RSS Feed">    <link rel="shortcut icon" href="/favicon.ico">
     <link href="/favicon.ico" type="image/x-icon" rel="icon">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <link rel="stylesheet" type="text/css" href="/theme/css/css.css">  </head>
@@ -16,28 +17,27 @@
     </header>
     <div class="content"><article class="entry">
   <div class="page-header">
-    <h1>Dump and restore all MySQL databases in one command
+    <h1>Dump and restore all MySQL databases in one&nbsp;command
     </h1>
     <p class="meta sub"><a href="http://fully-faltoo.com/2012/12/27/dump-mysql/"><small>Posted on Thu 27 December 2012</small></a>
     </p>
   </div>
   <div class="page-content">
-    <div class="post"><p>Came across this <a href="http://stackoverflow.com/questions/328922/transfer-mysql-database-to-another-computer/4819610#4819610">wonderful discussion</a> on StackOverflow, for dumping all the MySQL databases from command line.</p>
-<p><strong>For dumping:</strong></p>
+    <div class="post"><p>Came across this <a href="http://stackoverflow.com/questions/328922/transfer-mysql-database-to-another-computer/4819610#4819610">wonderful discussion</a> on StackOverflow, for dumping all the MySQL databases from command&nbsp;line.</p>
+<p><strong>For&nbsp;dumping:</strong></p>
 <div class="highlight"><pre><span class="n">mysqldump</span> <span class="o">-</span><span class="n">u</span> <span class="n">username</span> <span class="o">-</span><span class="n">p</span> <span class="o">--</span><span class="n">all</span><span class="o">-</span><span class="n">databases</span> <span class="o">&gt;</span> <span class="n">alldbs</span><span class="p">.</span><span class="n">sql</span>
 </pre></div>
 
 
-<p><strong>For restoring:</strong></p>
+<p><strong>For&nbsp;restoring:</strong></p>
 <div class="highlight"><pre><span class="n">mysql</span> <span class="o">-</span><span class="n">u</span> <span class="n">username</span> <span class="o">-</span><span class="n">p</span> <span class="o">&lt;</span> <span class="n">alldbs</span><span class="p">.</span><span class="n">sql</span>
 </pre></div>
 
 
-<p>The advantage is that it is very quick, and you do not lose the user privileges.</p>    </div>
+<p>The advantage is that it is very quick, and you do not lose the user&nbsp;privileges.</p>    </div>
   </div>
 </article><hr/><div class="comments">
-  <h3>Add comment or 
-<a href="https://twitter.com/share" data-via="faltoo" class="twitter-share-button">Tweet it</a>
+  <h3>Add comment or <a href="https://twitter.com/share" data-via="faltoo" class="twitter-share-button">Tweet it</a>
   </h3>
   <div id="disqus_thread"></div>
   <script>var disqus_identifier = "2012/12/27/dump-mysql/";
@@ -52,11 +52,7 @@ dsq.src = 'http://fully-faltoo.disqus.com/embed.js';
 </div>      <footer class="footer">
         <p><a href="/pages/about/">Pratyush Mittal?</a><a href="http://feedburner.google.com/fb/a/mailverify?uri=fullyfaltoo" class="right">Get updates via Email</a>
         </p>
-        <p><small>Powered by 
-<a href="http://getpelican.com">Pelican</a>, hosted on 
-<a href="http://www.github.com">GitHub</a> and written with 
-<img src="/theme/images/heart.png"> in India.
-</small>
+        <p><small>Powered by <a href="http://getpelican.com">Pelican</a>, hosted on <a href="http://www.github.com">GitHub</a> and written with <img src="/theme/images/heart.png"> in India.</small>
         </p>
       </footer>
     </div>

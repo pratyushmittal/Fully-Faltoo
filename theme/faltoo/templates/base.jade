@@ -2,13 +2,13 @@ doctype 5
 html(lang="{{ DEFAULT_LANG }}")
     head
         meta(charset="utf-8")
-        meta(name="author", content="#{AUTHOR}")
+        meta(name="author", content="{{AUTHOR}}")
         title
             block title
-                | #{SITENAME}
+                | {{SITENAME}}
 
         - if FEED_RSS
-            link(href="#{FEED_DOMAIN}", type="application/rss+xml", rel="alternate", title="#{SITENAME} RSS Feed")
+            link(href="{{FEED_DOMAIN}}", type="application/rss+xml", rel="alternate", title="{{SITENAME}} RSS Feed")
 
         link(rel="shortcut icon", href="/favicon.ico")
         link(href="/favicon.ico", type="image/x-icon", rel="icon")

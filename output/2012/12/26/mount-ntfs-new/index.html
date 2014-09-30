@@ -3,8 +3,9 @@
   <head>
     <meta charset="utf-8">
     <meta name="author" content="Pratyush Mittal">
-    <title>Mount NTFS partition automatically in Ubuntu
-    </title>    <link href="http://feeds.feedburner.com/fullyfaltoo" type="application/rss+xml" rel="alternate" title="A Fully-Faltoo Blog RSS Feed">    <link rel="shortcut icon" href="/favicon.ico">
+    <title>Mount <span class="caps">NTFS</span> partition automatically in&nbsp;Ubuntu
+    </title>
+    <link href="http://feeds.feedburner.com/fullyfaltoo" type="application/rss+xml" rel="alternate" title="A Fully-Faltoo Blog RSS Feed">    <link rel="shortcut icon" href="/favicon.ico">
     <link href="/favicon.ico" type="image/x-icon" rel="icon">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <link rel="stylesheet" type="text/css" href="/theme/css/css.css">  </head>
@@ -16,31 +17,30 @@
     </header>
     <div class="content"><article class="entry">
   <div class="page-header">
-    <h1><a href="http://askubuntu.com/questions/83461/automatically-mount-ntfs-drive-when-i-login" class="external">Mount NTFS partition automatically in Ubuntu</a>    </h1>
+    <h1><a href="http://askubuntu.com/questions/83461/automatically-mount-ntfs-drive-when-i-login" class="external">Mount <span class="caps">NTFS</span> partition automatically in&nbsp;Ubuntu</a>    </h1>
     <p class="meta sub"><a href="http://fully-faltoo.com/2012/12/26/mount-ntfs-new/"><small>Posted on Wed 26 December 2012</small></a>
     </p>
   </div>
   <div class="page-content">
-    <div class="post"><p>I had <a href="http://fully-faltoo.com/2012/06/30/mount-ntfs/">earlier mentioned</a> about the correct way of mounting NTFS partition using ntfs-config. However, recently I experienced a few crash errors and thus found this method easier to use.</p>
-<p>Open Unity (using windows key) and type "Startup Applications"</p>
+    <div class="post"><p>I had <a href="http://fully-faltoo.com/2012/06/30/mount-ntfs/">earlier mentioned</a> about the correct way of mounting <span class="caps">NTFS</span> partition using ntfs-config. However, recently I experienced a few crash errors and thus found this method easier to&nbsp;use.</p>
+<p>Open Unity (using windows key) and type &#8220;Startup&nbsp;Applications&#8221;</p>
 <blockquote>
-<p>Then click on the Add button, Write a name for this operation such as "Mount ntfs drives", then in command input box, write <code>udisks --mount /dev/sda2</code>, to automount the ntfs partition.</p>
-<p><strong>Note: You need to replace the /dev/sda2 with your actual NTFS partition number.</strong></p>
+<p>Then click on the Add button, Write a name for this operation such as &#8220;Mount ntfs drives&#8221;, then in command input box, write <code>udisks --mount /dev/sda2</code>, to automount the ntfs&nbsp;partition.</p>
+<p><strong>Note: You need to replace the /dev/sda2 with your actual <span class="caps">NTFS</span> partition&nbsp;number.</strong></p>
 <p>You can get this number by <code>sudo blkid</code></p>
 </blockquote>
-<p>Below is the output of this command in my computer.</p>
+<p>Below is the output of this command in my&nbsp;computer.</p>
 <p><img alt="Find NTFS partition number" src="http://fully-faltoo.com/uploads/ntfs-mount.png" /></p>
-<p>Since I had to mount the partition with the label "Storage", I entered this command:</p>
+<p>Since I had to mount the partition with the label &#8220;Storage&#8221;, I entered this&nbsp;command:</p>
 <div class="highlight"><pre><span class="n">udisks</span> <span class="o">--</span><span class="n">mount</span> <span class="o">/</span><span class="n">dev</span><span class="o">/</span><span class="n">sda4</span>
 </pre></div>
 
 
-<p>This auto mounts the partition on start-up with correct user permissions.</p>      <p><a href="http://askubuntu.com/questions/83461/automatically-mount-ntfs-drive-when-i-login" class="external">Mount NTFS partition automatically in Ubuntu</a>
+<p>This auto mounts the partition on start-up with correct user&nbsp;permissions.</p>      <p><a href="http://askubuntu.com/questions/83461/automatically-mount-ntfs-drive-when-i-login" class="external">Mount <span class="caps">NTFS</span> partition automatically in&nbsp;Ubuntu</a>
       </p>    </div>
   </div>
 </article><hr/><div class="comments">
-  <h3>Add comment or 
-<a href="https://twitter.com/share" data-via="faltoo" class="twitter-share-button">Tweet it</a>
+  <h3>Add comment or <a href="https://twitter.com/share" data-via="faltoo" class="twitter-share-button">Tweet it</a>
   </h3>
   <div id="disqus_thread"></div>
   <script>var disqus_identifier = "2012/12/26/mount-ntfs-new/";
@@ -55,11 +55,7 @@ dsq.src = 'http://fully-faltoo.disqus.com/embed.js';
 </div>      <footer class="footer">
         <p><a href="/pages/about/">Pratyush Mittal?</a><a href="http://feedburner.google.com/fb/a/mailverify?uri=fullyfaltoo" class="right">Get updates via Email</a>
         </p>
-        <p><small>Powered by 
-<a href="http://getpelican.com">Pelican</a>, hosted on 
-<a href="http://www.github.com">GitHub</a> and written with 
-<img src="/theme/images/heart.png"> in India.
-</small>
+        <p><small>Powered by <a href="http://getpelican.com">Pelican</a>, hosted on <a href="http://www.github.com">GitHub</a> and written with <img src="/theme/images/heart.png"> in India.</small>
         </p>
       </footer>
     </div>

@@ -5,6 +5,7 @@
 
 # Pelican
 output
+cache
 .git
 
 # Vim
