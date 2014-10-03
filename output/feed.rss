@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>A Fully-Faltoo Blog</title><link>http://fully-faltoo.com/</link><description></description><atom:link href="http://feeds.feedburner.com/fullyfaltoo/feed.rss" rel="self"></atom:link><lastBuildDate>Sun, 28 Sep 2014 00:00:00 +0530</lastBuildDate><item><title>Notes from Pycon India 2014</title><link>http://fully-faltoo.com/2014/09/28/pycon/</link><description>&lt;p&gt;I attended &lt;a href="http://in.pycon.org/2014/"&gt;Pycon India&lt;/a&gt; during last couple
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>A Fully-Faltoo Blog</title><link>http://fully-faltoo.com/</link><description></description><atom:link href="http://feeds.feedburner.com/fullyfaltoo/feed.rss" rel="self"></atom:link><lastBuildDate>Sun, 28 Sep 2014 00:00:00 +0530</lastBuildDate><item><title>Notes from Pycon India 2014</title><link>http://fully-faltoo.com/2014/09/28/pycon/</link><description>&lt;p&gt;&lt;img alt="Python India Conference" src="/uploads/pycon.jpg" /&gt;&lt;/p&gt;
+&lt;p&gt;I attended &lt;a href="http://in.pycon.org/2014/"&gt;Pycon India&lt;/a&gt; during last couple
 of days. As always, it felt great to meet so many
 smart programmers creating amazing things. These
 are my notes from various workshops, talks and
@@ -83,9 +84,9 @@ found the solution to some of my problems
 emphasized on moving the projects from
 platform-as-a-service (such as Heroku other such
 hostings) to infrastructure-as-a-service (such as
-Amazon &lt;span class="caps"&gt;AWS&lt;/span&gt;). The hosting services should be
-considered as livestock or sheeps instead of as
-pets. They should be easily migratable and
+Amazon &lt;span class="caps"&gt;AWS&lt;/span&gt;). A hosting service should be
+considered as livestock or sheep instead of as
+pet. It should be easily migratable and
 redeployable whenever needed. Docker and JuJu are
 steps towards&amp;nbsp;that.&lt;/p&gt;
 &lt;p&gt;&lt;a href="https://twitter.com/sanand0"&gt;@S Anand&lt;/a&gt; presented a talk on &amp;#8220;faster
