@@ -1,5 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>A Fully-Faltoo Blog</title><link>http://fully-faltoo.com/</link><description></description><atom:link href="http://feeds.feedburner.com/fullyfaltoo/feed.rss" rel="self"></atom:link><lastBuildDate>Sun, 28 Sep 2014 00:00:00 +0530</lastBuildDate><item><title>Notes from Pycon India 2014</title><link>http://fully-faltoo.com/2014/09/28/pycon/</link><description>&lt;p&gt;&lt;img alt="Python India Conference" src="/uploads/pycon.jpg" /&gt;
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>A Fully-Faltoo Blog</title><link>http://fully-faltoo.com/</link><description></description><atom:link href="http://feeds.feedburner.com/fullyfaltoo/feed.rss" rel="self"></atom:link><lastBuildDate>Mon, 13 Oct 2014 00:00:00 +0530</lastBuildDate><item><title>How to add a swap partition</title><link>http://fully-faltoo.com/2014/10/13/swap/</link><description>&lt;p&gt;I like to use &lt;a href="https://www.digitalocean.com"&gt;DigitalOcean&lt;/a&gt; for
+trying out new web-applications and scripts. The
+cheapest plan comes at $5/month but provides only
+&lt;span class="caps"&gt;512MB&lt;/span&gt; of memory. Adding a 1Gb swap memory is
+usually sufficient for temporary memory extensive
+needs. These is a short documentation on how to
+add the swap&amp;nbsp;partition.&lt;/p&gt;
+&lt;p&gt;Adding a swap&amp;nbsp;partition:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;sudo&lt;/span&gt; &lt;span class="n"&gt;dd&lt;/span&gt; &lt;span class="k"&gt;if&lt;/span&gt;&lt;span class="o"&gt;=/&lt;/span&gt;&lt;span class="n"&gt;dev&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;zero&lt;/span&gt; &lt;span class="n"&gt;of&lt;/span&gt;&lt;span class="o"&gt;=/&lt;/span&gt;&lt;span class="n"&gt;swap&lt;/span&gt; &lt;span class="n"&gt;bs&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="n"&gt;M&lt;/span&gt; &lt;span class="n"&gt;count&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;1024&lt;/span&gt;
+&lt;span class="n"&gt;sudo&lt;/span&gt; &lt;span class="n"&gt;mkswap&lt;/span&gt; &lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;swap&lt;/span&gt;
+&lt;span class="n"&gt;sudo&lt;/span&gt; &lt;span class="n"&gt;swapon&lt;/span&gt; &lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;swap&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Making the partition persistent on system&amp;nbsp;reboots:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;sudo&lt;/span&gt; &lt;span class="n"&gt;vi&lt;/span&gt; &lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;etc&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;fstab&lt;/span&gt;
+&lt;span class="cp"&gt;# Add a line to tell the system to use the file&lt;/span&gt;
+&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;swap&lt;/span&gt;   &lt;span class="n"&gt;none&lt;/span&gt;    &lt;span class="n"&gt;swap&lt;/span&gt;    &lt;span class="n"&gt;sw&lt;/span&gt;  &lt;span class="mi"&gt;0&lt;/span&gt;   &lt;span class="mi"&gt;0&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Optimize &lt;code&gt;swappiness&lt;/code&gt; and &lt;code&gt;vfc_cache_pressure&lt;/code&gt; &lt;em&gt;&lt;a href="https://www.digitalocean.com/community/tutorials/how-to-add-swap-on-ubuntu-14-04"&gt;for &lt;span class="caps"&gt;VPS&lt;/span&gt; needs&lt;/a&gt;&lt;/em&gt;:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;sudo&lt;/span&gt; &lt;span class="n"&gt;vi&lt;/span&gt; &lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;etc&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;sysctl&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;conf&lt;/span&gt;
+&lt;span class="cp"&gt;# Add the following at the bottom&lt;/span&gt;
+&lt;span class="n"&gt;vm&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;vfs_cache_pressure&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;50&lt;/span&gt;
+&lt;span class="n"&gt;vm&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;swappiness&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;10&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;The detailed article about what each of the above
+do is available &lt;a href="https://www.digitalocean.com/community/tutorials/how-to-add-swap-on-ubuntu-14-04"&gt;here&lt;/a&gt;.&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Pratyush Mittal</dc:creator><pubDate>Mon, 13 Oct 2014 00:00:00 +0530</pubDate><guid>tag:fully-faltoo.com,2014-10-13:2014/10/13/swap/</guid></item><item><title>Notes from Pycon India 2014</title><link>http://fully-faltoo.com/2014/09/28/pycon/</link><description>&lt;p&gt;&lt;img alt="Python India Conference" src="/uploads/pycon.jpg" /&gt;
 &lt;small class='sub'&gt;Image credits: &lt;a href="https://secure.flickr.com/photos/99555371@N06/"&gt;@Mukesh&lt;/a&gt;&lt;/small&gt;&lt;/p&gt;
 &lt;p&gt;I attended &lt;a href="http://in.pycon.org/2014/"&gt;Pycon India&lt;/a&gt; during last couple
 of days. As always, it felt great to meet so many

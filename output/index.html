@@ -16,6 +16,45 @@
     </header>
     <div class="content"><article class="entry">
   <div class="page-header">
+    <h1><a href="http://fully-faltoo.com/2014/10/13/swap/">How to add a swap&nbsp;partition</a>    </h1>
+    <p class="meta sub"><a href="http://fully-faltoo.com/2014/10/13/swap/"><small>Posted on Mon 13 October 2014</small></a>
+    </p>
+  </div>
+  <div class="page-content">
+    <div class="post"><p>I like to use <a href="https://www.digitalocean.com">DigitalOcean</a> for
+trying out new web-applications and scripts. The
+cheapest plan comes at $5/month but provides only
+<span class="caps">512MB</span> of memory. Adding a 1Gb swap memory is
+usually sufficient for temporary memory extensive
+needs. These is a short documentation on how to
+add the swap&nbsp;partition.</p>
+<p>Adding a swap&nbsp;partition:</p>
+<div class="highlight"><pre><span class="n">sudo</span> <span class="n">dd</span> <span class="k">if</span><span class="o">=/</span><span class="n">dev</span><span class="o">/</span><span class="n">zero</span> <span class="n">of</span><span class="o">=/</span><span class="n">swap</span> <span class="n">bs</span><span class="o">=</span><span class="mi">1</span><span class="n">M</span> <span class="n">count</span><span class="o">=</span><span class="mi">1024</span>
+<span class="n">sudo</span> <span class="n">mkswap</span> <span class="o">/</span><span class="n">swap</span>
+<span class="n">sudo</span> <span class="n">swapon</span> <span class="o">/</span><span class="n">swap</span>
+</pre></div>
+
+
+<p>Making the partition persistent on system&nbsp;reboots:</p>
+<div class="highlight"><pre><span class="n">sudo</span> <span class="n">vi</span> <span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">fstab</span>
+<span class="cp"># Add a line to tell the system to use the file</span>
+<span class="o">/</span><span class="n">swap</span>   <span class="n">none</span>    <span class="n">swap</span>    <span class="n">sw</span>  <span class="mi">0</span>   <span class="mi">0</span>
+</pre></div>
+
+
+<p>Optimize <code>swappiness</code> and <code>vfc_cache_pressure</code> <em><a href="https://www.digitalocean.com/community/tutorials/how-to-add-swap-on-ubuntu-14-04">for <span class="caps">VPS</span> needs</a></em>:</p>
+<div class="highlight"><pre><span class="n">sudo</span> <span class="n">vi</span> <span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">sysctl</span><span class="p">.</span><span class="n">conf</span>
+<span class="cp"># Add the following at the bottom</span>
+<span class="n">vm</span><span class="p">.</span><span class="n">vfs_cache_pressure</span> <span class="o">=</span> <span class="mi">50</span>
+<span class="n">vm</span><span class="p">.</span><span class="n">swappiness</span> <span class="o">=</span> <span class="mi">10</span>
+</pre></div>
+
+
+<p>The detailed article about what each of the above
+do is available <a href="https://www.digitalocean.com/community/tutorials/how-to-add-swap-on-ubuntu-14-04">here</a>.</p>    </div>
+  </div>
+</article><article class="entry">
+  <div class="page-header">
     <h1><a href="http://fully-faltoo.com/2014/09/28/pycon/">Notes from Pycon India&nbsp;2014</a>    </h1>
     <p class="meta sub"><a href="http://fully-faltoo.com/2014/09/28/pycon/"><small>Posted on Sun 28 September 2014</small></a>
     </p>
@@ -518,29 +557,8 @@ again and again at regular&nbsp;intervals.</p>    </div>
 
 <p>Different Lenovo laptops may require different tweaking. Above works best for Edge series. Other configs are available <strong><a href="https://bugs.launchpad.net/ubuntu/+source/xserver-xorg-input-synaptics/+bug/1042069">here</a></strong>.</p>    </div>
   </div>
-</article><article class="entry">
-  <div class="page-header">
-    <h1><a href="http://www.pip-installer.org/en/latest/cookbook.html#fast-local-installs" class="external">Faster <span class="caps">PIP</span> installs using local&nbsp;archives</a>    </h1>
-    <p class="meta sub"><a href="http://fully-faltoo.com/2013/07/14/pip-local/"><small>Posted on Sun 14 July 2013</small></a>
-    </p>
-  </div>
-  <div class="page-content">
-    <div class="post"><p>This method copies the <span class="caps">PIP</span> packages locally and uses them for faster installation when starting new&nbsp;projects.</p>
-<blockquote>
-<p>First, download the archives that fulfill your&nbsp;requirements:</p>
-</blockquote>
-<div class="highlight"><pre><span class="nv">$ </span>pip install --download &lt;DIR&gt; -r requirements.txt
-</pre></div>
-
-
-<blockquote>
-<p>Then, install using –find-links and&nbsp;–no-index:</p>
-</blockquote>
-<div class="highlight"><pre><span class="nv">$ </span>pip install --no-index --find-links<span class="o">=</span>&lt;DIR&gt; -r requirements.txt
-</pre></div>    </div>
-  </div>
 </article><p class="paginator center">
-    Page 1 / 51
+    Page 1 / 52
         <a href="http://fully-faltoo.com/page/2/">Older posts &raquo;</a>
 </p>
       <footer class="footer">
