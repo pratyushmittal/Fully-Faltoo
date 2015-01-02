@@ -222,6 +222,9 @@ installation by just extracting the&amp;nbsp;package.&lt;/p&gt;
 alternative for starting a live server from
 current directory to serve the&amp;nbsp;files.&lt;/p&gt;
 &lt;hr /&gt;
+&lt;p&gt;&lt;code&gt;netstat -plunt&lt;/code&gt;: To see which ports are open and
+which application is on each&amp;nbsp;one.&lt;/p&gt;
+&lt;hr /&gt;
 &lt;p&gt;&lt;code&gt;du file/path -chs&lt;/code&gt;: du is the disk-utility
 command. This command shows the total size of any
 directory. &lt;code&gt;-c&lt;/code&gt; is for total, &lt;code&gt;-h&lt;/code&gt; is for showing
