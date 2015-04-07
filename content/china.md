@@ -1,6 +1,7 @@
 Title: Visiting China - Tips
 Date: 2015-04-07
 Slug: china
+comments: true
 
 Last week, I visited Shenzhen in China with my
 family for 3 days. Shenzhen is a shopping paradise
