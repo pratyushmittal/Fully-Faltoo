@@ -1,5 +1,60 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>A Fully-Faltoo Blog</title><link>http://fully-faltoo.com/</link><description></description><atom:link href="http://feeds.feedburner.com/fullyfaltoo/feed.rss" rel="self"></atom:link><lastBuildDate>Mon, 13 Oct 2014 00:00:00 +0530</lastBuildDate><item><title>How to add a swap partition</title><link>http://fully-faltoo.com/2014/10/13/swap/</link><description>&lt;p&gt;I like to use &lt;a href="https://www.digitalocean.com"&gt;DigitalOcean&lt;/a&gt; for
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>A Fully-Faltoo Blog</title><link>http://fully-faltoo.com/</link><description></description><atom:link href="http://feeds.feedburner.com/fullyfaltoo/feed.rss" rel="self"></atom:link><lastBuildDate>Tue, 07 Apr 2015 00:00:00 +0530</lastBuildDate><item><title>Visiting China - Tips</title><link>http://fully-faltoo.com/2015/04/07/china/</link><description>&lt;p&gt;Last week, I visited Shenzhen in China with my
+family for 3 days. Shenzhen is a shopping paradise
+with huge markets such as Dongmen and Lo Wu
+commercial center. Shenzhen is surrounded by
+hills, which give it a pleasant weather all the
+year&amp;nbsp;round.&lt;/p&gt;
+&lt;p&gt;I compare my visit to China to that of some alien
+world, where the habitants have progressed as
+much as us (or even more), but where they don&amp;#8217;t
+understand our language, they don&amp;#8217;t accept our
+credit cards and where we can&amp;#8217;t use your mobile&amp;nbsp;applications.&lt;/p&gt;
+&lt;p&gt;These are few of the things I noted for our next
+trip to&amp;nbsp;China.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Things to note before visiting&amp;nbsp;China:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Google is banned in China. So is Facebook and&amp;nbsp;Twitter.&lt;/li&gt;
+&lt;li&gt;Since Google is banned, we cannot use Android
+  Play Store, Google Maps or&amp;nbsp;Gmail.&lt;/li&gt;
+&lt;li&gt;Credit Cards (our was International MasterCard)
+  might not work in&amp;nbsp;China.&lt;/li&gt;
+&lt;li&gt;Sim cards from Hong Kong might not provide
+  internet&amp;nbsp;access.&lt;/li&gt;
+&lt;li&gt;WhatsApp and WeChat work. So does&amp;nbsp;iPhone.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Workarounds and&amp;nbsp;preparations:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Pre-install &lt;a href="https://play.google.com/store/apps/details?id=com.baidu.baidutranslate&amp;amp;hl=en"&gt;Baidu Translate&lt;/a&gt; for text
+  translation and voice&amp;nbsp;translation.&lt;/li&gt;
+&lt;li&gt;Download offline package in Baidu Translate:
+  There is an option in the app to download the
+  offline package so that the translation works
+  even when there is no&amp;nbsp;internet.&lt;/li&gt;
+&lt;li&gt;Use Uber: Ensure to change your mobile number in
+  the profile option. The driver will probably
+  call you before coming. Have someone else tell
+  your current position in that&amp;nbsp;case.&lt;/li&gt;
+&lt;li&gt;Print out locations in Chinese names (especially
+  your address of stay): It is helpful to get
+  someone to write down the Chinese names of
+  locations you wish to go&amp;nbsp;to.&lt;/li&gt;
+&lt;li&gt;Bring sufficient &lt;span class="caps"&gt;RMB&lt;/span&gt; (Chinese Yuan Renminbi):
+  Since credit cards might not work in China, it
+  is better to carry sufficient &lt;span class="caps"&gt;RMB&lt;/span&gt;. We found the
+  best conversion rates in Tsim Tsa Tsui (in Hong
+  Kong) market (&lt;em&gt;don&amp;#8217;t&lt;/em&gt; use Western&amp;nbsp;Union).&lt;/li&gt;
+&lt;li&gt;Print the emails: Since Gmail wont
+  work in China, it is better to print or download
+  important emails before&amp;nbsp;arrival.&lt;/li&gt;
+&lt;li&gt;Use AirBnB: We booked our stay through
+  &lt;a href="https://www.airbnb.co.in/rooms/2910033"&gt;AirBnB&lt;/a&gt;. The host was extremely
+  co-operative and always available over WhatsApp.
+  It is good to have some local person to rely&amp;nbsp;on.&lt;/li&gt;
+&lt;li&gt;Buy a sim-card soon: The sim costs around &lt;span class="caps"&gt;RMB&lt;/span&gt; 70 with
+  the data pack. It is a helpful to have it&amp;nbsp;early.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Enjoy your trip to&amp;nbsp;China.&lt;/strong&gt;&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Pratyush Mittal</dc:creator><pubDate>Tue, 07 Apr 2015 00:00:00 +0530</pubDate><guid>tag:fully-faltoo.com,2015-04-07:2015/04/07/china/</guid></item><item><title>How to add a swap partition</title><link>http://fully-faltoo.com/2014/10/13/swap/</link><description>&lt;p&gt;I like to use &lt;a href="https://www.digitalocean.com"&gt;DigitalOcean&lt;/a&gt; for
 trying out new web-applications and scripts. The
 cheapest plan comes at $5/month but provides only
 &lt;span class="caps"&gt;512MB&lt;/span&gt; of memory. Adding a 1Gb swap memory is
@@ -389,7 +444,12 @@ everywhere. It required only some chits of paper
 experienced with 10-12&amp;nbsp;players.&lt;/p&gt;
 &lt;p&gt;I would highly recommend it to anyone who has a
 large group, scope to shout, and time to go
-through the&amp;nbsp;rulebook.&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Pratyush Mittal</dc:creator><pubDate>Tue, 28 Jan 2014 00:00:00 +0530</pubDate><guid>tag:fully-faltoo.com,2014-01-28:2014/01/28/werewolf/</guid></item><item><title>Dhoni’s advice to young players</title><link>http://fully-faltoo.com/2013/11/16/dhoni/</link><description>&lt;p&gt;&lt;img alt="Dhoni's shot in world cup final 2011" src="http://fully-faltoo.com/uploads/dhoni.jpg" /&gt;&lt;/p&gt;
+through the&amp;nbsp;rulebook.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;&amp;#8212;&amp;#8212;Update on April&amp;nbsp;2015&amp;#8212;&amp;#8212;&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;I found the rules for another variation of this
+game: &lt;a href="http://boardgamegeek.com/filepage/109882/english-rules-one-night-ultimate-werewolf"&gt;One Night Ultimate Werewolf&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;a href="http://fully-faltoo.com/uploads/werewolf.pdf"&gt;Mirror&lt;/a&gt; of the above rule&amp;nbsp;book.&lt;/p&gt;
+&lt;p&gt;I find this variation even&amp;nbsp;better.&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Pratyush Mittal</dc:creator><pubDate>Tue, 28 Jan 2014 00:00:00 +0530</pubDate><guid>tag:fully-faltoo.com,2014-01-28:2014/01/28/werewolf/</guid></item><item><title>Dhoni’s advice to young players</title><link>http://fully-faltoo.com/2013/11/16/dhoni/</link><description>&lt;p&gt;&lt;img alt="Dhoni's shot in world cup final 2011" src="http://fully-faltoo.com/uploads/dhoni.jpg" /&gt;&lt;/p&gt;
 &lt;p&gt;Of all the sportsmen, I admire &lt;span class="caps"&gt;MS&lt;/span&gt; Dhoni and Brian Lara the
 most. Whether India wins or not, I try to hear his words
 and learn from his temperament. Found this &lt;a href="http://www.mid-day.com/sports/2013/apr/230413-ms-dhoni-sports-psychologist-rudi-webster-interview.htm"&gt;wonderful
