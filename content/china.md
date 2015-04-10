@@ -14,7 +14,7 @@ I compare my visit to China to that of some alien
 world, where the habitants have progressed as
 much as us (or even more), but where they don't
 understand our language, they don't accept our
-credit cards and where we can't use your mobile
+credit cards and where we can't use our mobile
 applications.
 
 These are few of the things I noted for our next
