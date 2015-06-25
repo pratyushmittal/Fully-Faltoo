@@ -1,5 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>A Fully-Faltoo Blog</title><link>http://fully-faltoo.com/</link><description></description><atom:link href="http://feeds.feedburner.com/fullyfaltoo/feed.rss" rel="self"></atom:link><lastBuildDate>Tue, 07 Apr 2015 00:00:00 +0530</lastBuildDate><item><title>Visiting China - Tips</title><link>http://fully-faltoo.com/2015/04/07/china/</link><description>&lt;p&gt;Last week, I visited Shenzhen in China with my
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>A Fully-Faltoo Blog</title><link>http://fully-faltoo.com/</link><description></description><atom:link href="http://feeds.feedburner.com/fullyfaltoo/feed.rss" rel="self"></atom:link><lastBuildDate>Thu, 25 Jun 2015 00:00:00 +0530</lastBuildDate><item><title>AngularJS - Adding content outside ng-view</title><link>http://fully-faltoo.com/2015/06/25/angularjs-adding-content-outside-ng-view/</link><description>&lt;p&gt;One of the common problem patterns in AngularJS is adding content outside the &lt;code&gt;ng-view&lt;/code&gt;,
+such as having context specific sidebars or&amp;nbsp;toolbars.&lt;/p&gt;
+&lt;p&gt;I liked the solution of &lt;a href="http://apparently.me.uk/angularjs-view-specific-sidebars/"&gt;Martin Atkins&lt;/a&gt;. He suggests using &lt;code&gt;block&lt;/code&gt; like placeholders
+for specifying insertions. This is my implementation based on&amp;nbsp;it.&lt;/p&gt;
+&lt;script src="https://gist.github.com/pratyushmittal/92d1c5ca8f012cff074a.js"&gt;&lt;/script&gt;
+
+&lt;p&gt;Complete implementation demo: &lt;a href="http://plnkr.co/edit/w0B0hK?p=preview"&gt;http://plnkr.co/edit/w0B0hK?p=preview&lt;/a&gt;&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Pratyush Mittal</dc:creator><pubDate>Thu, 25 Jun 2015 00:00:00 +0530</pubDate><guid>tag:fully-faltoo.com,2015-06-25:2015/06/25/angularjs-adding-content-outside-ng-view/</guid></item><item><title>Visiting China - Tips</title><link>http://fully-faltoo.com/2015/04/07/china/</link><description>&lt;p&gt;Last week, I visited Shenzhen in China with my
 family for 3 days. Shenzhen is a shopping paradise
 with huge markets such as Dongmen and Lo Wu
 commercial center. Shenzhen is surrounded by
