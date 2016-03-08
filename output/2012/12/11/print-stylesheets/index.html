@@ -25,7 +25,7 @@
   <div class="page-content">
     <div class="post"><p>There are some very useful <span class="caps">CSS2</span> features which allow the authors to get control on how the pages are&nbsp;printed.</p>
 <h3>Avoid the page breaks just after&nbsp;headings</h3>
-<div class="highlight"><pre><span class="n">h1</span><span class="p">,</span> <span class="n">h2</span><span class="p">,</span> <span class="n">h3</span><span class="p">,</span> <span class="n">h4</span><span class="p">,</span> <span class="n">h5</span><span class="p">,</span> <span class="n">h6</span> <span class="p">{</span> <span class="n">page</span><span class="o">-</span><span class="k">break</span><span class="o">-</span><span class="n">after</span> <span class="o">:</span> <span class="n">avoid</span> <span class="p">}</span>
+<div class="highlight"><pre><span></span>h1, h2, h3, h4, h5, h6 { page-break-after : avoid }
 </pre></div>
 
 
@@ -34,9 +34,9 @@
 <p>The keyword auto is the default, it lets the browser generate page breaks as needed. The keyword always forces a page break before or after the element, while avoid suppresses a page break immediately before or after the element. The left and right keywords force one or two page breaks, so that the element is rendered on a left-hand or right-hand&nbsp;page.</p>
 </blockquote>
 <h3>Prevent just a line of the paragraph from moving onto next&nbsp;page</h3>
-<div class="highlight"><pre><span class="err">@</span><span class="n">page</span> <span class="p">{</span>
-    <span class="nl">orphans:</span><span class="mi">4</span><span class="p">;</span>
-    <span class="nl">widows:</span><span class="mi">2</span><span class="p">;</span>
+<div class="highlight"><pre><span></span><span class="k">@page</span> <span class="p">{</span>
+    <span class="nt">orphans</span><span class="nd">:4</span><span class="o">;</span>
+    <span class="nt">widows</span><span class="nd">:2</span><span class="o">;</span>
 <span class="p">}</span>
 </pre></div>
 

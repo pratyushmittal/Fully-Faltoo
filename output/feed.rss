@@ -1,11 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>A Fully-Faltoo Blog</title><link>http://fully-faltoo.com/</link><description></description><atom:link href="http://feeds.feedburner.com/fullyfaltoo/feed.rss" rel="self"></atom:link><lastBuildDate>Thu, 25 Jun 2015 00:00:00 +0530</lastBuildDate><item><title>AngularJS - Adding content outside ng-view</title><link>http://fully-faltoo.com/2015/06/25/angularjs-adding-content-outside-ng-view/</link><description>&lt;p&gt;One of the common problem patterns in AngularJS is adding content outside the &lt;code&gt;ng-view&lt;/code&gt;,
-such as having context specific sidebars or&amp;nbsp;toolbars.&lt;/p&gt;
-&lt;p&gt;I liked the solution of &lt;a href="http://apparently.me.uk/angularjs-view-specific-sidebars/"&gt;Martin Atkins&lt;/a&gt;. He suggests using &lt;code&gt;block&lt;/code&gt; like placeholders
-for specifying insertions. This is my implementation based on&amp;nbsp;it.&lt;/p&gt;
-&lt;script src="https://gist.github.com/pratyushmittal/92d1c5ca8f012cff074a.js"&gt;&lt;/script&gt;
-
-&lt;p&gt;Complete implementation demo: &lt;a href="http://plnkr.co/edit/w0B0hK?p=preview"&gt;http://plnkr.co/edit/w0B0hK?p=preview&lt;/a&gt;&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Pratyush Mittal</dc:creator><pubDate>Thu, 25 Jun 2015 00:00:00 +0530</pubDate><guid>tag:fully-faltoo.com,2015-06-25:2015/06/25/angularjs-adding-content-outside-ng-view/</guid></item><item><title>Visiting China - Tips</title><link>http://fully-faltoo.com/2015/04/07/china/</link><description>&lt;p&gt;Last week, I visited Shenzhen in China with my
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>A Fully-Faltoo Blog</title><link>http://fully-faltoo.com/</link><description></description><atom:link href="http://feeds.feedburner.com/fullyfaltoo/feed.rss" rel="self"></atom:link><lastBuildDate>Tue, 07 Apr 2015 00:00:00 +0530</lastBuildDate><item><title>Visiting China - Tips</title><link>http://fully-faltoo.com/2015/04/07/china/</link><description>&lt;p&gt;Last week, I visited Shenzhen in China with my
 family for 3 days. Shenzhen is a shopping paradise
 with huge markets such as Dongmen and Lo Wu
 commercial center. Shenzhen is surrounded by
@@ -68,24 +62,24 @@ usually sufficient for temporary memory extensive
 needs. These is a short documentation on how to
 add the swap&amp;nbsp;partition.&lt;/p&gt;
 &lt;p&gt;Adding a swap&amp;nbsp;partition:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;sudo&lt;/span&gt; &lt;span class="n"&gt;dd&lt;/span&gt; &lt;span class="k"&gt;if&lt;/span&gt;&lt;span class="o"&gt;=/&lt;/span&gt;&lt;span class="n"&gt;dev&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;zero&lt;/span&gt; &lt;span class="n"&gt;of&lt;/span&gt;&lt;span class="o"&gt;=/&lt;/span&gt;&lt;span class="n"&gt;swap&lt;/span&gt; &lt;span class="n"&gt;bs&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="n"&gt;M&lt;/span&gt; &lt;span class="n"&gt;count&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;1024&lt;/span&gt;
-&lt;span class="n"&gt;sudo&lt;/span&gt; &lt;span class="n"&gt;mkswap&lt;/span&gt; &lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;swap&lt;/span&gt;
-&lt;span class="n"&gt;sudo&lt;/span&gt; &lt;span class="n"&gt;swapon&lt;/span&gt; &lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;swap&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo dd if=/dev/zero of=/swap bs=1M count=1024
+sudo mkswap /swap
+sudo swapon /swap
 &lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;p&gt;Making the partition persistent on system&amp;nbsp;reboots:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;sudo&lt;/span&gt; &lt;span class="n"&gt;vi&lt;/span&gt; &lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;etc&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;fstab&lt;/span&gt;
-&lt;span class="cp"&gt;# Add a line to tell the system to use the file&lt;/span&gt;
-&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;swap&lt;/span&gt;   &lt;span class="n"&gt;none&lt;/span&gt;    &lt;span class="n"&gt;swap&lt;/span&gt;    &lt;span class="n"&gt;sw&lt;/span&gt;  &lt;span class="mi"&gt;0&lt;/span&gt;   &lt;span class="mi"&gt;0&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo vi /etc/fstab
+# Add a line to tell the system to use the file
+/swap   none    swap    sw  0   0
 &lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;p&gt;Optimize &lt;code&gt;swappiness&lt;/code&gt; and &lt;code&gt;vfc_cache_pressure&lt;/code&gt; &lt;em&gt;&lt;a href="https://www.digitalocean.com/community/tutorials/how-to-add-swap-on-ubuntu-14-04"&gt;for &lt;span class="caps"&gt;VPS&lt;/span&gt; needs&lt;/a&gt;&lt;/em&gt;:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;sudo&lt;/span&gt; &lt;span class="n"&gt;vi&lt;/span&gt; &lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;etc&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;sysctl&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;conf&lt;/span&gt;
-&lt;span class="cp"&gt;# Add the following at the bottom&lt;/span&gt;
-&lt;span class="n"&gt;vm&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;vfs_cache_pressure&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;50&lt;/span&gt;
-&lt;span class="n"&gt;vm&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;swappiness&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;10&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo vi /etc/sysctl.conf
+# Add the following at the bottom
+vm.vfs_cache_pressure = 50
+vm.swappiness = 10
 &lt;/pre&gt;&lt;/div&gt;
 
 
@@ -135,17 +129,17 @@ of the workshop we learned to write our own trace,
 memorize / cache and routing&amp;nbsp;decorators.&lt;/p&gt;
 &lt;p&gt;Apart from decorators, I also learned about
 various magic commands in IPython&amp;nbsp;Notebook:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="c"&gt;%%file filename.py&lt;/span&gt;
-# &lt;span class="n"&gt;Python&lt;/span&gt; &lt;span class="n"&gt;Code&lt;/span&gt;
-# &lt;span class="n"&gt;below&lt;/span&gt; &lt;span class="n"&gt;it&lt;/span&gt; &lt;span class="n"&gt;will&lt;/span&gt; &lt;span class="n"&gt;save&lt;/span&gt; &lt;span class="n"&gt;the&lt;/span&gt; &lt;span class="n"&gt;code&lt;/span&gt;
-# &lt;span class="n"&gt;in&lt;/span&gt; &lt;span class="n"&gt;the&lt;/span&gt; &lt;span class="n"&gt;given&lt;/span&gt; &lt;span class="n"&gt;filename&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="o"&gt;%&lt;/span&gt;&lt;span class="nf"&gt;%file&lt;/span&gt; &lt;span class="n"&gt;filename&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;py&lt;/span&gt;
+&lt;span class="cp"&gt;# Python Code&lt;/span&gt;
+&lt;span class="cp"&gt;# below it will save the code&lt;/span&gt;
+&lt;span class="cp"&gt;# in the given filename&lt;/span&gt;
 
-&lt;span class="sx"&gt;!python filename.py&lt;/span&gt;
-# &lt;span class="n"&gt;using&lt;/span&gt; ! &lt;span class="n"&gt;we&lt;/span&gt; &lt;span class="n"&gt;can&lt;/span&gt; &lt;span class="n"&gt;run&lt;/span&gt; &lt;span class="n"&gt;bash&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;commands&lt;/span&gt;
+&lt;span class="o"&gt;!&lt;/span&gt;&lt;span class="n"&gt;python&lt;/span&gt; &lt;span class="n"&gt;filename&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;py&lt;/span&gt;
+&lt;span class="cp"&gt;# using ! we can run bash-commands&lt;/span&gt;
 
-&lt;span class="c"&gt;%magic&lt;/span&gt;
-# &lt;span class="n"&gt;To&lt;/span&gt; &lt;span class="n"&gt;see&lt;/span&gt; &lt;span class="n"&gt;all&lt;/span&gt; &lt;span class="n"&gt;the&lt;/span&gt; &lt;span class="n"&gt;available&lt;/span&gt; &lt;span class="nb"&gt;magic&lt;/span&gt; &lt;span class="n"&gt;commands&lt;/span&gt; &lt;span class="n"&gt;in&lt;/span&gt; &lt;span class="n"&gt;IPython&lt;/span&gt;
-# &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;found&lt;/span&gt; &lt;span class="n"&gt;in&lt;/span&gt; &lt;span class="n"&gt;an&lt;/span&gt; &lt;span class="n"&gt;interaction&lt;/span&gt; &lt;span class="n"&gt;with&lt;/span&gt; &lt;span class="n"&gt;Eswar&lt;/span&gt; &lt;span class="n"&gt;Vandanapu&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="nf"&gt;%magic&lt;/span&gt;
+&lt;span class="cp"&gt;# To see all the available magic commands in IPython&lt;/span&gt;
+&lt;span class="cp"&gt;# (found in an interaction with Eswar Vandanapu)&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
@@ -307,9 +301,9 @@ backup snapshots of&amp;nbsp;databases.&lt;/p&gt;
 &lt;p&gt;I found these two commands &lt;a href="http://stackoverflow.com/questions/328922/transfer-mysql-database-to-another-computer/4819610#4819610"&gt;here&lt;/a&gt;.&lt;/p&gt;
 &lt;hr /&gt;
 &lt;p&gt;&lt;code&gt;ssh -D 31500 user@example.com&lt;/code&gt;: This turns the &lt;span class="caps"&gt;SSH&lt;/span&gt; client into a &lt;span class="caps"&gt;SOCKS&lt;/span&gt; proxy server. It provides me a &lt;span class="caps"&gt;VPN&lt;/span&gt; on the fly. So if a website refuses to open, or is restricted to a particular country, I run this command and then update the proxy settings in Firefox as&amp;nbsp;below:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="mf"&gt;1.&lt;/span&gt; &lt;span class="n"&gt;Enable&lt;/span&gt; &lt;span class="n"&gt;proxy&lt;/span&gt; &lt;span class="n"&gt;in&lt;/span&gt; &lt;span class="n"&gt;firefox&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;
-&lt;span class="mf"&gt;2.&lt;/span&gt; &lt;span class="n"&gt;Enter&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;127.0.0.1&amp;quot;&lt;/span&gt; &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;SOCKS Host&amp;quot;&lt;/span&gt;
-&lt;span class="mf"&gt;3.&lt;/span&gt; &lt;span class="n"&gt;Enter&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;31500&amp;quot;&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;or&lt;/span&gt; &lt;span class="n"&gt;whatever&lt;/span&gt; &lt;span class="n"&gt;port&lt;/span&gt; &lt;span class="n"&gt;we&lt;/span&gt; &lt;span class="n"&gt;chose&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;Port&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;1. Enable proxy in firefox.
+2. Enter &amp;quot;127.0.0.1&amp;quot; for &amp;quot;SOCKS Host&amp;quot;
+3. Enter &amp;quot;31500&amp;quot; (or whatever port we chose) for Port.
 &lt;/pre&gt;&lt;/div&gt;
 
 
@@ -514,37 +508,37 @@ you help your teammate to play better is equally&amp;nbsp;important.&lt;/p&gt;
 interview&lt;/a&gt;. Would try to go through the interview
 again and again at regular&amp;nbsp;intervals.&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Pratyush Mittal</dc:creator><pubDate>Sat, 16 Nov 2013 00:00:00 +0530</pubDate><guid>tag:fully-faltoo.com,2013-11-16:2013/11/16/dhoni/</guid></item><item><title>Fixing Lenovo touchpads on Ubuntu</title><link>http://fully-faltoo.com/2013/07/20/lenovo-touchpad/</link><description>&lt;p&gt;I recently moved from Dell Studio to Lenovo&amp;#8217;s Thinkpad Edge E430 laptop. It is an all-Intel machine and the drivers support is quite good. Initially the touchpad felt over sensitive as the cursor jumped a few pixels on finger lifts. Luckily, it is a common &lt;a href="https://bugs.launchpad.net/ubuntu/+source/xserver-xorg-input-synaptics/+bug/1042069"&gt;touchpad issue on Lenovo machines&lt;/a&gt; and easily&amp;nbsp;fixable.&lt;/p&gt;
 &lt;p&gt;Create the following config file in &lt;code&gt;/usr/share/X11/xorg.conf.d/50-thinkpad-touchpad.conf&lt;/code&gt; (create &lt;code&gt;xorg.conf.d&lt;/code&gt; directory if it doesn&amp;#8217;t&amp;nbsp;exist):&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;Section&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;InputClass&amp;quot;&lt;/span&gt;
-        &lt;span class="n"&gt;Identifier&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;touchpad&amp;quot;&lt;/span&gt;
-        &lt;span class="n"&gt;MatchProduct&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;SynPS/2 Synaptics TouchPad&amp;quot;&lt;/span&gt;
-        &lt;span class="n"&gt;Driver&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;synaptics&amp;quot;&lt;/span&gt;
-        &lt;span class="err"&gt;#&lt;/span&gt; &lt;span class="n"&gt;fix&lt;/span&gt; &lt;span class="n"&gt;touchpad&lt;/span&gt; &lt;span class="n"&gt;resolution&lt;/span&gt;
-        &lt;span class="n"&gt;Option&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;VertResolution&amp;quot;&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;100&amp;quot;&lt;/span&gt;
-        &lt;span class="n"&gt;Option&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;HorizResolution&amp;quot;&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;65&amp;quot;&lt;/span&gt;
-        &lt;span class="err"&gt;#&lt;/span&gt; &lt;span class="n"&gt;increment&lt;/span&gt; &lt;span class="n"&gt;noise&lt;/span&gt; &lt;span class="n"&gt;cancellation&lt;/span&gt; &lt;span class="n"&gt;factor&lt;/span&gt;
-        &lt;span class="n"&gt;Option&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;HorizHysteresis&amp;quot;&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;50&amp;quot;&lt;/span&gt;
-        &lt;span class="n"&gt;Option&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;VertHysteresis&amp;quot;&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;50&amp;quot;&lt;/span&gt;
-&lt;span class="n"&gt;EndSection&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;Section &amp;quot;InputClass&amp;quot;
+        Identifier &amp;quot;touchpad&amp;quot;
+        MatchProduct &amp;quot;SynPS/2 Synaptics TouchPad&amp;quot;
+        Driver &amp;quot;synaptics&amp;quot;
+        # fix touchpad resolution
+        Option &amp;quot;VertResolution&amp;quot; &amp;quot;100&amp;quot;
+        Option &amp;quot;HorizResolution&amp;quot; &amp;quot;65&amp;quot;
+        # increment noise cancellation factor
+        Option &amp;quot;HorizHysteresis&amp;quot; &amp;quot;50&amp;quot;
+        Option &amp;quot;VertHysteresis&amp;quot; &amp;quot;50&amp;quot;
+EndSection
 &lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;p&gt;&lt;strong&gt;Update for ArchLinux&lt;/strong&gt;: file path &lt;code&gt;/etc/X11/xorg.conf.d/50-thinkpad-touchpad.conf&lt;/code&gt;&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;Section&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;InputClass&amp;quot;&lt;/span&gt;
-        &lt;span class="n"&gt;Identifier&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;touchpad&amp;quot;&lt;/span&gt;
-        &lt;span class="n"&gt;MatchProduct&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;SynPS/2 Synaptics TouchPad&amp;quot;&lt;/span&gt;
-        &lt;span class="n"&gt;Driver&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;synaptics&amp;quot;&lt;/span&gt;
-        &lt;span class="err"&gt;#&lt;/span&gt; &lt;span class="n"&gt;fix&lt;/span&gt; &lt;span class="n"&gt;touchpad&lt;/span&gt; &lt;span class="n"&gt;resolution&lt;/span&gt;
-        &lt;span class="n"&gt;Option&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;VertResolution&amp;quot;&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;100&amp;quot;&lt;/span&gt;
-        &lt;span class="n"&gt;Option&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;HorizResolution&amp;quot;&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;65&amp;quot;&lt;/span&gt;
-        &lt;span class="err"&gt;#&lt;/span&gt; &lt;span class="n"&gt;disable&lt;/span&gt; &lt;span class="n"&gt;synaptics&lt;/span&gt; &lt;span class="n"&gt;driver&lt;/span&gt; &lt;span class="n"&gt;pointer&lt;/span&gt; &lt;span class="n"&gt;acceleration&lt;/span&gt;
-        &lt;span class="n"&gt;Option&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;MinSpeed&amp;quot;&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;1&amp;quot;&lt;/span&gt;
-        &lt;span class="n"&gt;Option&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;MaxSpeed&amp;quot;&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;1&amp;quot;&lt;/span&gt;
-        &lt;span class="err"&gt;#&lt;/span&gt; &lt;span class="n"&gt;tweak&lt;/span&gt; &lt;span class="n"&gt;the&lt;/span&gt; &lt;span class="n"&gt;X&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;server&lt;/span&gt; &lt;span class="n"&gt;pointer&lt;/span&gt; &lt;span class="n"&gt;acceleration&lt;/span&gt;
-        &lt;span class="n"&gt;Option&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;AccelerationProfile&amp;quot;&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;2&amp;quot;&lt;/span&gt;
-        &lt;span class="n"&gt;Option&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;AdaptiveDeceleration&amp;quot;&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;16&amp;quot;&lt;/span&gt;
-        &lt;span class="n"&gt;Option&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;ConstantDeceleration&amp;quot;&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;16&amp;quot;&lt;/span&gt;
-        &lt;span class="n"&gt;Option&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;VelocityScale&amp;quot;&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;128&amp;quot;&lt;/span&gt;
-&lt;span class="n"&gt;EndSection&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;Section &amp;quot;InputClass&amp;quot;
+        Identifier &amp;quot;touchpad&amp;quot;
+        MatchProduct &amp;quot;SynPS/2 Synaptics TouchPad&amp;quot;
+        Driver &amp;quot;synaptics&amp;quot;
+        # fix touchpad resolution
+        Option &amp;quot;VertResolution&amp;quot; &amp;quot;100&amp;quot;
+        Option &amp;quot;HorizResolution&amp;quot; &amp;quot;65&amp;quot;
+        # disable synaptics driver pointer acceleration
+        Option &amp;quot;MinSpeed&amp;quot; &amp;quot;1&amp;quot;
+        Option &amp;quot;MaxSpeed&amp;quot; &amp;quot;1&amp;quot;
+        # tweak the X-server pointer acceleration
+        Option &amp;quot;AccelerationProfile&amp;quot; &amp;quot;2&amp;quot;
+        Option &amp;quot;AdaptiveDeceleration&amp;quot; &amp;quot;16&amp;quot;
+        Option &amp;quot;ConstantDeceleration&amp;quot; &amp;quot;16&amp;quot;
+        Option &amp;quot;VelocityScale&amp;quot; &amp;quot;128&amp;quot;
+EndSection
 &lt;/pre&gt;&lt;/div&gt;
 
 
@@ -552,21 +546,15 @@ again and again at regular&amp;nbsp;intervals.&lt;/p&gt;</description><dc:creato
 &lt;blockquote&gt;
 &lt;p&gt;First, download the archives that fulfill your&amp;nbsp;requirements:&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;pip install --download &amp;lt;DIR&amp;gt; -r requirements.txt
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;$ pip install --download &amp;lt;DIR&amp;gt; -r requirements.txt
 &lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;blockquote&gt;
 &lt;p&gt;Then, install using –find-links and&amp;nbsp;–no-index:&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;pip install --no-index --find-links&lt;span class="o"&gt;=&lt;/span&gt;&amp;lt;DIR&amp;gt; -r requirements.txt
-&lt;/pre&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Pratyush Mittal</dc:creator><pubDate>Sun, 14 Jul 2013 00:00:00 +0530</pubDate><guid>tag:fully-faltoo.com,2013-07-14:2013/07/14/pip-local/</guid><category>python</category></item><item><title>Style snippet #1</title><link>http://fully-faltoo.com/2013/07/14/snippet-1/</link><description>&lt;p&gt;&lt;mark&gt;Starting this new &amp;#8220;style-snippet&amp;#8221; series to archive snippets of some good designs and their application.&lt;/mark&gt;&lt;/p&gt;
-&lt;p&gt;Loved the &lt;a href="http://www.google.com/fonts/specimen/Cambo"&gt;Cambo&lt;/a&gt; font used in the header of the &lt;a href="http://myusuf3.github.io/numbers.vim/"&gt;numbers package&lt;/a&gt; for&amp;nbsp;Vim.&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nt"&gt;h1&lt;/span&gt;&lt;span class="o"&gt;,&lt;/span&gt; &lt;span class="nt"&gt;h2&lt;/span&gt;&lt;span class="o"&gt;,&lt;/span&gt; &lt;span class="nt"&gt;h3&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
-    &lt;span class="k"&gt;font-family&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;Cambo&amp;#39;&lt;/span&gt;&lt;span class="o"&gt;,&lt;/span&gt; &lt;span class="k"&gt;serif&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
-    &lt;span class="k"&gt;color&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="m"&gt;#333333&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
-&lt;span class="p"&gt;}&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Pratyush Mittal</dc:creator><pubDate>Sun, 14 Jul 2013 00:00:00 +0530</pubDate><guid>tag:fully-faltoo.com,2013-07-14:2013/07/14/snippet-1/</guid><category>style</category><category>snippet</category></item><item><title>Relative symlinks in Git using subtree</title><link>http://fully-faltoo.com/2013/07/06/git-symlinks/</link><description>&lt;p&gt;I have two separate projects and both use a common set of directories. Since both the projects are under active development, I symlinked the common files. Thus the changes were incorporated in both the projects. &lt;strong&gt;However, git &lt;em&gt;does not&lt;/em&gt; follow the symbolic links and instead saves its&amp;nbsp;contents.&lt;/strong&gt;&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;$ pip install --no-index --find-links&lt;span class="o"&gt;=&lt;/span&gt;&amp;lt;DIR&amp;gt; -r requirements.txt
+&lt;/pre&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Pratyush Mittal</dc:creator><pubDate>Sun, 14 Jul 2013 00:00:00 +0530</pubDate><guid>tag:fully-faltoo.com,2013-07-14:2013/07/14/pip-local/</guid><category>python</category></item><item><title>Relative symlinks in Git using subtree</title><link>http://fully-faltoo.com/2013/07/06/git-symlinks/</link><description>&lt;p&gt;I have two separate projects and both use a common set of directories. Since both the projects are under active development, I symlinked the common files. Thus the changes were incorporated in both the projects. &lt;strong&gt;However, git &lt;em&gt;does not&lt;/em&gt; follow the symbolic links and instead saves its&amp;nbsp;contents.&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;To solve it&amp;nbsp;I:&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;Copied one of the projects into the another as a subdirectory using&amp;nbsp;subtree.&lt;/li&gt;
@@ -578,37 +566,37 @@ again and again at regular&amp;nbsp;intervals.&lt;/p&gt;</description><dc:creato
 &lt;p&gt;&lt;strong&gt;Step 1:&lt;/strong&gt; Subtree is useful (and better than submodule) for including a project into another project as a subdirectory. The main advantage is that the changes are both downstream as well as upstream. I followed &lt;a href="http://www.codeproject.com/Articles/562950/GitplusSubtreeplusMergeplus-e2-80-93TheplusQuickpl"&gt;this post&lt;/a&gt; to include the project as subtree&amp;nbsp;sub-directory.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Step 2:&lt;/strong&gt; Next step was to convert all the old symlinks (directly from main project) to symlinks from the new subtree directory. To find all the symbolic links in a directory use &lt;code&gt;$ find /path -type l&lt;/code&gt;.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Step 3:&lt;/strong&gt; The symlinks created usually contain absolute file paths (even though they might be in the same git project). Use the &lt;a href="http://bashscripts.org/forum/viewtopic.php?f=8&amp;amp;t=457"&gt;symlinks utility&lt;/a&gt; to convert all the symlinks from absolute paths to relative&amp;nbsp;paths.&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;sudo apt-get install symlinks
-&lt;span class="nv"&gt;$ &lt;/span&gt;symlinks -tscr .  &lt;span class="c"&gt;# Preview changes&lt;/span&gt;
-&lt;span class="nv"&gt;$ &lt;/span&gt;symlinks -scr .   &lt;span class="c"&gt;# Execute changes&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;$ sudo apt-get install symlinks
+$ symlinks -tscr .  &lt;span class="c1"&gt;# Preview changes&lt;/span&gt;
+$ symlinks -scr .   &lt;span class="c1"&gt;# Execute changes&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;p&gt;&lt;strong&gt;Step 4:&lt;/strong&gt; To automate all of the above, I compiled and saved the above commands in a fab file to run while committing the&amp;nbsp;changes.&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;sync_down&lt;/span&gt;&lt;span class="p"&gt;():&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;sync_down&lt;/span&gt;&lt;span class="p"&gt;():&lt;/span&gt;
     &lt;span class="sd"&gt;&amp;quot;&amp;quot;&amp;quot;Syncs downstream from remote to local branch&amp;quot;&amp;quot;&amp;quot;&lt;/span&gt;
-    &lt;span class="n"&gt;local&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;git checkout remote_branch&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-    &lt;span class="n"&gt;local&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;git pull&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-    &lt;span class="n"&gt;local&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;git checkout master&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-    &lt;span class="n"&gt;local&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;git merge --squash -s subtree &amp;#39;&lt;/span&gt;
-          &lt;span class="s"&gt;&amp;#39;--no-commit &amp;#39;&lt;/span&gt;
-          &lt;span class="s"&gt;&amp;#39;remote_branch&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+    &lt;span class="n"&gt;local&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;git checkout remote_branch&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+    &lt;span class="n"&gt;local&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;git pull&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+    &lt;span class="n"&gt;local&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;git checkout master&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+    &lt;span class="n"&gt;local&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;git merge --squash -s subtree &amp;#39;&lt;/span&gt;
+          &lt;span class="s1"&gt;&amp;#39;--no-commit &amp;#39;&lt;/span&gt;
+          &lt;span class="s1"&gt;&amp;#39;remote_branch&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 
 
 &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;sync_up&lt;/span&gt;&lt;span class="p"&gt;():&lt;/span&gt;
     &lt;span class="sd"&gt;&amp;quot;&amp;quot;&amp;quot;Syncs upstream from local to remote branch&amp;quot;&amp;quot;&amp;quot;&lt;/span&gt;
-    &lt;span class="n"&gt;local&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;git checkout remote_branch&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-    &lt;span class="n"&gt;local&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;git merge --squash -s subtree &amp;#39;&lt;/span&gt;
-          &lt;span class="s"&gt;&amp;#39;--no-commit &amp;#39;&lt;/span&gt;
-          &lt;span class="s"&gt;&amp;#39;master&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-    &lt;span class="n"&gt;local&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;git add . -A&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-    &lt;span class="n"&gt;local&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;git commit -m &amp;quot;Merged changes from remote&amp;quot;&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-    &lt;span class="n"&gt;local&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;git push remote remote_branch:master&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-    &lt;span class="n"&gt;local&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;git checkout master&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+    &lt;span class="n"&gt;local&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;git checkout remote_branch&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+    &lt;span class="n"&gt;local&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;git merge --squash -s subtree &amp;#39;&lt;/span&gt;
+          &lt;span class="s1"&gt;&amp;#39;--no-commit &amp;#39;&lt;/span&gt;
+          &lt;span class="s1"&gt;&amp;#39;master&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+    &lt;span class="n"&gt;local&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;git add . -A&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+    &lt;span class="n"&gt;local&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;git commit -m &amp;quot;Merged changes from remote&amp;quot;&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+    &lt;span class="n"&gt;local&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;git push remote remote_branch:master&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+    &lt;span class="n"&gt;local&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;git checkout master&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 
 
 &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;sync_all&lt;/span&gt;&lt;span class="p"&gt;():&lt;/span&gt;
-    &lt;span class="n"&gt;local&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;symlinks -scr .&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+    &lt;span class="n"&gt;local&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;symlinks -scr .&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
     &lt;span class="n"&gt;sync_down&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
     &lt;span class="n"&gt;sync_up&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
@@ -698,7 +686,7 @@ Thoda fightwa karo ji..&lt;br /&gt;&amp;nbsp;Moora..&lt;/p&gt;
 &lt;p&gt;Fakeimg.pl is a little tool that generates images with an &lt;span class="caps"&gt;URL&lt;/span&gt;. Choose the size, the colors, even the&amp;nbsp;text.&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;Usage&amp;nbsp;Example:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nl"&gt;http:&lt;/span&gt;&lt;span class="c1"&gt;//fakeimg.pl/439x230/282828/eae0d0/?text=Problem?&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;http://fakeimg.pl/439x230/282828/eae0d0/?text=Problem?
 &lt;/pre&gt;&lt;/div&gt;
 
 
@@ -726,12 +714,12 @@ Thoda fightwa karo ji..&lt;br /&gt;&amp;nbsp;Moora..&lt;/p&gt;
     - They too made&amp;nbsp;mistakes&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;Found the video on &lt;a href="http://jasonevanish.com/2013/01/02/lessons-from-the-biographer-of-jobs-einstein-and-franklin/"&gt;Jason&amp;#8217;s blog&lt;/a&gt;.&lt;/em&gt;&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Pratyush Mittal</dc:creator><pubDate>Thu, 03 Jan 2013 00:00:00 +0530</pubDate><guid>tag:fully-faltoo.com,2013-01-03:2013/01/03/walter-isaacson/</guid><category>"Inspirational"</category></item><item><title>Dump and restore all MySQL databases in one command</title><link>http://fully-faltoo.com/2012/12/27/dump-mysql/</link><description>&lt;p&gt;Came across this &lt;a href="http://stackoverflow.com/questions/328922/transfer-mysql-database-to-another-computer/4819610#4819610"&gt;wonderful discussion&lt;/a&gt; on StackOverflow, for dumping all the MySQL databases from command&amp;nbsp;line.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;For&amp;nbsp;dumping:&lt;/strong&gt;&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;mysqldump&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;u&lt;/span&gt; &lt;span class="n"&gt;username&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;p&lt;/span&gt; &lt;span class="o"&gt;--&lt;/span&gt;&lt;span class="n"&gt;all&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;databases&lt;/span&gt; &lt;span class="o"&gt;&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;alldbs&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;sql&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;mysqldump -u username -p --all-databases &amp;gt; alldbs.sql
 &lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;p&gt;&lt;strong&gt;For&amp;nbsp;restoring:&lt;/strong&gt;&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;mysql&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;u&lt;/span&gt; &lt;span class="n"&gt;username&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;p&lt;/span&gt; &lt;span class="o"&gt;&amp;lt;&lt;/span&gt; &lt;span class="n"&gt;alldbs&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;sql&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;mysql -u username -p &amp;lt; alldbs.sql
 &lt;/pre&gt;&lt;/div&gt;
 
 
@@ -745,7 +733,7 @@ Thoda fightwa karo ji..&lt;br /&gt;&amp;nbsp;Moora..&lt;/p&gt;
 &lt;p&gt;Below is the output of this command in my&amp;nbsp;computer.&lt;/p&gt;
 &lt;p&gt;&lt;img alt="Find NTFS partition number" src="http://fully-faltoo.com/uploads/ntfs-mount.png" /&gt;&lt;/p&gt;
 &lt;p&gt;Since I had to mount the partition with the label &amp;#8220;Storage&amp;#8221;, I entered this&amp;nbsp;command:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;udisks&lt;/span&gt; &lt;span class="o"&gt;--&lt;/span&gt;&lt;span class="n"&gt;mount&lt;/span&gt; &lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;dev&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;sda4&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;udisks --mount /dev/sda4
 &lt;/pre&gt;&lt;/div&gt;
 
 
@@ -774,7 +762,7 @@ Thoda fightwa karo ji..&lt;br /&gt;&amp;nbsp;Moora..&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;I would also add &lt;strong&gt;&amp;#8220;&lt;a href="http://modernerd.com/post/348119427/inbox-heaven"&gt;Zero Inbox&lt;/a&gt;&amp;#8221;&lt;/strong&gt; to the&amp;nbsp;list.&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Pratyush Mittal</dc:creator><pubDate>Wed, 12 Dec 2012 00:00:00 +0530</pubDate><guid>tag:fully-faltoo.com,2012-12-12:2012/12/12/life-tips/</guid><category>"Life"</category><category>"Minimalism"</category><category>"Humor"</category></item><item><title>Controlling the print style-sheets [CSS]</title><link>http://fully-faltoo.com/2012/12/11/print-stylesheets/</link><description>&lt;p&gt;There are some very useful &lt;span class="caps"&gt;CSS2&lt;/span&gt; features which allow the authors to get control on how the pages are&amp;nbsp;printed.&lt;/p&gt;
 &lt;h3&gt;Avoid the page breaks just after&amp;nbsp;headings&lt;/h3&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;h1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;h2&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;h3&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;h4&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;h5&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;h6&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt; &lt;span class="n"&gt;page&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="k"&gt;break&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;after&lt;/span&gt; &lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="n"&gt;avoid&lt;/span&gt; &lt;span class="p"&gt;}&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;h1, h2, h3, h4, h5, h6 { page-break-after : avoid }
 &lt;/pre&gt;&lt;/div&gt;
 
 
@@ -783,9 +771,9 @@ Thoda fightwa karo ji..&lt;br /&gt;&amp;nbsp;Moora..&lt;/p&gt;
 &lt;p&gt;The keyword auto is the default, it lets the browser generate page breaks as needed. The keyword always forces a page break before or after the element, while avoid suppresses a page break immediately before or after the element. The left and right keywords force one or two page breaks, so that the element is rendered on a left-hand or right-hand&amp;nbsp;page.&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;h3&gt;Prevent just a line of the paragraph from moving onto next&amp;nbsp;page&lt;/h3&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="err"&gt;@&lt;/span&gt;&lt;span class="n"&gt;page&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
-    &lt;span class="nl"&gt;orphans:&lt;/span&gt;&lt;span class="mi"&gt;4&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
-    &lt;span class="nl"&gt;widows:&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;@page&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+    &lt;span class="nt"&gt;orphans&lt;/span&gt;&lt;span class="nd"&gt;:4&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+    &lt;span class="nt"&gt;widows&lt;/span&gt;&lt;span class="nd"&gt;:2&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
 &lt;span class="p"&gt;}&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
@@ -795,7 +783,7 @@ Thoda fightwa karo ji..&lt;br /&gt;&amp;nbsp;Moora..&lt;/p&gt;
 &lt;p&gt;The &lt;code&gt;widows&lt;/code&gt; property specifies the minimum number of lines of a paragraph that must be left at the top of a&amp;nbsp;page.&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;&lt;strong&gt;&lt;a href="http://www.tutorialspoint.com/css/css_paged_media.htm"&gt;TutorialsPoint&lt;/a&gt; covers many other features for better print pages. Bookmarked it for&amp;nbsp;long!&lt;/strong&gt;&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Pratyush Mittal</dc:creator><pubDate>Tue, 11 Dec 2012 00:00:00 +0530</pubDate><guid>tag:fully-faltoo.com,2012-12-11:2012/12/11/print-stylesheets/</guid><category>"CSS"</category></item><item><title>You are using the wrong search engine!</title><link>http://fully-faltoo.com/2012/10/27/search-engine/</link><description>&lt;p&gt;&lt;img alt="Change default search engine to Google's &amp;quot;I am Feeling Lucky&amp;quot;" src="http://fully-faltoo.com/uploads/feeling-lucky.png" /&gt;&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="n"&gt;google&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="n"&gt;baseURL&lt;/span&gt;&lt;span class="p"&gt;}&lt;/span&gt;&lt;span class="n"&gt;search&lt;/span&gt;&lt;span class="o"&gt;?&lt;/span&gt;&lt;span class="n"&gt;ie&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;UTF&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mi"&gt;8&lt;/span&gt;&lt;span class="o"&gt;&amp;amp;&lt;/span&gt;&lt;span class="n"&gt;oe&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;UTF&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mi"&gt;8&lt;/span&gt;&lt;span class="o"&gt;&amp;amp;&lt;/span&gt;&lt;span class="n"&gt;sourceid&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;navclient&lt;/span&gt;&lt;span class="o"&gt;&amp;amp;&lt;/span&gt;&lt;span class="n"&gt;gfns&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="o"&gt;&amp;amp;&lt;/span&gt;&lt;span class="n"&gt;q&lt;/span&gt;&lt;span class="o"&gt;=%&lt;/span&gt;&lt;span class="n"&gt;s&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;{google:baseURL}search?ie=UTF-8&amp;amp;oe=UTF-8&amp;amp;sourceid=navclient&amp;amp;gfns=1&amp;amp;q=%s
 &lt;/pre&gt;&lt;/div&gt;
 
 
@@ -912,46 +900,46 @@ Charlie Rose: Help me understand what it takes to build a Microsoft, or to build
 &lt;p&gt;via &lt;a href="http://www.valueinvestingworld.com/2012/07/ben-franklin-quotes.html?utm_source=feedburner&amp;amp;utm_medium=feed&amp;amp;utm_campaign=Feed%3A+ValueInvestingWorld+%28Value+Investing+World%29&amp;amp;utm_content=Google+Reader"&gt;Value Investing&amp;nbsp;World&lt;/a&gt;&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Pratyush Mittal</dc:creator><pubDate>Fri, 06 Jul 2012 00:00:00 +0530</pubDate><guid>tag:fully-faltoo.com,2012-07-06:2012/07/06/ben-franklin-quotes/</guid><category>"Money"</category><category>"Inspiration"</category><category>"Quotes"</category></item><item><title>Do it today</title><link>http://fully-faltoo.com/2012/07/06/do-it-today/</link><description>&lt;p&gt;&lt;img alt="Do it today, or..." src="http://24.media.tumblr.com/tumblr_m6eh1dVLgJ1qzr04eo1_500.jpg" /&gt;&lt;/p&gt;
 &lt;p&gt;via &lt;a href="http://icanread.tumblr.com/post/26546369391"&gt;I can&amp;nbsp;read&lt;/a&gt;&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Pratyush Mittal</dc:creator><pubDate>Fri, 06 Jul 2012 00:00:00 +0530</pubDate><guid>tag:fully-faltoo.com,2012-07-06:2012/07/06/do-it-today/</guid><category>"Inspiration"</category><category>"Posters"</category></item><item><title>Jekyll bookmarklet [AutoKey script]</title><link>http://fully-faltoo.com/2012/07/05/jekyll-bookmarklet/</link><description>&lt;p&gt;Since I have &lt;a href="http://fully-faltoo.com/2012/06/30/moving-to-jekyll"&gt;moved to Jekyll&lt;/a&gt; I have been writing a lot many posts. A major reason is the easy with which I can write the posts&amp;nbsp;now.&lt;/p&gt;
 &lt;p&gt;I created a small AutoKey&amp;nbsp;script:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="k"&gt;import&lt;/span&gt; &lt;span class="nx"&gt;datetime&lt;/span&gt;
-&lt;span class="k"&gt;import&lt;/span&gt; &lt;span class="nb"&gt;time&lt;/span&gt;
-&lt;span class="k"&gt;import&lt;/span&gt; &lt;span class="nx"&gt;sys&lt;/span&gt;
-&lt;span class="k"&gt;import&lt;/span&gt; &lt;span class="nx"&gt;re&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;datetime&lt;/span&gt;
+&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;time&lt;/span&gt;
+&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;sys&lt;/span&gt;
+&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;re&lt;/span&gt;
 
-&lt;span class="err"&gt;#&lt;/span&gt; &lt;span class="nx"&gt;EDIT&lt;/span&gt; &lt;span class="o"&gt;&amp;amp;&lt;/span&gt; &lt;span class="nx"&gt;CUSTOMIZE&lt;/span&gt; &lt;span class="nx"&gt;the&lt;/span&gt; &lt;span class="nx"&gt;following&lt;/span&gt; &lt;span class="nx"&gt;two&lt;/span&gt; &lt;span class="nx"&gt;lines&lt;/span&gt;
+&lt;span class="c1"&gt;# EDIT &amp;amp; CUSTOMIZE the following two lines&lt;/span&gt;
 &lt;span class="n"&gt;location&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;/home/pratyush/Websites/pratyushmittal.github.com/&amp;#39;&lt;/span&gt;
 &lt;span class="n"&gt;text_editor&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;sublime-text-2 -n&amp;#39;&lt;/span&gt;
 
 
-&lt;span class="nx"&gt;def&lt;/span&gt; &lt;span class="nx"&gt;to_slug&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;text&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
-    &lt;span class="n"&gt;new_name&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nx"&gt;text.lower&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;&lt;span class="bp"&gt;.&lt;/span&gt;&lt;span class="nb"&gt;replace&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39; &amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;-&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-    &lt;span class="n"&gt;new_name&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nx"&gt;re.sub&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;-+&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;-&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="nx"&gt;new_name&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-    &lt;span class="n"&gt;pattern&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nx"&gt;re.compile&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;[^a-z0-9-]+&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-    &lt;span class="n"&gt;new_name&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nx"&gt;pattern.sub&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="nx"&gt;new_name&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="bp"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;strip&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;-&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-    &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="nx"&gt;new_name&lt;/span&gt;
+&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;to_slug&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;text&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+    &lt;span class="n"&gt;new_name&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;text&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;lower&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;replace&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39; &amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;-&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+    &lt;span class="n"&gt;new_name&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;re&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;sub&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;-+&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;-&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;new_name&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+    &lt;span class="n"&gt;pattern&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;re&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;compile&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;[^a-z0-9-]+&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+    &lt;span class="n"&gt;new_name&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;pattern&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;sub&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;new_name&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;strip&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;-&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+    &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="n"&gt;new_name&lt;/span&gt;
 
-&lt;span class="nx"&gt;keyboard.send_keys&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&amp;lt;ctrl&amp;gt;+c&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;span class="n"&gt;text&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nx"&gt;clipboard.get_selection&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
-&lt;span class="n"&gt;text&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;&lt;/span&gt;&lt;span class="se"&gt;\n&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;&lt;/span&gt;&lt;span class="bp"&gt;.&lt;/span&gt;&lt;span class="nb"&gt;join&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="err"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;&amp;gt; &amp;#39;&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="nb"&gt;line&lt;/span&gt; &lt;span class="nb"&gt;for&lt;/span&gt; &lt;span class="n"&gt;line&lt;/span&gt; &lt;span class="k"&gt;in&lt;/span&gt; &lt;span class="nx"&gt;text.split&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;&lt;/span&gt;&lt;span class="se"&gt;\n&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="cp"&gt;]&lt;/span&gt;)
+&lt;span class="n"&gt;keyboard&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;send_keys&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&amp;lt;ctrl&amp;gt;+c&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;text&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;clipboard&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;get_selection&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+&lt;span class="n"&gt;text&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;&lt;/span&gt;&lt;span class="se"&gt;\n&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;join&lt;/span&gt;&lt;span class="p"&gt;([&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;&amp;gt; &amp;#39;&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="n"&gt;line&lt;/span&gt; &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;line&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="n"&gt;text&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;split&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;&lt;/span&gt;&lt;span class="se"&gt;\n&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)])&lt;/span&gt;
 
-keyboard.send_keys(&amp;quot;&lt;span class="nt"&gt;&amp;lt;ctrl&amp;gt;&lt;/span&gt;+l&amp;quot;)
-time.sleep(1)
-keyboard.send_keys(&amp;quot;&lt;span class="nt"&gt;&amp;lt;ctrl&amp;gt;&lt;/span&gt;+c&amp;quot;)
-time.sleep(1)
-link = clipboard.get_selection()
-cb, post_title = dialog.input_dialog(&amp;quot;New Blog Post&amp;quot;, &amp;quot;Content: %s \nLink: %s\nPost Title:&amp;quot; % (text&lt;span class="cp"&gt;[&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="mi"&gt;140&lt;/span&gt;&lt;span class="cp"&gt;]&lt;/span&gt;, link))
-if not post_title:
-   sys.exit()
-cb, slug_title = dialog.input_dialog(&amp;quot;New Blog Post&amp;quot;, &amp;quot;Slug Title&amp;quot;, &amp;#39;%s&amp;#39; % post_title)
-slug_title = to_slug(slug_title)
+&lt;span class="n"&gt;keyboard&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;send_keys&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&amp;lt;ctrl&amp;gt;+l&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;time&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;sleep&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;keyboard&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;send_keys&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&amp;lt;ctrl&amp;gt;+c&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;time&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;sleep&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;link&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;clipboard&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;get_selection&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+&lt;span class="n"&gt;cb&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;post_title&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;dialog&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;input_dialog&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;New Blog Post&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;Content: &lt;/span&gt;&lt;span class="si"&gt;%s&lt;/span&gt;&lt;span class="s2"&gt; &lt;/span&gt;&lt;span class="se"&gt;\n&lt;/span&gt;&lt;span class="s2"&gt;Link: &lt;/span&gt;&lt;span class="si"&gt;%s&lt;/span&gt;&lt;span class="se"&gt;\n&lt;/span&gt;&lt;span class="s2"&gt;Post Title:&amp;quot;&lt;/span&gt; &lt;span class="o"&gt;%&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;text&lt;/span&gt;&lt;span class="p"&gt;[:&lt;/span&gt;&lt;span class="mi"&gt;140&lt;/span&gt;&lt;span class="p"&gt;],&lt;/span&gt; &lt;span class="n"&gt;link&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+&lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="ow"&gt;not&lt;/span&gt; &lt;span class="n"&gt;post_title&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+   &lt;span class="n"&gt;sys&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;exit&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+&lt;span class="n"&gt;cb&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;slug_title&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;dialog&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;input_dialog&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;New Blog Post&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;Slug Title&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;&lt;/span&gt;&lt;span class="si"&gt;%s&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;&lt;/span&gt; &lt;span class="o"&gt;%&lt;/span&gt; &lt;span class="n"&gt;post_title&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;slug_title&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;to_slug&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;slug_title&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 
-time_stamp = output = system.exec_command(&amp;quot;date&amp;quot;)
-postname = &amp;#39;%s-%s&amp;#39; % (datetime.datetime.now().strftime(&amp;quot;%Y-%m-%d&amp;quot;), slug_title)
-post_url = &amp;#39;%s_posts/%s.md&amp;#39; % (location, postname)
-with open(post_url, &amp;#39;w&amp;#39;) as post:
-    content = &amp;#39;---\ndate: %s\nlayout: post\ntitle: %s\ndescription: \nlink: %s\ntags: &lt;span class="cp"&gt;[&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&amp;quot;&lt;/span&gt;&lt;span class="cp"&gt;]&lt;/span&gt;\n---\n\n%s\n\n&amp;#39; % (time_stamp, post_title, link, text)
-    post.write(content)
+&lt;span class="n"&gt;time_stamp&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;output&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;system&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;exec_command&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;date&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;postname&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;&lt;/span&gt;&lt;span class="si"&gt;%s&lt;/span&gt;&lt;span class="s1"&gt;-&lt;/span&gt;&lt;span class="si"&gt;%s&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;&lt;/span&gt; &lt;span class="o"&gt;%&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;datetime&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;datetime&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;now&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;strftime&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;%Y-%m-&lt;/span&gt;&lt;span class="si"&gt;%d&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt; &lt;span class="n"&gt;slug_title&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;post_url&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;&lt;/span&gt;&lt;span class="si"&gt;%s&lt;/span&gt;&lt;span class="s1"&gt;_posts/&lt;/span&gt;&lt;span class="si"&gt;%s&lt;/span&gt;&lt;span class="s1"&gt;.md&amp;#39;&lt;/span&gt; &lt;span class="o"&gt;%&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;location&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;postname&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="k"&gt;with&lt;/span&gt; &lt;span class="nb"&gt;open&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;post_url&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;w&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="k"&gt;as&lt;/span&gt; &lt;span class="n"&gt;post&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+    &lt;span class="n"&gt;content&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;---&lt;/span&gt;&lt;span class="se"&gt;\n&lt;/span&gt;&lt;span class="s1"&gt;date: &lt;/span&gt;&lt;span class="si"&gt;%s&lt;/span&gt;&lt;span class="se"&gt;\n&lt;/span&gt;&lt;span class="s1"&gt;layout: post&lt;/span&gt;&lt;span class="se"&gt;\n&lt;/span&gt;&lt;span class="s1"&gt;title: &lt;/span&gt;&lt;span class="si"&gt;%s&lt;/span&gt;&lt;span class="se"&gt;\n&lt;/span&gt;&lt;span class="s1"&gt;description: &lt;/span&gt;&lt;span class="se"&gt;\n&lt;/span&gt;&lt;span class="s1"&gt;link: &lt;/span&gt;&lt;span class="si"&gt;%s&lt;/span&gt;&lt;span class="se"&gt;\n&lt;/span&gt;&lt;span class="s1"&gt;tags: [&amp;quot;&amp;quot;]&lt;/span&gt;&lt;span class="se"&gt;\n&lt;/span&gt;&lt;span class="s1"&gt;---&lt;/span&gt;&lt;span class="se"&gt;\n\n&lt;/span&gt;&lt;span class="si"&gt;%s&lt;/span&gt;&lt;span class="se"&gt;\n\n&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;&lt;/span&gt; &lt;span class="o"&gt;%&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;time_stamp&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;post_title&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;link&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;text&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+    &lt;span class="n"&gt;post&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;write&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;content&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 
-system.exec_command(&amp;quot;%s %s&amp;quot; % (text_editor, post_url), getOutput=False)
+&lt;span class="n"&gt;system&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;exec_command&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="si"&gt;%s&lt;/span&gt;&lt;span class="s2"&gt; &lt;/span&gt;&lt;span class="si"&gt;%s&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt; &lt;span class="o"&gt;%&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;text_editor&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;post_url&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt; &lt;span class="n"&gt;getOutput&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="bp"&gt;False&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
@@ -1111,7 +1099,7 @@ $('#fbtwt').live("click", function(e) {
 &lt;blockquote&gt;
 &lt;p&gt;Install ntfs-config from the Software Center, then it&amp;#8217;s just a matter of choosing which drives to mount and if you want to also write to the&amp;nbsp;drives.&lt;/p&gt;
 &lt;p&gt;Apparently ntfs-config crashes. To fix that you have to do&amp;nbsp;this:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;  &lt;span class="n"&gt;sudo&lt;/span&gt; &lt;span class="n"&gt;mkdir&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;p&lt;/span&gt; &lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;etc&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;hal&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;fdi&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;policy&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;  sudo mkdir -p /etc/hal/fdi/policy
 &lt;/pre&gt;&lt;/div&gt;
 
 
@@ -1119,18 +1107,18 @@ $('#fbtwt').live("click", function(e) {
 &lt;/blockquote&gt;
 &lt;p&gt;Using above method has a defect though. When you delete a file from the mounted partition, it permanently deletes it instead of sending to&amp;nbsp;rubbish-bin/thrash.&lt;/p&gt;
 &lt;p&gt;To fix above, you need to edit one line in fstab &lt;a href="http://ubuntuforums.org/showthread.php?t=1637304"&gt;via UbuntuForums&lt;/a&gt;:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;sudo&lt;/span&gt; &lt;span class="n"&gt;cp&lt;/span&gt; &lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;etc&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;fstab&lt;/span&gt; &lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;etc&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;fstab&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;bckup&lt;/span&gt;
-&lt;span class="n"&gt;gksu&lt;/span&gt; &lt;span class="n"&gt;gedit&lt;/span&gt; &lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;etc&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;fstab&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo cp /etc/fstab /etc/fstab.bckup
+gksu gedit /etc/fstab
 &lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;p&gt;Now replace portion &lt;strong&gt;after&lt;/strong&gt; ntfs-3g&amp;nbsp;with:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;defaults&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="n"&gt;utf8&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="n"&gt;umask&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mo"&gt;007&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="n"&gt;uid&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;1000&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="n"&gt;gid&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;1000&lt;/span&gt;   &lt;span class="mi"&gt;0&lt;/span&gt;   &lt;span class="mi"&gt;1&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;defaults,utf8,umask=007,uid=1000,gid=1000   0   1
 &lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;p&gt;thus the line may look&amp;nbsp;like:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;UUID&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;286&lt;/span&gt;&lt;span class="n"&gt;A0F8071DF401A&lt;/span&gt;   &lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;media&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;Storage&lt;/span&gt;  &lt;span class="n"&gt;ntfs&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="n"&gt;g&lt;/span&gt; &lt;span class="n"&gt;defaults&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="n"&gt;utf8&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="n"&gt;umask&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mo"&gt;007&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="n"&gt;uid&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;1000&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="n"&gt;gid&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;1000&lt;/span&gt;   &lt;span class="mi"&gt;0&lt;/span&gt;   &lt;span class="mi"&gt;1&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;UUID=286A0F8071DF401A   /media/Storage  ntfs-3g defaults,utf8,umask=007,uid=1000,gid=1000   0   1
 &lt;/pre&gt;&lt;/div&gt;
 
 

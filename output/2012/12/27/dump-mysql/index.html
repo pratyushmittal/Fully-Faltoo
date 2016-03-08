@@ -25,12 +25,12 @@
   <div class="page-content">
     <div class="post"><p>Came across this <a href="http://stackoverflow.com/questions/328922/transfer-mysql-database-to-another-computer/4819610#4819610">wonderful discussion</a> on StackOverflow, for dumping all the MySQL databases from command&nbsp;line.</p>
 <p><strong>For&nbsp;dumping:</strong></p>
-<div class="highlight"><pre><span class="n">mysqldump</span> <span class="o">-</span><span class="n">u</span> <span class="n">username</span> <span class="o">-</span><span class="n">p</span> <span class="o">--</span><span class="n">all</span><span class="o">-</span><span class="n">databases</span> <span class="o">&gt;</span> <span class="n">alldbs</span><span class="p">.</span><span class="n">sql</span>
+<div class="highlight"><pre><span></span>mysqldump -u username -p --all-databases &gt; alldbs.sql
 </pre></div>
 
 
 <p><strong>For&nbsp;restoring:</strong></p>
-<div class="highlight"><pre><span class="n">mysql</span> <span class="o">-</span><span class="n">u</span> <span class="n">username</span> <span class="o">-</span><span class="n">p</span> <span class="o">&lt;</span> <span class="n">alldbs</span><span class="p">.</span><span class="n">sql</span>
+<div class="highlight"><pre><span></span>mysql -u username -p &lt; alldbs.sql
 </pre></div>
 
 

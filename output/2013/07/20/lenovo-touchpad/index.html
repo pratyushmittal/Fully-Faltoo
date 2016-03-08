@@ -25,37 +25,37 @@
   <div class="page-content">
     <div class="post"><p>I recently moved from Dell Studio to Lenovo&#8217;s Thinkpad Edge E430 laptop. It is an all-Intel machine and the drivers support is quite good. Initially the touchpad felt over sensitive as the cursor jumped a few pixels on finger lifts. Luckily, it is a common <a href="https://bugs.launchpad.net/ubuntu/+source/xserver-xorg-input-synaptics/+bug/1042069">touchpad issue on Lenovo machines</a> and easily&nbsp;fixable.</p>
 <p>Create the following config file in <code>/usr/share/X11/xorg.conf.d/50-thinkpad-touchpad.conf</code> (create <code>xorg.conf.d</code> directory if it doesn&#8217;t&nbsp;exist):</p>
-<div class="highlight"><pre><span class="n">Section</span> <span class="s">&quot;InputClass&quot;</span>
-        <span class="n">Identifier</span> <span class="s">&quot;touchpad&quot;</span>
-        <span class="n">MatchProduct</span> <span class="s">&quot;SynPS/2 Synaptics TouchPad&quot;</span>
-        <span class="n">Driver</span> <span class="s">&quot;synaptics&quot;</span>
-        <span class="err">#</span> <span class="n">fix</span> <span class="n">touchpad</span> <span class="n">resolution</span>
-        <span class="n">Option</span> <span class="s">&quot;VertResolution&quot;</span> <span class="s">&quot;100&quot;</span>
-        <span class="n">Option</span> <span class="s">&quot;HorizResolution&quot;</span> <span class="s">&quot;65&quot;</span>
-        <span class="err">#</span> <span class="n">increment</span> <span class="n">noise</span> <span class="n">cancellation</span> <span class="n">factor</span>
-        <span class="n">Option</span> <span class="s">&quot;HorizHysteresis&quot;</span> <span class="s">&quot;50&quot;</span>
-        <span class="n">Option</span> <span class="s">&quot;VertHysteresis&quot;</span> <span class="s">&quot;50&quot;</span>
-<span class="n">EndSection</span>
+<div class="highlight"><pre><span></span>Section &quot;InputClass&quot;
+        Identifier &quot;touchpad&quot;
+        MatchProduct &quot;SynPS/2 Synaptics TouchPad&quot;
+        Driver &quot;synaptics&quot;
+        # fix touchpad resolution
+        Option &quot;VertResolution&quot; &quot;100&quot;
+        Option &quot;HorizResolution&quot; &quot;65&quot;
+        # increment noise cancellation factor
+        Option &quot;HorizHysteresis&quot; &quot;50&quot;
+        Option &quot;VertHysteresis&quot; &quot;50&quot;
+EndSection
 </pre></div>
 
 
 <p><strong>Update for ArchLinux</strong>: file path <code>/etc/X11/xorg.conf.d/50-thinkpad-touchpad.conf</code></p>
-<div class="highlight"><pre><span class="n">Section</span> <span class="s">&quot;InputClass&quot;</span>
-        <span class="n">Identifier</span> <span class="s">&quot;touchpad&quot;</span>
-        <span class="n">MatchProduct</span> <span class="s">&quot;SynPS/2 Synaptics TouchPad&quot;</span>
-        <span class="n">Driver</span> <span class="s">&quot;synaptics&quot;</span>
-        <span class="err">#</span> <span class="n">fix</span> <span class="n">touchpad</span> <span class="n">resolution</span>
-        <span class="n">Option</span> <span class="s">&quot;VertResolution&quot;</span> <span class="s">&quot;100&quot;</span>
-        <span class="n">Option</span> <span class="s">&quot;HorizResolution&quot;</span> <span class="s">&quot;65&quot;</span>
-        <span class="err">#</span> <span class="n">disable</span> <span class="n">synaptics</span> <span class="n">driver</span> <span class="n">pointer</span> <span class="n">acceleration</span>
-        <span class="n">Option</span> <span class="s">&quot;MinSpeed&quot;</span> <span class="s">&quot;1&quot;</span>
-        <span class="n">Option</span> <span class="s">&quot;MaxSpeed&quot;</span> <span class="s">&quot;1&quot;</span>
-        <span class="err">#</span> <span class="n">tweak</span> <span class="n">the</span> <span class="n">X</span><span class="o">-</span><span class="n">server</span> <span class="n">pointer</span> <span class="n">acceleration</span>
-        <span class="n">Option</span> <span class="s">&quot;AccelerationProfile&quot;</span> <span class="s">&quot;2&quot;</span>
-        <span class="n">Option</span> <span class="s">&quot;AdaptiveDeceleration&quot;</span> <span class="s">&quot;16&quot;</span>
-        <span class="n">Option</span> <span class="s">&quot;ConstantDeceleration&quot;</span> <span class="s">&quot;16&quot;</span>
-        <span class="n">Option</span> <span class="s">&quot;VelocityScale&quot;</span> <span class="s">&quot;128&quot;</span>
-<span class="n">EndSection</span>
+<div class="highlight"><pre><span></span>Section &quot;InputClass&quot;
+        Identifier &quot;touchpad&quot;
+        MatchProduct &quot;SynPS/2 Synaptics TouchPad&quot;
+        Driver &quot;synaptics&quot;
+        # fix touchpad resolution
+        Option &quot;VertResolution&quot; &quot;100&quot;
+        Option &quot;HorizResolution&quot; &quot;65&quot;
+        # disable synaptics driver pointer acceleration
+        Option &quot;MinSpeed&quot; &quot;1&quot;
+        Option &quot;MaxSpeed&quot; &quot;1&quot;
+        # tweak the X-server pointer acceleration
+        Option &quot;AccelerationProfile&quot; &quot;2&quot;
+        Option &quot;AdaptiveDeceleration&quot; &quot;16&quot;
+        Option &quot;ConstantDeceleration&quot; &quot;16&quot;
+        Option &quot;VelocityScale&quot; &quot;128&quot;
+EndSection
 </pre></div>
 
 

@@ -1,4 +1,4 @@
-﻿# -*- coding: utf-8 -*-
+# -*- coding: utf-8 -*-
 '''
 Sitemap
 -------
@@ -8,12 +8,14 @@ The sitemap plugin generates plain-text or XML sitemaps.
 
 from __future__ import unicode_literals
 
+import re
 import collections
 import os.path
 
 from datetime import datetime
 from logging import warning, info
 from codecs import open
+from pytz import timezone
 
 from pelican import signals, contents
 from pelican.utils import get_date
@@ -46,7 +48,7 @@ XML_FOOTER = """
 
 def format_date(date):
     if date.tzinfo:
-        tz = date.strftime('%s')
+        tz = date.strftime('%z')
         tz = tz[:-2] + ':' + tz[-2:]
     else:
         tz = "-00:00"
@@ -60,6 +62,11 @@ class SitemapGenerator(object):
         self.context = context
         self.now = datetime.now()
         self.siteurl = settings.get('SITEURL')
+
+
+        self.default_timezone = settings.get('TIMEZONE', 'UTC')
+        self.timezone = getattr(self, 'timezone', self.default_timezone)
+        self.timezone = timezone(self.timezone)
 
         self.format = 'xml'
 
@@ -75,6 +82,8 @@ class SitemapGenerator(object):
             'pages': 0.5
         }
 
+        self.sitemapExclude = []
+
         config = settings.get('SITEMAP', {})
 
         if not isinstance(config, dict):
@@ -83,6 +92,7 @@ class SitemapGenerator(object):
             fmt = config.get('format')
             pris = config.get('priorities')
             chfreqs = config.get('changefreqs')
+            self.sitemapExclude = config.get('exclude', [])
 
             if fmt not in ('xml', 'txt'):
                 warning("sitemap plugin: SITEMAP['format'] must be `txt' or `xml'")
@@ -128,7 +138,11 @@ class SitemapGenerator(object):
         if getattr(page, 'status', 'published') != 'published':
             return
 
-        page_path = os.path.join(self.output_path, page.url)
+        # We can disable categories/authors/etc by using False instead of ''
+        if not page.save_as:
+            return
+
+        page_path = os.path.join(self.output_path, page.save_as)
         if not os.path.exists(page_path):
             return
 
@@ -136,7 +150,7 @@ class SitemapGenerator(object):
         try:
             lastdate = self.get_date_modified(page, lastdate)
         except ValueError:
-            warning("sitemap plugin: " + page.url + " has invalid modification date,")
+            warning("sitemap plugin: " + page.save_as + " has invalid modification date,")
             warning("sitemap plugin: using date value as lastmod.")
         lastmod = format_date(lastdate)
 
@@ -150,11 +164,19 @@ class SitemapGenerator(object):
             pri = self.priorities['indexes']
             chfreq = self.changefreqs['indexes']
 
-
+        pageurl = '' if page.url == 'index.html' else page.url
+        
+        #Exclude URLs from the sitemap:
         if self.format == 'xml':
-            fd.write(XML_URL.format(self.siteurl, page.url, lastmod, chfreq, pri))
+            flag = False
+            for regstr in self.sitemapExclude:
+                if re.match(regstr, pageurl):
+                    flag = True
+                    break
+            if not flag:
+                fd.write(XML_URL.format(self.siteurl, pageurl, lastmod, chfreq, pri))
         else:
-            fd.write(self.siteurl + '/' + loc + '\n')
+            fd.write(self.siteurl + '/' + pageurl + '\n')
 
     def get_date_modified(self, page, default):
         if hasattr(page, 'modified'):
@@ -166,11 +188,11 @@ class SitemapGenerator(object):
 
     def set_url_wrappers_modification_date(self, wrappers):
         for (wrapper, articles) in wrappers:
-            lastmod = datetime.min
+            lastmod = datetime.min.replace(tzinfo=self.timezone)
             for article in articles:
-                lastmod = max(lastmod, article.date)
+                lastmod = max(lastmod, article.date.replace(tzinfo=self.timezone))
                 try:
-                    modified = self.get_date_modified(article, datetime.min);
+                    modified = self.get_date_modified(article, datetime.min).replace(tzinfo=self.timezone)
                     lastmod = max(lastmod, modified)
                 except ValueError:
                     # Supressed: user will be notified.
@@ -188,7 +210,7 @@ class SitemapGenerator(object):
         self.set_url_wrappers_modification_date(self.context['categories'])
         self.set_url_wrappers_modification_date(self.context['tags'])
         self.set_url_wrappers_modification_date(self.context['authors'])
-                
+
         for article in self.context['articles']:
             pages += article.translations
 
@@ -204,7 +226,8 @@ class SitemapGenerator(object):
             FakePage = collections.namedtuple('FakePage',
                                               ['status',
                                                'date',
-                                               'url'])
+                                               'url',
+                                               'save_as'])
 
             for standard_page_url in ['index.html',
                                       'archives.html',
@@ -212,7 +235,8 @@ class SitemapGenerator(object):
                                       'categories.html']:
                 fake = FakePage(status='published',
                                 date=self.now,
-                                url=standard_page_url)
+                                url=standard_page_url,
+                                save_as=standard_page_url)
                 self.write_url(fake, fd)
 
             for page in pages:

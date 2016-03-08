@@ -16,21 +16,6 @@
     </header>
     <div class="content"><article class="entry">
   <div class="page-header">
-    <h1><a href="http://fully-faltoo.com/2015/06/25/angularjs-adding-content-outside-ng-view/">AngularJS - Adding content outside&nbsp;ng-view</a>    </h1>
-    <p class="meta sub"><a href="http://fully-faltoo.com/2015/06/25/angularjs-adding-content-outside-ng-view/"><small>Posted on Thu 25 June 2015</small></a>
-    </p>
-  </div>
-  <div class="page-content">
-    <div class="post"><p>One of the common problem patterns in AngularJS is adding content outside the <code>ng-view</code>,
-such as having context specific sidebars or&nbsp;toolbars.</p>
-<p>I liked the solution of <a href="http://apparently.me.uk/angularjs-view-specific-sidebars/">Martin Atkins</a>. He suggests using <code>block</code> like placeholders
-for specifying insertions. This is my implementation based on&nbsp;it.</p>
-<script src="https://gist.github.com/pratyushmittal/92d1c5ca8f012cff074a.js"></script>
-
-<p>Complete implementation demo: <a href="http://plnkr.co/edit/w0B0hK?p=preview">http://plnkr.co/edit/w0B0hK?p=preview</a></p>    </div>
-  </div>
-</article><article class="entry">
-  <div class="page-header">
     <h1><a href="http://fully-faltoo.com/2015/04/07/china/">Visiting China -&nbsp;Tips</a>    </h1>
     <p class="meta sub"><a href="http://fully-faltoo.com/2015/04/07/china/"><small>Posted on Tue 07 April 2015</small></a>
     </p>
@@ -108,24 +93,24 @@ usually sufficient for temporary memory extensive
 needs. These is a short documentation on how to
 add the swap&nbsp;partition.</p>
 <p>Adding a swap&nbsp;partition:</p>
-<div class="highlight"><pre><span class="n">sudo</span> <span class="n">dd</span> <span class="k">if</span><span class="o">=/</span><span class="n">dev</span><span class="o">/</span><span class="n">zero</span> <span class="n">of</span><span class="o">=/</span><span class="n">swap</span> <span class="n">bs</span><span class="o">=</span><span class="mi">1</span><span class="n">M</span> <span class="n">count</span><span class="o">=</span><span class="mi">1024</span>
-<span class="n">sudo</span> <span class="n">mkswap</span> <span class="o">/</span><span class="n">swap</span>
-<span class="n">sudo</span> <span class="n">swapon</span> <span class="o">/</span><span class="n">swap</span>
+<div class="highlight"><pre><span></span>sudo dd if=/dev/zero of=/swap bs=1M count=1024
+sudo mkswap /swap
+sudo swapon /swap
 </pre></div>
 
 
 <p>Making the partition persistent on system&nbsp;reboots:</p>
-<div class="highlight"><pre><span class="n">sudo</span> <span class="n">vi</span> <span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">fstab</span>
-<span class="cp"># Add a line to tell the system to use the file</span>
-<span class="o">/</span><span class="n">swap</span>   <span class="n">none</span>    <span class="n">swap</span>    <span class="n">sw</span>  <span class="mi">0</span>   <span class="mi">0</span>
+<div class="highlight"><pre><span></span>sudo vi /etc/fstab
+# Add a line to tell the system to use the file
+/swap   none    swap    sw  0   0
 </pre></div>
 
 
 <p>Optimize <code>swappiness</code> and <code>vfc_cache_pressure</code> <em><a href="https://www.digitalocean.com/community/tutorials/how-to-add-swap-on-ubuntu-14-04">for <span class="caps">VPS</span> needs</a></em>:</p>
-<div class="highlight"><pre><span class="n">sudo</span> <span class="n">vi</span> <span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">sysctl</span><span class="p">.</span><span class="n">conf</span>
-<span class="cp"># Add the following at the bottom</span>
-<span class="n">vm</span><span class="p">.</span><span class="n">vfs_cache_pressure</span> <span class="o">=</span> <span class="mi">50</span>
-<span class="n">vm</span><span class="p">.</span><span class="n">swappiness</span> <span class="o">=</span> <span class="mi">10</span>
+<div class="highlight"><pre><span></span>sudo vi /etc/sysctl.conf
+# Add the following at the bottom
+vm.vfs_cache_pressure = 50
+vm.swappiness = 10
 </pre></div>
 
 
@@ -184,17 +169,17 @@ of the workshop we learned to write our own trace,
 memorize / cache and routing&nbsp;decorators.</p>
 <p>Apart from decorators, I also learned about
 various magic commands in IPython&nbsp;Notebook:</p>
-<div class="highlight"><pre><span class="c">%%file filename.py</span>
-# <span class="n">Python</span> <span class="n">Code</span>
-# <span class="n">below</span> <span class="n">it</span> <span class="n">will</span> <span class="n">save</span> <span class="n">the</span> <span class="n">code</span>
-# <span class="n">in</span> <span class="n">the</span> <span class="n">given</span> <span class="n">filename</span>
+<div class="highlight"><pre><span></span><span class="o">%</span><span class="nf">%file</span> <span class="n">filename</span><span class="p">.</span><span class="n">py</span>
+<span class="cp"># Python Code</span>
+<span class="cp"># below it will save the code</span>
+<span class="cp"># in the given filename</span>
 
-<span class="sx">!python filename.py</span>
-# <span class="n">using</span> ! <span class="n">we</span> <span class="n">can</span> <span class="n">run</span> <span class="n">bash</span><span class="o">-</span><span class="n">commands</span>
+<span class="o">!</span><span class="n">python</span> <span class="n">filename</span><span class="p">.</span><span class="n">py</span>
+<span class="cp"># using ! we can run bash-commands</span>
 
-<span class="c">%magic</span>
-# <span class="n">To</span> <span class="n">see</span> <span class="n">all</span> <span class="n">the</span> <span class="n">available</span> <span class="nb">magic</span> <span class="n">commands</span> <span class="n">in</span> <span class="n">IPython</span>
-# <span class="p">(</span><span class="n">found</span> <span class="n">in</span> <span class="n">an</span> <span class="n">interaction</span> <span class="n">with</span> <span class="n">Eswar</span> <span class="n">Vandanapu</span><span class="p">)</span>
+<span class="nf">%magic</span>
+<span class="cp"># To see all the available magic commands in IPython</span>
+<span class="cp"># (found in an interaction with Eswar Vandanapu)</span>
 </pre></div>
 
 
@@ -365,9 +350,9 @@ backup snapshots of&nbsp;databases.</p>
 <p>I found these two commands <a href="http://stackoverflow.com/questions/328922/transfer-mysql-database-to-another-computer/4819610#4819610">here</a>.</p>
 <hr />
 <p><code>ssh -D 31500 user@example.com</code>: This turns the <span class="caps">SSH</span> client into a <span class="caps">SOCKS</span> proxy server. It provides me a <span class="caps">VPN</span> on the fly. So if a website refuses to open, or is restricted to a particular country, I run this command and then update the proxy settings in Firefox as&nbsp;below:</p>
-<div class="highlight"><pre><span class="mf">1.</span> <span class="n">Enable</span> <span class="n">proxy</span> <span class="n">in</span> <span class="n">firefox</span><span class="p">.</span>
-<span class="mf">2.</span> <span class="n">Enter</span> <span class="s">&quot;127.0.0.1&quot;</span> <span class="k">for</span> <span class="s">&quot;SOCKS Host&quot;</span>
-<span class="mf">3.</span> <span class="n">Enter</span> <span class="s">&quot;31500&quot;</span> <span class="p">(</span><span class="n">or</span> <span class="n">whatever</span> <span class="n">port</span> <span class="n">we</span> <span class="n">chose</span><span class="p">)</span> <span class="k">for</span> <span class="n">Port</span><span class="p">.</span>
+<div class="highlight"><pre><span></span>1. Enable proxy in firefox.
+2. Enter &quot;127.0.0.1&quot; for &quot;SOCKS Host&quot;
+3. Enter &quot;31500&quot; (or whatever port we chose) for Port.
 </pre></div>
 
 
@@ -533,8 +518,74 @@ game: <a href="http://boardgamegeek.com/filepage/109882/english-rules-one-night-
 <p><a href="http://fully-faltoo.com/uploads/werewolf.pdf">Mirror</a> of the above rule&nbsp;book.</p>
 <p>I find this variation even&nbsp;better.</p>    </div>
   </div>
+</article><article class="entry">
+  <div class="page-header">
+    <h1><a href="http://fully-faltoo.com/2013/11/16/dhoni/">Dhoni&#8217;s advice to young&nbsp;players</a>    </h1>
+    <p class="meta sub"><a href="http://fully-faltoo.com/2013/11/16/dhoni/"><small>Posted on Sat 16 November 2013</small></a>
+    </p>
+  </div>
+  <div class="page-content">
+    <div class="post"><p><img alt="Dhoni's shot in world cup final 2011" src="http://fully-faltoo.com/uploads/dhoni.jpg" /></p>
+<p>Of all the sportsmen, I admire <span class="caps">MS</span> Dhoni and Brian Lara the
+most. Whether India wins or not, I try to hear his words
+and learn from his temperament. Found this <a href="http://www.mid-day.com/sports/2013/apr/230413-ms-dhoni-sports-psychologist-rudi-webster-interview.htm">wonderful
+interview</a> of Dhoni where he talks about the role
+of mind, and gives advice on how to be a better player.
+These advice apply as well to other things as to&nbsp;cricket.</p>
+<blockquote>
+<p><strong>What advice would you give to a young player who wants
+to improve his&nbsp;game?</strong></p>
+<p>First and foremost, I would tell him that he <strong>must love and
+enjoy his sport</strong>. If he does not enjoy it he would not
+learn to play the game as quickly or as well as he should.
+Second, I would tell him to <strong>keep things simple</strong>. The more
+he complicates the process the harder it will be for him
+to improve his game. For example, when he tells himself to
+watch the ball and play it on its merits, he might have
+other thoughts like scoring runs or not getting out in his&nbsp;mind.</p>
+<p>Those thoughts can break his concentration and prevent him
+from watching the ball. If he knows that the bowler can
+bowl an out-swinger, an in-swinger and a good bouncer as
+well, he has three other things to think about. But the
+more he thinks about what the bowler might do the more
+complex and difficult batting&nbsp;becomes.</p>
+<p>Third, I would tell him to capitalise on his strengths,
+improve his weaknesses and recognise his&nbsp;limitations.</p>
+<p>A lot of people talk about the problems players face when
+they have to play in conditions that are foreign to them.
+For instance, when Indian batsmen who are brought up on
+slow flat wickets have to play on the fast and bouncy
+wickets in Australia and South&nbsp;Africa.</p>
+<p>When I go to Australia or South Africa I <strong>try to be
+positive and see the visit as a challenge and an
+opportunity to explore, learn and improve my game</strong>. I try
+not to be negative or worry about the pace and bounce of
+the wickets or the things that could possibly go&nbsp;wrong.</p>
+<p><strong>Learning and improvement take time.</strong> When you leave nursery
+school you don’t expect to go straight into a graduate
+school. In the following years you slowly improve as a
+student and when you reach a certain standard you graduate
+and afterwards go on to higher levels. The same thing
+happens in&nbsp;sport.</p>
+<p>The player should therefore <strong>be patient and persistent and
+he should keep things simple and enjoy his sport.</strong> Not only
+should he enjoy his own performance on the field but he
+should also <strong>get pleasure from sharing his experiences with
+other players and from creating an atmosphere that helps
+the guy sitting next to him in the dressing room to
+perform&nbsp;better.</strong></p>
+<p>This is one area where the Indian team is very blessed.
+The senior players in our team have helped the younger
+players to learn, develop and perform better. Your
+individual performance is important but how much better
+you help your teammate to play better is equally&nbsp;important.</p>
+</blockquote>
+<p>This was just one of the passages from the <a href="http://www.mid-day.com/sports/2013/apr/230413-ms-dhoni-sports-psychologist-rudi-webster-interview.htm">complete
+interview</a>. Would try to go through the interview
+again and again at regular&nbsp;intervals.</p>    </div>
+  </div>
 </article><p class="paginator center">
-    Page 1 / 52
+    Page 1 / 51
         <a href="http://fully-faltoo.com/page/2/">Older posts &raquo;</a>
 </p>
       <footer class="footer">
