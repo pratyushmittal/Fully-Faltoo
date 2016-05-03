@@ -1,5 +1,4 @@
-@import url(http://fonts.googleapis.com/css?family=Raleway:500,700);
-@import url(http://fonts.googleapis.com/css?family=Architects+Daughter);
+@import url(https://fonts.googleapis.com/css?family=Lato:400,400italic,700);
 @import url(http://fonts.googleapis.com/css?family=PT+Mono);
 
 /* General styles */
@@ -8,13 +7,13 @@ body {
     padding: 0;
     color:#333333;
     font-size:100%;
-    font-family: 'Raleway','Helvetica Neue', Helvetica, Arial;
+    font-family: 'Lato','Helvetica Neue', Helvetica, Arial;
     min-height:480px;
     min-width:320px;
 }
 
 a {
-    color:#b371b3;
+    color: #3388EE;
     text-decoration: none;
 }
 
@@ -49,7 +48,7 @@ a:hover {
 
 /* Other General Style */
 h1, h2, h3, h4, h5, h6, .header, .footer {
-  font-family: 'Architects Daughter', cursive;
+  font-weight: bold;
   text-rendering: optimizelegibility;
 }
 
@@ -120,7 +119,6 @@ p, li {
   padding-bottom:2.5em;
 }
 .page-header h1 {
-  font-weight: normal;
   line-height: 1.35em;
 }
 .page-header {

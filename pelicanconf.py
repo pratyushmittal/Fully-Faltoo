@@ -101,7 +101,6 @@ CATEGORY_FEED_ATOM = None
 
 
 # Writing Settings
-JINJA_EXTENSIONS = ['pyjade.ext.jinja.PyJadeExtension']
 THEME = "theme/faltoo"
 READERS = {'html': None, 'rst': None}
 PATH = "content"

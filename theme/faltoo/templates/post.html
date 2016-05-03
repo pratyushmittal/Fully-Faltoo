@@ -1,0 +1,33 @@
+<article class="entry">
+  <div class="page-header">
+    <h1>
+      {% if article.link %}
+        <a class="external" href="{{ article.link }}">{{ article.title }}</a>
+      {% elif not article_page %}
+        <a href="{{ SITEURL }}/{{ article.url }}">{{ article.title }}</a>
+      {% else %}
+        {{ article.title }}
+      {% endif %}
+    </h1>
+    <p class="meta sub">
+      <a href="{{ SITEURL }}/{{ article.url }}">
+        <small>
+          Posted on {{ article.locale_date }}
+        </small>
+      </a>
+    </p>
+  </div>
+
+  <div class="page-content">
+    <div class="post">
+      {{ article.content|safe }}
+      {% if article.link and article_page %}
+        <p>
+          <a class="external" href="{{ article.link }}">
+            {{ article.title }}
+          </a>
+        </p>
+      {% endif %}
+    </div>
+  </div>
+</article>

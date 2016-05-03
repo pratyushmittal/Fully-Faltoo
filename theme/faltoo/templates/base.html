@@ -2,18 +2,20 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <meta name="author" content="Pratyush Mittal">
+    <meta name="author" content="{{ AUTHOR }}">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-    <title>  Spelling&nbsp;rules
-</title>
+    <title>{% block title %}{{ SITENAME }}{% endblock %}</title>
 
-    <link rel="alternate" href="http://feeds.feedburner.com/fullyfaltoo" title="A Fully-Faltoo Blog RSS Feed" type="application/rss+xml">
+    {% if FEED_RSS %}
+    <link rel="alternate" href="{{ FEED_DOMAIN }}" title="{{ SITENAME }} RSS Feed" type="application/rss+xml">
+    {% endif %}
 
     <link rel="shortcut icon" href="/favicon.ico">
     <link rel="icon" href="/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="/theme/css/css.css" type="text/css">
 
+    {% block head %}{% endblock %}
   </head>
   <body>
     <header class="header content">
@@ -26,30 +28,7 @@
     </header>
 
     <div class="content">
-
-<article class="entry">
-  <div class="page-header">
-    <h1>
-        Spelling&nbsp;rules
-    </h1>
-    <p class="meta sub">
-      <a href="http://fully-faltoo.com/2008/11/18/spelling-rules/">
-        <small>
-          Posted on Tue 18 November 2008
-        </small>
-      </a>
-    </p>
-  </div>
-
-  <div class="page-content">
-    <div class="post">
-      <iframe width="400" height="300" src="http://www.youtube.com/embed/WlV8Cf3yb7U?wmode=transparent&autohide=1&egm=0&hd=1&iv_load_policy=3&modestbranding=1&rel=0&showinfo=0&showsearch=0" frameborder="0" allowfullscreen></iframe>
-
-<p>Spelling Rules (say no to mistakes now) (via <a href="http://youtube.com/user/adjectivesgirl" target="_blank">adjectivesgirl</a>)</p>
-    </div>
-  </div>
-</article>  <hr>
-
+      {% block content %}{% endblock %}
 
       <footer class="footer">
         <p>
@@ -69,5 +48,6 @@
         </p>
       </footer>
     </div>
+    {% block body_end %}{% endblock %}
   </body>
 </html>

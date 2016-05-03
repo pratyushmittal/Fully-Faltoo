@@ -1,29 +1,49 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
   <head>
     <meta charset="utf-8">
     <meta name="author" content="Pratyush Mittal">
-    <title>Dump and restore all MySQL databases in one&nbsp;command
-    </title>
-    <link href="http://feeds.feedburner.com/fullyfaltoo" type="application/rss+xml" rel="alternate" title="A Fully-Faltoo Blog RSS Feed">    <link rel="shortcut icon" href="/favicon.ico">
-    <link href="/favicon.ico" type="image/x-icon" rel="icon">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <link rel="stylesheet" type="text/css" href="/theme/css/css.css">  </head>
+
+    <title>  Dump and restore all MySQL databases in one&nbsp;command
+</title>
+
+    <link rel="alternate" href="http://feeds.feedburner.com/fullyfaltoo" title="A Fully-Faltoo Blog RSS Feed" type="application/rss+xml">
+
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="/theme/css/css.css" type="text/css">
+
+  </head>
   <body>
     <header class="header content">
-      <div class="center"><a href="/"><img src="/theme/images/logo.png" alt="Pratyush - A <GeeK>!!!"></a>
+      <div class="center">
+        <a href="/">
+          <img src="/theme/images/logo.png" alt="Pratyush - A <GeeK>!!!" />
+        </a>
       </div>
       <div class="fix"></div>
     </header>
-    <div class="content"><article class="entry">
+
+    <div class="content">
+
+<article class="entry">
   <div class="page-header">
-    <h1>Dump and restore all MySQL databases in one&nbsp;command
+    <h1>
+        Dump and restore all MySQL databases in one&nbsp;command
     </h1>
-    <p class="meta sub"><a href="http://fully-faltoo.com/2012/12/27/dump-mysql/"><small>Posted on Thu 27 December 2012</small></a>
+    <p class="meta sub">
+      <a href="http://fully-faltoo.com/2012/12/27/dump-mysql/">
+        <small>
+          Posted on Thu 27 December 2012
+        </small>
+      </a>
     </p>
   </div>
+
   <div class="page-content">
-    <div class="post"><p>Came across this <a href="http://stackoverflow.com/questions/328922/transfer-mysql-database-to-another-computer/4819610#4819610">wonderful discussion</a> on StackOverflow, for dumping all the MySQL databases from command&nbsp;line.</p>
+    <div class="post">
+      <p>Came across this <a href="http://stackoverflow.com/questions/328922/transfer-mysql-database-to-another-computer/4819610#4819610">wonderful discussion</a> on StackOverflow, for dumping all the MySQL databases from command&nbsp;line.</p>
 <p><strong>For&nbsp;dumping:</strong></p>
 <div class="highlight"><pre><span></span>mysqldump -u username -p --all-databases &gt; alldbs.sql
 </pre></div>
@@ -34,25 +54,43 @@
 </pre></div>
 
 
-<p>The advantage is that it is very quick, and you do not lose the user&nbsp;privileges.</p>    </div>
+<p>The advantage is that it is very quick, and you do not lose the user&nbsp;privileges.</p>
+    </div>
   </div>
-</article><hr/><div class="comments">
-  <h3>Add comment or <a href="https://twitter.com/share" data-via="faltoo" class="twitter-share-button">Tweet it</a>
-  </h3>
-  <div id="disqus_thread"></div>
-  <script>var disqus_identifier = "2012/12/27/dump-mysql/";
-var disqus_url = "http://fully-faltoo.com/2012/12/27/dump-mysql/";
-(function() {
-var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-dsq.src = 'http://fully-faltoo.disqus.com/embed.js';
-(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-})();
+</article>  <hr>
 
-</script>
-</div>      <footer class="footer">
-        <p><a href="/pages/about/">Who is Pratyush?</a><a href="http://feedburner.google.com/fb/a/mailverify?uri=fullyfaltoo" class="right">Get updates via Email</a>
+  <div class="comments">
+    <h3>
+      Add comment or
+      <a class="twitter-share-button" href="https://twitter.com/share">Tweet it</a>
+    </h3>
+    <div id="disqus_thread"></div>
+    <script type="text/javascript">
+      var disqus_identifier = "2012/12/27/dump-mysql/";
+      var disqus_url = "http://fully-faltoo.com/2012/12/27/dump-mysql/";
+      (function() {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://fully-faltoo.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      })();
+    </script>
+  </div>
+
+      <footer class="footer">
+        <p>
+          <a href="/pages/about/">Who is Pratyush?</a>
+          <a class="right" href="http://feedburner.google.com/fb/a/mailverify?uri=fullyfaltoo">
+            Get updates via Email
+          </a>
         </p>
-        <p><small>Powered by <a href="http://getpelican.com">Pelican</a>, hosted on<a href="http://www.github.com">GitHub</a> and written with<img src="/theme/images/heart.png"> in India.</small>
+        <p>
+          <small>
+            Powered by
+            <a href="http://getpelican.com">Pelican</a>,
+            hosted on <a href="https://www.github.com">GitHub</a>
+            and written with
+            <img src="/theme/images/heart.png" alt="heart" /> in India.
+          </small>
         </p>
       </footer>
     </div>

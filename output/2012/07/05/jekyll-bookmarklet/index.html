@@ -1,29 +1,49 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
   <head>
     <meta charset="utf-8">
     <meta name="author" content="Pratyush Mittal">
-    <title>Jekyll bookmarklet [AutoKey&nbsp;script]
-    </title>
-    <link href="http://feeds.feedburner.com/fullyfaltoo" type="application/rss+xml" rel="alternate" title="A Fully-Faltoo Blog RSS Feed">    <link rel="shortcut icon" href="/favicon.ico">
-    <link href="/favicon.ico" type="image/x-icon" rel="icon">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <link rel="stylesheet" type="text/css" href="/theme/css/css.css">  </head>
+
+    <title>  Jekyll bookmarklet [AutoKey&nbsp;script]
+</title>
+
+    <link rel="alternate" href="http://feeds.feedburner.com/fullyfaltoo" title="A Fully-Faltoo Blog RSS Feed" type="application/rss+xml">
+
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="/theme/css/css.css" type="text/css">
+
+  </head>
   <body>
     <header class="header content">
-      <div class="center"><a href="/"><img src="/theme/images/logo.png" alt="Pratyush - A <GeeK>!!!"></a>
+      <div class="center">
+        <a href="/">
+          <img src="/theme/images/logo.png" alt="Pratyush - A <GeeK>!!!" />
+        </a>
       </div>
       <div class="fix"></div>
     </header>
-    <div class="content"><article class="entry">
+
+    <div class="content">
+
+<article class="entry">
   <div class="page-header">
-    <h1>Jekyll bookmarklet [AutoKey&nbsp;script]
+    <h1>
+        Jekyll bookmarklet [AutoKey&nbsp;script]
     </h1>
-    <p class="meta sub"><a href="http://fully-faltoo.com/2012/07/05/jekyll-bookmarklet/"><small>Posted on Thu 05 July 2012</small></a>
+    <p class="meta sub">
+      <a href="http://fully-faltoo.com/2012/07/05/jekyll-bookmarklet/">
+        <small>
+          Posted on Thu 05 July 2012
+        </small>
+      </a>
     </p>
   </div>
+
   <div class="page-content">
-    <div class="post"><p>Since I have <a href="http://fully-faltoo.com/2012/06/30/moving-to-jekyll">moved to Jekyll</a> I have been writing a lot many posts. A major reason is the easy with which I can write the posts&nbsp;now.</p>
+    <div class="post">
+      <p>Since I have <a href="http://fully-faltoo.com/2012/06/30/moving-to-jekyll">moved to Jekyll</a> I have been writing a lot many posts. A major reason is the easy with which I can write the posts&nbsp;now.</p>
 <p>I created a small AutoKey&nbsp;script:</p>
 <div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">datetime</span>
 <span class="kn">import</span> <span class="nn">time</span>
@@ -70,25 +90,43 @@
 
 <p>I have set the keyboard shortcut for the above as <code>&lt;super&gt;+b</code>. It asks for a title, automatically creates a post in your specified directory and opens it in your favourite text&nbsp;editor.</p>
 <p>I know the above is <strong><em>not a bookmarklet</em></strong> and the title is mis-worded. But after setting up Jekyll, that was the first thing I searched for. It landed me on a <a href="http://jonathanbuys.com/04-05-2011/Jekyll_Bookmarklet.html">blog-post by Jonathan</a> who had written a similar script but only for Mac. Using his idea, I wrote the above script for AutoKey which works well on Ubuntu (or any Linux&nbsp;distribution).</p>
-<p>There is also a <a href="http://www.justkez.com/jekyll-post-creator/">pure browser-based bookmarklet too</a>, written by Kester. It lets you write the post-content right from the&nbsp;browser.</p>    </div>
+<p>There is also a <a href="http://www.justkez.com/jekyll-post-creator/">pure browser-based bookmarklet too</a>, written by Kester. It lets you write the post-content right from the&nbsp;browser.</p>
+    </div>
   </div>
-</article><hr/><div class="comments">
-  <h3>Add comment or <a href="https://twitter.com/share" data-via="faltoo" class="twitter-share-button">Tweet it</a>
-  </h3>
-  <div id="disqus_thread"></div>
-  <script>var disqus_identifier = "2012/07/05/jekyll-bookmarklet/";
-var disqus_url = "http://fully-faltoo.com/2012/07/05/jekyll-bookmarklet/";
-(function() {
-var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-dsq.src = 'http://fully-faltoo.disqus.com/embed.js';
-(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-})();
+</article>  <hr>
 
-</script>
-</div>      <footer class="footer">
-        <p><a href="/pages/about/">Who is Pratyush?</a><a href="http://feedburner.google.com/fb/a/mailverify?uri=fullyfaltoo" class="right">Get updates via Email</a>
+  <div class="comments">
+    <h3>
+      Add comment or
+      <a class="twitter-share-button" href="https://twitter.com/share">Tweet it</a>
+    </h3>
+    <div id="disqus_thread"></div>
+    <script type="text/javascript">
+      var disqus_identifier = "2012/07/05/jekyll-bookmarklet/";
+      var disqus_url = "http://fully-faltoo.com/2012/07/05/jekyll-bookmarklet/";
+      (function() {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://fully-faltoo.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      })();
+    </script>
+  </div>
+
+      <footer class="footer">
+        <p>
+          <a href="/pages/about/">Who is Pratyush?</a>
+          <a class="right" href="http://feedburner.google.com/fb/a/mailverify?uri=fullyfaltoo">
+            Get updates via Email
+          </a>
         </p>
-        <p><small>Powered by <a href="http://getpelican.com">Pelican</a>, hosted on<a href="http://www.github.com">GitHub</a> and written with<img src="/theme/images/heart.png"> in India.</small>
+        <p>
+          <small>
+            Powered by
+            <a href="http://getpelican.com">Pelican</a>,
+            hosted on <a href="https://www.github.com">GitHub</a>
+            and written with
+            <img src="/theme/images/heart.png" alt="heart" /> in India.
+          </small>
         </p>
       </footer>
     </div>

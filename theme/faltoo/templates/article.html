@@ -1,1 +1,39 @@
-{% include "article.jade" %}
+{% extends "base.html" %}
+
+
+{% block title %}
+  {{ article.title }}
+{% endblock %}
+
+
+{% block head %}
+  {% if article.code %}
+    <link rel="stylesheet" href="/theme/css/code.css" type="text/css">
+  {% endif %}
+{% endblock %}
+
+{% block content %}
+
+  {% set article_page = True %}
+  {% include "post.html" %}
+  <hr>
+
+  {% if article.comments and DISQUS_SITENAME and SITEURL and article.status != "draft" %}
+  <div class="comments">
+    <h3>
+      Add comment or
+      <a class="twitter-share-button" href="https://twitter.com/share">Tweet it</a>
+    </h3>
+    <div id="disqus_thread"></div>
+    <script type="text/javascript">
+      var disqus_identifier = "{{ article.url }}";
+      var disqus_url = "{{ SITEURL }}/{{ article.url }}";
+      (function() {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://{{ DISQUS_SITENAME }}.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      })();
+    </script>
+  </div>
+  {% endif %}
+{% endblock %}

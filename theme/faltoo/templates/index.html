@@ -1,1 +1,10 @@
-{% include 'index.jade' %}
+{% extends "base.html" %}
+
+
+{% block content %}
+  {% for article in articles_page.object_list %}
+    {% include "post.html" %}
+  {% endfor %}
+
+  {% include "pagination.html" %}
+{% endblock %}
