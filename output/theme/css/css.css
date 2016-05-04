@@ -96,10 +96,13 @@ h6 {
   text-transform: uppercase;
 }
 
+p, li, pre {
+  max-width: 40em;
+}
+
 p, li {
-    max-width: 40em;
-    line-height: 1.5em;
-    margin: 1em 0;
+  line-height: 1.5em;
+  margin: 1em 0;
 }
 
 .low_pad {
