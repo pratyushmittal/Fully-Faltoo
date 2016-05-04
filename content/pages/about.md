@@ -1,10 +1,10 @@
-Title: About Me
+Title: About Pratyush Mittal
 description: About Pratyush Mittal
 slug: about
 
 ![Pratyush Mittal]({filename}/uploads/profile.jpg)
 
-Hi, I am Pratyush. I am a Chartered Accountant but I also love to write computer programs.
+Hi, I am Pratyush Mittal. I am a Chartered Accountant but I also love to write computer programs.
 
 I am currently digging deep into the principals of value investing and also developing a financial tool called [Screener][].
 
