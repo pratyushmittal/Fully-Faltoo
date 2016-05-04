@@ -21,4 +21,7 @@ On one of the recent treks, I broke my phone and missed taking a few items. This
 - More lowers and less jeans
 - Extra phone and an extra pair of spectacles
 
+**Bonus:** Want some ideas for places to travel? [Check this][travel].
+
 [werewolf]: http://fully-faltoo.com/2014/01/28/werewolf/
+[travel]: https://www.aeracode.org/places/
