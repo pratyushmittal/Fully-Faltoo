@@ -1,7 +1,6 @@
 Title: Camping checklist
 Date: 2016-05-04
 Slug: camping
-Status: draft
 comments: true
 
 ![Shiva Cafe in McLeod Ganj]({filename}/uploads/camping.jpg)
