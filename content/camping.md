@@ -6,7 +6,8 @@ comments: true
 
 ![Shiva Cafe in McLeod Ganj]({filename}/uploads/camping.jpg)
 
-On one of the recent treks, I broke my phone and missed taking a few items. This is a short checklist for future references.
+I broke my phone and missed carrying a few items on my recent trek.
+This is a short checklist for future references.
 
 - Torch
 - Pens
