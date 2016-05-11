@@ -1,5 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>A Fully-Faltoo Blog</title><link>http://fully-faltoo.com/</link><description></description><atom:link href="http://feeds.feedburner.com/fullyfaltoo/feed.rss" rel="self"></atom:link><lastBuildDate>Wed, 04 May 2016 00:00:00 +0530</lastBuildDate><item><title>Camping checklist</title><link>http://fully-faltoo.com/2016/05/04/camping/</link><description>&lt;p&gt;&lt;img alt="Shiva Cafe in McLeod Ganj" src="http://fully-faltoo.com/uploads/camping.jpg" /&gt;&lt;/p&gt;
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>A Fully-Faltoo Blog</title><link>http://fully-faltoo.com/</link><description></description><atom:link href="http://feeds.feedburner.com/fullyfaltoo/feed.rss" rel="self"></atom:link><lastBuildDate>Thu, 12 May 2016 00:00:00 +0530</lastBuildDate><item><title>People to Avoid</title><link>http://fully-faltoo.com/2016/05/12/people-to-avoid/</link><description>&lt;blockquote&gt;
+&lt;p&gt;“When I was very young, my father practiced law. One of his best friends, Grant McFayden was a client. He was a perfectly marvelous man of enormous charm and integrity - just a wonderful, wonderful&amp;nbsp;man.&lt;/p&gt;
+&lt;p&gt;In contrast, my father had another client who was a blowhard, overreaching, unfair, pompous, difficult man. And I must have been fourteen years old and thereabouts when I asked, “Dad, why do you do so much work for Mr. X - this overreaching blowhard - instead of working more for wonderful men like Grant&amp;nbsp;McFayden?”&lt;/p&gt;
+&lt;p&gt;My father said, “&lt;strong&gt;Grant McFayden treats his employees right, his customers right and his problems right. And if he gets involved with a psychotic, he quickly walks over to where the psychotic is and works out an exit as fast as he can. Therefore, Grant McFayden doesn’t have enough remunerative law business. &lt;/strong&gt;But Mr. X is a walking minefield of wonderful legal&amp;nbsp;business.”&lt;/p&gt;
+&lt;p&gt;This case demonstrates one of the troubles with practicing law. To a considerable extent, you’re going to be dealing with grossly defective people. They create an enormous amount of the remunerative law business. And even when your own client is a paragon of virtue, you’ll often be dealing with gross defectives on the other side or even on the bench. That’s partly what drove me out of the&amp;nbsp;profession.”&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;i&gt;- Charlie Munger in The Poor Charlie’s&amp;nbsp;Almanack&lt;/i&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;A very similar thought is in &lt;a href="http://zenpencils.com/comic/desiderata/"&gt;Desiderata&lt;/a&gt;&amp;nbsp;too:&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="http://zenpencils.com/comic/desiderata/"&gt;&lt;img alt="Desiderata Comic" src="http://fully-faltoo.com/uploads/desiderata.png" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Avoid loud and aggressive persons; they are vexatious to the&amp;nbsp;spirit.&lt;/p&gt;
+&lt;/blockquote&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Pratyush Mittal</dc:creator><pubDate>Thu, 12 May 2016 00:00:00 +0530</pubDate><guid>tag:fully-faltoo.com,2016-05-12:2016/05/12/people-to-avoid/</guid></item><item><title>Camping checklist</title><link>http://fully-faltoo.com/2016/05/04/camping/</link><description>&lt;p&gt;&lt;img alt="Shiva Cafe in McLeod Ganj" src="http://fully-faltoo.com/uploads/camping.jpg" /&gt;&lt;/p&gt;
 &lt;p&gt;I broke my phone and missed carrying a few items on my last trek.
 This is a short checklist for future&amp;nbsp;references.&lt;/p&gt;
 &lt;ul&gt;
@@ -273,7 +285,7 @@ present in cart&amp;#8221; flags.&amp;#160;&lt;a class="footnote-backref" href="
 &lt;hr /&gt;
 &lt;p&gt;&lt;a href="https://github.com/rupa/z"&gt;&lt;code&gt;z&lt;/code&gt;&lt;/a&gt;: Z allows jumping (&lt;code&gt;cd&lt;/code&gt;) into &lt;em&gt;frecently
 (i.e. frequently and recently)&lt;/em&gt; used directories.
-Insted of doing
+Instead of doing
 &lt;code&gt;cd /home/pratyush/websites/project_name&lt;/code&gt;
 each time, I can now simply do &lt;code&gt;z project_name&lt;/code&gt;.
 Z supports tab completion too. &lt;strong&gt;&lt;a href="https://github.com/rupa/z"&gt;Link to Z library&lt;/a&gt;&lt;/strong&gt;.&lt;/p&gt;
