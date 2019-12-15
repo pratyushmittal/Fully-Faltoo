@@ -8,7 +8,6 @@
     <title>  Controlling the print style-sheets [<span class="caps">CSS</span>]
 </title>
 
-    <link rel="alternate" href="http://feeds.feedburner.com/fullyfaltoo" title="A Fully-Faltoo Blog RSS Feed" type="application/rss+xml">
 
     <link rel="shortcut icon" href="/favicon.ico">
     <link rel="icon" href="/favicon.ico" type="image/x-icon">
@@ -33,7 +32,7 @@
         Controlling the print style-sheets [<span class="caps">CSS</span>]
     </h1>
     <p class="meta sub">
-      <a href="http://fully-faltoo.com/2012/12/11/print-stylesheets/">
+      <a href="/2012/12/11/print-stylesheets/">
         <small>
           Posted on Tue 11 December 2012
         </small>
@@ -45,7 +44,7 @@
     <div class="post">
       <p>There are some very useful <span class="caps">CSS2</span> features which allow the authors to get control on how the pages are&nbsp;printed.</p>
 <h3>Avoid the page breaks just after&nbsp;headings</h3>
-<div class="highlight"><pre><span></span>h1, h2, h3, h4, h5, h6 { page-break-after : avoid }
+<div class="highlight"><pre><span></span><span class="err">h1, h2, h3, h4, h5, h6 { page-break-after : avoid }</span>
 </pre></div>
 
 
@@ -54,10 +53,10 @@
 <p>The keyword auto is the default, it lets the browser generate page breaks as needed. The keyword always forces a page break before or after the element, while avoid suppresses a page break immediately before or after the element. The left and right keywords force one or two page breaks, so that the element is rendered on a left-hand or right-hand&nbsp;page.</p>
 </blockquote>
 <h3>Prevent just a line of the paragraph from moving onto next&nbsp;page</h3>
-<div class="highlight"><pre><span></span><span class="k">@page</span> <span class="p">{</span>
-    <span class="nt">orphans</span><span class="nd">:4</span><span class="o">;</span>
-    <span class="nt">widows</span><span class="nd">:2</span><span class="o">;</span>
-<span class="p">}</span>
+<div class="highlight"><pre><span></span><span class="err">@page {</span>
+<span class="err">    orphans:4;</span>
+<span class="err">    widows:2;</span>
+<span class="err">}</span>
 </pre></div>
 
 

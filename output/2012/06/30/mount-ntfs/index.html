@@ -8,7 +8,6 @@
     <title>  Auto mount <span class="caps">NTFS</span> partitions in Ubuntu in easy correct&nbsp;way
 </title>
 
-    <link rel="alternate" href="http://feeds.feedburner.com/fullyfaltoo" title="A Fully-Faltoo Blog RSS Feed" type="application/rss+xml">
 
     <link rel="shortcut icon" href="/favicon.ico">
     <link rel="icon" href="/favicon.ico" type="image/x-icon">
@@ -33,7 +32,7 @@
         Auto mount <span class="caps">NTFS</span> partitions in Ubuntu in easy correct&nbsp;way
     </h1>
     <p class="meta sub">
-      <a href="http://fully-faltoo.com/2012/06/30/mount-ntfs/">
+      <a href="/2012/06/30/mount-ntfs/">
         <small>
           Posted on Sat 30 June 2012
         </small>
@@ -48,7 +47,7 @@
 <blockquote>
 <p>Install ntfs-config from the Software Center, then it&#8217;s just a matter of choosing which drives to mount and if you want to also write to the&nbsp;drives.</p>
 <p>Apparently ntfs-config crashes. To fix that you have to do&nbsp;this:</p>
-<div class="highlight"><pre><span></span>  sudo mkdir -p /etc/hal/fdi/policy
+<div class="highlight"><pre><span></span><span class="err">  sudo mkdir -p /etc/hal/fdi/policy</span>
 </pre></div>
 
 
@@ -56,18 +55,18 @@
 </blockquote>
 <p>Using above method has a defect though. When you delete a file from the mounted partition, it permanently deletes it instead of sending to&nbsp;rubbish-bin/thrash.</p>
 <p>To fix above, you need to edit one line in fstab <a href="http://ubuntuforums.org/showthread.php?t=1637304">via UbuntuForums</a>:</p>
-<div class="highlight"><pre><span></span>sudo cp /etc/fstab /etc/fstab.bckup
-gksu gedit /etc/fstab
+<div class="highlight"><pre><span></span><span class="err">sudo cp /etc/fstab /etc/fstab.bckup</span>
+<span class="err">gksu gedit /etc/fstab</span>
 </pre></div>
 
 
 <p>Now replace portion <strong>after</strong> ntfs-3g&nbsp;with:</p>
-<div class="highlight"><pre><span></span>defaults,utf8,umask=007,uid=1000,gid=1000   0   1
+<div class="highlight"><pre><span></span><span class="err">defaults,utf8,umask=007,uid=1000,gid=1000   0   1</span>
 </pre></div>
 
 
 <p>thus the line may look&nbsp;like:</p>
-<div class="highlight"><pre><span></span>UUID=286A0F8071DF401A   /media/Storage  ntfs-3g defaults,utf8,umask=007,uid=1000,gid=1000   0   1
+<div class="highlight"><pre><span></span><span class="err">UUID=286A0F8071DF401A   /media/Storage  ntfs-3g defaults,utf8,umask=007,uid=1000,gid=1000   0   1</span>
 </pre></div>
 
 

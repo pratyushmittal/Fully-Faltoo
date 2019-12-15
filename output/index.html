@@ -5,9 +5,8 @@
     <meta name="author" content="Pratyush Mittal">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-    <title>A Fully-Faltoo Blog</title>
+    <title>Blog of Faltoo Things</title>
 
-    <link rel="alternate" href="http://feeds.feedburner.com/fullyfaltoo" title="A Fully-Faltoo Blog RSS Feed" type="application/rss+xml">
 
     <link rel="shortcut icon" href="/favicon.ico">
     <link rel="icon" href="/favicon.ico" type="image/x-icon">
@@ -28,10 +27,65 @@
 <article class="entry">
   <div class="page-header">
     <h1>
-        <a href="http://fully-faltoo.com/2016/05/12/people-to-avoid/">People to&nbsp;Avoid</a>
+        <a href="/2019/09/29/django-duplicates/">How to find and handle duplicate rows in&nbsp;Django</a>
     </h1>
     <p class="meta sub">
-      <a href="http://fully-faltoo.com/2016/05/12/people-to-avoid/">
+      <a href="/2019/09/29/django-duplicates/">
+        <small>
+          Posted on Sun 29 September 2019
+        </small>
+      </a>
+    </p>
+  </div>
+
+  <div class="page-content">
+    <div class="post">
+      <p>Sometimes we have duplicate rows in database due to some bad design or schema change. Lets see how we can fix&nbsp;them.</p>
+<p><strong>Algorithm</strong></p>
+<ul>
+<li>The solution is to &#8220;group by&#8221; rows based on the required&nbsp;columns.</li>
+<li>Add a column for&nbsp;counts</li>
+<li>Filter rows where count is more than&nbsp;1</li>
+</ul>
+<p>Lets say we have a model <code>Announcement</code> with <code>company_id</code> (<span class="caps">FK</span>), <code>title</code>, <code>broadcast_date</code> and other fields. We want to delete duplicate announcements for the company on same&nbsp;date.</p>
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">django.db.models</span> <span class="kn">import</span> <span class="n">Min</span><span class="p">,</span> <span class="n">Max</span><span class="p">,</span> <span class="n">Count</span>
+<span class="kn">from</span> <span class="nn">documents.models</span> <span class="kn">import</span> <span class="n">Announcement</span>
+
+<span class="c1"># Groupby by putting group identifiers in values</span>
+<span class="c1"># then annotate a count record</span>
+<span class="n">dupes</span> <span class="o">=</span> <span class="n">Announcement</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">values</span><span class="p">(</span><span class="s1">&#39;company_id&#39;</span><span class="p">,</span> <span class="s1">&#39;title&#39;</span><span class="p">,</span> <span class="s1">&#39;broadcast_date&#39;</span><span class="p">)</span> \
+    <span class="o">.</span><span class="n">order_by</span><span class="p">()</span> \
+    <span class="o">.</span><span class="n">annotate</span><span class="p">(</span>
+        <span class="n">first_update_id</span><span class="o">=</span><span class="n">Min</span><span class="p">(</span><span class="s1">&#39;id&#39;</span><span class="p">),</span>
+        <span class="n">records</span><span class="o">=</span><span class="n">Count</span><span class="p">(</span><span class="s1">&#39;id&#39;</span><span class="p">),</span>
+    <span class="p">)</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span>
+        <span class="n">records__gt</span><span class="o">=</span><span class="mi">1</span>
+    <span class="p">)</span>
+
+<span class="c1"># Check query</span>
+<span class="nb">print</span> <span class="n">dupes</span><span class="o">.</span><span class="n">query</span>
+
+<span class="c1"># Handle duplicate</span>
+<span class="k">for</span> <span class="n">result</span> <span class="ow">in</span> <span class="n">dupes</span><span class="p">:</span>
+    <span class="n">Announcement</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span>
+        <span class="n">company_id</span><span class="o">=</span><span class="n">result</span><span class="p">[</span><span class="s1">&#39;company_id&#39;</span><span class="p">],</span>
+        <span class="n">title</span><span class="o">=</span><span class="n">report</span><span class="p">[</span><span class="s1">&#39;title&#39;</span><span class="p">],</span>
+        <span class="n">broadcast_date</span><span class="o">=</span><span class="n">report</span><span class="p">[</span><span class="s1">&#39;broadcast_date&#39;</span><span class="p">],</span>
+    <span class="p">)</span><span class="o">.</span><span class="n">exclude</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="n">report</span><span class="p">[</span><span class="s1">&#39;first_update_id&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">delete</span><span class="p">()</span>
+</pre></div>
+
+
+<p><strong>Using <code>unique</code> and <code>unique_together</code> database&nbsp;constraints</strong></p>
+<p>Best way to handle duplicates is to use <code>unique</code> or <code>unique_together</code> constraints at  database level. A common error is sometimes to use a <em>nullable</em> field in <code>unique_together</code>. In <span class="caps">SQL</span>, <code>null</code> is not equal to anything. In-fact, <code>null</code> is not equal to even <code>null</code>. So a <code>unique</code> constraint on a <code>null</code> value won&#8217;t&nbsp;work.</p>
+    </div>
+  </div>
+</article><article class="entry">
+  <div class="page-header">
+    <h1>
+        <a href="/2016/05/12/people-to-avoid/">People to&nbsp;Avoid</a>
+    </h1>
+    <p class="meta sub">
+      <a href="/2016/05/12/people-to-avoid/">
         <small>
           Posted on Thu 12 May 2016
         </small>
@@ -50,7 +104,7 @@
 <p><i>- Charlie Munger in The Poor Charlie’s&nbsp;Almanack</i></p>
 
 <p><strong>A very similar thought is in <a href="http://zenpencils.com/comic/desiderata/">Desiderata</a>&nbsp;too:</strong></p>
-<p><a href="http://zenpencils.com/comic/desiderata/"><img alt="Desiderata Comic" src="http://fully-faltoo.com/uploads/desiderata.png" /></a></p>
+<p><a href="http://zenpencils.com/comic/desiderata/"><img alt="Desiderata Comic" src="/uploads/desiderata.png"></a></p>
 <blockquote>
 <p>Avoid loud and aggressive persons; they are vexatious to the&nbsp;spirit.</p>
 </blockquote>
@@ -59,10 +113,10 @@
 </article><article class="entry">
   <div class="page-header">
     <h1>
-        <a href="http://fully-faltoo.com/2016/05/04/camping/">Camping&nbsp;checklist</a>
+        <a href="/2016/05/04/camping/">Camping&nbsp;checklist</a>
     </h1>
     <p class="meta sub">
-      <a href="http://fully-faltoo.com/2016/05/04/camping/">
+      <a href="/2016/05/04/camping/">
         <small>
           Posted on Wed 04 May 2016
         </small>
@@ -72,7 +126,7 @@
 
   <div class="page-content">
     <div class="post">
-      <p><img alt="Shiva Cafe in McLeod Ganj" src="http://fully-faltoo.com/uploads/camping.jpg" /></p>
+      <p><img alt="Shiva Cafe in McLeod Ganj" src="/uploads/camping.jpg"></p>
 <p>I broke my phone and missed carrying a few items on my last trek.
 This is a short checklist for future&nbsp;references.</p>
 <ul>
@@ -95,10 +149,10 @@ This is a short checklist for future&nbsp;references.</p>
 </article><article class="entry">
   <div class="page-header">
     <h1>
-        <a href="http://fully-faltoo.com/2015/04/07/china/">Visiting China -&nbsp;Tips</a>
+        <a href="/2015/04/07/china/">Visiting China -&nbsp;Tips</a>
     </h1>
     <p class="meta sub">
-      <a href="http://fully-faltoo.com/2015/04/07/china/">
+      <a href="/2015/04/07/china/">
         <small>
           Posted on Tue 07 April 2015
         </small>
@@ -169,10 +223,10 @@ trip to&nbsp;China.</p>
 </article><article class="entry">
   <div class="page-header">
     <h1>
-        <a href="http://fully-faltoo.com/2014/10/13/swap/">How to add a swap&nbsp;partition</a>
+        <a href="/2014/10/13/swap/">How to add a swap&nbsp;partition</a>
     </h1>
     <p class="meta sub">
-      <a href="http://fully-faltoo.com/2014/10/13/swap/">
+      <a href="/2014/10/13/swap/">
         <small>
           Posted on Mon 13 October 2014
         </small>
@@ -190,24 +244,24 @@ usually sufficient for temporary memory extensive
 needs. These is a short documentation on how to
 add the swap&nbsp;partition.</p>
 <p>Adding a swap&nbsp;partition:</p>
-<div class="highlight"><pre><span></span>sudo dd if=/dev/zero of=/swap bs=1M count=1024
-sudo mkswap /swap
-sudo swapon /swap
+<div class="highlight"><pre><span></span><span class="err">sudo dd if=/dev/zero of=/swap bs=1M count=1024</span>
+<span class="err">sudo mkswap /swap</span>
+<span class="err">sudo swapon /swap</span>
 </pre></div>
 
 
 <p>Making the partition persistent on system&nbsp;reboots:</p>
-<div class="highlight"><pre><span></span>sudo vi /etc/fstab
-# Add a line to tell the system to use the file
-/swap   none    swap    sw  0   0
+<div class="highlight"><pre><span></span><span class="err">sudo vi /etc/fstab</span>
+<span class="err"># Add a line to tell the system to use the file</span>
+<span class="err">/swap   none    swap    sw  0   0</span>
 </pre></div>
 
 
 <p>Optimize <code>swappiness</code> and <code>vfc_cache_pressure</code> <em><a href="https://www.digitalocean.com/community/tutorials/how-to-add-swap-on-ubuntu-14-04">for <span class="caps">VPS</span> needs</a></em>:</p>
-<div class="highlight"><pre><span></span>sudo vi /etc/sysctl.conf
-# Add the following at the bottom
-vm.vfs_cache_pressure = 50
-vm.swappiness = 10
+<div class="highlight"><pre><span></span><span class="err">sudo vi /etc/sysctl.conf</span>
+<span class="err"># Add the following at the bottom</span>
+<span class="err">vm.vfs_cache_pressure = 50</span>
+<span class="err">vm.swappiness = 10</span>
 </pre></div>
 
 
@@ -218,10 +272,10 @@ commands do is available <a href="https://www.digitalocean.com/community/tutoria
 </article><article class="entry">
   <div class="page-header">
     <h1>
-        <a href="http://fully-faltoo.com/2014/09/28/pycon/">Notes from Pycon India&nbsp;2014</a>
+        <a href="/2014/09/28/pycon/">Notes from Pycon India&nbsp;2014</a>
     </h1>
     <p class="meta sub">
-      <a href="http://fully-faltoo.com/2014/09/28/pycon/">
+      <a href="/2014/09/28/pycon/">
         <small>
           Posted on Sun 28 September 2014
         </small>
@@ -231,13 +285,13 @@ commands do is available <a href="https://www.digitalocean.com/community/tutoria
 
   <div class="page-content">
     <div class="post">
-      <p><img alt="Python India Conference" src="/uploads/pycon.jpg" />
+      <p><img alt="Python India Conference" src="/uploads/pycon.jpg">
 <small class='sub'>Image credits: <a href="https://secure.flickr.com/photos/99555371@N06/">@Mukesh</a></small></p>
 <p>I attended <a href="http://in.pycon.org/2014/">Pycon India</a> during last couple
 of days. As always, it felt great to meet so many
 smart programmers creating amazing things. These
 are my notes from various workshops, talks and
-interactions <sup id="fnref:Note"><a class="footnote-ref" href="#fn:Note" rel="footnote">1</a></sup>.</p>
+interactions <sup id="fnref:Note"><a class="footnote-ref" href="#fn:Note">1</a></sup>.</p>
 <p>In an interaction with <a href="https://twitter.com/gvrv">@Gaurav</a>, he
 mentioned about <a href="http://pythonhosted.org/behave/">Behave library</a> - &#8220;it is
 for behaviour-driven development. It is so
@@ -246,7 +300,7 @@ specs for your code.&#8221; The concept sounds
 interesting for writing browser tests with&nbsp;Selenium.</p>
 <p><a href="https://github.com/shshank">@Shashank</a> gave a workshop on &#8220;scraping
 even the hardest websites.&#8221; Though I have used
-BeautifulSoup <sup id="fnref:Soup"><a class="footnote-ref" href="#fn:Soup" rel="footnote">2</a></sup> before, using Selenium with
+BeautifulSoup <sup id="fnref:Soup"><a class="footnote-ref" href="#fn:Soup">2</a></sup> before, using Selenium with
 <a href="http://phantomjs.org/">PhantomJS</a> was a new learning. Another interesting note
 from the talk was using
 <a href="http://www.deathbycaptcha.com/">DeathByCaptcha</a> <span class="caps">API</span> for solving
@@ -301,7 +355,7 @@ favorite Python packages - Rhythmbox and&nbsp;Django.</p>
 <a href="http://simplecv.org/">SimpleCV</a> to play flappy-birds using
 gestures. The library looks quite powerful to do
 some interesting stuff with cameras and images. I
-have a few toy-ideas in my mind now <sup id="fnref:SimpleCV Ideas"><a class="footnote-ref" href="#fn:SimpleCV Ideas" rel="footnote">3</a></sup>
+have a few toy-ideas in my mind now <sup id="fnref:SimpleCV Ideas"><a class="footnote-ref" href="#fn:SimpleCV Ideas">3</a></sup>
 - will see how they&nbsp;go.</p>
 <p><a href="https://github.com/jace">@Kiran</a> shared the problems he faced while
 creating <a href="https://github.com/hasgeek/lastuser">LastUser</a> service. I learned about
@@ -312,7 +366,7 @@ hijack sessions using FireSheep on an unsecured&nbsp;network.</p>
 <p>Django uses database-backed sessions by default.
 While digging into the <a href="https://docs.djangoproject.com/en/dev/topics/http/sessions/">related documentation</a>, I
 found the solution to some of my problems
-<sup id="fnref:sessions"><a class="footnote-ref" href="#fn:sessions" rel="footnote">4</a></sup>.</p>
+<sup id="fnref:sessions"><a class="footnote-ref" href="#fn:sessions">4</a></sup>.</p>
 <p>Second keynote speaker, <a href="http://www.voidspace.org.uk/cv.shtml">@Michael Foord</a>,
 emphasized on moving the projects from
 platform-as-a-service (such as Heroku other such
@@ -364,7 +418,7 @@ me busy well until the next&nbsp;PyCon.</p>
 <!--- Twitter Handles -->
 
 <div class="footnote">
-<hr />
+<hr>
 <ol>
 <li id="fn:Note">
 <p><strong>Note:</strong> This is <em>not a post about
@@ -372,11 +426,11 @@ everything</em> interesting that happened at the
 event. There were many other interesting talks and
 workshops. These are only the things I noted down
 during the event to implement them in my projects
-at sometime.&#160;<a class="footnote-backref" href="#fnref:Note" rev="footnote" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+at sometime.&#160;<a class="footnote-backref" href="#fnref:Note" title="Jump back to footnote 1 in the text">&#8617;</a></p>
 </li>
 <li id="fn:Soup">
 <p>I prefer to use <code>lxml</code> with <a href="https://github.com/gawel/pyquery/">PyQuery</a>
-for parsing and selecting the elements.&#160;<a class="footnote-backref" href="#fnref:Soup" rev="footnote" title="Jump back to footnote 2 in the text">&#8617;</a></p>
+for parsing and selecting the elements.&#160;<a class="footnote-backref" href="#fnref:Soup" title="Jump back to footnote 2 in the text">&#8617;</a></p>
 </li>
 <li id="fn:SimpleCV Ideas">
 <p><strong>Toy-ideas:</strong>
@@ -384,7 +438,7 @@ for parsing and selecting the elements.&#160;<a class="footnote-backref" href="#
    the lid of laptop.
 2. Write a script to automatically filter the
    best, find duplicates, and fix images from a
-   large album.&#160;<a class="footnote-backref" href="#fnref:SimpleCV Ideas" rev="footnote" title="Jump back to footnote 3 in the text">&#8617;</a></p>
+   large album.&#160;<a class="footnote-backref" href="#fnref:SimpleCV Ideas" title="Jump back to footnote 3 in the text">&#8617;</a></p>
 </li>
 <li id="fn:sessions">
 <p>In a database-backed session, a
@@ -396,7 +450,7 @@ used to store session data of any size without
 incurring any additional overhead - example use
 cases: storing user&#8217;s votes, alerts, carts,
 trackers etc to show &#8220;already voted or item
-present in cart&#8221; flags.&#160;<a class="footnote-backref" href="#fnref:sessions" rev="footnote" title="Jump back to footnote 4 in the text">&#8617;</a></p>
+present in cart&#8221; flags.&#160;<a class="footnote-backref" href="#fnref:sessions" title="Jump back to footnote 4 in the text">&#8617;</a></p>
 </li>
 </ol>
 </div>
@@ -405,10 +459,10 @@ present in cart&#8221; flags.&#160;<a class="footnote-backref" href="#fnref:sess
 </article><article class="entry">
   <div class="page-header">
     <h1>
-        <a href="http://fully-faltoo.com/2014/08/23/commands/">Useful bash&nbsp;commands</a>
+        <a href="/2014/08/23/commands/">Useful bash&nbsp;commands</a>
     </h1>
     <p class="meta sub">
-      <a href="http://fully-faltoo.com/2014/08/23/commands/">
+      <a href="/2014/08/23/commands/">
         <small>
           Posted on Sat 23 August 2014
         </small>
@@ -419,21 +473,21 @@ present in cart&#8221; flags.&#160;<a class="footnote-backref" href="#fnref:sess
   <div class="page-content">
     <div class="post">
       <p>These are few of the bash commands I often find&nbsp;useful:</p>
-<hr />
+<hr>
 <p><a href="https://github.com/rupa/z"><code>z</code></a>: Z allows jumping (<code>cd</code>) into <em>frecently
 (i.e. frequently and recently)</em> used directories.
 Instead of doing
 <code>cd /home/pratyush/websites/project_name</code>
 each time, I can now simply do <code>z project_name</code>.
 Z supports tab completion too. <strong><a href="https://github.com/rupa/z">Link to Z library</a></strong>.</p>
-<hr />
+<hr>
 <p><code>ps -u &lt;username&gt; -o pid,rss,command | awk '{print $0}{sum+=$2} END {print "Total", sum/1024, "MB"}'</code>:
 When accessing remote servers using shell, I often need to
 check the list of scripts running and the memory
 they are consuming. This command does exactly
 that. It is a sort of minimal task-manager. I
 found this command <a href="https://community.webfaction.com/questions/8553/how-to-determine-memory-consumption">here</a>.</p>
-<hr />
+<hr>
 <p><code>php -S localhost:8888 -t .</code>: Though I am not a
 <code>PHP</code> fan (anymore), this command serves the
 current directory using a live php server. This
@@ -442,21 +496,21 @@ installation by just extracting the&nbsp;package.</p>
 <p><code>python -m SimpleHTTPServer 8080</code> is a Python
 alternative for starting a live server from
 current directory to serve the&nbsp;files.</p>
-<hr />
+<hr>
 <p><code>netstat -plunt</code>: To see which ports are open and
 which application is on each&nbsp;one.</p>
-<hr />
+<hr>
 <p><code>du file/path -chs</code>: du is the disk-utility
 command. This command shows the total size of any
 directory. <code>-c</code> is for total, <code>-h</code> is for showing
 humanize file sizes and <code>-s</code> for showing only the
 summary. I often use this command on web-servers
 to find the size of file-system&nbsp;caches.</p>
-<hr />
+<hr>
 <p><code>ssh-copy-id user@example.com</code>: This appends the
 public key to the remote-host for password-less
 ssh&nbsp;logins.</p>
-<hr />
+<hr>
 <p><code>mysqldump -u username -p --all-databases &gt; alldbs.sql</code>:
 For creating a backup of all the mysql&nbsp;databases.</p>
 <p><code>mysql -u username -p &lt; alldbs.sql</code>:
@@ -465,17 +519,17 @@ For restoring all the databases from the&nbsp;dump.</p>
 performance. These come handy for creating a
 backup snapshots of&nbsp;databases.</p>
 <p>I found these two commands <a href="http://stackoverflow.com/questions/328922/transfer-mysql-database-to-another-computer/4819610#4819610">here</a>.</p>
-<hr />
+<hr>
 <p><code>ssh -D 31500 user@example.com</code>: This turns the <span class="caps">SSH</span> client into a <span class="caps">SOCKS</span> proxy server. It provides me a <span class="caps">VPN</span> on the fly. So if a website refuses to open, or is restricted to a particular country, I run this command and then update the proxy settings in Firefox as&nbsp;below:</p>
-<div class="highlight"><pre><span></span>1. Enable proxy in firefox.
-2. Enter &quot;127.0.0.1&quot; for &quot;SOCKS Host&quot;
-3. Enter &quot;31500&quot; (or whatever port we chose) for Port.
+<div class="highlight"><pre><span></span><span class="err">1. Enable proxy in firefox.</span>
+<span class="err">2. Enter &quot;127.0.0.1&quot; for &quot;SOCKS Host&quot;</span>
+<span class="err">3. Enter &quot;31500&quot; (or whatever port we chose) for Port.</span>
 </pre></div>
 
 
 <p>Full documentation for this trick is available
 <a href="https://help.ubuntu.com/community/SSH/OpenSSH/PortForwarding#Dynamic_Port_Forwarding">here</a>.</p>
-<hr />
+<hr>
 <p><code>howdoi</code>: <a href="https://github.com/gleitz/howdoi">HowDoI</a> provides answers to
 programming questions from command line. Thus
 instead of opening a browser and getting
@@ -485,7 +539,7 @@ to get the&nbsp;leads.</p>
 <p>I usually pass the <code>-ac</code> arguments: <code>-a</code> provides
 the full text of the answer, <code>-c</code> enables
 colorized&nbsp;output.</p>
-<hr />
+<hr>
 <p><code>ab -n 100 -c 10 http://www.example.com</code>: <span class="caps">AB</span> is a
 poor man&#8217;s website performance benchmarking tool. <code>-c</code>
 specifies the number of concurrent requests and
@@ -493,138 +547,23 @@ specifies the number of concurrent requests and
 sent to a webpage. This comes handy while
 migrating websites to new servers or when making
 significant frontend&nbsp;changes.</p>
-<hr />
+<hr>
 <p><code>wget "url" -c</code>: <span class="caps">WGET</span> is for downloading files
 from command-line. I often find the download speeds
 significantly different in browser&#8217;s built-in
 download managers and wget. <code>-c</code> enables the
 resume&nbsp;support.</p>
-<hr />
+<hr>
 <p>There are various other <em>must-know</em> bash commands
 such as <code>awk</code>, <code>uniq</code>, <code>head</code> which are
 super-useful in daily work. <a href="http://datavu.blogspot.in/2014/08/useful-unix-commands-for-exploring-data.html">Akshay</a> has covered
 them in a <a href="http://datavu.blogspot.in/2014/08/useful-unix-commands-for-exploring-data.html">brief tutorial here</a>.</p>
     </div>
   </div>
-</article><article class="entry">
-  <div class="page-header">
-    <h1>
-        <a href="http://fully-faltoo.com/2014/05/15/a-to-z/">Websites I use - A to&nbsp;Z</a>
-    </h1>
-    <p class="meta sub">
-      <a href="http://fully-faltoo.com/2014/05/15/a-to-z/">
-        <small>
-          Posted on Thu 15 May 2014
-        </small>
-      </a>
-    </p>
-  </div>
-
-  <div class="page-content">
-    <div class="post">
-      <p>These are the websites I use the most based on my
-browser&#8217;s <a href="http://en.wikipedia.org/wiki/Frecency">frecency</a>:</p>
-<p><em>This post is inspired from <a href="http://www.s-anand.net/blog/a-z-of-my-browsing-history/">S Anand&#8217;s blogpost</a>.</em></p>
-<ul>
-<li>A is for <a href="http://www.amazon.in">amazon.in</a>.
-  Though I don&#8217;t shop too much, I usually use
-  Amazon to browse though books and
-  read their initial&nbsp;pages.</li>
-<li>B is <a href="http://www.bseindia.com">bseindia.com</a> - mostly
-  for checking current stock prices and for
-  keeping a track of latest corporate&nbsp;announcements.</li>
-<li>C shows one of my favorite tech blogs -
-  <a href="http://www.codinghorror.com">codinghorror.com</a>.
-  Recently, have been visiting it more frequently
-  to check the blog&#8217;s integration with
-  <a href="http://www.discourse.org">Discourse</a>. It is followed by
-  <a href="http://cricket.yahoo.com">cricket.yahoo.com</a>,
-  which I use to keep a track of latest&nbsp;scores.</li>
-<li>D is <a href="http://docs.google.com">docs.google.com</a>.
-  I love to use the live sharing and commenting
-  feature in Google Docs to collaborate on
-  articles, letters and reports. For other
-  writings, I prefer to use&nbsp;gVim.</li>
-<li>E is
-  <a href="http://english.stackexchange.com">english.stackexchange.com</a>.
-  I recently read Strunk and White&#8217;s
-  <a href="https://en.wikipedia.org/wiki/The_Elements_of_Style">The Elements of Style</a>;
-  have been using this StackExchange to follow up
-  with few of the rules mentioned in the&nbsp;book.</li>
-<li>F is (obviously)
-  <a href="http://www.facebook.com">facebook.com</a>. The
-  runner-up is <a href="http://feedly.com">feedly.com</a> - rss reader to keep
-  a track of my favorite blogs. In future I would
-  like to see Feedly climb above&nbsp;:).</li>
-<li>G is <a href="http://www.github.com">github.com</a> - I
-  love open-source&nbsp;projects.</li>
-<li>H is <a href="http://hootsuite.com">hootsuite.com</a> - used to manage multiple
-  Twitter accounts including
-  <a href="http://www.twitter.com/faltoo">@faltoo</a> and
-  <a href="http://www.twitter.com/screener_in">@screener_in</a>.</li>
-<li>I is <a href="http://www.irctc.co.in">irctc.co.in</a> -
-  for booking all the train tickets. It is
-  followed by <a href="http://www.imdb.com">imdb.com</a> for
-  checking all the movie&nbsp;recommendations.</li>
-<li>J shows one of my favorite financial blogs
-  <a href="http://janav.wordpress.com">janav.wordpress.com</a>.
-  It is followed by <a href="http://jpegmini.com">jpegmini.com</a>,
-  which I use to compress images in blog&nbsp;posts.</li>
-<li>K is <a href="http://www.kickass.to">kickass.to</a> - for
-  movies and&nbsp;music.</li>
-<li>L is <a href="http://localhost/">localhost</a> - a
-  playground for all my development&nbsp;projects.</li>
-<li>M is (again obviously)
-  <a href="http://mail.google.com">mail.google.com</a>.</li>
-<li>N is
-  <a href="http://news.ycombinator.com">news.ycominator.com</a> -
-  I use it to stay updated with the latest
-  programing developments.
-  Lately, I have been using more of
-  <a href="http://www.hckrnews.com">hckrnews.com</a> for its
-  better&nbsp;interface.</li>
-<li>O is
-  <a href="http://openshift.redhat.com">openshift.redhat.com</a> -
-  for deploying new test projects for&nbsp;free.</li>
-<li>P is
-  <a href="http://play.fully-faltoo.com">play.fully-faltoo.com</a> -
-  a custom domain used for testing different
-  internal projects at different times. It is
-  followed by
-  <a href="http://pixlr.com/express/">pixlr.com/express/</a>,
-  used for quickly fixing the&nbsp;photographs.</li>
-<li>Q is <a href="http://www.quora.com">Quora</a>. I am not a
-  huge fan of Quora but it is the only one with&nbsp;Q.</li>
-<li>R is <a href="http://www.readiotbox.com">Readiot.com</a> -
-  a side-project I have been working upon. It is
-  like Evernote but saves everything in your&nbsp;DropBox.</li>
-<li>S is for <a href="http://www.screener.in">screener.in</a> -
-  the project that takes most of my time :). It is
-  followed by <a href="http://stackoverflow.com">stackoverflow.com</a> -
-  my favorite resource to get and provide&nbsp;help.</li>
-<li>T is <a href="http://www.twitter.com">twitter.com</a> - I
-  like to keep track of latest updates through
-  Twitter rather than watching&nbsp;news.</li>
-<li>U is <a href="http://ubuntu.com/">ubuntu.com</a>, an old
-  and the only item in U. Now I like to use
-  <a href="https://www.archlinux.org/">Arch</a>.</li>
-<li>V is <a href="http://valuepickr.com/">valuepickr.com</a>,
-  my favorite forum for in-depth discussions on&nbsp;stocks.</li>
-<li>W is <a href="http://webfaction.com">webfaction.com</a> -
-  my webhost for all the production&nbsp;deployments.</li>
-<li>X is <a href="http://xiaomi.eu/community/">xiaomi.eu</a> -
-  an old one time item when I used <span class="caps">MIUI</span> Rom on my
-  Nexus&nbsp;S.</li>
-<li>Y is <a href="http://youtube.com">youtube.com</a> - I love
-  to hear music and watch my favorite channels&nbsp;online.</li>
-<li>Z has no&nbsp;items.</li>
-</ul>
-    </div>
-  </div>
 </article>
 <p class="paginator center">
     Page 1 / 52
-        <a href="http://fully-faltoo.com/page/2/">Older posts &raquo;</a>
+        <a href="/page/2/">Older posts &raquo;</a>
 </p>
 
       <footer class="footer">

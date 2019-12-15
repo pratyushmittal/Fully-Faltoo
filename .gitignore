@@ -2,12 +2,5 @@
 *.pyc
 *.pid
 *.un~
-
-# Pelican
-output
-cache
-.git
-
-# Vim
-*~
-*.pid
+.DS_Store
+.vscode

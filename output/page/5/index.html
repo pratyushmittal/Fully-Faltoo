@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="author" content="Pratyush Mittal">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <title>Blog of Faltoo Things</title>
+
+
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="/theme/css/css.css" type="text/css">
+
+  </head>
+  <body>
+    <header class="header content">
+      <div class="center">
+        <a href="/">
+          <img src="/theme/images/logo.png" alt="Pratyush - A <GeeK>!!!" />
+        </a>
+      </div>
+      <div class="fix"></div>
+    </header>
+
+    <div class="content">
+<article class="entry">
+  <div class="page-header">
+    <h1>
+        <a href="/2012/12/11/print-stylesheets/">Controlling the print style-sheets [<span class="caps">CSS</span>]</a>
+    </h1>
+    <p class="meta sub">
+      <a href="/2012/12/11/print-stylesheets/">
+        <small>
+          Posted on Tue 11 December 2012
+        </small>
+      </a>
+    </p>
+  </div>
+
+  <div class="page-content">
+    <div class="post">
+      <p>There are some very useful <span class="caps">CSS2</span> features which allow the authors to get control on how the pages are&nbsp;printed.</p>
+<h3>Avoid the page breaks just after&nbsp;headings</h3>
+<div class="highlight"><pre><span></span><span class="err">h1, h2, h3, h4, h5, h6 { page-break-after : avoid }</span>
+</pre></div>
+
+
+<blockquote>
+<p>page-break-after properties accept the auto, always, avoid, left, and right&nbsp;keywords.</p>
+<p>The keyword auto is the default, it lets the browser generate page breaks as needed. The keyword always forces a page break before or after the element, while avoid suppresses a page break immediately before or after the element. The left and right keywords force one or two page breaks, so that the element is rendered on a left-hand or right-hand&nbsp;page.</p>
+</blockquote>
+<h3>Prevent just a line of the paragraph from moving onto next&nbsp;page</h3>
+<div class="highlight"><pre><span></span><span class="err">@page {</span>
+<span class="err">    orphans:4;</span>
+<span class="err">    widows:2;</span>
+<span class="err">}</span>
+</pre></div>
+
+
+<blockquote>
+<p>The <code>orphans</code> property specifies the minimum number of lines of a paragraph that must be left at the bottom of a&nbsp;page.</p>
+<p>The <code>widows</code> property specifies the minimum number of lines of a paragraph that must be left at the top of a&nbsp;page.</p>
+</blockquote>
+<p><strong><a href="http://www.tutorialspoint.com/css/css_paged_media.htm">TutorialsPoint</a> covers many other features for better print pages. Bookmarked it for&nbsp;long!</strong></p>
+    </div>
+  </div>
+</article><article class="entry">
+  <div class="page-header">
+    <h1>
+        <a href="/2012/10/27/search-engine/">You are using the wrong search&nbsp;engine!</a>
+    </h1>
+    <p class="meta sub">
+      <a href="/2012/10/27/search-engine/">
+        <small>
+          Posted on Sat 27 October 2012
+        </small>
+      </a>
+    </p>
+  </div>
+
+  <div class="page-content">
+    <div class="post">
+      <p><img alt="Change default search engine to Google's &quot;I am Feeling Lucky&quot;" src="/uploads/feeling-lucky.png"></p>
+<div class="highlight"><pre><span></span><span class="err">{google:baseURL}search?ie=UTF-8&amp;oe=UTF-8&amp;sourceid=navclient&amp;gfns=1&amp;q=%s</span>
+</pre></div>
+
+
+<p>Before ignoring this tip, I would highly recommend you to try the above as the default search engine in Chrome (at-least for a week). <strong>It is the Google&#8217;s &#8220;I am Feeling Lucky™&#8221; search</strong>.</p>
+<p>I began using the <em>&#8220;I am Feeling Lucky&#8221; (<span class="caps">IAFL</span>)</em> link in one of my websites to link to specific details. The results were overwhelming as the accuracy was more than 90%. Since then I started using it as my default search&nbsp;engine.</p>
+<p>The biggest advantage of using <span class="caps">IAFL</span> is that it makes you more productive. Traditionally, you first input the search query in the omnibox, hit enter, and get the list of results. You need to scan through ads, through results and through all the distractions. In most cases, we often end-up opening more than one pages, and correspondingly many more number of clicks and time. In contrast, <a href="http://en.wikipedia.org/wiki/Google_Search#.22I.27m_Feeling_Lucky.22">the <span class="caps">IAFL</span> search is ad-free</a> and takes you to the best result (which is mostly the page you want to see), just after you hit enter. Also, in case Google is not sure which is the <em>the best</em> result, it shows the default&nbsp;results.</p>
+<p>As you use more of <span class="caps">IAFL</span> search, you start exploring its hidden potentials. Don&#8217;t remember your favourite band&#8217;s Facebook page link? No problem, just type <code>facebook [band name]</code> and enter, and it will take you directly take to the band&#8217;s page. In similar fashion you can use it for twitter, linkedin, stackoverflow, mp3, subtitles or even torrents. You will be soon surprised by the Google&#8217;s&nbsp;accuracy.</p>
+<p>Do give it a try and share your search&nbsp;tips.</p>
+<p>Detailed instructions for using &#8220;I am Feeling Lucky&#8221; on <a href="http://support.google.com/chrome/bin/answer.py?hl=en&amp;answer=95426">Chrome</a>, <a href="http://support.mozilla.org/en-US/kb/search-web-address-bar?redirectlocale=en-US&amp;redirectslug=Location+bar+search#w_changing-the-internet-keyword-service">Firefox</a>, <a href="http://my.opera.com/ariesptn/blog/index.dml/tag/I'm%20feeling%20lucky">Opera</a> and <a href="http://answers.microsoft.com/en-us/ie/forum/ie8-windows_other/how-can-i-make-googles-im-feeling-lucky-my-default/877858f5-36c3-4627-b337-5d62bb421a27">Internet Explorer</a>.<br>
+Link: <code>{google:baseURL}search?ie=UTF-8&amp;oe=UTF-8&amp;sourceid=navclient&amp;gfns=1&amp;q=%s</code></p>
+    </div>
+  </div>
+</article><article class="entry">
+  <div class="page-header">
+    <h1>
+        <a class="external" href="http://siriuslymeg.tumblr.com/post/33738057928/99-life-hacks-to-make-your-life-easier">99 Life hacks [in&nbsp;pictures]</a>
+    </h1>
+    <p class="meta sub">
+      <a href="/2012/10/18/99-life-hacks/">
+        <small>
+          Posted on Thu 18 October 2012
+        </small>
+      </a>
+    </p>
+  </div>
+
+  <div class="page-content">
+    <div class="post">
+      <p>This an awesome compilation of some super-useful life-hacks. Few of my favourite ones from the&nbsp;link:</p>
+<p><img alt="Identifying keys using nail-polish" src="http://media.tumblr.com/tumblr_mbyii9fETT1qhkzpz.jpg"></p>
+<p><img alt="Untying knots" src="http://media.tumblr.com/tumblr_mbyijl18Dw1qhkzpz.jpg"></p>
+<p><img alt="Sandwich guide" src="http://media.tumblr.com/tumblr_mbyikrUJ0B1qhkzpz.jpg"></p>
+<h3><a href="http://siriuslymeg.tumblr.com/post/33738057928/99-life-hacks-to-make-your-life-easier">See the complete&nbsp;list</a></h3>
+    </div>
+  </div>
+</article><article class="entry">
+  <div class="page-header">
+    <h1>
+        <a class="external" href="http://dayscore.net/">DayScore is a fabulous way to develop&nbsp;habits</a>
+    </h1>
+    <p class="meta sub">
+      <a href="/2012/10/03/dayscore-habits/">
+        <small>
+          Posted on Wed 03 October 2012
+        </small>
+      </a>
+    </p>
+  </div>
+
+  <div class="page-content">
+    <div class="post">
+      <p><a href="http://dayscore.net"><img alt="DayScore sheet" src="http://fully-faltoo.com/uploads/DayScore.png"></a></p>
+<p>This is wow! Earlier I used to make a <a href="http://fully-faltoo.com/uploads/todo.jpg">score list of daily rituals</a> to get the important (and un-motivating) things done. <a href="http://dayscore.net">DayScore</a> converts that concept into an awesome web platform to &#8220;reinforce positive habits by keeping&nbsp;score.&#8221;</p>
+<p>I have set the service as one of my opening tabs in&nbsp;Chrome.</p>
+    </div>
+  </div>
+</article><article class="entry">
+  <div class="page-header">
+    <h1>
+        <a class="external" href="http://www.youtube.com/watch?v=jILgxeNBK_8&feature=share">Why do competitors open their stores next to one&nbsp;another?</a>
+    </h1>
+    <p class="meta sub">
+      <a href="/2012/10/01/competitors/">
+        <small>
+          Posted on Mon 01 October 2012
+        </small>
+      </a>
+    </p>
+  </div>
+
+  <div class="page-content">
+    <div class="post">
+      <p>I often wondered why the crowd of computer shops exist only at one place in our city; why all those big garment showrooms open next to each other; or even why all the shops of musical instruments open only at one place (and those at other places get&nbsp;closed).</p>
+<p>This video answers that well, in a simple&nbsp;animation.</p>
+<iframe width="640" height="360" src="http://www.youtube.com/embed/jILgxeNBK_8?feature=player_detailpage" frameborder="0" allowfullscreen="allowfullscreen"> </iframe>
+    </div>
+  </div>
+</article><article class="entry">
+  <div class="page-header">
+    <h1>
+        <a href="/2012/09/25/world-cup-dhoni/">Aya World Cup - Jeetengi meri Dhoni ki&nbsp;India</a>
+    </h1>
+    <p class="meta sub">
+      <a href="/2012/09/25/world-cup-dhoni/">
+        <small>
+          Posted on Tue 25 September 2012
+        </small>
+      </a>
+    </p>
+  </div>
+
+  <div class="page-content">
+    <div class="post">
+      <h2>This song is&nbsp;awesome!!!</h2>
+<p>It refreshes the <a href="http://fully-faltoo.com/2011/04/03/love-you-india/">memories of the amazing World Cup win</a>. Hope the repeat it in this T20 World Cup 2012&nbsp;too.</p>
+<iframe width="420" height="315" src="http://www.youtube.com/embed/zxhuJLXjemw" frameborder="0" allowfullscreen="allowfullscreen"> </iframe>
+
+<p><strong>Composed by Omkar <span class="amp">&amp;</span>&nbsp;Aditya</strong></p>
+<p><strong>Lyrics:</strong></p>
+<p>Maare des re,&nbsp;aaayaaa</p>
+<p>Aya world cup maare des re,<br>
+Jeetengi meri Dhoni ki&nbsp;India</p>
+<p>Maare 6 chakke Yuvraj,<br>
+Phode ache&nbsp;gendbaaj</p>
+<p>Oo, Sreesanth tej gendbaaj,<br>
+Phataka tikhaa hai&nbsp;andaaj</p>
+<p>Powerhouse Yusuf Pathan,<br>
+Dhurandar Virendar&nbsp;chattan</p>
+<p>Googly daale Bhajji khaas,<br>
+Gambhir khele&nbsp;superfast</p>
+<p>Suresh Raina jeet ka gehna,<br>
+Baandhe Nehra jeet ka&nbsp;sehra</p>
+<p>Ooooo&#8230;</p>
+<p>All-rounder Tendulkar ka raaj re,<br>
+Jeetengi meri Dhoni ki&nbsp;India!</p>
+<p><strong><a href="http://www.reverbnation.com/play_now/song_8006186?utm_campaign=opengraph&amp;utm_content=song&amp;utm_medium=link&amp;utm_source=facebook">Download&nbsp;link</a></strong></p>
+    </div>
+  </div>
+</article><article class="entry">
+  <div class="page-header">
+    <h1>
+        <a class="external" href="http://subtlepatterns.com/">Best tiled backgrounds [Subtle&nbsp;Patterns]</a>
+    </h1>
+    <p class="meta sub">
+      <a href="/2012/08/22/background-patterns/">
+        <small>
+          Posted on Wed 22 August 2012
+        </small>
+      </a>
+    </p>
+  </div>
+
+  <div class="page-content">
+    <div class="post">
+      <p><img alt="Subtle Patters" src="http://fully-faltoo.com/uploads/subtle-patterns.png"></p>
+<p>After getting tired of searching that perfect background image for my sites, I stumbled upon Subtle&nbsp;Patterns.</p>
+<blockquote>
+<p>Subtle Patterns&#8217; goal is to be a high quality resource for anyone in need of tilable textured patterns, free to use (including commercial&nbsp;projects).</p>
+</blockquote>
+<p><span class="caps">PS</span>: Love their instant preview option&nbsp;too.</p>
+    </div>
+  </div>
+</article>
+<p class="paginator center">
+            <a href="/page/4">&laquo; Newer posts</a>
+    Page 5 / 52
+        <a href="/page/6/">Older posts &raquo;</a>
+</p>
+
+      <footer class="footer">
+        <p>
+          <a href="/pages/about/">Who is Pratyush?</a>
+          <a class="right" href="http://feedburner.google.com/fb/a/mailverify?uri=fullyfaltoo">
+            Get updates via Email
+          </a>
+        </p>
+        <p>
+          <small>
+            Powered by
+            <a href="http://getpelican.com">Pelican</a>,
+            hosted on <a href="https://www.github.com">GitHub</a>
+            and written with
+            <img src="/theme/images/heart.png" alt="heart" /> in India.
+          </small>
+        </p>
+      </footer>
+    </div>
+  </body>
+</html>

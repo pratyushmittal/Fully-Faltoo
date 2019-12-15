@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="author" content="Pratyush Mittal">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <title>  Visiting China -&nbsp;Tips
+</title>
+
+
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="/theme/css/css.css" type="text/css">
+
+  </head>
+  <body>
+    <header class="header content">
+      <div class="center">
+        <a href="/">
+          <img src="/theme/images/logo.png" alt="Pratyush - A <GeeK>!!!" />
+        </a>
+      </div>
+      <div class="fix"></div>
+    </header>
+
+    <div class="content">
+
+<article class="entry">
+  <div class="page-header">
+    <h1>
+        Visiting China -&nbsp;Tips
+    </h1>
+    <p class="meta sub">
+      <a href="/drafts/multiple-wordpress.html">
+        <small>
+          Posted on Wed 15 April 2015
+        </small>
+      </a>
+    </p>
+  </div>
+
+  <div class="page-content">
+    <div class="post">
+      <p>I recently migrated all my Wordpress
+installations spread across different web-hosts
+to a single DigitalOcean server. This is a
+brief step-by-step checklist for the reference&nbsp;purpose.</p>
+<ol>
+<li>
+<p><strong>Setup a <span class="caps">LAMP</span> stack</strong>: <a href="https://www.digitalocean.com/community/tutorials/how-to-set-up-multiple-wordpress-sites-on-a-single-ubuntu-vps">Follow this guide</a>
+   for setting up mysql and apache configurations.
+   <a href="https://archive.today/GiU6l">Mirror link</a>.</p>
+</li>
+<li>
+<p><strong>Take a backup of uploads on source server</strong>:</p>
+</li>
+</ol>
+<p># cd into wp-content folder or source server
+   zip -ruq uploads.zip uploads/
+   mv uploads.zip&nbsp;uploads/</p>
+<ol>
+<li>
+<p><strong>Downloading media files</strong>:</p>
+<h1>cd into wp-content folder on destination&nbsp;server</h1>
+<p>wget http://website.com/wp-content/uploads/uploads.zip
+rm uploads
+unzip&nbsp;uploads.zip</p>
+</li>
+<li>
+<p>Enable&nbsp;mod-rewrite</p>
+</li>
+<li>Update&nbsp;hosts</li>
+<li>Import&nbsp;export</li>
+<li>change&nbsp;dns</li>
+<li>plugins,&nbsp;disqus</li>
+<li>Settings -&gt;&nbsp;Permalinks</li>
+<li>Appearance</li>
+</ol>
+<p>^1: I have a few Wordpress blogs at blog.screener.in,
+dalal-street.in and a couple of others for&nbsp;friends.</p>
+    </div>
+  </div>
+</article>  <hr>
+
+
+      <footer class="footer">
+        <p>
+          <a href="/pages/about/">Who is Pratyush?</a>
+          <a class="right" href="http://feedburner.google.com/fb/a/mailverify?uri=fullyfaltoo">
+            Get updates via Email
+          </a>
+        </p>
+        <p>
+          <small>
+            Powered by
+            <a href="http://getpelican.com">Pelican</a>,
+            hosted on <a href="https://www.github.com">GitHub</a>
+            and written with
+            <img src="/theme/images/heart.png" alt="heart" /> in India.
+          </small>
+        </p>
+      </footer>
+    </div>
+  </body>
+</html>

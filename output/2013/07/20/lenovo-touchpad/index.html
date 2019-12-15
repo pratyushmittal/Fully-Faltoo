@@ -8,7 +8,6 @@
     <title>  Fixing Lenovo touchpads on&nbsp;Ubuntu
 </title>
 
-    <link rel="alternate" href="http://feeds.feedburner.com/fullyfaltoo" title="A Fully-Faltoo Blog RSS Feed" type="application/rss+xml">
 
     <link rel="shortcut icon" href="/favicon.ico">
     <link rel="icon" href="/favicon.ico" type="image/x-icon">
@@ -33,7 +32,7 @@
         Fixing Lenovo touchpads on&nbsp;Ubuntu
     </h1>
     <p class="meta sub">
-      <a href="http://fully-faltoo.com/2013/07/20/lenovo-touchpad/">
+      <a href="/2013/07/20/lenovo-touchpad/">
         <small>
           Posted on Sat 20 July 2013
         </small>
@@ -45,37 +44,37 @@
     <div class="post">
       <p>I recently moved from Dell Studio to Lenovo&#8217;s Thinkpad Edge E430 laptop. It is an all-Intel machine and the drivers support is quite good. Initially the touchpad felt over sensitive as the cursor jumped a few pixels on finger lifts. Luckily, it is a common <a href="https://bugs.launchpad.net/ubuntu/+source/xserver-xorg-input-synaptics/+bug/1042069">touchpad issue on Lenovo machines</a> and easily&nbsp;fixable.</p>
 <p>Create the following config file in <code>/usr/share/X11/xorg.conf.d/50-thinkpad-touchpad.conf</code> (create <code>xorg.conf.d</code> directory if it doesn&#8217;t&nbsp;exist):</p>
-<div class="highlight"><pre><span></span>Section &quot;InputClass&quot;
-        Identifier &quot;touchpad&quot;
-        MatchProduct &quot;SynPS/2 Synaptics TouchPad&quot;
-        Driver &quot;synaptics&quot;
-        # fix touchpad resolution
-        Option &quot;VertResolution&quot; &quot;100&quot;
-        Option &quot;HorizResolution&quot; &quot;65&quot;
-        # increment noise cancellation factor
-        Option &quot;HorizHysteresis&quot; &quot;50&quot;
-        Option &quot;VertHysteresis&quot; &quot;50&quot;
-EndSection
+<div class="highlight"><pre><span></span><span class="err">Section &quot;InputClass&quot;</span>
+<span class="err">        Identifier &quot;touchpad&quot;</span>
+<span class="err">        MatchProduct &quot;SynPS/2 Synaptics TouchPad&quot;</span>
+<span class="err">        Driver &quot;synaptics&quot;</span>
+<span class="err">        # fix touchpad resolution</span>
+<span class="err">        Option &quot;VertResolution&quot; &quot;100&quot;</span>
+<span class="err">        Option &quot;HorizResolution&quot; &quot;65&quot;</span>
+<span class="err">        # increment noise cancellation factor</span>
+<span class="err">        Option &quot;HorizHysteresis&quot; &quot;50&quot;</span>
+<span class="err">        Option &quot;VertHysteresis&quot; &quot;50&quot;</span>
+<span class="err">EndSection</span>
 </pre></div>
 
 
 <p><strong>Update for ArchLinux</strong>: file path <code>/etc/X11/xorg.conf.d/50-thinkpad-touchpad.conf</code></p>
-<div class="highlight"><pre><span></span>Section &quot;InputClass&quot;
-        Identifier &quot;touchpad&quot;
-        MatchProduct &quot;SynPS/2 Synaptics TouchPad&quot;
-        Driver &quot;synaptics&quot;
-        # fix touchpad resolution
-        Option &quot;VertResolution&quot; &quot;100&quot;
-        Option &quot;HorizResolution&quot; &quot;65&quot;
-        # disable synaptics driver pointer acceleration
-        Option &quot;MinSpeed&quot; &quot;1&quot;
-        Option &quot;MaxSpeed&quot; &quot;1&quot;
-        # tweak the X-server pointer acceleration
-        Option &quot;AccelerationProfile&quot; &quot;2&quot;
-        Option &quot;AdaptiveDeceleration&quot; &quot;16&quot;
-        Option &quot;ConstantDeceleration&quot; &quot;16&quot;
-        Option &quot;VelocityScale&quot; &quot;128&quot;
-EndSection
+<div class="highlight"><pre><span></span><span class="err">Section &quot;InputClass&quot;</span>
+<span class="err">        Identifier &quot;touchpad&quot;</span>
+<span class="err">        MatchProduct &quot;SynPS/2 Synaptics TouchPad&quot;</span>
+<span class="err">        Driver &quot;synaptics&quot;</span>
+<span class="err">        # fix touchpad resolution</span>
+<span class="err">        Option &quot;VertResolution&quot; &quot;100&quot;</span>
+<span class="err">        Option &quot;HorizResolution&quot; &quot;65&quot;</span>
+<span class="err">        # disable synaptics driver pointer acceleration</span>
+<span class="err">        Option &quot;MinSpeed&quot; &quot;1&quot;</span>
+<span class="err">        Option &quot;MaxSpeed&quot; &quot;1&quot;</span>
+<span class="err">        # tweak the X-server pointer acceleration</span>
+<span class="err">        Option &quot;AccelerationProfile&quot; &quot;2&quot;</span>
+<span class="err">        Option &quot;AdaptiveDeceleration&quot; &quot;16&quot;</span>
+<span class="err">        Option &quot;ConstantDeceleration&quot; &quot;16&quot;</span>
+<span class="err">        Option &quot;VelocityScale&quot; &quot;128&quot;</span>
+<span class="err">EndSection</span>
 </pre></div>
 
 
@@ -84,22 +83,6 @@ EndSection
   </div>
 </article>  <hr>
 
-  <div class="comments">
-    <h3>
-      Add comment or
-      <a class="twitter-share-button" href="https://twitter.com/share">Tweet it</a>
-    </h3>
-    <div id="disqus_thread"></div>
-    <script type="text/javascript">
-      var disqus_identifier = "2013/07/20/lenovo-touchpad/";
-      var disqus_url = "http://fully-faltoo.com/2013/07/20/lenovo-touchpad/";
-      (function() {
-      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-      dsq.src = 'http://fully-faltoo.disqus.com/embed.js';
-      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-      })();
-    </script>
-  </div>
 
       <footer class="footer">
         <p>

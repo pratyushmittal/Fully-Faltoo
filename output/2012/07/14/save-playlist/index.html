@@ -8,7 +8,6 @@
     <title>  Export or save songs from a playlist&nbsp;(Linux)
 </title>
 
-    <link rel="alternate" href="http://feeds.feedburner.com/fullyfaltoo" title="A Fully-Faltoo Blog RSS Feed" type="application/rss+xml">
 
     <link rel="shortcut icon" href="/favicon.ico">
     <link rel="icon" href="/favicon.ico" type="image/x-icon">
@@ -33,7 +32,7 @@
         Export or save songs from a playlist&nbsp;(Linux)
     </h1>
     <p class="meta sub">
-      <a href="http://fully-faltoo.com/2012/07/14/save-playlist/">
+      <a href="/2012/07/14/save-playlist/">
         <small>
           Posted on Sat 14 July 2012
         </small>
@@ -45,11 +44,11 @@
     <div class="post">
       <p>I often need to export a playlist items for saving them in a <span class="caps">USB</span> or just in a folder. <a href="http://askubuntu.com/questions/43643/how-can-i-export-all-the-mp3s-from-a-playlist-in-banshee">Found this useful one line command</a> for Terminal which exports or saves a play-list items as&nbsp;files.</p>
 <blockquote>
-<p>Export your playlist to a m3u file. I called it playlist.m3u<br />
+<p>Export your playlist to a m3u file. I called it playlist.m3u<br>
 Open a terminal in the folder where you have saved the&nbsp;file.</p>
-<p>Copy <span class="amp">&amp;</span> paste this:<br />
+<p>Copy <span class="amp">&amp;</span> paste this:<br>
 <code>sed "s/#.*//g" &lt; playlist.m3u | sed "/^$/d" | while read line; do cp "${line}" '/path/to/output/folder/'; done</code></p>
-<p>Remember to change the path to your desired output folder.<br />
+<p>Remember to change the path to your desired output folder.<br>
 Note: Terminal will not give any output whilst files are copied, just be patient&nbsp;;)</p>
 </blockquote>
     </div>
