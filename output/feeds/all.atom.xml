@@ -1,48 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Blog of Faltoo Things</title><link href="https://fully-faltoo.com/" rel="alternate"></link><link href="https://fully-faltoo.com/feeds/all.atom.xml" rel="self"></link><id>https://fully-faltoo.com/</id><updated>2019-09-29T00:00:00+05:30</updated><entry><title>How to find and handle duplicate rows in Django</title><link href="https://fully-faltoo.com/2019/09/29/django-duplicates/" rel="alternate"></link><published>2019-09-29T00:00:00+05:30</published><updated>2019-09-29T00:00:00+05:30</updated><author><name>Pratyush Mittal</name></author><id>tag:fully-faltoo.com,2019-09-29:/2019/09/29/django-duplicates/</id><summary type="html">&lt;p&gt;Sometimes we have duplicate rows in database due to some bad design or schema change. Lets see how we can fix&amp;nbsp;them.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Algorithm&lt;/strong&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;The solution is to &amp;#8220;group by&amp;#8221; rows based on the required&amp;nbsp;columns.&lt;/li&gt;
-&lt;li&gt;Add a column for&amp;nbsp;counts&lt;/li&gt;
-&lt;li&gt;Filter rows where count is more than&amp;nbsp;1&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;Lets say …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Sometimes we have duplicate rows in database due to some bad design or schema change. Lets see how we can fix&amp;nbsp;them.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Algorithm&lt;/strong&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;The solution is to &amp;#8220;group by&amp;#8221; rows based on the required&amp;nbsp;columns.&lt;/li&gt;
-&lt;li&gt;Add a column for&amp;nbsp;counts&lt;/li&gt;
-&lt;li&gt;Filter rows where count is more than&amp;nbsp;1&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;Lets say we have a model &lt;code&gt;Announcement&lt;/code&gt; with &lt;code&gt;company_id&lt;/code&gt; (&lt;span class="caps"&gt;FK&lt;/span&gt;), &lt;code&gt;title&lt;/code&gt;, &lt;code&gt;broadcast_date&lt;/code&gt; and other fields. We want to delete duplicate announcements for the company on same&amp;nbsp;date.&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;django.db.models&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;Min&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;Max&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;Count&lt;/span&gt;
-&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;documents.models&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;Announcement&lt;/span&gt;
-
-&lt;span class="c1"&gt;# Groupby by putting group identifiers in values&lt;/span&gt;
-&lt;span class="c1"&gt;# then annotate a count record&lt;/span&gt;
-&lt;span class="n"&gt;dupes&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;Announcement&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;objects&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;values&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;company_id&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;title&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;broadcast_date&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; \
-    &lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;order_by&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt; \
-    &lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;annotate&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;
-        &lt;span class="n"&gt;first_update_id&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;Min&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;id&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt;
-        &lt;span class="n"&gt;records&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;Count&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;id&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt;
-    &lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;filter&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;
-        &lt;span class="n"&gt;records__gt&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;
-    &lt;span class="p"&gt;)&lt;/span&gt;
-
-&lt;span class="c1"&gt;# Check query&lt;/span&gt;
-&lt;span class="nb"&gt;print&lt;/span&gt; &lt;span class="n"&gt;dupes&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;query&lt;/span&gt;
-
-&lt;span class="c1"&gt;# Handle duplicate&lt;/span&gt;
-&lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;result&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="n"&gt;dupes&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
-    &lt;span class="n"&gt;Announcement&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;objects&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;filter&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;
-        &lt;span class="n"&gt;company_id&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;result&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;company_id&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;],&lt;/span&gt;
-        &lt;span class="n"&gt;title&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;report&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;title&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;],&lt;/span&gt;
-        &lt;span class="n"&gt;broadcast_date&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;report&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;broadcast_date&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;],&lt;/span&gt;
-    &lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;exclude&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;id&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;report&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;first_update_id&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;])&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;delete&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;p&gt;&lt;strong&gt;Using &lt;code&gt;unique&lt;/code&gt; and &lt;code&gt;unique_together&lt;/code&gt; database&amp;nbsp;constraints&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;Best way to handle duplicates is to use &lt;code&gt;unique&lt;/code&gt; or &lt;code&gt;unique_together&lt;/code&gt; constraints at  database level. A common error is sometimes to use a &lt;em&gt;nullable&lt;/em&gt; field in &lt;code&gt;unique_together&lt;/code&gt;. In &lt;span class="caps"&gt;SQL&lt;/span&gt;, &lt;code&gt;null&lt;/code&gt; is not equal to anything. In-fact, &lt;code&gt;null&lt;/code&gt; is not equal to even &lt;code&gt;null&lt;/code&gt;. So a &lt;code&gt;unique&lt;/code&gt; constraint on a &lt;code&gt;null&lt;/code&gt; value won&amp;#8217;t&amp;nbsp;work.&lt;/p&gt;</content><category term="misc"></category><category term="'python'"></category></entry><entry><title>People to Avoid</title><link href="https://fully-faltoo.com/2016/05/12/people-to-avoid/" rel="alternate"></link><published>2016-05-12T00:00:00+05:30</published><updated>2016-05-12T00:00:00+05:30</updated><author><name>Pratyush Mittal</name></author><id>tag:fully-faltoo.com,2016-05-12:/2016/05/12/people-to-avoid/</id><summary type="html">&lt;blockquote&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Blog of Faltoo Things</title><link href="https://fully-faltoo.com/" rel="alternate"></link><link href="https://fully-faltoo.com/feeds/all.atom.xml" rel="self"></link><id>https://fully-faltoo.com/</id><updated>2016-05-12T00:00:00+05:30</updated><entry><title>People to Avoid</title><link href="https://fully-faltoo.com/2016/05/12/people-to-avoid/" rel="alternate"></link><published>2016-05-12T00:00:00+05:30</published><updated>2016-05-12T00:00:00+05:30</updated><author><name>Pratyush Mittal</name></author><id>tag:fully-faltoo.com,2016-05-12:/2016/05/12/people-to-avoid/</id><summary type="html">&lt;blockquote&gt;
 &lt;p&gt;“When I was very young, my father practiced law. One of his best friends, Grant McFayden was a client. He was a perfectly marvelous man of enormous charm and integrity - just a wonderful, wonderful&amp;nbsp;man.&lt;/p&gt;
 &lt;p&gt;In contrast, my father had another client who was a blowhard, overreaching, unfair, pompous, difficult …&lt;/p&gt;&lt;/blockquote&gt;</summary><content type="html">&lt;blockquote&gt;
 &lt;p&gt;“When I was very young, my father practiced law. One of his best friends, Grant McFayden was a client. He was a perfectly marvelous man of enormous charm and integrity - just a wonderful, wonderful&amp;nbsp;man.&lt;/p&gt;
