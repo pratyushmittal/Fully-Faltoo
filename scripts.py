@@ -4,7 +4,7 @@ import time
 import subprocess
 
 CONTENT_FOLDER = "content"
-OUTPUT_FOLDER = "output"
+OUTPUT_FOLDER = "docs"
 PREVIEW_FOLDER = "preview"
 
 
@@ -20,6 +20,13 @@ def _prepare(command):
     random_folder = os.path.join(output_folder, "random")
     subprocess.run([
         "mkdir", "-p", random_folder
+    ])
+
+    # copy CNAME file
+    # CNAME file must be in root of output folder
+    cname_path = os.path.join(output_folder, "CNAME")
+    subprocess.run([
+        "cp", "CNAME", cname_path
     ])
 
 
