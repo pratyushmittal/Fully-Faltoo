@@ -2,11 +2,15 @@
 *.pyc
 *.pid
 *.un~
+.DS_Store
 
 # Pelican
 output
 cache
 .git
+
+# VS Code
+.vscode
 
 # Vim
 *~
