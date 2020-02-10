@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="author" content="Pratyush Mittal">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <title>  Relative symlinks in Git using&nbsp;subtree
+</title>
+
+
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="/theme/css/css.css" type="text/css">
+
+    <link rel="stylesheet" href="/theme/css/code.css" type="text/css">
+  </head>
+  <body>
+    <header class="header content">
+      <div class="center">
+        <a href="/">
+          <img src="/theme/images/logo.png" alt="Pratyush - A <GeeK>!!!" />
+        </a>
+      </div>
+      <div class="fix"></div>
+    </header>
+
+    <div class="content">
+
+<article class="entry">
+  <div class="page-header">
+    <h1>
+        Relative symlinks in Git using&nbsp;subtree
+    </h1>
+    <p class="meta sub">
+      <a href="https://fully-faltoo.com/2013/07/06/git-symlinks/">
+        <small>
+          Posted on Sat 06 July 2013
+        </small>
+      </a>
+    </p>
+  </div>
+
+  <div class="page-content">
+    <div class="post">
+      <p>I have two separate projects and both use a common set of directories. Since both the projects are under active development, I symlinked the common files. Thus the changes were incorporated in both the projects. <strong>However, git <em>does not</em> follow the symbolic links and instead saves its&nbsp;contents.</strong></p>
+<p>To solve it&nbsp;I:</p>
+<ol>
+<li>Copied one of the projects into the another as a subdirectory using&nbsp;subtree.</li>
+<li>Created symlinks from inside this subtree&nbsp;directory.</li>
+<li>Changed the absolute paths of symbolic links into relative&nbsp;paths.</li>
+<li>Automated all of the above into a&nbsp;script.</li>
+</ol>
+<h2>Detailed&nbsp;steps</h2>
+<p><strong>Step 1:</strong> Subtree is useful (and better than submodule) for including a project into another project as a subdirectory. The main advantage is that the changes are both downstream as well as upstream. I followed <a href="http://www.codeproject.com/Articles/562950/GitplusSubtreeplusMergeplus-e2-80-93TheplusQuickpl">this post</a> to include the project as subtree&nbsp;sub-directory.</p>
+<p><strong>Step 2:</strong> Next step was to convert all the old symlinks (directly from main project) to symlinks from the new subtree directory. To find all the symbolic links in a directory use <code>$ find /path -type l</code>.</p>
+<p><strong>Step 3:</strong> The symlinks created usually contain absolute file paths (even though they might be in the same git project). Use the <a href="http://bashscripts.org/forum/viewtopic.php?f=8&amp;t=457">symlinks utility</a> to convert all the symlinks from absolute paths to relative&nbsp;paths.</p>
+<div class="highlight"><pre><span></span>$ sudo apt-get install symlinks
+$ symlinks -tscr .  <span class="c1"># Preview changes</span>
+$ symlinks -scr .   <span class="c1"># Execute changes</span>
+</pre></div>
+
+
+<p><strong>Step 4:</strong> To automate all of the above, I compiled and saved the above commands in a fab file to run while committing the&nbsp;changes.</p>
+<div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">sync_down</span><span class="p">():</span>
+    <span class="sd">&quot;&quot;&quot;Syncs downstream from remote to local branch&quot;&quot;&quot;</span>
+    <span class="n">local</span><span class="p">(</span><span class="s2">&quot;git checkout remote_branch&quot;</span><span class="p">)</span>
+    <span class="n">local</span><span class="p">(</span><span class="s2">&quot;git pull&quot;</span><span class="p">)</span>
+    <span class="n">local</span><span class="p">(</span><span class="s2">&quot;git checkout master&quot;</span><span class="p">)</span>
+    <span class="n">local</span><span class="p">(</span><span class="s1">&#39;git merge --squash -s subtree &#39;</span>
+          <span class="s1">&#39;--no-commit &#39;</span>
+          <span class="s1">&#39;remote_branch&#39;</span><span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">sync_up</span><span class="p">():</span>
+    <span class="sd">&quot;&quot;&quot;Syncs upstream from local to remote branch&quot;&quot;&quot;</span>
+    <span class="n">local</span><span class="p">(</span><span class="s2">&quot;git checkout remote_branch&quot;</span><span class="p">)</span>
+    <span class="n">local</span><span class="p">(</span><span class="s1">&#39;git merge --squash -s subtree &#39;</span>
+          <span class="s1">&#39;--no-commit &#39;</span>
+          <span class="s1">&#39;master&#39;</span><span class="p">)</span>
+    <span class="n">local</span><span class="p">(</span><span class="s1">&#39;git add . -A&#39;</span><span class="p">)</span>
+    <span class="n">local</span><span class="p">(</span><span class="s1">&#39;git commit -m &quot;Merged changes from remote&quot;&#39;</span><span class="p">)</span>
+    <span class="n">local</span><span class="p">(</span><span class="s2">&quot;git push remote remote_branch:master&quot;</span><span class="p">)</span>
+    <span class="n">local</span><span class="p">(</span><span class="s2">&quot;git checkout master&quot;</span><span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">sync_all</span><span class="p">():</span>
+    <span class="n">local</span><span class="p">(</span><span class="s2">&quot;symlinks -scr .&quot;</span><span class="p">)</span>
+    <span class="n">sync_down</span><span class="p">()</span>
+    <span class="n">sync_up</span><span class="p">()</span>
+</pre></div>
+
+
+<p>I agree that this is a very hacky way to achieve a simple following of symlinks. However, all the <a href="http://stackoverflow.com/questions/86402/how-can-i-get-git-to-follow-symlinks">other</a> <a href="http://stackoverflow.com/questions/1500772/getting-git-to-follow-symlinks-again">workarounds</a> looked as&nbsp;bad. </p>
+    </div>
+  </div>
+</article>  <hr>
+
+
+      <footer class="footer">
+        <p>
+          <a href="/pages/about/">Who is Pratyush?</a>
+          <a class="right" href="http://feedburner.google.com/fb/a/mailverify?uri=fullyfaltoo">
+            Get updates via Email
+          </a>
+        </p>
+        <p>
+          <small>
+            Powered by
+            <a href="http://getpelican.com">Pelican</a>,
+            hosted on <a href="https://www.github.com">GitHub</a>
+            and written with
+            <img src="/theme/images/heart.png" alt="heart" /> in India.
+          </small>
+        </p>
+      </footer>
+    </div>
+  </body>
+</html>

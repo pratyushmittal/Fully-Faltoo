@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="author" content="Pratyush Mittal">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <title>  Notes from Pycon India&nbsp;2014
+</title>
+
+
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="/theme/css/css.css" type="text/css">
+
+  </head>
+  <body>
+    <header class="header content">
+      <div class="center">
+        <a href="/">
+          <img src="/theme/images/logo.png" alt="Pratyush - A <GeeK>!!!" />
+        </a>
+      </div>
+      <div class="fix"></div>
+    </header>
+
+    <div class="content">
+
+<article class="entry">
+  <div class="page-header">
+    <h1>
+        Notes from Pycon India&nbsp;2014
+    </h1>
+    <p class="meta sub">
+      <a href="https://fully-faltoo.com/2014/09/28/pycon/">
+        <small>
+          Posted on Sun 28 September 2014
+        </small>
+      </a>
+    </p>
+  </div>
+
+  <div class="page-content">
+    <div class="post">
+      <p><img alt="Python India Conference" src="/uploads/pycon.jpg">
+<small class='sub'>Image credits: <a href="https://secure.flickr.com/photos/99555371@N06/">@Mukesh</a></small></p>
+<p>I attended <a href="http://in.pycon.org/2014/">Pycon India</a> during last couple
+of days. As always, it felt great to meet so many
+smart programmers creating amazing things. These
+are my notes from various workshops, talks and
+interactions <sup id="fnref:Note"><a class="footnote-ref" href="#fn:Note">1</a></sup>.</p>
+<p>In an interaction with <a href="https://twitter.com/gvrv">@Gaurav</a>, he
+mentioned about <a href="http://pythonhosted.org/behave/">Behave library</a> - &#8220;it is
+for behaviour-driven development. It is so
+intuitive that even a non techy person can write
+specs for your code.&#8221; The concept sounds
+interesting for writing browser tests with&nbsp;Selenium.</p>
+<p><a href="https://github.com/shshank">@Shashank</a> gave a workshop on &#8220;scraping
+even the hardest websites.&#8221; Though I have used
+BeautifulSoup <sup id="fnref:Soup"><a class="footnote-ref" href="#fn:Soup">2</a></sup> before, using Selenium with
+<a href="http://phantomjs.org/">PhantomJS</a> was a new learning. Another interesting note
+from the talk was using
+<a href="http://www.deathbycaptcha.com/">DeathByCaptcha</a> <span class="caps">API</span> for solving
+captchas on&nbsp;websites.</p>
+<p>So now my workflow for scraping websites is
+something like&nbsp;this:</p>
+<dl>
+    <dt>Traditional <span class="caps">GET</span>&nbsp;requests</dt>
+    <dd>Requests.</dd>
+
+    <dt>Forms / <span class="caps">POST</span>&nbsp;requests</dt>
+    <dd><a href="https://github.com/jmcarp/robobrowser">RoboBrowser</a>
+    (to go around <span class="caps">CSRF</span> and <span class="caps">ASP</span>&nbsp;websites).</dd>
+
+    <dt>Modern&nbsp;single-page-websites</dt>
+    <dd>It probably has <span class="caps">REST</span> APIs - use&nbsp;them.</dd>
+
+    <dt>For other Javascript heavy&nbsp;websites</dt>
+    <dd>Selenium +&nbsp;PhantomJS.</dd>
+</dl>
+
+<p>In another workshop, <a href="https://twitter.com/anandology">@Anand</a> not only
+explained us how decorators work, but also
+made us do lots of exercises. One can <a href="http://anandology.com/nb/2014/decorators-demystified/">go
+through the notebook here</a>. By the end
+of the workshop we learned to write our own trace,
+memorize / cache and routing&nbsp;decorators.</p>
+<p>Apart from decorators, I also learned about
+various magic commands in IPython&nbsp;Notebook:</p>
+<div class="highlight"><pre><span></span><span class="o">%</span><span class="nf">%file</span> <span class="n">filename</span><span class="p">.</span><span class="n">py</span>
+<span class="cp"># Python Code</span>
+<span class="cp"># below it will save the code</span>
+<span class="cp"># in the given filename</span>
+
+<span class="o">!</span><span class="n">python</span> <span class="n">filename</span><span class="p">.</span><span class="n">py</span>
+<span class="cp"># using ! we can run bash-commands</span>
+
+<span class="nf">%magic</span>
+<span class="cp"># To see all the available magic commands in IPython</span>
+<span class="cp"># (found in an interaction with Eswar Vandanapu)</span>
+</pre></div>
+
+
+<p><a href="https://twitter.com/kushaldas">@Kushal</a> gave a keynote on the importance
+of contributing upstream. By going through the
+source codes of our favorite programs, we can not
+only become a better programmer but also get an
+opportunity to contribute to them. I pledge to have
+a closer look at the source codes of two of my
+favorite Python packages - Rhythmbox and&nbsp;Django.</p>
+<p>Guys from <span class="caps">IIT</span> Bhu talked about using
+<a href="http://simplecv.org/">SimpleCV</a> to play flappy-birds using
+gestures. The library looks quite powerful to do
+some interesting stuff with cameras and images. I
+have a few toy-ideas in my mind now <sup id="fnref:SimpleCV Ideas"><a class="footnote-ref" href="#fn:SimpleCV Ideas">3</a></sup>
+- will see how they&nbsp;go.</p>
+<p><a href="https://github.com/jace">@Kiran</a> shared the problems he faced while
+creating <a href="https://github.com/hasgeek/lastuser">LastUser</a> service. I learned about
+database-backed sessions and about how they differ
+from cookie based sessions. Kiran also emphasized
+on using <span class="caps">HTTPS</span> by showing how easy it was to
+hijack sessions using FireSheep on an unsecured&nbsp;network.</p>
+<p>Django uses database-backed sessions by default.
+While digging into the <a href="https://docs.djangoproject.com/en/dev/topics/http/sessions/">related documentation</a>, I
+found the solution to some of my problems
+<sup id="fnref:sessions"><a class="footnote-ref" href="#fn:sessions">4</a></sup>.</p>
+<p>Second keynote speaker, <a href="http://www.voidspace.org.uk/cv.shtml">@Michael Foord</a>,
+emphasized on moving the projects from
+platform-as-a-service (such as Heroku other such
+hostings) to infrastructure-as-a-service (such as
+Amazon <span class="caps">AWS</span>). A hosting service should be
+considered as livestock or sheep instead of as
+pet. It should be easily migratable and
+redeployable whenever needed. Docker and JuJu are
+steps towards&nbsp;that.</p>
+<p><a href="https://twitter.com/sanand0">@S Anand</a> presented a talk on &#8220;faster
+data processing in python.&#8221; He began with basic
+pieces of codes and then optimized them
+incrementally - explaining the measurement
+techniques and conceptual approach towards
+optimization. The <a href="https://www.youtube.com/watch?v=jM-SgJTi8g0#t=14970">complete talk</a> can be viewed
+online, while the <a href="http://nbviewer.ipython.org/github/sanand0/ipython-notebooks/blob/master/Faster%20Data%20Processing%20in%20Python.ipynb">notebook is available here</a>.</p>
+<p>Few important libraries mentioned in the talk&nbsp;were:</p>
+<dl>
+    <dt><a href="https://github.com/rkern/line_profiler">line_profiler</a></dt>
+    <dd>Shows the number of hits and time spent on
+    each <i>line of code</i>.</dd>
+
+    <dt>Pandas and&nbsp;Numpy</dt>
+    <dd>For performing vector&nbsp;operations.</dd>
+
+    <dt><a href="http://numba.pydata.org/">Numba</a> @jit&nbsp;decorator</dt>
+    <dd>Converts a Python function to efficient machine&nbsp;instruction.</dd>
+</dl>
+
+<p>During the lightning talks, <a href="https://github.com/naiquevin">@Vineet</a> showcased his
+library <a href="https://github.com/naiquevin/pipdeptree">Pipdeptree</a>, which displays all the pip
+dependencies in a tree format. It will surely come
+quite handy for generating sane <code>requirements.txt</code>.</p>
+<p><a href="https://twitter.com/originalankur">@Ankur</a> showcased his awesome new project
+<a href="http://importpython.com/">ImportPython.com</a> - a <em>customized</em>
+Python weekly newsletter. Apart from that, the
+website lists all the Python books (free as well
+as paid) categorized by reader&#8217;s levels. In future
+he plans to bring everything else, including
+videos, presentations etc. related to Python at
+one&nbsp;place.</p>
+<p>Together, this is a long list of new libraries and
+concepts to try-out and practice. It should keep
+me busy well until the next&nbsp;PyCon.</p>
+<!--- foot-notes -->
+
+<!--- Links -->
+
+<!--- Twitter Handles -->
+
+<div class="footnote">
+<hr>
+<ol>
+<li id="fn:Note">
+<p><strong>Note:</strong> This is <em>not a post about
+everything</em> interesting that happened at the
+event. There were many other interesting talks and
+workshops. These are only the things I noted down
+during the event to implement them in my projects
+at sometime.&#160;<a class="footnote-backref" href="#fnref:Note" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
+<li id="fn:Soup">
+<p>I prefer to use <code>lxml</code> with <a href="https://github.com/gawel/pyquery/">PyQuery</a>
+for parsing and selecting the elements.&#160;<a class="footnote-backref" href="#fnref:Soup" title="Jump back to footnote 2 in the text">&#8617;</a></p>
+</li>
+<li id="fn:SimpleCV Ideas">
+<p><strong>Toy-ideas:</strong>
+1. Write a script to take images each time I open
+   the lid of laptop.
+2. Write a script to automatically filter the
+   best, find duplicates, and fix images from a
+   large album.&#160;<a class="footnote-backref" href="#fnref:SimpleCV Ideas" title="Jump back to footnote 3 in the text">&#8617;</a></p>
+</li>
+<li id="fn:sessions">
+<p>In a database-backed session, a
+session row is created in the database on each
+user login. The encrypted id of this row is stored
+in the user&#8217;s cookie. On each <code>is_authenticated()</code>
+call, this session row is fetched. Thus this can be
+used to store session data of any size without
+incurring any additional overhead - example use
+cases: storing user&#8217;s votes, alerts, carts,
+trackers etc to show &#8220;already voted or item
+present in cart&#8221; flags.&#160;<a class="footnote-backref" href="#fnref:sessions" title="Jump back to footnote 4 in the text">&#8617;</a></p>
+</li>
+</ol>
+</div>
+    </div>
+  </div>
+</article>  <hr>
+
+
+      <footer class="footer">
+        <p>
+          <a href="/pages/about/">Who is Pratyush?</a>
+          <a class="right" href="http://feedburner.google.com/fb/a/mailverify?uri=fullyfaltoo">
+            Get updates via Email
+          </a>
+        </p>
+        <p>
+          <small>
+            Powered by
+            <a href="http://getpelican.com">Pelican</a>,
+            hosted on <a href="https://www.github.com">GitHub</a>
+            and written with
+            <img src="/theme/images/heart.png" alt="heart" /> in India.
+          </small>
+        </p>
+      </footer>
+    </div>
+  </body>
+</html>

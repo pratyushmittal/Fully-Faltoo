@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="author" content="Pratyush Mittal">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <title>Blog of Faltoo Things - Articles by Pratyush Mittal</title>
+
+
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="/theme/css/css.css" type="text/css">
+
+  </head>
+  <body>
+    <header class="header content">
+      <div class="center">
+        <a href="/">
+          <img src="/theme/images/logo.png" alt="Pratyush - A <GeeK>!!!" />
+        </a>
+      </div>
+      <div class="fix"></div>
+    </header>
+
+    <div class="content">
+<article class="entry">
+  <div class="page-header">
+    <h1>
+        <a href="https://fully-faltoo.com/2012/07/03/internet-explorer-6/">Dealing with Internet Explorer 6&nbsp;issues</a>
+    </h1>
+    <p class="meta sub">
+      <a href="https://fully-faltoo.com/2012/07/03/internet-explorer-6/">
+        <small>
+          Posted on Tue 03 July 2012
+        </small>
+      </a>
+    </p>
+  </div>
+
+  <div class="page-content">
+    <div class="post">
+      <p>I have often spent hours trying to fix the interface for Internet Explorer users. Most of the time, it isn&#8217;t worth it. A wonderful question was asked on StackExchange as to <a href="http://ux.stackexchange.com/questions/5296/blocking-ie6-deny-outright-or-warn-of-issues">what to do with the Internet Explorer 6 users</a> - to block them or to warn them. The answer that I liked the most was to do neither, as <strong>“<span class="caps">IE6</span> users probably don&#8217;t care about poorly rendered pages anyway since they are used to&nbsp;it.”</strong></p>
+<blockquote>
+<p>At my company, we neither display a warning nor a blocking message. We make the site usable in <span class="caps">IE6</span>, and that&#8217;s enough. There&#8217;s no need to wave your hands in the air and say &#8220;sorry, we don&#8217;t have the time to make our site look pretty in your browser&#8221;. <span class="caps">IE6</span> users probably don&#8217;t care about poorly rendered pages anyway since they are used to it - every other page they land on will look bad compared to how a modern browser would render the&nbsp;page.</p>
+<p>99% of the time, <span class="caps">IE6</span> has problems with visuals, not functionality. We use the Prototype Javascript Framework to fix all the cross-browser functional incompatibilities. There doesn&#8217;t exist an analogous <span class="caps">CSS</span> framework to fix all the visual incompatabilities, so we often find <span class="caps">IE6</span> displaying something differently. A button may be 5 pixels shorter or a corner isn&#8217;t rounded, for example. Our philosophy is to let these visual differences slide because websites are made for people to complete tasks, not gawk at pretty interface design. All the usability experts will attest that ugly design does not hamper&nbsp;usability.</p>
+</blockquote>
+<p>With other major web-sites, including YouTube, Wordpress, Facebook&#8230;already showing upgrade messages, it looks like the best advice to&nbsp;follow.</p>
+<p>Read the <a href="http://ux.stackexchange.com/questions/5296/blocking-ie6-deny-outright-or-warn-of-issues">complete discussion at StackExchange</a> for other approaches&nbsp;too.</p>
+    </div>
+  </div>
+</article><article class="entry">
+  <div class="page-header">
+    <h1>
+        <a href="https://fully-faltoo.com/2012/07/03/updates-available/">Updates&nbsp;available</a>
+    </h1>
+    <p class="meta sub">
+      <a href="https://fully-faltoo.com/2012/07/03/updates-available/">
+        <small>
+          Posted on Tue 03 July 2012
+        </small>
+      </a>
+    </p>
+  </div>
+
+  <div class="page-content">
+    <div class="post">
+      <p><img alt="An update is available for your computer" src="http://www.stickycomics.com/wp-content/uploads/update_for_your_computer.jpg"></p>
+<p>Lolz, so&nbsp;true!</p>
+    </div>
+  </div>
+</article><article class="entry">
+  <div class="page-header">
+    <h1>
+        <a href="https://fully-faltoo.com/2012/07/02/websites-hacked/">How Labnol might have been&nbsp;hacked</a>
+    </h1>
+    <p class="meta sub">
+      <a href="https://fully-faltoo.com/2012/07/02/websites-hacked/">
+        <small>
+          Posted on Mon 02 July 2012
+        </small>
+      </a>
+    </p>
+  </div>
+
+  <div class="page-content">
+    <div class="post">
+      <p>It was a sad day today as the most popular Indian tech-blog, around 7 years old one, was hacked. Worst of all, all the content was&nbsp;deleted.</p>
+
+<blockquote class="twitter-tweet"><p>Difficult times. Hackers have deleted all my&nbsp;websites.</p>&mdash; Amit Agarwal (@labnol) <a href="https://twitter.com/labnol/status/219317563564367872" data-datetime="2012-07-01T06:32:36+00:00">July 1, 2012</a></blockquote>
+
+<script src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+<p>Amit Agarwal, has been a path setter for many-many bloggers in India today. He is one of my web-super-heroes too. I got inspired from his quality content and his passion to always pursue <span class="amp">&amp;</span> develop new&nbsp;ideas.</p>
+
+<p>As all the details are not yet available, I kept wondering about how it might had happened and how we can protect ourselves. <i>I am not a hacker, but I do code web-applications and thus will try to explain how things work. The common hacking tricks&nbsp;are:</i></p>
+
+<p><strong>1. Walking through the door - getting your keys (or passwords):</strong> This is probably the most dangerous as the hacker gets your password. The passwords are stored at two places, one with the user (in his brain) and another at servers of the websites to authenticate the user. Good websites store &#8220;hashed&#8221; passwords on their servers. &#8220;Hashed&#8221; means that a user&#8217;s password is encrypted using an irreversible&nbsp;algorithm.</p>
+
+<p>Thus say your password is: <code>panther</code><br>
+then it might be stored in database as <code>b0d86da2d5b3aa15b61df214489f7c12</code> using <span class="caps">MD5</span>&nbsp;encryption.</p>
+
+<p>Even if the hacker gets access to the password through a website’s server (MySQL injection or other ways), the hacker only receives an encryption and not the original plain password. However, though the above is irreversible, what hackers do is they do the encryption of all the dictionary words or the common passwords using above algorithm and then compare the resulting values. For this reason we are recommended not to keep dictionary words as&nbsp;passwords.</p>
+
+<p>If your password is not a dictionary word or other common password, then it is less likely that hacker can get your password through some website’s server (eg. recent LinkedIn or LastPass&nbsp;leaks).</p>
+
+<p>The other trick from the book is brute-attack. What hacker does here is that he tries all the possible combinations as the password to get the access. It is like trying a bunch of keys to get through the door using all possible combinations. Since the possible combinations can be unlimited, thus brute force is also used only for dictionary words or common passwords. Ever wondered why all the banking sites require you to have that extra numerical number and an upper-case letter? Brute-force attack precaution is the reason as it increases the number of combinations&nbsp;possible.</p>
+
+<p>I am sure, Amit must have had strong passwords making both the above&nbsp;unlikely.</p>
+
+<p><strong>2. Wearing a mask - phishing or click-jacking:</strong> Phishing is where the hacker creates a replica of a web-site’s login page, but instead, when a user types the password, it sends the password to the hacker. For this reason, browsers highlight the main domain now days. Best protection is to always look at the url before entering passwords, and preferably to type the url&nbsp;yourself.</p>
+
+<p>Click-jacking is the un-solicited link which shows something and takes somewhere&nbsp;else.</p>
+
+<p>Click-jack Example: <a href="http://www.facebook.com" id="fbtwt">http://www.facebook.com</a></p>
+
+<p>clicking above Facebook link will actually take to twitter.com (even though it shows as facebook.com in the status bar on hovering over the above link). A hacker often sends such click-jack links through emails. The user clicks on the link and lands on the phishing page to enter the password. For this reason, we are advised not to click un-solicited links in the&nbsp;emails.</p>
+
+<p><strong>3. Sea-surfing - <span class="caps">CSRF</span> Attacks:</strong> In <span class="caps">CSRF</span> attacks, the hacker makes a user perform actions without his knowledge. We have often heard users complaining that they followed someone on Twitter/Facebook without their knowledge, or sent a change password requests without actually doing it. This type of attack is more of a weakness of a web-site than of a user. What happens behind the scenes is say the hacker posts an image somewhere, can be on his blog or some common forum. However, instead of actually putting the url of the image, he puts an un-intended link there. Thus when user opens that page, the browser sends a request to that page to fetch the image, and instead of fetching the image, it performs the action without a users knowledge. Jeff Atwood has <a href="http://www.codinghorror.com/blog/2008/10/preventing-csrf-and-xsrf-attacks.html">explained the concept in detail</a> on his&nbsp;page.</p>
+
+<p><span class="caps">CSRF</span> attacks can be much more frightening than we imagine. I checked through some of the very good web-hosts admin/billing panel and found the vulnerability there. A little technical job and the hacker can make users send a request for adding new email, or theoretically even delete unwanted files, or perform other such actions, without their&nbsp;knowing.</p>
+
+<p>In <span class="caps">CSRF</span> attacks, the user’s browser cookies play an important role as the user is supposed to be logged into his account. Thus the protection is to log-out after the work (even if working from your own computer) from data-sensitive websites. While big websites like Facebook or Gmail have much of protection against <span class="caps">CSRF</span>, most other common websites are not that well protected. In browser settings, one can check the option to automatically clear cookies on closing the&nbsp;browser.</p>
+
+<p><strong>4. Other ways:</strong> Other ways are mostly about getting access to a users computer. It can be through key-loggers, unsecured public wifi connections or other networking&nbsp;tricks.</p>
+
+<p>Till the time the actual details are available, I assume that it might have been a phishing attack that compromised Amit’s password. As more details about the attack are made available, I will update this&nbsp;post.</p>
+
+<p>I pray for a quick recovery of all his websites. Best of luck&nbsp;Amit!!!</p>
+
+<p><strong>Update:</strong> During a <a href="https://twitter.com/Blogsdna/status/219684771360538624">conversation with BlogsDNA</a> on Twitter, he explained about a <span class="caps">PHP</span> exploit which can allow a hacker run shell commands using a <span class="caps">PHP</span> script. A good example about such attack is <a href="http://www.unix.com/302239668-post1.html">this script</a>. The only protection is &#8220;never to trust a user&#8217;s entered data.&#8221; The Murphy&#8217;s law in general applies with unusual force in the&nbsp;web-world:</p>
+
+<blockquote>Anything that can go wrong, will go wrong.</blockquote>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+
+<script type="text/javascript">
+$('#fbtwt').live("click", function(e) {
+    e.preventDefault();
+    e.stopPropagation();
+    window.location = "https://twitter.com";
+    return false;
+});
+</script>
+    </div>
+  </div>
+</article><article class="entry">
+  <div class="page-header">
+    <h1>
+        <a class="external" href="http://jorge.fbarr.net/2012/05/01/how-to-google-more-efficiently/">How to Google more&nbsp;efficiently</a>
+    </h1>
+    <p class="meta sub">
+      <a href="https://fully-faltoo.com/2012/07/01/google-better/">
+        <small>
+          Posted on Sun 01 July 2012
+        </small>
+      </a>
+    </p>
+  </div>
+
+  <div class="page-content">
+    <div class="post">
+      <p>Some nice tricks to improve your searches on Google. I didn&#8217;t know about some of these power-symbols&nbsp;like:</p>
+<blockquote>
+<p><code>~review</code> to include related words, such as “check, examine,&nbsp;opinion”.</p>
+<p><code>* distribution</code> to replaces itself with common terms in your&nbsp;search.</p>
+<p><code>2010..2012</code> - Shows all results from within the specified&nbsp;time-range.</p>
+<p><code>$100..$200</code> - gives you results based on a range from $100 to&nbsp;$200.</p>
+</blockquote>
+    </div>
+  </div>
+</article><article class="entry">
+  <div class="page-header">
+    <h1>
+        <a href="https://fully-faltoo.com/2012/07/01/pessimism-mis-pricing/">Buffett on pessimism <span class="amp">&amp;</span>&nbsp;mis-pricing</a>
+    </h1>
+    <p class="meta sub">
+      <a href="https://fully-faltoo.com/2012/07/01/pessimism-mis-pricing/">
+        <small>
+          Posted on Sun 01 July 2012
+        </small>
+      </a>
+    </p>
+  </div>
+
+  <div class="page-content">
+    <div class="post">
+      <blockquote>
+<p>The most common cause of low prices is pessimism - some times pervasive, some times specific to a company or industry. We want to do business in such an environment, not because we like pessimism but because we like the prices it produces. It&#8217;s optimism that is the enemy of the rational&nbsp;buyer.</p>
+<p>None of this means, however, that a business or stock is an intelligent purchase simply because it is unpopular; a contrarian approach is just as foolish as a follow-the-crowd strategy. What&#8217;s required is thinking rather than polling. Unfortunately, Bertrand Russell&#8217;s observation about life in general applies with unusual force in the financial world: &#8220;Most men would rather die than think. Many&nbsp;do.&#8221;</p>
+</blockquote>
+<p>From <a href="http://www.berkshirehathaway.com/letters/1990.html">Warren Buffett&#8217;s letter to shareholders -&nbsp;1990</a></p>
+    </div>
+  </div>
+</article><article class="entry">
+  <div class="page-header">
+    <h1>
+        <a class="external" href="https://chrome.google.com/webstore/detail/pnhechapfaindjhompbnflcldabbghjo">Web <span class="caps">SSH</span> Client <span class="amp">&amp;</span> Terminal&nbsp;Emulator</a>
+    </h1>
+    <p class="meta sub">
+      <a href="https://fully-faltoo.com/2012/07/01/web-terminal/">
+        <small>
+          Posted on Sun 01 July 2012
+        </small>
+      </a>
+    </p>
+  </div>
+
+  <div class="page-content">
+    <div class="post">
+      <p>While on Linux, <span class="caps">SSH</span> is just an <code>Alt+F2</code> away, on windows it is a little complex job. This is a handy Chrome Extension, by Google Team itself, to let windows users access <span class="caps">SSH</span> client (or emulate Terminal) through their&nbsp;browsers.</p>
+    </div>
+  </div>
+</article><article class="entry">
+  <div class="page-header">
+    <h1>
+        <a class="external" href="http://www.forbes.com/sites/ericjackson/2012/06/28/the-64-biggest-investing-cliches-to-sound-like-a-pundit/">64 Investing Cliches and what they&nbsp;mean</a>
+    </h1>
+    <p class="meta sub">
+      <a href="https://fully-faltoo.com/2012/06/30/investing-cliches/">
+        <small>
+          Posted on Sat 30 June 2012
+        </small>
+      </a>
+    </p>
+  </div>
+
+  <div class="page-content">
+    <div class="post">
+      <p>Some interesting ones from the&nbsp;page:</p>
+<blockquote>
+<p>It was a Black Swan event/Perfect Storm = I didn’t read that book but I did watch the George Clooney movie and I learned that you can’t ever blame me for mismanaging your&nbsp;money</p>
+<p>Buy the rumor, sell the news = The only cliche on this list older than Warren Buffett; buy something as soon as you hear something might happen, sell it when the company confirms it’s&nbsp;happening</p>
+<p>It passed our sniff-test = I asked another fund manager if he liked it. He said,&nbsp;yes.</p>
+<p>The earnings were a mixed bag / had something for everyone = There’s not much to discuss here but I’m going to kill a few minutes before the next guest&nbsp;arrives</p>
+<p>Gold is a hard asset that stores value = Buy&nbsp;Gold!</p>
+<p>Gold is a yellow rock with no value = Sell&nbsp;Gold!</p>
+<p>This time it’s different because = Get ready for some pretty wild-eyed crazy&nbsp;logic….</p>
+<p>Markets can stay irrational longer than you can stay solvent = This sounds better than “put this in your pipe and smoke&nbsp;it”</p>
+<p>The easiest way to make $1 million on a trade is to start with $2 million = Hey, none of us knows what he/she is doing here, but we can all laugh at this one… just as long as we’re not the ones at the losing end of this&nbsp;trade</p>
+<p>[Stock <span class="caps">XYZ</span>] wants higher…./is resting…/is ripping… = Fancy ways of saying my stock is not going up&nbsp;enough</p>
+<p>We like big-cap healthcare here = Don’t ask me to give you any specific stock names I like – I just say this because I don’t have any real&nbsp;ideas</p>
+</blockquote>
+    </div>
+  </div>
+</article>
+<p class="paginator center">
+            <a href="https://fully-faltoo.com/page/8">&laquo; Newer posts</a>
+    Page 9 / 52
+        <a href="https://fully-faltoo.com/page/10/">Older posts &raquo;</a>
+</p>
+
+      <footer class="footer">
+        <p>
+          <a href="/pages/about/">Who is Pratyush?</a>
+          <a class="right" href="http://feedburner.google.com/fb/a/mailverify?uri=fullyfaltoo">
+            Get updates via Email
+          </a>
+        </p>
+        <p>
+          <small>
+            Powered by
+            <a href="http://getpelican.com">Pelican</a>,
+            hosted on <a href="https://www.github.com">GitHub</a>
+            and written with
+            <img src="/theme/images/heart.png" alt="heart" /> in India.
+          </small>
+        </p>
+      </footer>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="author" content="Pratyush Mittal">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <title>  Installing Office 2010 on Ubuntu using Wine&nbsp;1.5
+</title>
+
+
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="/theme/css/css.css" type="text/css">
+
+  </head>
+  <body>
+    <header class="header content">
+      <div class="center">
+        <a href="/">
+          <img src="/theme/images/logo.png" alt="Pratyush - A <GeeK>!!!" />
+        </a>
+      </div>
+      <div class="fix"></div>
+    </header>
+
+    <div class="content">
+
+<article class="entry">
+  <div class="page-header">
+    <h1>
+        Installing Office 2010 on Ubuntu using Wine&nbsp;1.5
+    </h1>
+    <p class="meta sub">
+      <a href="https://fully-faltoo.com/2013/01/27/office-wine/">
+        <small>
+          Posted on Sun 27 January 2013
+        </small>
+      </a>
+    </p>
+  </div>
+
+  <div class="page-content">
+    <div class="post">
+      <p>I tried various guides on installing Microsoft Office 2010 on Ubuntu using Wine (1.5.22) but none worked. In each case the installer failed the midway. However, since the <a href="http://appdb.winehq.org/objectManager.php?sClass=version&amp;iId=17336">official Wine page</a> gives it a rating of Platinum, I finally read through the page and it&nbsp;worked.</p>
+<p>Bookmarking the relevant extracts for&nbsp;future.</p>
+<blockquote>
+<p>Make sure all dependencies of Wine are installed on your system, including&nbsp;winbind.</p>
+</blockquote>
+<ol>
+<li>
+<p>Installed the latest Wine version. It auto installed wine-mono mentioned in the original&nbsp;article.</p>
+<p>$ sudo add-apt-repository ppa:ubuntu-wine/ppa
+$ sudo apt-get update
+$ sudo apt-get install&nbsp;wine1.6</p>
+</li>
+<li>
+<p>Installed ttf-mscorefonts (i.e. the windows&nbsp;fonts).</p>
+<blockquote>
+<p>Install Office 2010 to a clean wineprefix&#8212;no winetricks or other tweaks, and no other applications installed. Do not change the Windows version in winecfg; it should remain at the default setting of <span class="caps">XP</span>.</p>
+</blockquote>
+</li>
+<li>
+<p>Reset WineTricks changes: WineTricks &gt;&gt; Select the default wineprefix &gt;&gt; Delete all data and applications. Start WineTricks again to recreate default&nbsp;prefix.</p>
+<blockquote>
+<p>After installing, set riched20 to native, builtin in winecfg to enable Powerpoint to start and selection boxes to display correctly. Do not use winetricks; Office installs its own riched20 to a private directory, and the one installed by winetricks is&nbsp;insufficient.</p>
+</blockquote>
+</li>
+<li>
+<p>Run winecfg &gt;&gt; Libraries &gt;&gt; add riched20 &gt;&gt; edit to select&nbsp;native.</p>
+</li>
+</ol>
+<p>Have been using the the above for quite some time now. It is very stable and looks even more beautiful than on Windows&nbsp;:).</p>
+<p><strong><a href="http://appdb.winehq.org/objectManager.php?sClass=version&amp;iId=17336">Official Wine&nbsp;Page</a></strong></p>
+    </div>
+  </div>
+</article>  <hr>
+
+
+      <footer class="footer">
+        <p>
+          <a href="/pages/about/">Who is Pratyush?</a>
+          <a class="right" href="http://feedburner.google.com/fb/a/mailverify?uri=fullyfaltoo">
+            Get updates via Email
+          </a>
+        </p>
+        <p>
+          <small>
+            Powered by
+            <a href="http://getpelican.com">Pelican</a>,
+            hosted on <a href="https://www.github.com">GitHub</a>
+            and written with
+            <img src="/theme/images/heart.png" alt="heart" /> in India.
+          </small>
+        </p>
+      </footer>
+    </div>
+  </body>
+</html>

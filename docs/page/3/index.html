@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="author" content="Pratyush Mittal">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <title>Blog of Faltoo Things</title>
+
+
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="/theme/css/css.css" type="text/css">
+
+  </head>
+  <body>
+    <header class="header content">
+      <div class="center">
+        <a href="/">
+          <img src="/theme/images/logo.png" alt="Pratyush - A <GeeK>!!!" />
+        </a>
+      </div>
+      <div class="fix"></div>
+    </header>
+
+    <div class="content">
+<article class="entry">
+  <div class="page-header">
+    <h1>
+        <a href="https://fully-faltoo.com/2013/02/16/triumph-defeat/">Triumph and Defeat - Atul&nbsp;Gawande</a>
+    </h1>
+    <p class="meta sub">
+      <a href="https://fully-faltoo.com/2013/02/16/triumph-defeat/">
+        <small>
+          Posted on Sat 16 February 2013
+        </small>
+      </a>
+    </p>
+  </div>
+
+  <div class="page-content">
+    <div class="post">
+      <blockquote>
+<p>“A failure often does not have to be a failure at all. However, you have to be ready for it. Will you admit when things go wrong? Will you take steps to set them right? Because the difference between triumph and defeat, you’ll find, isn’t about willingness to take risks. It’s about mastery of rescue.” – <strong>Atul Gawande</strong>, <a href="http://www.newyorker.com/online/blogs/newsdesk/2012/06/atul-gawande-failure-and-rescue.html">2012 Williams College Commencement&nbsp;Address</a></p>
+</blockquote>
+    </div>
+  </div>
+</article><article class="entry">
+  <div class="page-header">
+    <h1>
+        <a href="https://fully-faltoo.com/2013/02/04/bill-gates-letter/">An Open Letter to&nbsp;Hobbyists</a>
+    </h1>
+    <p class="meta sub">
+      <a href="https://fully-faltoo.com/2013/02/04/bill-gates-letter/">
+        <small>
+          Posted on Mon 04 February 2013
+        </small>
+      </a>
+    </p>
+  </div>
+
+  <div class="page-content">
+    <div class="post">
+      <p>Bill Gates hits the bulls-eye in this open letter dated February 3, 1976. The line that strikes me the most is that <em>&#8220;most of you steal your software. Hardware must be paid for, but software is something to share.&#8221;</em> Something that is abnormally common in&nbsp;India.</p>
+<p>The complete letter (via <a href="http://www.lettersofnote.com/2009/10/most-of-you-steal-your-software.html">LettersOfNote</a>:</p>
+<p><img alt="Open Letter by Bill Gates" src="http://farm3.static.flickr.com/2474/3991297476_1dc98a1d14_o.png"></p>
+<p>I now realise the perils of piracy in India. Being addicted to piracy, and getting mp3s and movies for free, we now assume the net to be free. Software is the last thing we like to pay for. <strong>And probably this is the reason why we neither have &#8220;good softwares being written&#8221; nor a Facebook or Google marked <em>‘made in India’</em>.</strong></p>
+<p><strong><em>Update:</em></strong></p>
+<p><a href="http://www.britannica.com/EBchecked/topic/461490/piracy">Bill Gate&#8217;s response to Windows Piracy in China, in&nbsp;1998:</a></p>
+<blockquote>
+<p>Although about 3 million computers get sold every year in China, people don’t pay for the software. Someday they will, though, and as long as they’re going to steal it, we want them to steal ours. <strong>They’ll get sort of addicted, and then we’ll somehow figure out how to collect sometime in the next&nbsp;decade.</strong></p>
+</blockquote>
+<p>That is actually what is happening now as all the laptops are preloaded with genuine Windows. The lesson can be summarized&nbsp;as:</p>
+<p>Step 1: If you want to make a great software, and keep it alive, then make it paid.<br>
+Step 2: Don&#8217;t lose the market. Those who can&#8217;t pay, give them free and make them&nbsp;addicted.  </p>
+    </div>
+  </div>
+</article><article class="entry">
+  <div class="page-header">
+    <h1>
+        <a href="https://fully-faltoo.com/2013/01/27/office-wine/">Installing Office 2010 on Ubuntu using Wine&nbsp;1.5</a>
+    </h1>
+    <p class="meta sub">
+      <a href="https://fully-faltoo.com/2013/01/27/office-wine/">
+        <small>
+          Posted on Sun 27 January 2013
+        </small>
+      </a>
+    </p>
+  </div>
+
+  <div class="page-content">
+    <div class="post">
+      <p>I tried various guides on installing Microsoft Office 2010 on Ubuntu using Wine (1.5.22) but none worked. In each case the installer failed the midway. However, since the <a href="http://appdb.winehq.org/objectManager.php?sClass=version&amp;iId=17336">official Wine page</a> gives it a rating of Platinum, I finally read through the page and it&nbsp;worked.</p>
+<p>Bookmarking the relevant extracts for&nbsp;future.</p>
+<blockquote>
+<p>Make sure all dependencies of Wine are installed on your system, including&nbsp;winbind.</p>
+</blockquote>
+<ol>
+<li>
+<p>Installed the latest Wine version. It auto installed wine-mono mentioned in the original&nbsp;article.</p>
+<p>$ sudo add-apt-repository ppa:ubuntu-wine/ppa
+$ sudo apt-get update
+$ sudo apt-get install&nbsp;wine1.6</p>
+</li>
+<li>
+<p>Installed ttf-mscorefonts (i.e. the windows&nbsp;fonts).</p>
+<blockquote>
+<p>Install Office 2010 to a clean wineprefix&#8212;no winetricks or other tweaks, and no other applications installed. Do not change the Windows version in winecfg; it should remain at the default setting of <span class="caps">XP</span>.</p>
+</blockquote>
+</li>
+<li>
+<p>Reset WineTricks changes: WineTricks &gt;&gt; Select the default wineprefix &gt;&gt; Delete all data and applications. Start WineTricks again to recreate default&nbsp;prefix.</p>
+<blockquote>
+<p>After installing, set riched20 to native, builtin in winecfg to enable Powerpoint to start and selection boxes to display correctly. Do not use winetricks; Office installs its own riched20 to a private directory, and the one installed by winetricks is&nbsp;insufficient.</p>
+</blockquote>
+</li>
+<li>
+<p>Run winecfg &gt;&gt; Libraries &gt;&gt; add riched20 &gt;&gt; edit to select&nbsp;native.</p>
+</li>
+</ol>
+<p>Have been using the the above for quite some time now. It is very stable and looks even more beautiful than on Windows&nbsp;:).</p>
+<p><strong><a href="http://appdb.winehq.org/objectManager.php?sClass=version&amp;iId=17336">Official Wine&nbsp;Page</a></strong></p>
+    </div>
+  </div>
+</article><article class="entry">
+  <div class="page-header">
+    <h1>
+        <a class="external" href="http://xph.us/2013/01/22/inbox-zero-for-life.html">Zero Inbox with&nbsp;shortcuts</a>
+    </h1>
+    <p class="meta sub">
+      <a href="https://fully-faltoo.com/2013/01/23/zero-inbox-shortcuts/">
+        <small>
+          Posted on Wed 23 January 2013
+        </small>
+      </a>
+    </p>
+  </div>
+
+  <div class="page-content">
+    <div class="post">
+      <p><a href="http://xph.us/2013/01/22/inbox-zero-for-life.html">This</a> is a powerful guide to Zero-Inbox technique using Gmail&nbsp;shortcuts.</p>
+<p><code>e</code>: archive<br>
+<code>#</code>: delete<br>
+<code>se</code>: star <span class="amp">&amp;</span> archive<br>
+<code>gi</code>: goto inbox<br>
+<code>gs</code>: goto stared mails (do more often than <code>gi</code>)<br>
+<code>j</code>: next mail<br>
+<code>k</code>: previous&nbsp;mail</p>
+<p>While reading the <a href="http://news.ycombinator.com/item?id=5098936">discussion</a> about it, also came across some useful Gmail&nbsp;tips:</p>
+<ol>
+<li>Use <a href="http://followup.cc">followup.cc</a>.</li>
+<li>Enable <a href="http://gmailblog.blogspot.ca/2010/10/new-in-labs-auto-advance-to-next.html">auto-advance</a> in&nbsp;labs.</li>
+<li>Enable <a href="http://fully-faltoo.com/2009/03/20/undo-in-gmail/">undo sent</a> if you already&nbsp;haven&#8217;t.</li>
+</ol>
+    </div>
+  </div>
+</article><article class="entry">
+  <div class="page-header">
+    <h1>
+        <a class="external" href="http://alignedleft.com/tutorials/d3/scales/">Understanding scales, domains and ranges in&nbsp;D3</a>
+    </h1>
+    <p class="meta sub">
+      <a href="https://fully-faltoo.com/2013/01/22/scales-d3/">
+        <small>
+          Posted on Tue 22 January 2013
+        </small>
+      </a>
+    </p>
+  </div>
+
+  <div class="page-content">
+    <div class="post">
+      <p>Have been playing around with <a href="http://d3js.org/">D3</a> recently. <a href="http://alignedleft.com/tutorials/d3/scales/">This</a> was the most easy to understand guide/tutorial to understand <em>scales</em>, <em>domains</em> and <em>ranges</em> in D3. It is powerful and I am loving&nbsp;it!</p>
+<blockquote>
+<p>The values in any data set are unlikely to correspond exactly to pixel measurements for use in your visualization. Scales provide a convenient way to map those data values to new values useful for visualization&nbsp;purposes.</p>
+</blockquote>
+    </div>
+  </div>
+</article><article class="entry">
+  <div class="page-header">
+    <h1>
+        <a class="external" href="http://www.youtube.com/watch?v=PH-AvQRNjMA">Moora - Gangs of Wasseypur 2 [Awesome&nbsp;lyrics]</a>
+    </h1>
+    <p class="meta sub">
+      <a href="https://fully-faltoo.com/2013/01/12/moora/">
+        <small>
+          Posted on Sat 12 January 2013
+        </small>
+      </a>
+    </p>
+  </div>
+
+  <div class="page-content">
+    <div class="post">
+      <iframe width="560" height="315" src="http://www.youtube.com/embed/PH-AvQRNjMA" frameborder="0" allowfullscreen></iframe>
+
+<p>Listed to this song and loved the lyrics by Varun Grover. Interestingly, he is the same guy who also penned the lyrics of <em>Ishq Wala Love</em>.</p>
+<blockquote>
+<p>Frustiyaao nahin moora,<br>
+Narbhasaao nahin moora,<br>
+Anytime moodwa ko,<br>
+Upsettaao nahin&nbsp;moora…  </p>
+<p>Jo bhi wrongwa hai usey,<br>
+Set right-wa karo ji,<br>
+Naahin loojiye ji hope,<br>
+Thoda fightwa karo ji..<br>&nbsp;Moora..</p>
+</blockquote>
+<p><strong><a href="http://www.bollymeaning.com/2012/07/moora-lyrics-meaning-translation.html">Complete&nbsp;lyrics</a></strong></p>
+    </div>
+  </div>
+</article><article class="entry">
+  <div class="page-header">
+    <h1>
+        <a href="https://fully-faltoo.com/2013/01/07/fake-images/">Playing with&nbsp;images</a>
+    </h1>
+    <p class="meta sub">
+      <a href="https://fully-faltoo.com/2013/01/07/fake-images/">
+        <small>
+          Posted on Mon 07 January 2013
+        </small>
+      </a>
+    </p>
+  </div>
+
+  <div class="page-content">
+    <div class="post">
+      <p><img alt="Fake image example " src="http://fakeimg.pl/439x230/282828/eae0d0/?text=This%20is%20so%20cool!"></p>
+<p>This week&#8217;s <a href="http://www.hackernewsletter.com/"><span class="caps">HN</span> Newsletter</a> shared 2 useful websites for playing with&nbsp;images.</p>
+<h2><a href="http://phrase.it/">phrase.it</a></h2>
+<blockquote>
+<p>Add cartoon style speech bubbles to photos within&nbsp;seconds</p>
+</blockquote>
+<h2><a href="http://fakeimg.pl/">Fake Images&nbsp;Please?</a></h2>
+<blockquote>
+<p>Fakeimg.pl is a little tool that generates images with an <span class="caps">URL</span>. Choose the size, the colors, even the&nbsp;text.</p>
+</blockquote>
+<p>Usage&nbsp;Example:</p>
+<div class="highlight"><pre><span></span><span class="c">http://fakeimg.pl/439x230/282828/eae0d0/?text=Problem?</span>
+</pre></div>
+
+
+<p>Bookmarked&nbsp;both!</p>
+    </div>
+  </div>
+</article>
+<p class="paginator center">
+            <a href="https://fully-faltoo.com/page/2">&laquo; Newer posts</a>
+    Page 3 / 52
+        <a href="https://fully-faltoo.com/page/4/">Older posts &raquo;</a>
+</p>
+
+      <footer class="footer">
+        <p>
+          <a href="/pages/about/">Who is Pratyush?</a>
+          <a class="right" href="http://feedburner.google.com/fb/a/mailverify?uri=fullyfaltoo">
+            Get updates via Email
+          </a>
+        </p>
+        <p>
+          <small>
+            Powered by
+            <a href="http://getpelican.com">Pelican</a>,
+            hosted on <a href="https://www.github.com">GitHub</a>
+            and written with
+            <img src="/theme/images/heart.png" alt="heart" /> in India.
+          </small>
+        </p>
+      </footer>
+    </div>
+  </body>
+</html>

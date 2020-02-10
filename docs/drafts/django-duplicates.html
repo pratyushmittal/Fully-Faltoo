@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="author" content="Pratyush Mittal">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <title>  How to find and handle duplicate rows in&nbsp;Django
+</title>
+
+
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="/theme/css/css.css" type="text/css">
+
+    <link rel="stylesheet" href="/theme/css/code.css" type="text/css">
+  </head>
+  <body>
+    <header class="header content">
+      <div class="center">
+        <a href="/">
+          <img src="/theme/images/logo.png" alt="Pratyush - A <GeeK>!!!" />
+        </a>
+      </div>
+      <div class="fix"></div>
+    </header>
+
+    <div class="content">
+
+<article class="entry">
+  <div class="page-header">
+    <h1>
+        How to find and handle duplicate rows in&nbsp;Django
+    </h1>
+    <p class="meta sub">
+      <a href="https://fully-faltoo.com/drafts/django-duplicates.html">
+        <small>
+          Posted on Sun 29 September 2019
+        </small>
+      </a>
+    </p>
+  </div>
+
+  <div class="page-content">
+    <div class="post">
+      <p>Sometimes we have duplicate rows in database due to some bad design or schema change. Lets see how we can fix&nbsp;them.</p>
+<p><strong>Algorithm</strong></p>
+<ul>
+<li>The solution is to &#8220;group by&#8221; rows based on the required&nbsp;columns.</li>
+<li>Add a column for&nbsp;counts</li>
+<li>Filter rows where count is more than&nbsp;1</li>
+</ul>
+<p>Lets say we have a model <code>Announcement</code> with <code>company_id</code> (<span class="caps">FK</span>), <code>title</code>, <code>broadcast_date</code> and other fields. We want to delete duplicate announcements for the company on same&nbsp;date.</p>
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">django.db.models</span> <span class="kn">import</span> <span class="n">Min</span><span class="p">,</span> <span class="n">Max</span><span class="p">,</span> <span class="n">Count</span>
+<span class="kn">from</span> <span class="nn">documents.models</span> <span class="kn">import</span> <span class="n">Announcement</span>
+
+<span class="c1"># Groupby by putting group identifiers in values</span>
+<span class="c1"># then annotate a count record</span>
+<span class="n">dupes</span> <span class="o">=</span> <span class="n">Announcement</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">values</span><span class="p">(</span><span class="s1">&#39;company_id&#39;</span><span class="p">,</span> <span class="s1">&#39;title&#39;</span><span class="p">,</span> <span class="s1">&#39;broadcast_date&#39;</span><span class="p">)</span> \
+    <span class="o">.</span><span class="n">order_by</span><span class="p">()</span> \
+    <span class="o">.</span><span class="n">annotate</span><span class="p">(</span>
+        <span class="n">first_update_id</span><span class="o">=</span><span class="n">Min</span><span class="p">(</span><span class="s1">&#39;id&#39;</span><span class="p">),</span>
+        <span class="n">records</span><span class="o">=</span><span class="n">Count</span><span class="p">(</span><span class="s1">&#39;id&#39;</span><span class="p">),</span>
+    <span class="p">)</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span>
+        <span class="n">records__gt</span><span class="o">=</span><span class="mi">1</span>
+    <span class="p">)</span>
+
+<span class="c1"># Check query</span>
+<span class="nb">print</span> <span class="n">dupes</span><span class="o">.</span><span class="n">query</span>
+
+<span class="c1"># Handle duplicate</span>
+<span class="k">for</span> <span class="n">result</span> <span class="ow">in</span> <span class="n">dupes</span><span class="p">:</span>
+    <span class="n">Announcement</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span>
+        <span class="n">company_id</span><span class="o">=</span><span class="n">result</span><span class="p">[</span><span class="s1">&#39;company_id&#39;</span><span class="p">],</span>
+        <span class="n">title</span><span class="o">=</span><span class="n">report</span><span class="p">[</span><span class="s1">&#39;title&#39;</span><span class="p">],</span>
+        <span class="n">broadcast_date</span><span class="o">=</span><span class="n">report</span><span class="p">[</span><span class="s1">&#39;broadcast_date&#39;</span><span class="p">],</span>
+    <span class="p">)</span><span class="o">.</span><span class="n">exclude</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="n">report</span><span class="p">[</span><span class="s1">&#39;first_update_id&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">delete</span><span class="p">()</span>
+</pre></div>
+
+
+<p><strong>Using <code>unique</code> and <code>unique_together</code> database&nbsp;constraints</strong></p>
+<p>Best way to handle duplicates is to use <code>unique</code> or <code>unique_together</code> constraints at  database level. A common error is sometimes to use a <em>nullable</em> field in <code>unique_together</code>. In <span class="caps">SQL</span>, <code>null</code> is not equal to anything. In-fact, <code>null</code> is not equal to even <code>null</code>. So a <code>unique</code> constraint on a <code>null</code> value won&#8217;t&nbsp;work.</p>
+    </div>
+  </div>
+</article>  <hr>
+
+
+      <footer class="footer">
+        <p>
+          <a href="/pages/about/">Who is Pratyush?</a>
+          <a class="right" href="http://feedburner.google.com/fb/a/mailverify?uri=fullyfaltoo">
+            Get updates via Email
+          </a>
+        </p>
+        <p>
+          <small>
+            Powered by
+            <a href="http://getpelican.com">Pelican</a>,
+            hosted on <a href="https://www.github.com">GitHub</a>
+            and written with
+            <img src="/theme/images/heart.png" alt="heart" /> in India.
+          </small>
+        </p>
+      </footer>
+    </div>
+  </body>
+</html>
