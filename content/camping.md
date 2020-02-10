@@ -3,7 +3,7 @@ Date: 2016-05-04
 Slug: camping
 comments: true
 
-![Shiva Cafe in McLeod Ganj]({filename}/uploads/camping.jpg)
+![Shiva Cafe in McLeod Ganj]({static}/uploads/camping.jpg)
 
 I broke my phone and missed carrying a few items on my last trek.
 This is a short checklist for future references.

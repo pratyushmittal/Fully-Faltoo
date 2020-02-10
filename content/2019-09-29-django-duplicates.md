@@ -4,7 +4,7 @@ title: How to find and handle duplicate rows in Django
 description: How to find and handle duplicate rows in Django using "group by" query
 tags: 'python'
 code: true
-draft: true
+status: draft
 
 Sometimes we have duplicate rows in database due to some bad design or schema change. Lets see how we can fix them.
 

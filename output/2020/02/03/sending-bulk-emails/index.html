@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="author" content="Pratyush Mittal">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <title>  Sending bulk&nbsp;emails
+</title>
+
+
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="/theme/css/css.css" type="text/css">
+
+  </head>
+  <body>
+    <header class="header content">
+      <div class="center">
+        <a href="/">
+          <img src="/theme/images/logo.png" alt="Pratyush - A <GeeK>!!!" />
+        </a>
+      </div>
+      <div class="fix"></div>
+    </header>
+
+    <div class="content">
+
+<article class="entry">
+  <div class="page-header">
+    <h1>
+        Sending bulk&nbsp;emails
+    </h1>
+    <p class="meta sub">
+      <a href="/2020/02/03/sending-bulk-emails/">
+        <small>
+          Posted on Mon 03 February 2020
+        </small>
+      </a>
+    </p>
+  </div>
+
+  <div class="page-content">
+    <div class="post">
+      <p>We send around 1lac emails a day. It is a tough task because it involves multiple&nbsp;things:</p>
+<ul>
+<li>Setting up a server<ul>
+<li>reverse <span class="caps">DNS</span></li>
+<li>checking <span class="caps">IP</span> in&nbsp;blocklist</li>
+</ul>
+</li>
+<li>Installing&nbsp;postfix</li>
+<li>Setting up <span class="caps">SPF</span> and <span class="caps">DKIM</span></li>
+<li>Setting up authentication and&nbsp;firewall</li>
+<li>Monitoring server <span class="caps">IP</span></li>
+<li>Adopting best practices:<ul>
+<li>Unsubscribe&nbsp;links</li>
+<li>Handling&nbsp;bounces</li>
+</ul>
+</li>
+<li>Debugging in case of&nbsp;errors</li>
+</ul>
+<p>Most guides cover only one of these topics. I will try to share the &#8220;edge cases&#8221; and important things that are often missed. I will also link to good guides for general&nbsp;things.</p>
+<h2>Setting up a&nbsp;server</h2>
+<p>DigitalOcean covers the basic server setup. Immediately after spinning a new server, we should check it&#8217;s reputation. See if it is blocked on  We also need to configure the server for reverse <span class="caps">DNS</span> and&nbsp;ch</p>
+    </div>
+  </div>
+</article>  <hr>
+
+
+      <footer class="footer">
+        <p>
+          <a href="/pages/about/">Who is Pratyush?</a>
+          <a class="right" href="http://feedburner.google.com/fb/a/mailverify?uri=fullyfaltoo">
+            Get updates via Email
+          </a>
+        </p>
+        <p>
+          <small>
+            Powered by
+            <a href="http://getpelican.com">Pelican</a>,
+            hosted on <a href="https://www.github.com">GitHub</a>
+            and written with
+            <img src="/theme/images/heart.png" alt="heart" /> in India.
+          </small>
+        </p>
+      </footer>
+    </div>
+  </body>
+</html>

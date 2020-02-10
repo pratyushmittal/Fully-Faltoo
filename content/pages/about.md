@@ -2,7 +2,7 @@ Title: About Pratyush Mittal
 description: About Pratyush Mittal
 slug: about
 
-![Pratyush Mittal]({filename}/uploads/profile.jpg)
+![Pratyush Mittal]({static}/uploads/profile.jpg)
 
 Hi, I am Pratyush Mittal. I am a Chartered Accountant but I also love to write computer programs.
 
@@ -10,7 +10,7 @@ I am currently digging deep into the principals of value investing and also deve
 
 Follow me on [Twitter][] or [Github][].
 
-![Hangout]({filename}/uploads/perfect.jpg)
+![Hangout]({static}/uploads/perfect.jpg)
 
 ## Stocks and Finance
 

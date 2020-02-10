@@ -13,6 +13,6 @@ Date: 2016-05-12
 
 **A very similar thought is in [Desiderata](http://zenpencils.com/comic/desiderata/) too:**
 
-[![Desiderata Comic]({filename}/uploads/desiderata.png)](http://zenpencils.com/comic/desiderata/)
+[![Desiderata Comic]({static}/uploads/desiderata.png)](http://zenpencils.com/comic/desiderata/)
 
 > Avoid loud and aggressive persons; they are vexatious to the spirit.

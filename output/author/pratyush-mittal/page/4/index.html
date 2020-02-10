@@ -27,40 +27,6 @@
 <article class="entry">
   <div class="page-header">
     <h1>
-        <a href="/2013/01/07/fake-images/">Playing with&nbsp;images</a>
-    </h1>
-    <p class="meta sub">
-      <a href="/2013/01/07/fake-images/">
-        <small>
-          Posted on Mon 07 January 2013
-        </small>
-      </a>
-    </p>
-  </div>
-
-  <div class="page-content">
-    <div class="post">
-      <p><img alt="Fake image example " src="http://fakeimg.pl/439x230/282828/eae0d0/?text=This%20is%20so%20cool!"></p>
-<p>This week&#8217;s <a href="http://www.hackernewsletter.com/"><span class="caps">HN</span> Newsletter</a> shared 2 useful websites for playing with&nbsp;images.</p>
-<h2><a href="http://phrase.it/">phrase.it</a></h2>
-<blockquote>
-<p>Add cartoon style speech bubbles to photos within&nbsp;seconds</p>
-</blockquote>
-<h2><a href="http://fakeimg.pl/">Fake Images&nbsp;Please?</a></h2>
-<blockquote>
-<p>Fakeimg.pl is a little tool that generates images with an <span class="caps">URL</span>. Choose the size, the colors, even the&nbsp;text.</p>
-</blockquote>
-<p>Usage&nbsp;Example:</p>
-<div class="highlight"><pre><span></span><span class="c">http://fakeimg.pl/439x230/282828/eae0d0/?text=Problem?</span>
-</pre></div>
-
-
-<p>Bookmarked&nbsp;both!</p>
-    </div>
-  </div>
-</article><article class="entry">
-  <div class="page-header">
-    <h1>
         <a href="/2013/01/03/walter-isaacson/">Virtues of Jobs, Einstein and&nbsp;Franklin</a>
     </h1>
     <p class="meta sub">
@@ -240,6 +206,47 @@
 <p>Eliminate clutter on your&nbsp;desk</p>
 </blockquote>
 <p>I would also add <strong>&#8220;<a href="http://modernerd.com/post/348119427/inbox-heaven">Zero Inbox</a>&#8221;</strong> to the&nbsp;list.</p>
+    </div>
+  </div>
+</article><article class="entry">
+  <div class="page-header">
+    <h1>
+        <a href="/2012/12/11/print-stylesheets/">Controlling the print style-sheets [<span class="caps">CSS</span>]</a>
+    </h1>
+    <p class="meta sub">
+      <a href="/2012/12/11/print-stylesheets/">
+        <small>
+          Posted on Tue 11 December 2012
+        </small>
+      </a>
+    </p>
+  </div>
+
+  <div class="page-content">
+    <div class="post">
+      <p>There are some very useful <span class="caps">CSS2</span> features which allow the authors to get control on how the pages are&nbsp;printed.</p>
+<h3>Avoid the page breaks just after&nbsp;headings</h3>
+<div class="highlight"><pre><span></span><span class="err">h1, h2, h3, h4, h5, h6 { page-break-after : avoid }</span>
+</pre></div>
+
+
+<blockquote>
+<p>page-break-after properties accept the auto, always, avoid, left, and right&nbsp;keywords.</p>
+<p>The keyword auto is the default, it lets the browser generate page breaks as needed. The keyword always forces a page break before or after the element, while avoid suppresses a page break immediately before or after the element. The left and right keywords force one or two page breaks, so that the element is rendered on a left-hand or right-hand&nbsp;page.</p>
+</blockquote>
+<h3>Prevent just a line of the paragraph from moving onto next&nbsp;page</h3>
+<div class="highlight"><pre><span></span><span class="err">@page {</span>
+<span class="err">    orphans:4;</span>
+<span class="err">    widows:2;</span>
+<span class="err">}</span>
+</pre></div>
+
+
+<blockquote>
+<p>The <code>orphans</code> property specifies the minimum number of lines of a paragraph that must be left at the bottom of a&nbsp;page.</p>
+<p>The <code>widows</code> property specifies the minimum number of lines of a paragraph that must be left at the top of a&nbsp;page.</p>
+</blockquote>
+<p><strong><a href="http://www.tutorialspoint.com/css/css_paged_media.htm">TutorialsPoint</a> covers many other features for better print pages. Bookmarked it for&nbsp;long!</strong></p>
     </div>
   </div>
 </article>

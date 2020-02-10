@@ -27,61 +27,6 @@
 <article class="entry">
   <div class="page-header">
     <h1>
-        <a href="/2019/09/29/django-duplicates/">How to find and handle duplicate rows in&nbsp;Django</a>
-    </h1>
-    <p class="meta sub">
-      <a href="/2019/09/29/django-duplicates/">
-        <small>
-          Posted on Sun 29 September 2019
-        </small>
-      </a>
-    </p>
-  </div>
-
-  <div class="page-content">
-    <div class="post">
-      <p>Sometimes we have duplicate rows in database due to some bad design or schema change. Lets see how we can fix&nbsp;them.</p>
-<p><strong>Algorithm</strong></p>
-<ul>
-<li>The solution is to &#8220;group by&#8221; rows based on the required&nbsp;columns.</li>
-<li>Add a column for&nbsp;counts</li>
-<li>Filter rows where count is more than&nbsp;1</li>
-</ul>
-<p>Lets say we have a model <code>Announcement</code> with <code>company_id</code> (<span class="caps">FK</span>), <code>title</code>, <code>broadcast_date</code> and other fields. We want to delete duplicate announcements for the company on same&nbsp;date.</p>
-<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">django.db.models</span> <span class="kn">import</span> <span class="n">Min</span><span class="p">,</span> <span class="n">Max</span><span class="p">,</span> <span class="n">Count</span>
-<span class="kn">from</span> <span class="nn">documents.models</span> <span class="kn">import</span> <span class="n">Announcement</span>
-
-<span class="c1"># Groupby by putting group identifiers in values</span>
-<span class="c1"># then annotate a count record</span>
-<span class="n">dupes</span> <span class="o">=</span> <span class="n">Announcement</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">values</span><span class="p">(</span><span class="s1">&#39;company_id&#39;</span><span class="p">,</span> <span class="s1">&#39;title&#39;</span><span class="p">,</span> <span class="s1">&#39;broadcast_date&#39;</span><span class="p">)</span> \
-    <span class="o">.</span><span class="n">order_by</span><span class="p">()</span> \
-    <span class="o">.</span><span class="n">annotate</span><span class="p">(</span>
-        <span class="n">first_update_id</span><span class="o">=</span><span class="n">Min</span><span class="p">(</span><span class="s1">&#39;id&#39;</span><span class="p">),</span>
-        <span class="n">records</span><span class="o">=</span><span class="n">Count</span><span class="p">(</span><span class="s1">&#39;id&#39;</span><span class="p">),</span>
-    <span class="p">)</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span>
-        <span class="n">records__gt</span><span class="o">=</span><span class="mi">1</span>
-    <span class="p">)</span>
-
-<span class="c1"># Check query</span>
-<span class="nb">print</span> <span class="n">dupes</span><span class="o">.</span><span class="n">query</span>
-
-<span class="c1"># Handle duplicate</span>
-<span class="k">for</span> <span class="n">result</span> <span class="ow">in</span> <span class="n">dupes</span><span class="p">:</span>
-    <span class="n">Announcement</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span>
-        <span class="n">company_id</span><span class="o">=</span><span class="n">result</span><span class="p">[</span><span class="s1">&#39;company_id&#39;</span><span class="p">],</span>
-        <span class="n">title</span><span class="o">=</span><span class="n">report</span><span class="p">[</span><span class="s1">&#39;title&#39;</span><span class="p">],</span>
-        <span class="n">broadcast_date</span><span class="o">=</span><span class="n">report</span><span class="p">[</span><span class="s1">&#39;broadcast_date&#39;</span><span class="p">],</span>
-    <span class="p">)</span><span class="o">.</span><span class="n">exclude</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="n">report</span><span class="p">[</span><span class="s1">&#39;first_update_id&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">delete</span><span class="p">()</span>
-</pre></div>
-
-
-<p><strong>Using <code>unique</code> and <code>unique_together</code> database&nbsp;constraints</strong></p>
-<p>Best way to handle duplicates is to use <code>unique</code> or <code>unique_together</code> constraints at  database level. A common error is sometimes to use a <em>nullable</em> field in <code>unique_together</code>. In <span class="caps">SQL</span>, <code>null</code> is not equal to anything. In-fact, <code>null</code> is not equal to even <code>null</code>. So a <code>unique</code> constraint on a <code>null</code> value won&#8217;t&nbsp;work.</p>
-    </div>
-  </div>
-</article><article class="entry">
-  <div class="page-header">
-    <h1>
         <a href="/2016/05/12/people-to-avoid/">People to&nbsp;Avoid</a>
     </h1>
     <p class="meta sub">
@@ -558,6 +503,121 @@ resume&nbsp;support.</p>
 such as <code>awk</code>, <code>uniq</code>, <code>head</code> which are
 super-useful in daily work. <a href="http://datavu.blogspot.in/2014/08/useful-unix-commands-for-exploring-data.html">Akshay</a> has covered
 them in a <a href="http://datavu.blogspot.in/2014/08/useful-unix-commands-for-exploring-data.html">brief tutorial here</a>.</p>
+    </div>
+  </div>
+</article><article class="entry">
+  <div class="page-header">
+    <h1>
+        <a href="/2014/05/15/a-to-z/">Websites I use - A to&nbsp;Z</a>
+    </h1>
+    <p class="meta sub">
+      <a href="/2014/05/15/a-to-z/">
+        <small>
+          Posted on Thu 15 May 2014
+        </small>
+      </a>
+    </p>
+  </div>
+
+  <div class="page-content">
+    <div class="post">
+      <p>These are the websites I use the most based on my
+browser&#8217;s <a href="http://en.wikipedia.org/wiki/Frecency">frecency</a>:</p>
+<p><em>This post is inspired from <a href="http://www.s-anand.net/blog/a-z-of-my-browsing-history/">S Anand&#8217;s blogpost</a>.</em></p>
+<ul>
+<li>A is for <a href="http://www.amazon.in">amazon.in</a>.
+  Though I don&#8217;t shop too much, I usually use
+  Amazon to browse though books and
+  read their initial&nbsp;pages.</li>
+<li>B is <a href="http://www.bseindia.com">bseindia.com</a> - mostly
+  for checking current stock prices and for
+  keeping a track of latest corporate&nbsp;announcements.</li>
+<li>C shows one of my favorite tech blogs -
+  <a href="http://www.codinghorror.com">codinghorror.com</a>.
+  Recently, have been visiting it more frequently
+  to check the blog&#8217;s integration with
+  <a href="http://www.discourse.org">Discourse</a>. It is followed by
+  <a href="http://cricket.yahoo.com">cricket.yahoo.com</a>,
+  which I use to keep a track of latest&nbsp;scores.</li>
+<li>D is <a href="http://docs.google.com">docs.google.com</a>.
+  I love to use the live sharing and commenting
+  feature in Google Docs to collaborate on
+  articles, letters and reports. For other
+  writings, I prefer to use&nbsp;gVim.</li>
+<li>E is
+  <a href="http://english.stackexchange.com">english.stackexchange.com</a>.
+  I recently read Strunk and White&#8217;s
+  <a href="https://en.wikipedia.org/wiki/The_Elements_of_Style">The Elements of Style</a>;
+  have been using this StackExchange to follow up
+  with few of the rules mentioned in the&nbsp;book.</li>
+<li>F is (obviously)
+  <a href="http://www.facebook.com">facebook.com</a>. The
+  runner-up is <a href="http://feedly.com">feedly.com</a> - rss reader to keep
+  a track of my favorite blogs. In future I would
+  like to see Feedly climb above&nbsp;:).</li>
+<li>G is <a href="http://www.github.com">github.com</a> - I
+  love open-source&nbsp;projects.</li>
+<li>H is <a href="http://hootsuite.com">hootsuite.com</a> - used to manage multiple
+  Twitter accounts including
+  <a href="http://www.twitter.com/faltoo">@faltoo</a> and
+  <a href="http://www.twitter.com/screener_in">@screener_in</a>.</li>
+<li>I is <a href="http://www.irctc.co.in">irctc.co.in</a> -
+  for booking all the train tickets. It is
+  followed by <a href="http://www.imdb.com">imdb.com</a> for
+  checking all the movie&nbsp;recommendations.</li>
+<li>J shows one of my favorite financial blogs
+  <a href="http://janav.wordpress.com">janav.wordpress.com</a>.
+  It is followed by <a href="http://jpegmini.com">jpegmini.com</a>,
+  which I use to compress images in blog&nbsp;posts.</li>
+<li>K is <a href="http://www.kickass.to">kickass.to</a> - for
+  movies and&nbsp;music.</li>
+<li>L is <a href="http://localhost/">localhost</a> - a
+  playground for all my development&nbsp;projects.</li>
+<li>M is (again obviously)
+  <a href="http://mail.google.com">mail.google.com</a>.</li>
+<li>N is
+  <a href="http://news.ycombinator.com">news.ycominator.com</a> -
+  I use it to stay updated with the latest
+  programing developments.
+  Lately, I have been using more of
+  <a href="http://www.hckrnews.com">hckrnews.com</a> for its
+  better&nbsp;interface.</li>
+<li>O is
+  <a href="http://openshift.redhat.com">openshift.redhat.com</a> -
+  for deploying new test projects for&nbsp;free.</li>
+<li>P is
+  <a href="http://play.fully-faltoo.com">play.fully-faltoo.com</a> -
+  a custom domain used for testing different
+  internal projects at different times. It is
+  followed by
+  <a href="http://pixlr.com/express/">pixlr.com/express/</a>,
+  used for quickly fixing the&nbsp;photographs.</li>
+<li>Q is <a href="http://www.quora.com">Quora</a>. I am not a
+  huge fan of Quora but it is the only one with&nbsp;Q.</li>
+<li>R is <a href="http://www.readiotbox.com">Readiot.com</a> -
+  a side-project I have been working upon. It is
+  like Evernote but saves everything in your&nbsp;DropBox.</li>
+<li>S is for <a href="http://www.screener.in">screener.in</a> -
+  the project that takes most of my time :). It is
+  followed by <a href="http://stackoverflow.com">stackoverflow.com</a> -
+  my favorite resource to get and provide&nbsp;help.</li>
+<li>T is <a href="http://www.twitter.com">twitter.com</a> - I
+  like to keep track of latest updates through
+  Twitter rather than watching&nbsp;news.</li>
+<li>U is <a href="http://ubuntu.com/">ubuntu.com</a>, an old
+  and the only item in U. Now I like to use
+  <a href="https://www.archlinux.org/">Arch</a>.</li>
+<li>V is <a href="http://valuepickr.com/">valuepickr.com</a>,
+  my favorite forum for in-depth discussions on&nbsp;stocks.</li>
+<li>W is <a href="http://webfaction.com">webfaction.com</a> -
+  my webhost for all the production&nbsp;deployments.</li>
+<li>X is <a href="http://xiaomi.eu/community/">xiaomi.eu</a> -
+  an old one time item when I used <span class="caps">MIUI</span> Rom on my
+  Nexus&nbsp;S.</li>
+<li>Y is <a href="http://youtube.com">youtube.com</a> - I love
+  to hear music and watch my favorite channels&nbsp;online.</li>
+<li>Z has no&nbsp;items.</li>
+</ul>
     </div>
   </div>
 </article>
