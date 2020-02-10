@@ -5,7 +5,7 @@ import subprocess
 
 def preview():
     "Shows what will be output"
-    server = subprocess.Popen(['pelican', '--listen'])
+    server = subprocess.Popen(['pelican', 'content', '--listen', '--autoreload'])
     time.sleep(2)
     subprocess.run(['open', 'http://localhost:8000'])
     server.communicate()

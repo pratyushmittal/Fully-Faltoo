@@ -53,7 +53,7 @@ DEFAULT_PAGINATION = 7
 # Options are given here: http://docs.getpelican.com/en/stable/settings.html
 
 # Sitemap
-PLUGINS_PATHS = ["pelican-plugins"]
+PLUGIN_PATHS = ["pelican-plugins"]
 PLUGINS = ['sitemap', 'random_article', ]
 SITEMAP = {
     'format': 'xml',
