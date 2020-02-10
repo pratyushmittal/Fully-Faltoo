@@ -4,5 +4,8 @@
 *.un~
 .DS_Store
 
+# Preview content
+preview
+
 # Editors
 .vscode
