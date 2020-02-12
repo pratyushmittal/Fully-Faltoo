@@ -4,5 +4,4 @@ layout: post
 title: Social proof-reading
 link: https://www.kibin.com/
 
-
-<p>Kibin gets you proofreading and editing by Real People.</p><br/><p>A community based service that sounds interesting.</p>
+Kibin gets you proofreading and editing by Real People. A community based service that sounds interesting.
