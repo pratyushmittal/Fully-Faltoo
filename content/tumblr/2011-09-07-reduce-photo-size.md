@@ -2,7 +2,7 @@ date: 2011-09-07
 slug: reduce-photo-size
 layout: post
 title: Reduce Photo size
-link: "http://www.jpegmini.com/main/home"
+link: http://www.jpegmini.com/main/home
 tags: "web-designing"
 
 
