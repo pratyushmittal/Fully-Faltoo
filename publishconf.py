@@ -14,6 +14,7 @@ from pelicanconf import *
 SITEURL = 'https://fully-faltoo.com'
 RELATIVE_URLS = False
 
+FEED_DOMAIN = 'http://feeds.feedburner.com/fullyfaltoo'
 FEED_ALL_ATOM = 'feeds/all.atom.xml'
 CATEGORY_FEED_ATOM = 'feeds/{slug}.atom.xml'
 

@@ -7,7 +7,7 @@
 
     <title>{% block title %}{{ SITENAME }}{% endblock %}</title>
 
-    {% if FEED_RSS %}
+    {% if FEED_DOMAIN %}
     <link rel="alternate" href="{{ FEED_DOMAIN }}" title="{{ SITENAME }} RSS Feed" type="application/rss+xml">
     {% endif %}
 
