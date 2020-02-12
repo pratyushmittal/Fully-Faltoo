@@ -27,6 +27,47 @@
 <article class="entry">
   <div class="page-header">
     <h1>
+        <a href="https://fully-faltoo.com/2012/12/11/print-stylesheets/">Controlling the print style-sheets [<span class="caps">CSS</span>]</a>
+    </h1>
+    <p class="meta sub">
+      <a href="https://fully-faltoo.com/2012/12/11/print-stylesheets/">
+        <small>
+          Posted on Tue 11 December 2012
+        </small>
+      </a>
+    </p>
+  </div>
+
+  <div class="page-content">
+    <div class="post">
+      <p>There are some very useful <span class="caps">CSS2</span> features which allow the authors to get control on how the pages are&nbsp;printed.</p>
+<h3>Avoid the page breaks just after&nbsp;headings</h3>
+<div class="highlight"><pre><span></span><span class="err">h1, h2, h3, h4, h5, h6 { page-break-after : avoid }</span>
+</pre></div>
+
+
+<blockquote>
+<p>page-break-after properties accept the auto, always, avoid, left, and right&nbsp;keywords.</p>
+<p>The keyword auto is the default, it lets the browser generate page breaks as needed. The keyword always forces a page break before or after the element, while avoid suppresses a page break immediately before or after the element. The left and right keywords force one or two page breaks, so that the element is rendered on a left-hand or right-hand&nbsp;page.</p>
+</blockquote>
+<h3>Prevent just a line of the paragraph from moving onto next&nbsp;page</h3>
+<div class="highlight"><pre><span></span><span class="err">@page {</span>
+<span class="err">    orphans:4;</span>
+<span class="err">    widows:2;</span>
+<span class="err">}</span>
+</pre></div>
+
+
+<blockquote>
+<p>The <code>orphans</code> property specifies the minimum number of lines of a paragraph that must be left at the bottom of a&nbsp;page.</p>
+<p>The <code>widows</code> property specifies the minimum number of lines of a paragraph that must be left at the top of a&nbsp;page.</p>
+</blockquote>
+<p><strong><a href="http://www.tutorialspoint.com/css/css_paged_media.htm">TutorialsPoint</a> covers many other features for better print pages. Bookmarked it for&nbsp;long!</strong></p>
+    </div>
+  </div>
+</article><article class="entry">
+  <div class="page-header">
+    <h1>
         <a href="https://fully-faltoo.com/2012/10/27/search-engine/">You are using the wrong search&nbsp;engine!</a>
     </h1>
     <p class="meta sub">
@@ -182,25 +223,6 @@ Jeetengi meri Dhoni ki&nbsp;India!</p>
 <p>Subtle Patterns&#8217; goal is to be a high quality resource for anyone in need of tilable textured patterns, free to use (including commercial&nbsp;projects).</p>
 </blockquote>
 <p><span class="caps">PS</span>: Love their instant preview option&nbsp;too.</p>
-    </div>
-  </div>
-</article><article class="entry">
-  <div class="page-header">
-    <h1>
-        <a class="external" href="https://www.youtube.com/watch?v=NdDU_BBJW9Y&feature=player_embedded#ShSf!">Inspiring story of <span class="caps">LEGO</span></a>
-    </h1>
-    <p class="meta sub">
-      <a href="https://fully-faltoo.com/2012/08/18/lego-story/">
-        <small>
-          Posted on Sat 18 August 2012
-        </small>
-      </a>
-    </p>
-  </div>
-
-  <div class="page-content">
-    <div class="post">
-      <iframe width="640" height="360" src="https://www.youtube.com/embed/NdDU_BBJW9Y?feature=player_detailpage" frameborder="0" allowfullscreen="allowfullscreen"> </iframe>
     </div>
   </div>
 </article>
