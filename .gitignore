@@ -9,3 +9,6 @@ preview
 
 # Editors
 .vscode
+
+# virtual env
+.venv
