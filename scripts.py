@@ -79,7 +79,17 @@ def new_post():
     date = dt.date.today()
     filename = f"{date}-{slug}.md"
     filepath = os.path.join("content", filename)
-    content = [f"title: {slug}", f"date: {date}", f"status: draft", "", ""]
+    content = [
+        f"title: {slug}",
+        f"date: {date}",
+        f"status: draft",
+        "",
+        "",
+        "[in what capacity]",
+        "[in what style]",
+        "[how much are you going to cover]",
+        "[what is one take away from it]",
+    ]
     content = "\n".join(content)
     with open(filepath, "w") as f:
         f.write(content)
