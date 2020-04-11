@@ -74,17 +74,16 @@ def _to_slug(title):
 
 
 def new_post():
-    title = input("Title: ")
-    slug = _to_slug(title)
-    slug = input(f"Slug [{slug}]: ") or slug
+    slug = sys.argv[2] or input("Slug: ")
+    slug = _to_slug(slug)
     date = dt.date.today()
     filename = f"{date}-{slug}.md"
     filepath = os.path.join("content", filename)
-    content = [f"title: {title}", f"date: {date}", f"status: draft", "", ""]
+    content = [f"title: {slug}", f"date: {date}", f"status: draft", "", ""]
     content = "\n".join(content)
     with open(filepath, "w") as f:
         f.write(content)
-    subprocess.run(["code", filepath])
+    subprocess.run(["/usr/local/bin/code", filepath])
 
 
 if __name__ == "__main__":
