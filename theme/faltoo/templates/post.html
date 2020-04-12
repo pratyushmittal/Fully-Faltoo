@@ -1,6 +1,13 @@
-<article class="entry">
-  <div class="page-header">
-    <h1>
+<article>
+  <header>
+    <div class="meta sub">
+      <a href="{{ SITEURL }}/{{ article.url }}">
+        <small>
+          Posted on {{ article.locale_date }}
+        </small>
+      </a>
+    </div>
+    <h1 style="">
       {% if article.link %}
         <a class="external" href="{{ article.link }}">{{ article.title }}</a>
       {% elif not article_page %}
@@ -9,14 +16,7 @@
         {{ article.title }}
       {% endif %}
     </h1>
-    <p class="meta sub">
-      <a href="{{ SITEURL }}/{{ article.url }}">
-        <small>
-          Posted on {{ article.locale_date }}
-        </small>
-      </a>
-    </p>
-  </div>
+  </header>
 
   <div class="page-content">
     <div class="post">

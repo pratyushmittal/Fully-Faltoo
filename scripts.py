@@ -91,8 +91,9 @@ def new_post():
         "[what is one take away from it]",
     ]
     content = "\n".join(content)
-    with open(filepath, "w") as f:
-        f.write(content)
+    if not os.path.isfile(filepath):
+        with open(filepath, "w") as f:
+            f.write(content)
     subprocess.run(["/usr/local/bin/code", filepath])
 
 

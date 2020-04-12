@@ -1,5 +1,5 @@
 {% if DEFAULT_PAGINATION %}
-<p class="paginator center">
+<p class="center" style="margin: 50px 0 30px;">
     {% if articles_page.has_previous() %}
         {% if articles_page.previous_page_number() == 1 %}
             <a href="{{ SITEURL }}/">&laquo; Newer posts</a>
@@ -7,9 +7,15 @@
             <a href="{{ SITEURL }}/page/{{ articles_page.previous_page_number() }}">&laquo; Newer posts</a>
         {% endif %}
     {% endif %}
-    Page {{ articles_page.number }} / {{ articles_paginator.num_pages }}
+
+    <span style="padding: 0 20px;">
+        Page {{ articles_page.number }} / {{ articles_paginator.num_pages }}
+    </span>
+
     {% if articles_page.has_next() %}
-        <a href="{{ SITEURL }}/page/{{ articles_page.next_page_number() }}/">Older posts &raquo;</a>
+        <a href="{{ SITEURL }}/page/{{ articles_page.next_page_number() }}/">
+            Older posts &raquo;
+        </a>
     {% endif %}
 </p>
 {% endif %}
