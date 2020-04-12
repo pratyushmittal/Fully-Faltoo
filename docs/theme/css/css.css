@@ -6,7 +6,6 @@ body {
     margin: 0;
     padding: 0;
     color:#333333;
-    font-size:100%;
     font-family: 'Lato','Helvetica Neue', Helvetica, Arial;
     min-height:480px;
     min-width:320px;
@@ -26,18 +25,18 @@ a:hover {
     padding-right: 13px;
 }
 
-
-.header {
-    margin: 100px 0 75px 0;
+.brand {
+    margin: 60px 0 80px 0;
 }
 
-.footer {
+.brand a {
+    color: #6a6a6a;
+}
+
+footer {
     padding-top: 20px;
 }
 
-.header a {
-    color: #6a6a6a;
-}
 
 .content {
     margin-left: auto;
@@ -45,57 +44,7 @@ a:hover {
     width: 65.9375%;    /* 633px / 960px */
 }
 
-
 /* Other General Style */
-h1, h2, h3, h4, h5, h6, .header, .footer {
-  font-weight: bold;
-  text-rendering: optimizelegibility;
-}
-
-h1, h2, h3, h4, h5, h6 {
-  margin: 0;
-}
-h1 small, h2 small, h3 small, h4 small, h5 small, h6 small {
-  font-weight: normal;
-}
-h1 {
-  font-size: 1.875em;
-  line-height: 2.25em;
-}
-h1 small {
-  font-size: 1.125em;
-}
-h2 {
-  font-size: 1.5em;
-  line-height: 1.8em;
-}
-h2 small {
-  font-size: 1.125em;
-}
-h3 {
-  font-size: 1.125em;
-  line-height: 1.6875em;
-}
-h3 small {
-  font-size: .875em;
-}
-h4, h5, h6 {
-  line-height: 1.125em;
-}
-h4 {
-  font-size: .875em;
-}
-h4 small {
-  font-size: .75em;
-}
-h5 {
-  font-size: .75em;
-}
-h6 {
-  font-size: .6875em;
-  text-transform: uppercase;
-}
-
 p, li, pre {
   max-width: 40em;
 }
@@ -105,27 +54,14 @@ p, li {
   margin: 1em 0;
 }
 
-.low_pad {
-  padding:.25em;
-}
-
-.mid_pad {
-  padding:.5em;
-}
-
-.high_pad {
-  padding:1em;
-}
-
 /* Posts */
-.entry {
-  padding-bottom:2.5em;
+article h1 {
+  font-size: 2em;
+  margin: 0;
 }
-.page-header h1 {
-  line-height: 1.35em;
-}
-.page-header {
-margin: 1em 0;
+
+article + article {
+  margin-top: 100px;
 }
 
 .meta {
@@ -142,10 +78,6 @@ margin: 1em 0;
 /* Layout */
 img, object, iframe {
     max-width: 100%;
-}
-
-.island {
-  margin: 1em;
 }
 
 .right {
